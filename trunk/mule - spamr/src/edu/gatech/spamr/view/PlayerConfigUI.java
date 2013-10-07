@@ -3,7 +3,7 @@ package edu.gatech.spamr.view;
 import javax.swing.JPanel;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
-import edu.gatech.spamr.model.Player.difficulty;
+import edu.gatech.spamr.model.Player.Difficulty;
 import javax.swing.JTable;
 import java.awt.Component;
 import javax.swing.JButton;
@@ -30,7 +30,7 @@ public class PlayerConfigUI extends JPanel {
 		setLayout(null);
 		
 		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(difficulty.values()));
+		comboBox.setModel(new DefaultComboBoxModel(Difficulty.values()));
 		comboBox.setBounds(203, 290, 76, 20);
 		add(comboBox);
 		
