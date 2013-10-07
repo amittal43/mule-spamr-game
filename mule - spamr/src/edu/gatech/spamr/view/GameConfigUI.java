@@ -1,5 +1,14 @@
 package edu.gatech.spamr.view;
 
-public class GameConfigUI {
+import javax.swing.JPanel;
+
+public class GameConfigUI extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public GameConfigUI() {
+
+	}
 
 }
