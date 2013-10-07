@@ -15,6 +15,8 @@ import java.awt.Color;
 import javax.swing.JToggleButton;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
+import java.awt.Font;
+import java.awt.Dimension;
 
 public class PlayerConfigUI extends JPanel {
 	private final ButtonGroup buttonGroup = new ButtonGroup();
@@ -24,6 +26,8 @@ public class PlayerConfigUI extends JPanel {
 	 * Create the panel.
 	 */
 	public PlayerConfigUI() {
+		setMinimumSize(new Dimension(309, 336));
+		setPreferredSize(new Dimension(309, 336));
 		setBackground(Color.DARK_GRAY);
 		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		setName("Player Configuration");
@@ -47,7 +51,9 @@ public class PlayerConfigUI extends JPanel {
 		add(btnNewButton);
 		
 		JToggleButton button = new JToggleButton("Color");
-		button.setBackground(new Color(0, 0, 0));
+		button.setFont(new Font("Verdana", Font.BOLD, 11));
+		button.setForeground(Color.BLUE);
+		button.setBackground(Color.BLACK);
 		button.setActionCommand("");
 		button.setBounds(116, 112, 76, 71);
 		add(button);
