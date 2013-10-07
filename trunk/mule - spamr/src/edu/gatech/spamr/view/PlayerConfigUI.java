@@ -17,28 +17,39 @@ import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 import java.awt.Font;
 import java.awt.Dimension;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JTextField;
 
 public class PlayerConfigUI extends JPanel {
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private final ButtonGroup buttonGroup_1 = new ButtonGroup();
+	private JTextField textField;
 
 	/**
 	 * Create the panel.
 	 */
 	public PlayerConfigUI() {
 		setMinimumSize(new Dimension(309, 336));
-		setPreferredSize(new Dimension(309, 336));
+		setPreferredSize(new Dimension(309, 363));
 		setBackground(Color.DARK_GRAY);
 		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		setName("Player Configuration");
 		setLayout(null);
 		
 		JComboBox comboBox = new JComboBox();
+		comboBox.setFont(new Font("Verdana", Font.BOLD, 8));
 		comboBox.setModel(new DefaultComboBoxModel(Difficulty.values()));
 		comboBox.setBounds(203, 290, 76, 20);
 		add(comboBox);
 		
 		JButton btnNewButton = new JButton("");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				
+			}
+		});
 		btnNewButton.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/MULE_Mechtron.png")));
 		buttonGroup_1.add(btnNewButton);
 		btnNewButton.setBackground(new Color(0, 0, 0));
@@ -115,24 +126,39 @@ public class PlayerConfigUI extends JPanel {
 		add(button_7);
 		
 		JRadioButton radioButton = new JRadioButton("1");
+		radioButton.setFont(new Font("Verdana", Font.BOLD, 8));
 		buttonGroup.add(radioButton);
 		radioButton.setBounds(30, 289, 31, 23);
 		add(radioButton);
 		
 		JRadioButton radioButton_1 = new JRadioButton("2");
+		radioButton_1.setFont(new Font("Verdana", Font.BOLD, 8));
 		buttonGroup.add(radioButton_1);
 		radioButton_1.setBounds(75, 289, 31, 23);
 		add(radioButton_1);
 		
 		JRadioButton radioButton_2 = new JRadioButton("3");
+		radioButton_2.setFont(new Font("Verdana", Font.BOLD, 8));
 		buttonGroup.add(radioButton_2);
 		radioButton_2.setBounds(116, 289, 31, 23);
 		add(radioButton_2);
 		
 		JRadioButton radioButton_3 = new JRadioButton("4");
+		radioButton_3.setFont(new Font("Verdana", Font.BOLD, 8));
 		buttonGroup.add(radioButton_3);
 		radioButton_3.setBounds(161, 289, 31, 23);
 		add(radioButton_3);
+		
+		JButton btnNewButton_1 = new JButton("Confirm");
+		btnNewButton_1.setFont(new Font("Verdana", Font.BOLD, 9));
+		btnNewButton_1.setActionCommand("Confirm");
+		btnNewButton_1.setBounds(203, 329, 76, 23);
+		add(btnNewButton_1);
+		
+		textField = new JTextField();
+		textField.setBounds(106, 330, 86, 20);
+		add(textField);
+		textField.setColumns(10);
 
 	}
 }
