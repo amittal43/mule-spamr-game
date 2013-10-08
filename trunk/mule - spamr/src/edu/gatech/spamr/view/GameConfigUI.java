@@ -45,6 +45,7 @@ public class GameConfigUI extends JPanel {
 		add(lblGameConfiguration);
 		
 		JButton btnContinue = new JButton("Continue");
+		btnContinue.setFont(new Font("Verdana", Font.BOLD, 11));
 		btnContinue.setBounds(183, 282, 89, 23);
 		add(btnContinue);
 
