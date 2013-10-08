@@ -20,6 +20,8 @@ import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 public class PlayerConfigUI extends JPanel {
 	private final ButtonGroup buttonGroup = new ButtonGroup();
@@ -126,27 +128,35 @@ public class PlayerConfigUI extends JPanel {
 		add(button_7);
 		
 		JRadioButton radioButton = new JRadioButton("1");
+		radioButton.setForeground(Color.LIGHT_GRAY);
+		radioButton.setBackground(Color.DARK_GRAY);
 		radioButton.setFont(new Font("Verdana", Font.BOLD, 8));
 		buttonGroup.add(radioButton);
-		radioButton.setBounds(30, 289, 31, 23);
+		radioButton.setBounds(18, 289, 43, 23);
 		add(radioButton);
 		
 		JRadioButton radioButton_1 = new JRadioButton("2");
+		radioButton_1.setForeground(Color.LIGHT_GRAY);
+		radioButton_1.setBackground(Color.DARK_GRAY);
 		radioButton_1.setFont(new Font("Verdana", Font.BOLD, 8));
 		buttonGroup.add(radioButton_1);
-		radioButton_1.setBounds(75, 289, 31, 23);
+		radioButton_1.setBounds(63, 289, 43, 23);
 		add(radioButton_1);
 		
 		JRadioButton radioButton_2 = new JRadioButton("3");
+		radioButton_2.setForeground(Color.LIGHT_GRAY);
+		radioButton_2.setBackground(Color.DARK_GRAY);
 		radioButton_2.setFont(new Font("Verdana", Font.BOLD, 8));
 		buttonGroup.add(radioButton_2);
-		radioButton_2.setBounds(116, 289, 31, 23);
+		radioButton_2.setBounds(104, 289, 43, 23);
 		add(radioButton_2);
 		
 		JRadioButton radioButton_3 = new JRadioButton("4");
+		radioButton_3.setForeground(Color.LIGHT_GRAY);
+		radioButton_3.setBackground(Color.DARK_GRAY);
 		radioButton_3.setFont(new Font("Verdana", Font.BOLD, 8));
 		buttonGroup.add(radioButton_3);
-		radioButton_3.setBounds(161, 289, 31, 23);
+		radioButton_3.setBounds(149, 289, 43, 23);
 		add(radioButton_3);
 		
 		JButton btnNewButton_1 = new JButton("Confirm");
@@ -156,9 +166,17 @@ public class PlayerConfigUI extends JPanel {
 		add(btnNewButton_1);
 		
 		textField = new JTextField();
-		textField.setBounds(106, 330, 86, 20);
+		textField.setBounds(104, 330, 88, 20);
 		add(textField);
 		textField.setColumns(10);
+		
+		JLabel lblPlayerName = new JLabel("Player Name:");
+		lblPlayerName.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblPlayerName.setLabelFor(textField);
+		lblPlayerName.setForeground(Color.LIGHT_GRAY);
+		lblPlayerName.setFont(new Font("Verdana", Font.BOLD, 9));
+		lblPlayerName.setBounds(18, 333, 76, 14);
+		add(lblPlayerName);
 
 	}
 }
