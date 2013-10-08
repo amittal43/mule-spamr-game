@@ -33,7 +33,11 @@ public class PlayerConfigUI extends JPanel {
 	 */
 	public PlayerConfigUI() {
 		setMinimumSize(new Dimension(309, 336));
+
+		setPreferredSize(new Dimension(382, 369));
+
 		setPreferredSize(new Dimension(309, 363));
+
 		setBackground(Color.DARK_GRAY);
 		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		setName("Player Configuration");
@@ -42,7 +46,7 @@ public class PlayerConfigUI extends JPanel {
 		JComboBox comboBox = new JComboBox();
 		comboBox.setFont(new Font("Verdana", Font.BOLD, 8));
 		comboBox.setModel(new DefaultComboBoxModel(Difficulty.values()));
-		comboBox.setBounds(203, 290, 76, 20);
+		comboBox.setBounds(203, 290, 125, 22);
 		add(comboBox);
 		
 		JButton btnNewButton = new JButton("");
@@ -132,7 +136,7 @@ public class PlayerConfigUI extends JPanel {
 		radioButton.setBackground(Color.DARK_GRAY);
 		radioButton.setFont(new Font("Verdana", Font.BOLD, 8));
 		buttonGroup.add(radioButton);
-		radioButton.setBounds(18, 289, 43, 23);
+		radioButton.setBounds(18, 298, 43, 23);
 		add(radioButton);
 		
 		JRadioButton radioButton_1 = new JRadioButton("2");
@@ -140,7 +144,7 @@ public class PlayerConfigUI extends JPanel {
 		radioButton_1.setBackground(Color.DARK_GRAY);
 		radioButton_1.setFont(new Font("Verdana", Font.BOLD, 8));
 		buttonGroup.add(radioButton_1);
-		radioButton_1.setBounds(63, 289, 43, 23);
+		radioButton_1.setBounds(63, 298, 43, 23);
 		add(radioButton_1);
 		
 		JRadioButton radioButton_2 = new JRadioButton("3");
@@ -148,7 +152,7 @@ public class PlayerConfigUI extends JPanel {
 		radioButton_2.setBackground(Color.DARK_GRAY);
 		radioButton_2.setFont(new Font("Verdana", Font.BOLD, 8));
 		buttonGroup.add(radioButton_2);
-		radioButton_2.setBounds(104, 289, 43, 23);
+		radioButton_2.setBounds(105, 298, 43, 23);
 		add(radioButton_2);
 		
 		JRadioButton radioButton_3 = new JRadioButton("4");
@@ -156,7 +160,7 @@ public class PlayerConfigUI extends JPanel {
 		radioButton_3.setBackground(Color.DARK_GRAY);
 		radioButton_3.setFont(new Font("Verdana", Font.BOLD, 8));
 		buttonGroup.add(radioButton_3);
-		radioButton_3.setBounds(149, 289, 43, 23);
+		radioButton_3.setBounds(148, 298, 43, 23);
 		add(radioButton_3);
 		
 		JButton btnNewButton_1 = new JButton("Confirm");
@@ -177,6 +181,12 @@ public class PlayerConfigUI extends JPanel {
 		lblPlayerName.setFont(new Font("Verdana", Font.BOLD, 9));
 		lblPlayerName.setBounds(18, 333, 76, 14);
 		add(lblPlayerName);
+		
+		JLabel lblNewLabel = new JLabel("Choose Player number:\n");
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setFont(new Font("Verdana", Font.BOLD, 9));
+		lblNewLabel.setBounds(18, 277, 133, 22);
+		add(lblNewLabel);
 
 	}
 }
