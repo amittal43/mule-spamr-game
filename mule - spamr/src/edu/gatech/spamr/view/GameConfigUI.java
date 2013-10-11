@@ -7,6 +7,8 @@ import java.awt.Font;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class GameConfigUI extends JPanel {
 
@@ -48,6 +50,16 @@ public class GameConfigUI extends JPanel {
 		btnContinue.setFont(new Font("Verdana", Font.BOLD, 11));
 		btnContinue.setBounds(183, 282, 89, 23);
 		add(btnContinue);
-
+		
+		btnContinue.addActionListener(new ActionListener() {  
+            public void actionPerformed(ActionEvent e)
+            {
+                //button is pressed
+                System.out.println("You clicked the Continue button");
+            }
+        });
+		
+		
+		
 	}
 }
