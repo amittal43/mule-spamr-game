@@ -20,7 +20,7 @@ public class GameConfigUI extends JPanel {
 		setLayout(null);
 		
 		//combobox
-		JComboBox comboBox = new JComboBox();
+		final JComboBox comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Default Map", "Other Map"}));
 		comboBox.setFont(new Font("Verdana", Font.BOLD, 11));
 		comboBox.setBounds(47, 117, 103, 20);
@@ -54,6 +54,20 @@ public class GameConfigUI extends JPanel {
 		btnContinue.setBounds(183, 282, 89, 23);
 		add(btnContinue);
 		
+		
+		//comboBox listeners
+		comboBox.addActionListener(new ActionListener() {  
+            public void actionPerformed(ActionEvent e)
+            {
+            	//made comboBox final to get this to work (not sure if that is good)
+            	String s = (String)(comboBox.getSelectedItem());
+               
+            	//combo box selected
+                System.out.println(s);
+            }
+        });
+		
+		//buttonListener
 		btnContinue.addActionListener(new ActionListener() {  
             public void actionPerformed(ActionEvent e)
             {
