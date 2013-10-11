@@ -19,6 +19,7 @@ public class GameConfigUI extends JPanel {
 		setBackground(Color.DARK_GRAY);
 		setLayout(null);
 		
+		//combobox
 		JComboBox comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Default Map", "Other Map"}));
 		comboBox.setFont(new Font("Verdana", Font.BOLD, 11));
@@ -31,6 +32,7 @@ public class GameConfigUI extends JPanel {
 		comboBox_1.setBounds(47, 209, 156, 20);
 		add(comboBox_1);
 		
+		//label
 		JLabel lblMapSelection = new JLabel("Map Selection");
 		lblMapSelection.setFont(new Font("Verdana", Font.BOLD, 11));
 		lblMapSelection.setBounds(47, 92, 103, 14);
@@ -46,6 +48,7 @@ public class GameConfigUI extends JPanel {
 		lblGameConfiguration.setBounds(47, 29, 208, 36);
 		add(lblGameConfiguration);
 		
+		//button
 		JButton btnContinue = new JButton("Continue");
 		btnContinue.setFont(new Font("Verdana", Font.BOLD, 11));
 		btnContinue.setBounds(183, 282, 89, 23);
