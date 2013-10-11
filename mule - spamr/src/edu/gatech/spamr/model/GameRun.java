@@ -7,7 +7,16 @@ public class GameRun {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		
+		
+		//create a JFrame to add panels to
+		
+		
+		//JPanel
 		GameConfigUI gUI = new GameConfigUI();
+		
+		
+		
 		
 		
 	}
