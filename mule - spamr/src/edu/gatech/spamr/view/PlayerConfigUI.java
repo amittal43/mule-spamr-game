@@ -57,7 +57,7 @@ public class PlayerConfigUI extends JPanel {
 	public PlayerConfigUI() {
 		setMinimumSize(new Dimension(309, 336));
 
-		setPreferredSize(new Dimension(382, 369));
+		setPreferredSize(new Dimension(309, 354));
 
 		setPreferredSize(new Dimension(309, 363));
 
@@ -65,12 +65,6 @@ public class PlayerConfigUI extends JPanel {
 		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		setName("Player Configuration");
 		setLayout(null);
-		
-		JComboBox DifficultyComboBox = new JComboBox();
-		DifficultyComboBox.setFont(new Font("Verdana", Font.BOLD, 8));
-		DifficultyComboBox.setModel(new DefaultComboBoxModel(Difficulty.values()));
-		DifficultyComboBox.setBounds(203, 290, 76, 22);
-		add(DifficultyComboBox);
 		
 		final JButton Mechtron = new JButton("");
 		Mechtron.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/MULE_Mechtron.png")));
@@ -251,7 +245,7 @@ public class PlayerConfigUI extends JPanel {
 		Player1.setBackground(Color.DARK_GRAY);
 		Player1.setFont(new Font("Verdana", Font.BOLD, 8));
 		SelectPlayer.add(Player1);
-		Player1.setBounds(18, 298, 43, 23);
+		Player1.setBounds(105, 286, 43, 23);
 		add(Player1);
 		
 		final JRadioButton Player2 = new JRadioButton("2");
@@ -265,7 +259,7 @@ public class PlayerConfigUI extends JPanel {
 		Player2.setBackground(Color.DARK_GRAY);
 		Player2.setFont(new Font("Verdana", Font.BOLD, 8));
 		SelectPlayer.add(Player2);
-		Player2.setBounds(63, 298, 43, 23);
+		Player2.setBounds(147, 286, 43, 23);
 		add(Player2);
 		
 		final JRadioButton Player3 = new JRadioButton("3");
@@ -280,7 +274,7 @@ public class PlayerConfigUI extends JPanel {
 		Player3.setBackground(Color.DARK_GRAY);
 		Player3.setFont(new Font("Verdana", Font.BOLD, 8));
 		SelectPlayer.add(Player3);
-		Player3.setBounds(105, 298, 43, 23);
+		Player3.setBounds(192, 286, 43, 23);
 		add(Player3);
 		
 		final JRadioButton Player4 = new JRadioButton("4");
@@ -294,7 +288,7 @@ public class PlayerConfigUI extends JPanel {
 		Player4.setBackground(Color.DARK_GRAY);
 		Player4.setFont(new Font("Verdana", Font.BOLD, 8));
 		SelectPlayer.add(Player4);
-		Player4.setBounds(148, 298, 43, 23);
+		Player4.setBounds(235, 286, 43, 23);
 		add(Player4);
 		
 		final JButton Next = new JButton("Next");
@@ -354,11 +348,11 @@ public class PlayerConfigUI extends JPanel {
 			}
 		});
 		Next.setFont(new Font("Verdana", Font.BOLD, 9));
-		Next.setBounds(203, 329, 76, 23);
+		Next.setBounds(203, 316, 76, 23);
 		add(Next);
 		
 		PlayerName = new JTextField();
-		PlayerName.setBounds(104, 330, 88, 20);
+		PlayerName.setBounds(104, 317, 88, 20);
 		add(PlayerName);
 		PlayerName.setColumns(10);
 		
@@ -367,14 +361,14 @@ public class PlayerConfigUI extends JPanel {
 		lblPlayerName.setLabelFor(PlayerName);
 		lblPlayerName.setForeground(Color.LIGHT_GRAY);
 		lblPlayerName.setFont(new Font("Verdana", Font.BOLD, 9));
-		lblPlayerName.setBounds(18, 333, 76, 14);
+		lblPlayerName.setBounds(18, 320, 76, 14);
 		add(lblPlayerName);
 		
-		JLabel lblNewLabel = new JLabel("Choose Player number:\n");
-		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setFont(new Font("Verdana", Font.BOLD, 9));
-		lblNewLabel.setBounds(18, 277, 133, 22);
-		add(lblNewLabel);
+		JLabel lblPlayerNum = new JLabel("Player number:\r\n");
+		lblPlayerNum.setForeground(Color.LIGHT_GRAY);
+		lblPlayerNum.setFont(new Font("Verdana", Font.BOLD, 9));
+		lblPlayerNum.setBounds(18, 285, 88, 22);
+		add(lblPlayerNum);
 		
 
 	}

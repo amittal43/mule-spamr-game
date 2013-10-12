@@ -23,24 +23,24 @@ public class GameConfigUI extends JPanel {
 		final JComboBox comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Default Map", "Other Map"}));
 		comboBox.setFont(new Font("Verdana", Font.BOLD, 11));
-		comboBox.setBounds(47, 117, 103, 20);
+		comboBox.setBounds(47, 101, 103, 20);
 		add(comboBox);
 		
 		JComboBox comboBox_1 = new JComboBox();
 		comboBox_1.setFont(new Font("Verdana", Font.BOLD, 11));
 		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"4 Human Players", "3 Human Players", "2 Human Players"}));
-		comboBox_1.setBounds(47, 209, 156, 20);
+		comboBox_1.setBounds(49, 167, 156, 20);
 		add(comboBox_1);
 		
 		//label
 		JLabel lblMapSelection = new JLabel("Map Selection");
 		lblMapSelection.setFont(new Font("Verdana", Font.BOLD, 11));
-		lblMapSelection.setBounds(47, 92, 103, 14);
+		lblMapSelection.setBounds(47, 76, 103, 14);
 		add(lblMapSelection);
 		
 		JLabel lblPlayerCount = new JLabel("Player Count");
 		lblPlayerCount.setFont(new Font("Verdana", Font.BOLD, 11));
-		lblPlayerCount.setBounds(45, 184, 117, 14);
+		lblPlayerCount.setBounds(47, 142, 117, 14);
 		add(lblPlayerCount);
 		
 		JLabel lblGameConfiguration = new JLabel("Game Configuration");
@@ -53,6 +53,16 @@ public class GameConfigUI extends JPanel {
 		btnContinue.setFont(new Font("Verdana", Font.BOLD, 11));
 		btnContinue.setBounds(183, 282, 89, 23);
 		add(btnContinue);
+		
+		JComboBox comboBox_2 = new JComboBox();
+		comboBox_2.setFont(new Font("Verdana", Font.BOLD, 8));
+		comboBox_2.setBounds(47, 239, 103, 22);
+		add(comboBox_2);
+		
+		JLabel lblDifficulty = new JLabel("Difficulty");
+		lblDifficulty.setFont(new Font("Verdana", Font.BOLD, 11));
+		lblDifficulty.setBounds(47, 214, 103, 14);
+		add(lblDifficulty);
 		
 		
 		//comboBox listeners
