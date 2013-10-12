@@ -6,6 +6,7 @@ import javax.swing.DefaultComboBoxModel;
 
 import edu.gatech.spamr.model.Player;
 import edu.gatech.spamr.model.Player.Difficulty;
+import edu.gatech.spamr.model.Player.PlayerColor;
 import edu.gatech.spamr.model.Player.Race;
 
 import javax.swing.JTable;
@@ -36,13 +37,19 @@ import javax.swing.SwingConstants;
 public class PlayerConfigUI extends JPanel {
 	private final ButtonGroup SelectPlayer = new ButtonGroup();
 	private final ButtonGroup SelectRace = new ButtonGroup();
-	private JTextField textField;
-	private Player player1, player2, player3, player4;
-	private Player selectedPlayer = null;
+	private JTextField PlayerName;
+	private Player player1 = new Player();
+	private Player player2 = new Player();
+	private Player player3 = new Player();
+	private Player player4 = new Player();
+	private Player selectedPlayer = player1;
+	private PlayerColor currentColor = PlayerColor.BLUE;
+	private Race currentRace = Race.HUMANOID;
 	
 	private Player getSelectedPlayer(){
 		return selectedPlayer;
 	}
+	
 
 	/**
 	 * Create the panel.
@@ -59,35 +66,31 @@ public class PlayerConfigUI extends JPanel {
 		setName("Player Configuration");
 		setLayout(null);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setFont(new Font("Verdana", Font.BOLD, 8));
-		comboBox.setModel(new DefaultComboBoxModel(Difficulty.values()));
-		comboBox.setBounds(203, 290, 76, 22);
-		add(comboBox);
+		JComboBox DifficultyComboBox = new JComboBox();
+		DifficultyComboBox.setFont(new Font("Verdana", Font.BOLD, 8));
+		DifficultyComboBox.setModel(new DefaultComboBoxModel(Difficulty.values()));
+		DifficultyComboBox.setBounds(203, 290, 76, 22);
+		add(DifficultyComboBox);
 		
-		JButton Mechtron = new JButton("");
+		final JButton Mechtron = new JButton("");
 		Mechtron.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/MULE_Mechtron.png")));
 		SelectRace.add(Mechtron);
 		Mechtron.setBackground(new Color(0, 0, 0));
 		Mechtron.setActionCommand("");
 		Mechtron.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				getSelectedPlayer().setRace(Race.MECHTRON);
-				System.out.println("Mechtron Selected");
+				currentRace = Race.MECHTRON;
 			}
 		});
 		Mechtron.setBounds(30, 30, 76, 71);
 		add(Mechtron);
 		
-		JToggleButton button = new JToggleButton("Color");
-		button.setFont(new Font("Verdana", Font.BOLD, 11));
-		button.setForeground(Color.BLUE);
-		button.setBackground(Color.BLACK);
-		button.setActionCommand("");
-		button.setBounds(116, 112, 76, 71);
-		add(button);
-		
-		JButton Spheroid = new JButton("");
+		final JButton Spheroid = new JButton("");
+		Spheroid.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				currentRace = Race.SPHEROID;
+			}
+		});
 		Spheroid.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/MULE_Spheroid.png")));
 		SelectRace.add(Spheroid);
 		Spheroid.setBackground(new Color(0, 0, 0));
@@ -95,7 +98,12 @@ public class PlayerConfigUI extends JPanel {
 		Spheroid.setBounds(202, 112, 76, 71);
 		add(Spheroid);
 		
-		JButton Bonzoid = new JButton("");
+		final JButton Bonzoid = new JButton("");
+		Bonzoid.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				currentRace = Race.BONZOID;
+			}
+		});
 		Bonzoid.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/MULE_Bonzoid.png")));
 		SelectRace.add(Bonzoid);
 		Bonzoid.setBackground(new Color(0, 0, 0));
@@ -103,10 +111,10 @@ public class PlayerConfigUI extends JPanel {
 		Bonzoid.setBounds(30, 112, 76, 71);
 		add(Bonzoid);
 		
-		JButton Gollumer = new JButton("");
+		final JButton Gollumer = new JButton("");
 		Gollumer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				getSelectedPlayer().setRace(Race.GOLLUMER);
+				currentRace = Race.GOLLUMER;
 			}
 		});
 		Gollumer.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/MULE_Gollumer.png")));
@@ -116,10 +124,10 @@ public class PlayerConfigUI extends JPanel {
 		Gollumer.setBounds(116, 30, 76, 71);
 		add(Gollumer);
 		
-		JButton Packer = new JButton("");
+		final JButton Packer = new JButton("");
 		Packer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				getSelectedPlayer().setRace(Race.PACKER);
+				currentRace = Race.PACKER;
 			}
 		});
 		SelectRace.add(Packer);
@@ -129,7 +137,12 @@ public class PlayerConfigUI extends JPanel {
 		Packer.setBounds(202, 30, 76, 71);
 		add(Packer);
 		
-		JButton Flapper = new JButton("");
+		final JButton Flapper = new JButton("");
+		Flapper.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				currentRace = Race.FLAPPER;
+			}
+		});
 		Flapper.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/MULE_Flapper.png")));
 		SelectRace.add(Flapper);
 		Flapper.setBackground(new Color(0, 0, 0));
@@ -137,7 +150,12 @@ public class PlayerConfigUI extends JPanel {
 		Flapper.setBounds(30, 194, 76, 71);
 		add(Flapper);
 		
-		JButton Leggite = new JButton("");
+		final JButton Leggite = new JButton("");
+		Leggite.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				currentRace = Race.LEGGITE;
+			}
+		});
 		SelectRace.add(Leggite);
 		Leggite.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/MULE_Leggite.png")));
 		Leggite.setBackground(new Color(0, 0, 0));
@@ -145,7 +163,12 @@ public class PlayerConfigUI extends JPanel {
 		Leggite.setBounds(116, 194, 76, 71);
 		add(Leggite);
 		
-		JButton Humanoid = new JButton("");
+		final JButton Humanoid = new JButton("");
+		Humanoid.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				currentRace = Race.HUMANOID;
+			}
+		});
 		Humanoid.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/MULE_Humanoid.png")));
 		SelectRace.add(Humanoid);
 		Humanoid.setBackground(new Color(0, 0, 0));
@@ -153,12 +176,76 @@ public class PlayerConfigUI extends JPanel {
 		Humanoid.setBounds(202, 194, 76, 71);
 		add(Humanoid);
 		
+		final JButton button = new JButton("Color");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(currentColor == PlayerColor.BLUE){
+					button.setBackground(Color.RED);
+					currentColor = PlayerColor.RED;
+					Bonzoid.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/RED/MULE_Bonzoid_Red.png")));
+					Flapper.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/RED/MULE_Flapper_Red.png")));
+					Gollumer.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/RED/MULE_Gollumer_Red.png")));
+					Humanoid.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/RED/MULE_Humanoid_Red.png")));
+					Leggite.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/RED/MULE_Leggite_Red.png")));
+					Mechtron.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/RED/MULE_Mechtron_Red.png")));
+					Packer.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/RED/MULE_Packer_Red.png")));
+					Spheroid.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/RED/MULE_Spheroid_Red.png")));
+					return;
+				}
+				if(currentColor == PlayerColor.RED){
+					button.setBackground(Color.GREEN);
+					currentColor = PlayerColor.GREEN;
+					Bonzoid.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/GREEN/MULE_Bonzoid_Green.png")));
+					Flapper.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/GREEN/MULE_Flapper_Green.png")));
+					Gollumer.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/GREEN/MULE_Gollumer_Green.png")));
+					Humanoid.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/GREEN/MULE_Humanoid_Green.png")));
+					Leggite.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/GREEN/MULE_Leggite_Green.png")));
+					Mechtron.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/GREEN/MULE_Mechtron_Green.png")));
+					Packer.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/GREEN/MULE_Packer_Green.png")));
+					Spheroid.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/GREEN/MULE_Spheroid_Green.png")));
+
+					return;
+				}
+				if(currentColor == PlayerColor.GREEN){
+					button.setBackground(Color.YELLOW);
+					currentColor = PlayerColor.YELLOW;
+					Bonzoid.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/YELLOW/MULE_Bonzoid_Yellow.png")));
+					Flapper.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/YELLOW/MULE_Flapper_Yellow.png")));
+					Gollumer.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/YELLOW/MULE_Gollumer_Yellow.png")));
+					Humanoid.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/YELLOW/MULE_Humanoid_Yellow.png")));
+					Leggite.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/YELLOW/MULE_Leggite_Yellow.png")));
+					Mechtron.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/YELLOW/MULE_Mechtron_Yellow.png")));
+					Packer.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/YELLOW/MULE_Packer_Yellow.png")));
+					Spheroid.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/YELLOW/MULE_Spheroid_Yellow.png")));
+					return;
+				}
+				if(currentColor == PlayerColor.YELLOW){
+					button.setBackground(Color.BLUE);
+					currentColor = PlayerColor.BLUE;
+					Bonzoid.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/BLUE/MULE_Bonzoid_Blue.png")));
+					Flapper.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/BLUE/MULE_Flapper_Blue.png")));
+					Gollumer.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/BLUE/MULE_Gollumer_Blue.png")));
+					Humanoid.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/BLUE/MULE_Humanoid_Blue.png")));
+					Leggite.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/BLUE/MULE_Leggite_Blue.png")));
+					Mechtron.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/BLUE/MULE_Mechtron_Blue.png")));
+					Packer.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/BLUE/MULE_Packer_Blue.png")));
+					Spheroid.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/BLUE/MULE_Spheroid_Blue.png")));
+					return;
+				}
+			}
+		});
+		button.setFont(new Font("Verdana", Font.BOLD, 11));
+		button.setForeground(Color.BLACK);
+		button.setBackground(Color.BLUE);
+		button.setActionCommand("");
+		button.setBounds(116, 112, 76, 71);
+		add(button);
+		
 		final JRadioButton Player1 = new JRadioButton("1");
+		Player1.setSelected(true);
 		Player1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(Player1.isEnabled()){
 					selectedPlayer = player1;
-			}
 		}});
 		Player1.setForeground(Color.LIGHT_GRAY);
 		Player1.setBackground(Color.DARK_GRAY);
@@ -168,11 +255,10 @@ public class PlayerConfigUI extends JPanel {
 		add(Player1);
 		
 		final JRadioButton Player2 = new JRadioButton("2");
+		Player2.setEnabled(false);
 		Player2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(Player2.isEnabled()){
 					selectedPlayer = player2;
-				}
 			}
 		});
 		Player2.setForeground(Color.LIGHT_GRAY);
@@ -183,11 +269,10 @@ public class PlayerConfigUI extends JPanel {
 		add(Player2);
 		
 		final JRadioButton Player3 = new JRadioButton("3");
+		Player3.setEnabled(false);
 		Player3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(Player3.isEnabled()){
 					selectedPlayer = player3;
-				}
 				System.out.println(selectedPlayer.getName());
 			}
 		});
@@ -199,11 +284,10 @@ public class PlayerConfigUI extends JPanel {
 		add(Player3);
 		
 		final JRadioButton Player4 = new JRadioButton("4");
+		Player4.setEnabled(false);
 		Player4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(Player4.isEnabled()){
 					selectedPlayer = player4;
-				}
 			}
 		});
 		Player4.setForeground(Color.LIGHT_GRAY);
@@ -213,20 +297,74 @@ public class PlayerConfigUI extends JPanel {
 		Player4.setBounds(148, 298, 43, 23);
 		add(Player4);
 		
-		JButton btnNewButton_1 = new JButton("Confirm");
-		btnNewButton_1.setFont(new Font("Verdana", Font.BOLD, 9));
-		btnNewButton_1.setActionCommand("Confirm");
-		btnNewButton_1.setBounds(203, 329, 76, 23);
-		add(btnNewButton_1);
+		final JButton Next = new JButton("Next");
+		Next.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(getSelectedPlayer().equals(player1)){
+					player1.setName(PlayerName.getText());
+					player1.setColor(currentColor);
+					player1.setRace(currentRace);
+					System.out.println("Player 1's Name: " + player1.getName());
+					System.out.println("Player 1's Color: " + player1.getColor().toString());
+					System.out.println("Player 1's Race: " + player1.getRace().toString());
+					Player2.setEnabled(true);
+					Player2.doClick();
+					Player1.setEnabled(false);
+					PlayerName.setText("");
+					return;
+				}
+				if(getSelectedPlayer().equals(player2)){
+					player2.setName(PlayerName.getText());
+					player2.setColor(currentColor);
+					player2.setRace(currentRace);
+					System.out.println();
+					System.out.println("Player 2's Name: " + player2.getName());
+					System.out.println("Player 2's Color: " + player2.getColor().toString());
+					System.out.println("Player 2's Race: " + player2.getRace().toString());
+					Player3.setEnabled(true);
+					Player3.doClick();
+					Player2.setEnabled(false);
+					PlayerName.setText("");
+					return;
+				}
+				if(getSelectedPlayer().equals(player3)){
+					player3.setName(PlayerName.getText());
+					player3.setColor(currentColor);
+					player3.setRace(currentRace);
+					System.out.println();
+					System.out.println("Player 3's Name: " + player3.getName());
+					System.out.println("Player 3's Color: " + player3.getColor().toString());
+					System.out.println("Player 3's Race: " + player3.getRace().toString());
+					Player4.setEnabled(true);
+					Player4.doClick();
+					Player3.setEnabled(false);
+					PlayerName.setText("");
+					Next.setText("Confirm");
+					return;
+				}
+				if(getSelectedPlayer().equals(player4)){
+					player4.setName(PlayerName.getText());
+					player4.setColor(currentColor);
+					player4.setRace(currentRace);
+					System.out.println();
+					System.out.println("Player 4's Name: " + player4.getName());
+					System.out.println("Player 4's Color: " + player4.getColor().toString());
+					System.out.println("Player 4's Race: " + player4.getRace().toString());
+				}
+			}
+		});
+		Next.setFont(new Font("Verdana", Font.BOLD, 9));
+		Next.setBounds(203, 329, 76, 23);
+		add(Next);
 		
-		textField = new JTextField();
-		textField.setBounds(104, 330, 88, 20);
-		add(textField);
-		textField.setColumns(10);
+		PlayerName = new JTextField();
+		PlayerName.setBounds(104, 330, 88, 20);
+		add(PlayerName);
+		PlayerName.setColumns(10);
 		
 		JLabel lblPlayerName = new JLabel("Player Name:");
 		lblPlayerName.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblPlayerName.setLabelFor(textField);
+		lblPlayerName.setLabelFor(PlayerName);
 		lblPlayerName.setForeground(Color.LIGHT_GRAY);
 		lblPlayerName.setFont(new Font("Verdana", Font.BOLD, 9));
 		lblPlayerName.setBounds(18, 333, 76, 14);
