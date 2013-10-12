@@ -6,7 +6,7 @@ public class Player {
 	private String name;
 	private Race race;
 	private Difficulty diff;
-	private Color color;
+	private PlayerColor color;
 	private int money;
 	private int food;
 	private int energy;
@@ -17,8 +17,18 @@ public class Player {
 	//enums
 	public enum Race{PACKER, SPHEROID, HUMANOID, LEGGITE, FLAPPER, BONZOID, MECHTRON, GOLLUMER};
 	public enum Difficulty{BEGINNER, STANDARD, TOURNAMENT};
-	public enum Color{BLUE, GREEN, RED, YELLOW};
+	public enum PlayerColor{BLUE, GREEN, RED, YELLOW};
 	
+	public Player(){
+		name = null;
+		race = null;
+		diff = null;
+		color = null;
+		money = 0;
+		food = 0;
+		energy = 0;
+		ore = 0;
+	}
 	
 	//getters and setters
 	public String getName(){
@@ -45,11 +55,11 @@ public class Player {
 		diff = d;
 	}
 	
-	public Color getColor(){
+	public PlayerColor getColor(){
 		return color;
 	}
 	
-	public void setColor(Color c){
+	public void setColor(PlayerColor c){
 		color = c;
 	}
 	
