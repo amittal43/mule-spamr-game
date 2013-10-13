@@ -170,7 +170,7 @@ public class PlayerConfigUI extends JPanel {
 		Humanoid.setBounds(202, 194, 76, 71);
 		add(Humanoid);
 		
-		final JButton button = new JButton("Color");
+		final JButton button = new JButton("Choose Color");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if(currentColor == PlayerColor.BLUE){
