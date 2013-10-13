@@ -4,6 +4,18 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
+/** 
+ * The MainAppView class represents the actual application of the game
+ * 
+ *  
+ * @author Sean Lachenberg
+ * @author Aditya Mittal
+ * @author Mike Vail
+ * @author Puja Sheth
+ * @author Raj Prateek
+ * @version 1.0 10/03/2013 
+ */
+
 public class MainAppView {
 
 	private JFrame frame;

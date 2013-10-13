@@ -34,6 +34,20 @@ import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
+/** 
+ * The PlayerConfigUI class represents a panel in which users can pick number of players and their corresponding 
+ * names and player icons.
+ * 
+ * It has a total of 4 players in which users can choose from as well as 8 icons and 4 colors.  
+ * 
+ * @author Sean Lachenberg
+ * @author Aditya Mittal
+ * @author Mike Vail
+ * @author Puja Sheth
+ * @author Raj Prateek
+ * @version 1.0 10/03/2013 
+ */ 
+
 public class PlayerConfigUI extends JPanel {
 	private final ButtonGroup SelectPlayer = new ButtonGroup();
 	private final ButtonGroup SelectRace = new ButtonGroup();
@@ -50,10 +64,13 @@ public class PlayerConfigUI extends JPanel {
 		return selectedPlayer;
 	}
 	
+	/** 
+	 * Construct a PlayerConfigUI panel with the given instances of the player and 
+	 * button classes as well as the various features the group wanted.
+	 * 
+	 * @return color of the current player  
+	 */ 
 
-	/**
-	 * Create the panel.
-	 */
 	public PlayerConfigUI() {
 		setMinimumSize(new Dimension(309, 336));
 
@@ -65,6 +82,10 @@ public class PlayerConfigUI extends JPanel {
 		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		setName("Player Configuration");
 		setLayout(null);
+		
+		/**
+		 * Creates the Mectron button 
+		 */
 		
 		final JButton Mechtron = new JButton("");
 		Mechtron.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/MULE_Mechtron.png")));
@@ -79,6 +100,10 @@ public class PlayerConfigUI extends JPanel {
 		Mechtron.setBounds(30, 30, 76, 71);
 		add(Mechtron);
 		
+		/**
+		 * Creates the Spheroid button
+		 */
+		
 		final JButton Spheroid = new JButton("");
 		Spheroid.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -91,6 +116,10 @@ public class PlayerConfigUI extends JPanel {
 		Spheroid.setActionCommand("");
 		Spheroid.setBounds(202, 112, 76, 71);
 		add(Spheroid);
+		
+		/**
+		 * Creates the Bonzoid button
+		 */
 		
 		final JButton Bonzoid = new JButton("");
 		Bonzoid.addActionListener(new ActionListener() {
@@ -105,6 +134,10 @@ public class PlayerConfigUI extends JPanel {
 		Bonzoid.setBounds(30, 112, 76, 71);
 		add(Bonzoid);
 		
+		/**
+		 * Creates the Gollumer button
+		 */
+		
 		final JButton Gollumer = new JButton("");
 		Gollumer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -117,6 +150,10 @@ public class PlayerConfigUI extends JPanel {
 		Gollumer.setActionCommand("");
 		Gollumer.setBounds(116, 30, 76, 71);
 		add(Gollumer);
+		
+		/**
+		 * Creates the Packer button
+		 */
 		
 		final JButton Packer = new JButton("");
 		Packer.addActionListener(new ActionListener() {
@@ -131,6 +168,10 @@ public class PlayerConfigUI extends JPanel {
 		Packer.setBounds(202, 30, 76, 71);
 		add(Packer);
 		
+		/**
+		 * Creates the Flapper button
+		 */
+		
 		final JButton Flapper = new JButton("");
 		Flapper.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -143,6 +184,10 @@ public class PlayerConfigUI extends JPanel {
 		Flapper.setActionCommand("");
 		Flapper.setBounds(30, 194, 76, 71);
 		add(Flapper);
+		
+		/**
+		 * Creates the Leggitte button
+		 */
 		
 		final JButton Leggite = new JButton("");
 		Leggite.addActionListener(new ActionListener() {
@@ -157,6 +202,10 @@ public class PlayerConfigUI extends JPanel {
 		Leggite.setBounds(116, 194, 76, 71);
 		add(Leggite);
 		
+		/**
+		 * Creates the Humanoid button
+		 */
+		
 		final JButton Humanoid = new JButton("");
 		Humanoid.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -169,6 +218,10 @@ public class PlayerConfigUI extends JPanel {
 		Humanoid.setActionCommand("");
 		Humanoid.setBounds(202, 194, 76, 71);
 		add(Humanoid);
+		
+		/**
+		 * Creates a toggle button in which a user can toggle between which color he/she wants his/her player to be
+		 */
 		
 		final JButton button = new JButton("Choose Color");
 		button.addActionListener(new ActionListener() {
@@ -235,6 +288,10 @@ public class PlayerConfigUI extends JPanel {
 		button.setBounds(116, 112, 76, 71);
 		add(button);
 		
+		/**
+		 * Creates a button for the user to choose an option of 1 player
+		 */
+		
 		final JRadioButton Player1 = new JRadioButton("1");
 		Player1.setSelected(true);
 		Player1.addActionListener(new ActionListener() {
@@ -247,6 +304,10 @@ public class PlayerConfigUI extends JPanel {
 		SelectPlayer.add(Player1);
 		Player1.setBounds(105, 286, 43, 23);
 		add(Player1);
+		
+		/**
+		 * Creates a button for the user to choose an option of 2 players
+		 */
 		
 		final JRadioButton Player2 = new JRadioButton("2");
 		Player2.setEnabled(false);
@@ -261,6 +322,10 @@ public class PlayerConfigUI extends JPanel {
 		SelectPlayer.add(Player2);
 		Player2.setBounds(147, 286, 43, 23);
 		add(Player2);
+		
+		/**
+		 * Creates a button for the user to choose an option of 3 players
+		 */
 		
 		final JRadioButton Player3 = new JRadioButton("3");
 		Player3.setEnabled(false);
@@ -277,6 +342,10 @@ public class PlayerConfigUI extends JPanel {
 		Player3.setBounds(192, 286, 43, 23);
 		add(Player3);
 		
+		/**
+		 * Creates a button for the user to choose an option of 4 players
+		 */
+		
 		final JRadioButton Player4 = new JRadioButton("4");
 		Player4.setEnabled(false);
 		Player4.addActionListener(new ActionListener() {
@@ -290,6 +359,12 @@ public class PlayerConfigUI extends JPanel {
 		SelectPlayer.add(Player4);
 		Player4.setBounds(235, 286, 43, 23);
 		add(Player4);
+		
+		/**
+		 * Creates a next button after the radio button is clicked to obtain information
+		 * 
+		 * @return player's information
+		 */
 		
 		final JButton Next = new JButton("Next");
 		Next.addActionListener(new ActionListener() {

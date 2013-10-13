@@ -2,6 +2,17 @@ package edu.gatech.spamr.view;
 
 import javax.swing.JFrame;
 
+/** 
+ * The GameFrame class creates a frame for our panels to run in.  
+ * 
+ * @author Sean Lachenberg
+ * @author Aditya Mittal
+ * @author Mike Vail
+ * @author Puja Sheth
+ * @author Raj Prateek
+ * @version 1.0 10/07/2013 
+ */
+
 public class GameFrame {
 
 	//creates a frame for our panels to run in

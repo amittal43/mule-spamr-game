@@ -10,6 +10,19 @@ import javax.swing.JButton;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/** 
+ * The GameConfigUI class represents a panel in which the map of the game is displayed
+ * 
+ * It has a default map and an other map and a way to see the map based on the amount of players.  
+ * 
+ * @author Sean Lachenberg
+ * @author Aditya Mittal
+ * @author Mike Vail
+ * @author Puja Sheth
+ * @author Raj Prateek
+ * @version 1.0 10/05/2013 
+ */
+
 public class GameConfigUI extends JPanel {
 
 	/**
