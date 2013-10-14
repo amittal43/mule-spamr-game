@@ -9,12 +9,17 @@ public class GameRun {
 
 		
 		
-		//create a JFrame to add panels to
-		
-		
+		/*//create a JFrame to add panels to
+
 		//JPanel
-		GameConfigUI gUI = new GameConfigUI();
+		GameConfigUI gUI = new GameConfigUI(); */
 		
+		
+		javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                GameFrame.createFrame();
+            }
+        });
 		
 		
 		
