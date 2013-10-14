@@ -1,14 +1,22 @@
 package edu.gatech.spamr.view;
 
 import javax.swing.JPanel;
+
 import java.awt.Color;
+import java.awt.Dialog;
+
 import javax.swing.JComboBox;
+
 import java.awt.Font;
+
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.JDialog;
 
 /** 
  * The GameConfigUI class represents a panel in which the map of the game is displayed
@@ -95,6 +103,15 @@ public class GameConfigUI extends JPanel {
             public void actionPerformed(ActionEvent e)
             {
                 //button is pressed
+            	PlayerConfigUI pcui = new PlayerConfigUI();
+            	JDialog pcuiDialog = new JDialog(null, "Configure Players", Dialog.ModalityType.APPLICATION_MODAL);
+            	pcuiDialog.setSize(pcui.getPreferredSize());
+            	pcuiDialog.setContentPane(pcui);
+            	pcuiDialog.setVisible(true);
+            	while(!pcui.isCompleted()){
+            		if(pcui.isCompleted())
+            			pcuiDialog.dispose();
+            	}
                 System.out.println("You clicked the Continue button");
             }
         });
