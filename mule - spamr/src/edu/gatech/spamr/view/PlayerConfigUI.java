@@ -228,7 +228,7 @@ public class PlayerConfigUI extends JPanel {
 		 * Creates a toggle button in which a user can toggle between which color he/she wants his/her player to be
 		 */
 		
-		final JButton button = new JButton("Choose Color");
+		final JButton button = new JButton("Color");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if(currentColor == PlayerColor.BLUE){
