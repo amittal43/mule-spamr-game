@@ -49,7 +49,7 @@ public class MainAppView {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100,100,640,480);
-		PlayerConfigUI ui = new PlayerConfigUI();
+		GameConfigUI ui = new GameConfigUI();
 		frame.add(ui);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}

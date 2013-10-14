@@ -59,9 +59,14 @@ public class PlayerConfigUI extends JPanel {
 	private Player selectedPlayer = player1;
 	private PlayerColor currentColor = PlayerColor.BLUE;
 	private Race currentRace = Race.HUMANOID;
+	private boolean completed = false;
 	
 	private Player getSelectedPlayer(){
 		return selectedPlayer;
+	}
+	
+	public boolean isCompleted(){
+		return completed;
 	}
 	
 	/** 
@@ -72,9 +77,9 @@ public class PlayerConfigUI extends JPanel {
 	 */ 
 
 	public PlayerConfigUI() {
-		setMinimumSize(new Dimension(309, 336));
+		setMinimumSize(new Dimension(309, 365));
 
-		setPreferredSize(new Dimension(309, 354));
+		setPreferredSize(new Dimension(309, 365));
 
 		setPreferredSize(new Dimension(309, 363));
 
@@ -419,6 +424,7 @@ public class PlayerConfigUI extends JPanel {
 					System.out.println("Player 4's Name: " + player4.getName());
 					System.out.println("Player 4's Color: " + player4.getColor().toString());
 					System.out.println("Player 4's Race: " + player4.getRace().toString());
+					completed = true;
 				}
 			}
 		});
