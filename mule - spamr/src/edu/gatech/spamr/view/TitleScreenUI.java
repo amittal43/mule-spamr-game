@@ -9,6 +9,18 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/** 
+ * The TitleScreenUI class creates a panel for the player to begin the game 
+ * after seeing the creation information  
+ * 
+ * @author Sean Lachenberg
+ * @author Aditya Mittal
+ * @author Mike Vail
+ * @author Puja Sheth
+ * @author Raj Prateek
+ * @version 1.0 10/15/2013 
+ */
+
 public class TitleScreenUI extends JPanel {
 
 	private MainAppView parent;

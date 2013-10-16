@@ -8,6 +8,17 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import java.awt.Dimension;
 
+/** 
+ * The GameScreenUI class creates a panel for the player to begin the game  
+ * 
+ * @author Sean Lachenberg
+ * @author Aditya Mittal
+ * @author Mike Vail
+ * @author Puja Sheth
+ * @author Raj Prateek
+ * @version 1.0 10/15/2013 
+ */
+
 public class GameScreenUI extends JPanel {
 
 	/**
