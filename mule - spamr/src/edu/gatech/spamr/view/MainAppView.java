@@ -1,7 +1,9 @@
 package edu.gatech.spamr.view;
 
+import java.awt.Dimension;
 import java.awt.EventQueue;
 
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 
 /** 
@@ -18,7 +20,39 @@ import javax.swing.JFrame;
 
 public class MainAppView {
 
-	private JFrame frame;
+	private JFrame mainFrame;
+	private JDialog configDialog;
+	private TitleScreenUI title = new TitleScreenUI();
+	private GameConfigUI gcui = new GameConfigUI();
+	private PlayerConfigUI pcui = new PlayerConfigUI();
+	private GameScreenUI game = new GameScreenUI();
+	
+	public JFrame getMainFrame(){
+		return mainFrame;
+	}
+	
+	public JDialog getConfigDialog(){
+		return configDialog;
+	}
+	
+	public void setUpConfigDialog(){
+		configDialog = new JDialog(mainFrame,"Configure Game");
+		configDialog.setSize(new Dimension(310,400));
+		configDialog.setContentPane(gcui);
+		configDialog.setVisible(true);
+	}
+	
+	public GameConfigUI getGameConfigUI(){
+		return gcui;
+	}
+	
+	public PlayerConfigUI getPlayerConfigUI(){
+		return pcui;
+	}
+	
+	public GameScreenUI getGameScreenUI(){
+		return game;
+	}
 
 	/**
 	 * Launch the application.
@@ -28,7 +62,7 @@ public class MainAppView {
 			public void run() {
 				try {
 					MainAppView window = new MainAppView();
-					window.frame.setVisible(true);
+					window.mainFrame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -47,11 +81,14 @@ public class MainAppView {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100,100,640,480);
-		GameConfigUI ui = new GameConfigUI();
-		frame.add(ui);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		mainFrame = new JFrame();
+		mainFrame.setBounds(100,100,800,600);
+		mainFrame.setTitle("MULE: SPAMR Edition");
+		mainFrame.setContentPane(title);
+		title.setParent(this);
+		gcui.setParent(this);
+		pcui.setParent(this);
+		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
 }
