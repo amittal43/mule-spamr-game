@@ -2,8 +2,13 @@ package edu.gatech.spamr.view;
 
 import javax.swing.JPanel;
 
+import edu.gatech.spamr.model.Map.MapType;
+import edu.gatech.spamr.model.Player.Difficulty;
+
 import java.awt.Color;
 import java.awt.Dialog;
+import java.awt.Frame;
+import java.awt.Window;
 
 import javax.swing.JComboBox;
 
@@ -12,11 +17,14 @@ import java.awt.Font;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import javax.swing.SwingUtilities;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JDialog;
+
+import java.awt.Dimension;
 
 /** 
  * The GameConfigUI class represents a panel in which the map of the game is displayed
@@ -33,86 +41,112 @@ import javax.swing.JDialog;
 
 public class GameConfigUI extends JPanel {
 
+	private JPanel gameConfigPanel = this;
+	private MainAppView parent;
+	private Difficulty selectedDifficulty = Difficulty.BEGINNER; // default difficulty
+	private int numHumans = 4; // default number of human players
+	private MapType selectedMapType = MapType.DEFAULT;
+	
+	public MapType getMapType(){
+		return selectedMapType;
+	}
+	
+	public int getNumHumans(){
+		return numHumans;
+	}
+	
+	public Difficulty getDifficulty(){
+		return selectedDifficulty;
+	}
+	
+	public void setParent(MainAppView mainApp){
+		parent = mainApp;
+	}
+	
+	private MainAppView getMainApp(){
+		return parent;
+	}
+	
 	/**
 	 * Create the panel.
 	 */
 	public GameConfigUI() {
+		setPreferredSize(new Dimension(309, 365));
+		setMinimumSize(new Dimension(309, 365));
 		setBackground(Color.DARK_GRAY);
 		setLayout(null);
 		
 		//combobox
-		final JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Default Map", "Other Map"}));
-		comboBox.setFont(new Font("Verdana", Font.BOLD, 11));
-		comboBox.setBounds(47, 101, 103, 20);
-		add(comboBox);
+		final JComboBox MapComboBox = new JComboBox();
+		MapComboBox.setModel(new DefaultComboBoxModel(MapType.values()));
+		MapComboBox.setFont(new Font("Verdana", Font.BOLD, 11));
+		MapComboBox.setBounds(47, 113, 103, 20);
+		add(MapComboBox);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setFont(new Font("Verdana", Font.BOLD, 11));
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"4 Human Players", "3 Human Players", "2 Human Players"}));
-		comboBox_1.setBounds(49, 167, 156, 20);
-		add(comboBox_1);
+		final JComboBox HumansComboBox = new JComboBox();
+		HumansComboBox.setFont(new Font("Verdana", Font.BOLD, 11));
+		HumansComboBox.setModel(new DefaultComboBoxModel(new String[] {"4 Human Players", "3 Human Players", "2 Human Players"}));
+		HumansComboBox.setBounds(47, 180, 156, 20);
+		add(HumansComboBox);
 		
 		//label
 		JLabel lblMapSelection = new JLabel("Map Selection");
-		lblMapSelection.setFont(new Font("Verdana", Font.BOLD, 11));
-		lblMapSelection.setBounds(47, 76, 103, 14);
+		lblMapSelection.setForeground(Color.LIGHT_GRAY);
+		lblMapSelection.setFont(new Font("Verdana", Font.BOLD, 12));
+		lblMapSelection.setBounds(47, 88, 103, 14);
 		add(lblMapSelection);
 		
 		JLabel lblPlayerCount = new JLabel("Player Count");
-		lblPlayerCount.setFont(new Font("Verdana", Font.BOLD, 11));
-		lblPlayerCount.setBounds(47, 142, 117, 14);
+		lblPlayerCount.setForeground(Color.LIGHT_GRAY);
+		lblPlayerCount.setFont(new Font("Verdana", Font.BOLD, 12));
+		lblPlayerCount.setBounds(47, 155, 117, 14);
 		add(lblPlayerCount);
 		
 		JLabel lblGameConfiguration = new JLabel("Game Configuration");
+		lblGameConfiguration.setForeground(Color.LIGHT_GRAY);
 		lblGameConfiguration.setFont(new Font("Verdana", Font.BOLD, 18));
 		lblGameConfiguration.setBounds(47, 29, 208, 36);
 		add(lblGameConfiguration);
 		
 		//button
 		JButton btnContinue = new JButton("Continue");
-		btnContinue.setFont(new Font("Verdana", Font.BOLD, 11));
-		btnContinue.setBounds(183, 282, 89, 23);
+		btnContinue.setFont(new Font("Verdana", Font.BOLD, 12));
+		btnContinue.setBounds(102, 303, 103, 36);
 		add(btnContinue);
 		
-		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setFont(new Font("Verdana", Font.BOLD, 8));
-		comboBox_2.setBounds(47, 239, 103, 22);
-		add(comboBox_2);
+		final JComboBox DifficultyComboBox = new JComboBox();
+		DifficultyComboBox.setModel(new DefaultComboBoxModel(Difficulty.values()));
+		DifficultyComboBox.setFont(new Font("Verdana", Font.BOLD, 11));
+		DifficultyComboBox.setBounds(47, 246, 103, 22);
+		add(DifficultyComboBox);
 		
 		JLabel lblDifficulty = new JLabel("Difficulty");
-		lblDifficulty.setFont(new Font("Verdana", Font.BOLD, 11));
-		lblDifficulty.setBounds(47, 214, 103, 14);
+		lblDifficulty.setForeground(Color.LIGHT_GRAY);
+		lblDifficulty.setFont(new Font("Verdana", Font.BOLD, 12));
+		lblDifficulty.setBounds(47, 221, 103, 14);
 		add(lblDifficulty);
-		
-		
-		//comboBox listeners
-		comboBox.addActionListener(new ActionListener() {  
-            public void actionPerformed(ActionEvent e)
-            {
-            	//made comboBox final to get this to work (not sure if that is good)
-            	String s = (String)(comboBox.getSelectedItem());
-               
-            	//combo box selected
-                System.out.println(s);
-            }
-        });
 		
 		//buttonListener
 		btnContinue.addActionListener(new ActionListener() {  
             public void actionPerformed(ActionEvent e)
             {
                 //button is pressed
-            	PlayerConfigUI pcui = new PlayerConfigUI();
-            	JDialog pcuiDialog = new JDialog(null, "Configure Players", Dialog.ModalityType.APPLICATION_MODAL);
-            	pcuiDialog.setSize(pcui.getPreferredSize());
-            	pcuiDialog.setContentPane(pcui);
-            	pcuiDialog.setVisible(true);
-            	while(!pcui.isCompleted()){
-            		if(pcui.isCompleted())
-            			pcuiDialog.dispose();
-            	}
-                System.out.println("You clicked the Continue button");
+            	selectedMapType = (MapType) MapComboBox.getSelectedItem();
+            	if(HumansComboBox.getSelectedIndex()==0)
+            		numHumans = 4;
+            	if(HumansComboBox.getSelectedIndex()==1)
+            		numHumans = 3;
+            	if(HumansComboBox.getSelectedIndex()==2)
+            		numHumans = 2;
+            	selectedDifficulty = (Difficulty) DifficultyComboBox.getSelectedItem();
+            	System.out.println("Map Type: " + selectedMapType.toString());
+            	System.out.println("Number of Human Players: " + numHumans + " Players");
+            	System.out.println("Difficulty: " + selectedDifficulty.toString());
+            	
+            	parent.getConfigDialog().setContentPane(parent.getPlayerConfigUI());
+            	parent.getConfigDialog().setTitle("Configure Players");
+            	parent.getConfigDialog().validate();
+            	parent.getConfigDialog().repaint();
             }
         });
 		
