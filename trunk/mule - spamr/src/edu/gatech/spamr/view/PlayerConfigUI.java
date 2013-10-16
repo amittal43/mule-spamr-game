@@ -49,6 +49,7 @@ import javax.swing.SwingConstants;
  */ 
 
 public class PlayerConfigUI extends JPanel {
+	private MainAppView parent;
 	private final ButtonGroup SelectPlayer = new ButtonGroup();
 	private final ButtonGroup SelectRace = new ButtonGroup();
 	private JTextField PlayerName;
@@ -57,8 +58,8 @@ public class PlayerConfigUI extends JPanel {
 	private Player player3 = new Player();
 	private Player player4 = new Player();
 	private Player selectedPlayer = player1;
-	private PlayerColor currentColor = PlayerColor.BLUE;
-	private Race currentRace = Race.HUMANOID;
+	private PlayerColor currentColor = PlayerColor.BLUE; // default color, if none is selected
+	private Race currentRace = Race.HUMANOID; // default race, if none is selected
 	private boolean completed = false;
 	
 	private Player getSelectedPlayer(){
@@ -67,6 +68,19 @@ public class PlayerConfigUI extends JPanel {
 	
 	public boolean isCompleted(){
 		return completed;
+	}
+	
+	public void setParent(MainAppView main){
+		parent = main;
+	}
+	
+	public Player[] getConfiguredPlayers(){
+		Player[] configPlayers = new Player[4];
+		configPlayers[0] = player1;
+		configPlayers[1] = player2;
+		configPlayers[2] = player3;
+		configPlayers[3] = player4;
+		return configPlayers;
 	}
 	
 	/** 
@@ -378,6 +392,7 @@ public class PlayerConfigUI extends JPanel {
 					player1.setName(PlayerName.getText());
 					player1.setColor(currentColor);
 					player1.setRace(currentRace);
+					System.out.println();
 					System.out.println("Player 1's Name: " + player1.getName());
 					System.out.println("Player 1's Color: " + player1.getColor().toString());
 					System.out.println("Player 1's Race: " + player1.getRace().toString());
@@ -424,7 +439,11 @@ public class PlayerConfigUI extends JPanel {
 					System.out.println("Player 4's Name: " + player4.getName());
 					System.out.println("Player 4's Color: " + player4.getColor().toString());
 					System.out.println("Player 4's Race: " + player4.getRace().toString());
-					completed = true;
+					
+					parent.getConfigDialog().dispose();
+					parent.getMainFrame().setContentPane(parent.getGameScreenUI());
+					parent.getMainFrame().validate();
+					parent.getMainFrame().repaint();
 				}
 			}
 		});
