@@ -53,7 +53,6 @@ public class MainAppView {
 	public GameScreenUI getGameScreenUI(){
 		return game;
 	}
-
 	/**
 	 * Launch the application.
 	 */
