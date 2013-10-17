@@ -18,7 +18,7 @@ public class Tile {
 		tileColor = PlayerColor.BLUE; // default
 	}
 	
-	public enum TileType{MOUNTAIN1(1,1,2), MOUNTAIN2(1,1,3), MOUNTAIN3(1,1,4), PLAIN(2,3,1), RIVER(4,2,0);
+	public enum TileType{MOUNTAIN1(1,1,2), MOUNTAIN2(1,1,3), MOUNTAIN3(1,1,4), PLAIN(2,3,1), RIVER(4,2,0), TOWN(0,0,0);
 	
 	private final int foodProduction;
 	private final int energyProduction;
