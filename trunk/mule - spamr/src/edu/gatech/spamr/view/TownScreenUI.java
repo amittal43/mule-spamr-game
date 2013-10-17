@@ -15,10 +15,10 @@ import javax.swing.JPanel;
 
 public class TownScreenUI extends JPanel {
 	
-	private JPanel storePanel;
-	private JPanel assayPanel;
-	private JPanel pubPanel;
-	private JPanel landOfficePanel;
+	private JButton storeButton;
+	private JButton assayButton;
+	private JButton pubButton;
+	private JButton landOfficeButton;
 
 	/**
 	 * Create the panel.
@@ -31,16 +31,16 @@ public class TownScreenUI extends JPanel {
 		JPanel biggerPanel = new JPanel();
 		biggerPanel.setLayout(new GridLayout(1,4));
 		
-		storePanel = new JPanel();
-		ImageIcon storeIcon = new ImageIcon();
+		storeButton = new JButton();
+		ImageIcon storeIcon = new ImageIcon("");
 		JButton storeButton = new JButton(storeIcon);
-		biggerPanel.add(storePanel);
+		biggerPanel.add(storeButton);
 		
 		
-		assayPanel = new JPanel();
+		assayButton = new JButton();
 		ImageIcon assayIcon = new ImageIcon();
 		JButton assayButton = new JButton(assayIcon);
-		biggerPanel.add(assayPanel);
+		biggerPanel.add(assayButton);
 		
 	}
 	
