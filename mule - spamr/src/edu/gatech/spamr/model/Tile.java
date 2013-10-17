@@ -1,10 +1,22 @@
 package edu.gatech.spamr.model;
 
+import edu.gatech.spamr.model.Player.PlayerColor;
+
 public class Tile {
 
-	private int ownerNumber;
+	private int tileIndex;
+	private Player owner;
+	private Player.PlayerColor tileColor;
 	private boolean owned;
 	private TileType type;
+	
+	Tile(int index, TileType t){
+		tileIndex = index;
+		type = t;
+		owned = false;
+		owner = null;
+		tileColor = PlayerColor.BLUE; // default
+	}
 	
 	public enum TileType{MOUNTAIN1(1,1,2), MOUNTAIN2(1,1,3), MOUNTAIN3(1,1,4), PLAIN(2,3,1), RIVER(4,2,0);
 	
@@ -31,12 +43,20 @@ public class Tile {
 	}
 	}
 	
-	public int getOwnerNumber(){
-		return ownerNumber;
+	public int getTileIndex(){
+		return tileIndex;
 	}
 	
-	public void setOwnerNumber(int num){
-		ownerNumber = num;
+	public void setTileIndex(int i){
+		tileIndex = i;
+	}
+	
+	public Player getOwner(){
+		return owner;
+	}
+	
+	public void setOwner(Player p){
+		owner = p;
 	}
 	
 	public TileType getTileType(){
