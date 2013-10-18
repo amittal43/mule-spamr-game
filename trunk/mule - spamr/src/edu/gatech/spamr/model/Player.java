@@ -13,7 +13,6 @@ public class Player {
 	private int energy;
 	private int ore;
 	
-	//array of Tile's which the player owns
 	
 	//enums
 	public enum Race{PACKER(1000), SPHEROID(1000), HUMANOID(600), LEGGITE(1000), FLAPPER(1600), BONZOID(1000), MECHTRON(1000), GOLLUMER(1000);
