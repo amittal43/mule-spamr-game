@@ -1,5 +1,7 @@
 package edu.gatech.spamr.model;
 
+import java.util.Random;
+
 public class LandOffice {
 	
 	//TODO
@@ -12,14 +14,16 @@ public class LandOffice {
 		
 	}
 	
-	//TODO
+	//returns the price the property can be bought at
 	public int calcBuyPrice(int roundNum){
-		return 0;
+		Random rand = new Random();
+		return ( (roundNum * rand.nextInt(100)) + 300 );
 	}
 	
-	//TODO
+	//returns the price the property is sold at
 	public int calcSellPrice(){
-		return 0;
+		Random rand = new Random();
+		return ( rand.nextInt(200) + 400 );
 	}
 
 }
