@@ -13,6 +13,17 @@ import java.awt.Color;
 
 import javax.swing.JPanel;
 
+/** 
+ * The TownScreenUI class creates a panel for the player to go to the store
+ * 
+ * @author Sean Lachenberg
+ * @author Aditya Mittal
+ * @author Mike Vail
+ * @author Puja Sheth
+ * @author Raj Prateek
+ * @version 1.0 10/15/2013 
+ */
+
 public class TownScreenUI extends JPanel {
 	
 	private JButton storeButton;
