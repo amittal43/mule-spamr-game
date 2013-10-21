@@ -10,6 +10,7 @@ public class Tile {
 	private boolean owned;
 	private TileType type;
 	
+	//Tile Constructor
 	Tile(int index, TileType t){
 		tileIndex = index;
 		type = t;
@@ -18,18 +19,22 @@ public class Tile {
 		tileColor = PlayerColor.BLUE; // default
 	}
 	
+	//description of TileTypes available
 	public enum TileType{MOUNTAIN1(1,1,2), MOUNTAIN2(1,1,3), MOUNTAIN3(1,1,4), PLAIN(2,3,1), RIVER(4,2,0), TOWN(0,0,0);
 	
+	//variables
 	private final int foodProduction;
 	private final int energyProduction;
 	private final int oreProduction;
 	
+	//TileType Constructor
 	TileType(int fProd, int eProd, int oProd){
 		foodProduction = fProd;
 		energyProduction = eProd;
 		oreProduction = oProd;
 	}
 	
+	//getters and setters
 	public int getFoodProduction(){
 		return foodProduction;
 	}
