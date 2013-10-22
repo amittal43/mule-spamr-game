@@ -13,6 +13,13 @@ public class Player {
 	private int energy;
 	private int ore;
 	
+	//copy constructor
+	public void Player(Player p){
+		name = p.getName();
+		race  = p.getRace();
+		diff = p.getDifficulty();
+		color = p.getColor();
+	}
 	
 	//enums
 	public enum Race{PACKER(1000), SPHEROID(1000), HUMANOID(600), LEGGITE(1000), FLAPPER(1600), BONZOID(1000), MECHTRON(1000), GOLLUMER(1000);
