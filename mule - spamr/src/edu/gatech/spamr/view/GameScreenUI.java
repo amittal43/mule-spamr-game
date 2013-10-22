@@ -1,11 +1,16 @@
 package edu.gatech.spamr.view;
 
 import javax.swing.JPanel;
+
 import java.awt.CardLayout;
 import java.awt.Color;
+
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
 import javax.swing.SwingConstants;
+
 import java.awt.Dimension;
 
 /** 
@@ -19,10 +24,11 @@ import java.awt.Dimension;
  * @version 1.0 10/15/2013 
  */
 
-public class GameScreenUI extends JPanel {
+public class GameScreenUI extends JPanel {	//panel that holds cards
 
-	private MapUI mapui = new MapUI();
 	
+	
+
 	/**
 	 * Create the panel.
 	 */
@@ -31,8 +37,17 @@ public class GameScreenUI extends JPanel {
 		setMinimumSize(new Dimension(800, 600));
 		setBackground(Color.DARK_GRAY);
 		setLayout(new CardLayout(0, 0));
-		this.add(mapui);
+
+		//creating each "card" to the panel
+		MapUI mapui = new MapUI();
+		TownScreenUI tsui = new TownScreenUI();
 		
+		//adding each "card" to the panel
+		this.add(mapui);
+		this.add(tsui);
+		
+		
+		//adding Ready To Play! Label 
 		JLabel lblReadyToPlay = new JLabel("Ready To Play!");
 		lblReadyToPlay.setHorizontalAlignment(SwingConstants.CENTER);
 		lblReadyToPlay.setForeground(Color.LIGHT_GRAY);
