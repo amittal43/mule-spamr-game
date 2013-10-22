@@ -20,18 +20,25 @@ public class Tile {
 	}
 	
 	//description of TileTypes available
-	public enum TileType{MOUNTAIN1(1,1,2), MOUNTAIN2(1,1,3), MOUNTAIN3(1,1,4), PLAIN(2,3,1), RIVER(4,2,0), TOWN(0,0,0);
+	public enum TileType{MOUNTAIN1(1,1,2,"/edu/gatech/spamr/resources/mountain1.png"),
+							MOUNTAIN2(1,1,3,"/edu/gatech/spamr/resources/mountain2.png"),
+							 MOUNTAIN3(1,1,4, "/edu/gatech/spamr/resources/mountain3.png"), 
+							  PLAIN(2,3,1, "/edu/gatech/spamr/resources/plains.png"),
+							   RIVER(4,2,0, "/edu/gatech/spamr/resources/river.png"),
+							    TOWN(0,0,0, "/edu/gatech/spamr/resources/town.png");
 	
 	//variables
 	private final int foodProduction;
 	private final int energyProduction;
 	private final int oreProduction;
+	private String iconLocation;
 	
 	//TileType Constructor
-	TileType(int fProd, int eProd, int oProd){
+	TileType(int fProd, int eProd, int oProd, String icon){
 		foodProduction = fProd;
 		energyProduction = eProd;
 		oreProduction = oProd;
+		iconLocation = icon;
 	}
 	
 	//getters and setters
@@ -45,6 +52,10 @@ public class Tile {
 	
 	public int getOreProduction(){
 		return oreProduction;
+	}
+	
+	public String getIcon(){
+		return iconLocation;
 	}
 	}
 	
