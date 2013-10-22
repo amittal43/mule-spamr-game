@@ -81,7 +81,7 @@ public class MainAppView {
 	 */
 	private void initialize() {
 		mainFrame = new JFrame();
-		mainFrame.setBounds(100,100,800,600);
+		mainFrame.setBounds(100,100,1280,800);
 		mainFrame.setTitle("MULE: SPAMR Edition");
 		mainFrame.setContentPane(title);
 		title.setParent(this);

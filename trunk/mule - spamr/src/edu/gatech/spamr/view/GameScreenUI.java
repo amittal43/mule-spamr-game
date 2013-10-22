@@ -33,8 +33,8 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 	 * Create the panel.
 	 */
 	public GameScreenUI() {
-		setPreferredSize(new Dimension(800, 600));
-		setMinimumSize(new Dimension(800, 600));
+		setPreferredSize(new Dimension(1280, 800));
+		setMinimumSize(new Dimension(1280, 800));
 		setBackground(Color.DARK_GRAY);
 		setLayout(new CardLayout(0, 0));
 
