@@ -42,16 +42,29 @@ public class TownScreenUI extends JPanel {
 		JPanel biggerPanel = new JPanel();
 		biggerPanel.setLayout(new GridLayout(1,4));
 		
+		//create a store button in which the player can go to the store
 		storeButton = new JButton();
-		ImageIcon storeIcon = new ImageIcon("");
+		ImageIcon storeIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/Store-final.JPG"));
 		JButton storeButton = new JButton(storeIcon);
 		biggerPanel.add(storeButton);
 		
-		
+		//create an assay button in which the player can go assay 
 		assayButton = new JButton();
-		ImageIcon assayIcon = new ImageIcon();
+		ImageIcon assayIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/Assay-Office-final.jpg"));
 		JButton assayButton = new JButton(assayIcon);
 		biggerPanel.add(assayButton);
+		
+		//create a pub button in which the player can go to the pub
+		pubButton = new JButton();
+		ImageIcon pubIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/Pub-alpha.jpg"));
+		biggerPanel.add(pubButton);
+		
+		//create a land office button in which the player can go to the office to buy/trade land with computer
+
+		landOfficeButton = new JButton();
+		ImageIcon landIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/Land-Office-final.jpg"));
+		biggerPanel.add(landOfficeButton);
+		
 		
 	}
 	

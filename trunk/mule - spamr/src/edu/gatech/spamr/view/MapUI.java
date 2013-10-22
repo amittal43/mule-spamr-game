@@ -22,6 +22,8 @@ import edu.gatech.spamr.model.Map.MapType;
 import edu.gatech.spamr.model.Tile;
 
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class MapUI extends JPanel {
 	private Map map = new Map(MapType.DEFAULT);
@@ -328,6 +330,7 @@ public class MapUI extends JPanel {
 		gbc_button_21.gridy = 2;
 		add(button_21, gbc_button_21);
 		
+		//this is the town based off the land configuration given in M2
 		JButton button_22 = new JButton("0");
 		button_22.setPreferredSize(new Dimension(88, 120));
 		button_22.setMinimumSize(new Dimension(88, 120));
@@ -335,11 +338,18 @@ public class MapUI extends JPanel {
 		button_22.setContentAreaFilled(false);
 		button_22.setBorder(null);
 		button_22.setIcon(new ImageIcon(MapUI.class.getResource(mapArray[22].getTileType().getIcon())));
-		GridBagConstraints gbc_button_22 = new GridBagConstraints();
+		button_22.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TownScreenUI tsui = new TownScreenUI();
+				tsui.setVisible(true);
+			}
+		});
+		GridBagConstraints gbc_button_22 = new GridBagConstraints(); //right before/after this step there should be an action listener that will take the player to the town if the button is clicked on
 		gbc_button_22.insets = new Insets(0, 0, 5, 5);
 		gbc_button_22.gridx = 4;
 		gbc_button_22.gridy = 2;
 		add(button_22, gbc_button_22);
+			
 		
 		JButton button_23 = new JButton("0");
 		button_23.setPreferredSize(new Dimension(88, 120));
