@@ -24,7 +24,7 @@ public class Tile {
 							MOUNTAIN2(1,1,3,"/edu/gatech/spamr/resources/mountain2.png"),
 							 MOUNTAIN3(1,1,4, "/edu/gatech/spamr/resources/mountain3.png"), 
 							  PLAIN(2,3,1, "/edu/gatech/spamr/resources/plains.png"),
-							   RIVER(4,2,0, "/edu/gatech/spamr/resources/river.png"),
+							   RIVER(4,2,0, "/edu/gatech/spamr/resources/river1.png"),
 							    TOWN(0,0,0, "/edu/gatech/spamr/resources/town.png");
 	
 	//variables
