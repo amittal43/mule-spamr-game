@@ -61,6 +61,7 @@ public class TownScreenUI extends JPanel {
 		
 		//create a pub button in which the player can go to the pub
 		pubButton = new JButton();
+		pubButton.setIcon(new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/Pub-alpha.jpg")));
 		pubButton.setBounds(225, 0, 112, 300);
 		ImageIcon pubIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/Pub-alpha.jpg"));
 		//biggerPanel.add(pubButton);
@@ -69,6 +70,7 @@ public class TownScreenUI extends JPanel {
 		//create a land office button in which the player can go to the office to buy/trade land with computer
 
 		landOfficeButton = new JButton();
+		landOfficeButton.setIcon(new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/Land-Office-final.jpg")));
 		landOfficeButton.setBounds(338, 0, 112, 300);
 		landOfficeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
