@@ -21,6 +21,8 @@ import java.awt.Dimension;
 
 public class GameScreenUI extends JPanel {
 
+	private MapUI mapui = new MapUI();
+	
 	/**
 	 * Create the panel.
 	 */
@@ -29,6 +31,7 @@ public class GameScreenUI extends JPanel {
 		setMinimumSize(new Dimension(800, 600));
 		setBackground(Color.DARK_GRAY);
 		setLayout(new CardLayout(0, 0));
+		this.add(mapui);
 		
 		JLabel lblReadyToPlay = new JLabel("Ready To Play!");
 		lblReadyToPlay.setHorizontalAlignment(SwingConstants.CENTER);
