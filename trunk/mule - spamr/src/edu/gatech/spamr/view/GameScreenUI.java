@@ -12,6 +12,7 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 
 import java.awt.Dimension;
+import java.awt.event.ItemEvent;
 
 /** 
  * The GameScreenUI class creates a panel for the player to begin the game  
@@ -30,7 +31,7 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 	
 
 	/**
-	 * Create the panel.
+	 * Creates the GameScreen Panel and adds the other panels as cards
 	 */
 	public GameScreenUI() {
 		setPreferredSize(new Dimension(1280, 800));
@@ -56,4 +57,10 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 
 	}
 
+	public void cardChangeTo(String cardName) {
+        CardLayout cl = (CardLayout)(this.getLayout());
+        cl.show(this, cardName);
+    }
+	
+	
 }
