@@ -1,15 +1,20 @@
 package edu.gatech.spamr.view;
 
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import java.awt.GridBagLayout;
+import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 
+import java.awt.BorderLayout;
+import java.awt.Container;
 import java.awt.GridBagConstraints;
 import java.awt.Dimension;
 import java.awt.Insets;
+import java.awt.LayoutManager;
 
 import javax.swing.border.BevelBorder;
 
