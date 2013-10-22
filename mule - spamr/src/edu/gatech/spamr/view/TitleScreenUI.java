@@ -8,6 +8,8 @@ import java.awt.Dimension;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+import java.awt.Component;
 
 /** 
  * The TitleScreenUI class creates a panel for the player to begin the game 
@@ -33,13 +35,16 @@ public class TitleScreenUI extends JPanel {
 	 * Create the panel.
 	 */
 	public TitleScreenUI() {
-		setPreferredSize(new Dimension(800, 600));
-		setMinimumSize(new Dimension(800, 600));
+		setPreferredSize(new Dimension(1280, 800));
+		setMinimumSize(new Dimension(1280, 800));
 		setBackground(Color.DARK_GRAY);
 		setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("MULE: SPAMR Edition");
-		lblNewLabel.setBounds(222, 209, 359, 38);
+		lblNewLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+		lblNewLabel.setHorizontalTextPosition(SwingConstants.CENTER);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(479, 256, 359, 38);
 		lblNewLabel.setForeground(Color.LIGHT_GRAY);
 		lblNewLabel.setFont(new Font("Verdana", Font.BOLD, 30));
 		add(lblNewLabel);
@@ -51,7 +56,7 @@ public class TitleScreenUI extends JPanel {
 			}
 		});
 		btnStart.setFont(new Font("Verdana", Font.BOLD, 18));
-		btnStart.setBounds(338, 369, 132, 54);
+		btnStart.setBounds(581, 453, 132, 54);
 		add(btnStart);
 
 	}
