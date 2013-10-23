@@ -87,6 +87,7 @@ public class MainAppView {
 		title.setParent(this);
 		gcui.setParent(this);
 		pcui.setParent(this);
+		game.setParent(this);
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
