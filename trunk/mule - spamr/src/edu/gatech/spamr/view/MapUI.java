@@ -42,6 +42,10 @@ public class MapUI extends JPanel {
 	public void setParent(GameScreenUI gcui){
 		parent = gcui;
 	}
+	
+	public Tile getCurrentTile(){
+		return currentTile;
+	}
 
 
 	/**
