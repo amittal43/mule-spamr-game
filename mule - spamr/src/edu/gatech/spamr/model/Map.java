@@ -6,6 +6,7 @@ import edu.gatech.spamr.model.Tile.TileType;
 
 
 public class Map {
+	
 	private MapType mapType;
 	private Tile[] properties = new Tile[45];
 	
@@ -16,29 +17,36 @@ public class Map {
 			TileType.PLAIN, TileType.MOUNTAIN2, TileType.PLAIN, TileType.PLAIN, TileType.RIVER, TileType.PLAIN, TileType.MOUNTAIN2, TileType.PLAIN, TileType.PLAIN,
 			TileType.PLAIN, TileType.PLAIN, TileType.MOUNTAIN2, TileType.PLAIN, TileType.RIVER, TileType.PLAIN, TileType.PLAIN, TileType.PLAIN, TileType.MOUNTAIN2 };
 
-	private static TileType[] otherMap = null; // not yet implemented
+	//TODO add another map
+	private static TileType[] otherMap = null;
 	
+	//defines an enum for each map available
 	public enum MapType{DEFAULT(defaultMap), OTHER(otherMap);
 	
-	private TileType[] mapLayout;
-	
-	MapType(TileType[] array){
-		mapLayout = array;
+		private TileType[] mapLayout;
+		
+		MapType(TileType[] array){
+			mapLayout = array;
+		}
+		
+		public TileType[] getMapLayout(){
+			return mapLayout;
+		}
 	}
 	
-	public TileType[] getMapLayout(){
-		return mapLayout;
-	}
-	}
 	
+	//creates an array of tiles representing the map
 	public Map(MapType m){
 		mapType = m;
 		TileType[] mapLayout = mapType.getMapLayout();
-		for(int i=0; i<properties.length; i++){
+		//loops through the enums in the mapLayout and creates tiles for each of them
+		for(int i=0; i<properties.length; i++){	
 			properties[i] = new Tile(i, mapLayout[i]);
 		}
 	}
 	
+	
+	//getters and setters
 	public MapType getMapType(){
 		return mapType;
 	}
