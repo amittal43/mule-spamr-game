@@ -441,6 +441,7 @@ public class PlayerConfigUI extends JPanel {
 					System.out.println("Player 4's Color: " + player4.getColor().toString());
 					System.out.println("Player 4's Race: " + player4.getRace().toString());
 					
+					/*			//currently does not work
 					//pass all player data to game here
 					Game.getPlayer1().setName(player1.getName());
 					Game.getPlayer1().setColor(player1.getColor());
@@ -461,6 +462,7 @@ public class PlayerConfigUI extends JPanel {
 					Game.getPlayer4().setColor(player4.getColor());
 					Game.getPlayer4().setRace(player4.getRace());
 					Game.getPlayer4().setMoney(player4.getRace().getStartingMoney());
+					*/
 					
 					//close window
 					parent.getConfigDialog().dispose();
