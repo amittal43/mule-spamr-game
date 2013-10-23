@@ -20,6 +20,7 @@ import javax.swing.JFrame;
 
 public class MainAppView {
 
+	//MainAppView variables
 	private JFrame mainFrame;
 	private JDialog configDialog;
 	private TitleScreenUI title = new TitleScreenUI();
@@ -27,14 +28,7 @@ public class MainAppView {
 	private PlayerConfigUI pcui = new PlayerConfigUI();
 	private GameScreenUI game = new GameScreenUI();
 	
-	public JFrame getMainFrame(){
-		return mainFrame;
-	}
-	
-	public JDialog getConfigDialog(){
-		return configDialog;
-	}
-	
+	//sets preferences for the window
 	public void setUpConfigDialog(){
 		configDialog = new JDialog(mainFrame,"Configure Game");
 		configDialog.setSize(new Dimension(310,400));
@@ -42,17 +36,7 @@ public class MainAppView {
 		configDialog.setVisible(true);
 	}
 	
-	public GameConfigUI getGameConfigUI(){
-		return gcui;
-	}
 	
-	public PlayerConfigUI getPlayerConfigUI(){
-		return pcui;
-	}
-	
-	public GameScreenUI getGameScreenUI(){
-		return game;
-	}
 	/**
 	 * Launch the application.
 	 */
@@ -80,15 +64,41 @@ public class MainAppView {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
+		//instantiate the frame and set prefrences
 		mainFrame = new JFrame();
 		mainFrame.setBounds(100,100,1280,800);
 		mainFrame.setTitle("MULE: SPAMR Edition");
 		mainFrame.setContentPane(title);
+		
+		//adds cards to the frame
 		title.setParent(this);
 		gcui.setParent(this);
 		pcui.setParent(this);
 		game.setParent(this);
+		
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
+	//getters and setters
+	public JFrame getMainFrame(){
+		return mainFrame;
+	}
+	
+	public JDialog getConfigDialog(){
+		return configDialog;
+	}
+	
+	public GameConfigUI getGameConfigUI(){
+		return gcui;
+	}
+	
+	public PlayerConfigUI getPlayerConfigUI(){
+		return pcui;
+	}
+	
+	public GameScreenUI getGameScreenUI(){
+		return game;
+	}
+	
 }
