@@ -4,8 +4,20 @@ import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Dimension;
 
+/** 
+ * The LandOfficeUI class creates a panel for the player to go to the land office  
+ * 
+ * @author Sean Lachenberg
+ * @author Aditya Mittal
+ * @author Mike Vail
+ * @author Puja Sheth
+ * @author Raj Prateek
+ * @version 1.0 10/21/2013 
+ */
+
 public class LandOfficeUI extends JPanel {
 	
+	//creates an instance variable of MapUI
 	private MapUI mapui = new MapUI();
 
 	/**
