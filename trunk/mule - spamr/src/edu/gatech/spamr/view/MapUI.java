@@ -77,7 +77,14 @@ public class MapUI extends JPanel {
 		gbc_button.gridy = 0;
 		add(button, gbc_button);
 		
+		
+		
 		JButton button_1 = new JButton("0");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[1];
+			}
+		});
 		button_1.setPreferredSize(new Dimension(88, 120));
 		button_1.setMinimumSize(new Dimension(88, 120));
 		button_1.setMaximumSize(new Dimension(88, 120));
@@ -90,7 +97,13 @@ public class MapUI extends JPanel {
 		gbc_button_1.gridy = 0;
 		add(button_1, gbc_button_1);
 		
+		
 		JButton button_2 = new JButton("0");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[2];
+			}
+		});
 		button_2.setPreferredSize(new Dimension(88, 120));
 		button_2.setMinimumSize(new Dimension(88, 120));
 		button_2.setMaximumSize(new Dimension(88, 120));
@@ -104,6 +117,11 @@ public class MapUI extends JPanel {
 		add(button_2, gbc_button_2);
 		
 		JButton button_3 = new JButton("0");
+		button_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[3];
+			}
+		});
 		button_3.setPreferredSize(new Dimension(88, 120));
 		button_3.setMinimumSize(new Dimension(88, 120));
 		button_3.setMaximumSize(new Dimension(88, 120));
@@ -117,6 +135,11 @@ public class MapUI extends JPanel {
 		add(button_3, gbc_button_3);
 		
 		JButton button_4 = new JButton("0");
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[4];
+			}
+		});
 		button_4.setPreferredSize(new Dimension(88, 120));
 		button_4.setMinimumSize(new Dimension(88, 120));
 		button_4.setMaximumSize(new Dimension(88, 120));
@@ -130,6 +153,11 @@ public class MapUI extends JPanel {
 		add(button_4, gbc_button_4);
 		
 		JButton button_5 = new JButton("0");
+		button_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[5];
+			}
+		});
 		button_5.setPreferredSize(new Dimension(88, 120));
 		button_5.setMinimumSize(new Dimension(88, 120));
 		button_5.setMaximumSize(new Dimension(88, 120));
@@ -143,6 +171,11 @@ public class MapUI extends JPanel {
 		add(button_5, gbc_button_5);
 		
 		JButton button_6 = new JButton("0");
+		button_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[6];
+			}
+		});
 		button_6.setPreferredSize(new Dimension(88, 120));
 		button_6.setMinimumSize(new Dimension(88, 120));
 		button_6.setMaximumSize(new Dimension(88, 120));
@@ -156,6 +189,11 @@ public class MapUI extends JPanel {
 		add(button_6, gbc_button_6);
 		
 		JButton button_7 = new JButton("0");
+		button_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[7];
+			}
+		});
 		button_7.setPreferredSize(new Dimension(88, 120));
 		button_7.setMinimumSize(new Dimension(88, 120));
 		button_7.setMaximumSize(new Dimension(88, 120));
@@ -169,6 +207,12 @@ public class MapUI extends JPanel {
 		add(button_7, gbc_button_7);
 		
 		JButton button_8 = new JButton("0");
+		button_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[8];
+			}
+		});
+		
 		button_8.setPreferredSize(new Dimension(88, 120));
 		button_8.setMinimumSize(new Dimension(88, 120));
 		button_8.setMaximumSize(new Dimension(88, 120));
@@ -181,7 +225,13 @@ public class MapUI extends JPanel {
 		gbc_button_8.gridy = 0;
 		add(button_8, gbc_button_8);
 		
+		
 		JButton button_9 = new JButton("0");
+		button_9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[9];
+			}
+		});
 		button_9.setPreferredSize(new Dimension(88, 120));
 		button_9.setMinimumSize(new Dimension(88, 120));
 		button_9.setMaximumSize(new Dimension(88, 120));
@@ -194,7 +244,13 @@ public class MapUI extends JPanel {
 		gbc_button_9.gridy = 1;
 		add(button_9, gbc_button_9);
 		
+		
 		JButton button_10 = new JButton("0");
+		button_10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[10];
+			}
+		});
 		button_10.setPreferredSize(new Dimension(88, 120));
 		button_10.setMinimumSize(new Dimension(88, 120));
 		button_10.setMaximumSize(new Dimension(88, 120));
@@ -208,6 +264,11 @@ public class MapUI extends JPanel {
 		add(button_10, gbc_button_10);
 		
 		JButton button_11 = new JButton("0");
+		button_11.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[11];
+			}
+		});
 		button_11.setPreferredSize(new Dimension(88, 120));
 		button_11.setMinimumSize(new Dimension(88, 120));
 		button_11.setMaximumSize(new Dimension(88, 120));
@@ -221,6 +282,11 @@ public class MapUI extends JPanel {
 		add(button_11, gbc_button_11);
 		
 		JButton button_12 = new JButton("0");
+		button_12.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[12];
+			}
+		});
 		button_12.setPreferredSize(new Dimension(88, 120));
 		button_12.setMinimumSize(new Dimension(88, 120));
 		button_12.setMaximumSize(new Dimension(88, 120));
@@ -234,6 +300,11 @@ public class MapUI extends JPanel {
 		add(button_12, gbc_button_12);
 		
 		JButton button_13 = new JButton("0");
+		button_13.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[13];
+			}
+		});
 		button_13.setPreferredSize(new Dimension(88, 120));
 		button_13.setMinimumSize(new Dimension(88, 120));
 		button_13.setMaximumSize(new Dimension(88, 120));
@@ -247,6 +318,11 @@ public class MapUI extends JPanel {
 		add(button_13, gbc_button_13);
 		
 		JButton button_14 = new JButton("0");
+		button_14.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[14];
+			}
+		});
 		button_14.setPreferredSize(new Dimension(88, 120));
 		button_14.setMinimumSize(new Dimension(88, 120));
 		button_14.setMaximumSize(new Dimension(88, 120));
@@ -260,6 +336,11 @@ public class MapUI extends JPanel {
 		add(button_14, gbc_button_14);
 		
 		JButton button_15 = new JButton("0");
+		button_15.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[15];
+			}
+		});
 		button_15.setPreferredSize(new Dimension(88, 120));
 		button_15.setMinimumSize(new Dimension(88, 120));
 		button_15.setMaximumSize(new Dimension(88, 120));
@@ -273,6 +354,11 @@ public class MapUI extends JPanel {
 		add(button_15, gbc_button_15);
 		
 		JButton button_16 = new JButton("0");
+		button_16.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[16];
+			}
+		});
 		button_16.setPreferredSize(new Dimension(88, 120));
 		button_16.setMinimumSize(new Dimension(88, 120));
 		button_16.setMaximumSize(new Dimension(88, 120));
@@ -286,6 +372,11 @@ public class MapUI extends JPanel {
 		add(button_16, gbc_button_16);
 		
 		JButton button_17 = new JButton("0");
+		button_17.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[17];
+			}
+		});
 		button_17.setPreferredSize(new Dimension(88, 120));
 		button_17.setMinimumSize(new Dimension(88, 120));
 		button_17.setMaximumSize(new Dimension(88, 120));
@@ -299,6 +390,11 @@ public class MapUI extends JPanel {
 		add(button_17, gbc_button_17);
 		
 		JButton button_18 = new JButton("0");
+		button_18.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[18];
+			}
+		});
 		button_18.setPreferredSize(new Dimension(88, 120));
 		button_18.setMinimumSize(new Dimension(88, 120));
 		button_18.setMaximumSize(new Dimension(88, 120));
@@ -312,6 +408,11 @@ public class MapUI extends JPanel {
 		add(button_18, gbc_button_18);
 		
 		JButton button_19 = new JButton("0");
+		button_19.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[19];
+			}
+		});
 		button_19.setPreferredSize(new Dimension(88, 120));
 		button_19.setMinimumSize(new Dimension(88, 120));
 		button_19.setMaximumSize(new Dimension(88, 120));
@@ -325,6 +426,11 @@ public class MapUI extends JPanel {
 		add(button_19, gbc_button_19);
 		
 		JButton button_20 = new JButton("0");
+		button_20.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[20];
+			}
+		});
 		button_20.setPreferredSize(new Dimension(88, 120));
 		button_20.setMinimumSize(new Dimension(88, 120));
 		button_20.setMaximumSize(new Dimension(88, 120));
@@ -338,6 +444,11 @@ public class MapUI extends JPanel {
 		add(button_20, gbc_button_20);
 		
 		JButton button_21 = new JButton("0");
+		button_21.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[21];
+			}
+		});
 		button_21.setPreferredSize(new Dimension(88, 120));
 		button_21.setMinimumSize(new Dimension(88, 120));
 		button_21.setMaximumSize(new Dimension(88, 120));
@@ -352,6 +463,11 @@ public class MapUI extends JPanel {
 		
 		//this is the town based off the land configuration given in M2
 		JButton button_22 = new JButton("0");
+		button_22.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[22];
+			}
+		});
 		button_22.setPreferredSize(new Dimension(88, 120));
 		button_22.setMinimumSize(new Dimension(88, 120));
 		button_22.setMaximumSize(new Dimension(88, 120));
@@ -375,6 +491,11 @@ public class MapUI extends JPanel {
 			
 		
 		JButton button_23 = new JButton("0");
+		button_23.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[23];
+			}
+		});
 		button_23.setPreferredSize(new Dimension(88, 120));
 		button_23.setMinimumSize(new Dimension(88, 120));
 		button_23.setMaximumSize(new Dimension(88, 120));
@@ -388,6 +509,11 @@ public class MapUI extends JPanel {
 		add(button_23, gbc_button_23);
 		
 		JButton button_24 = new JButton("0");
+		button_24.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[24];
+			}
+		});
 		button_24.setPreferredSize(new Dimension(88, 120));
 		button_24.setMinimumSize(new Dimension(88, 120));
 		button_24.setMaximumSize(new Dimension(88, 120));
@@ -401,6 +527,11 @@ public class MapUI extends JPanel {
 		add(button_24, gbc_button_24);
 		
 		JButton button_25 = new JButton("0");
+		button_25.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[25];
+			}
+		});
 		button_25.setPreferredSize(new Dimension(88, 120));
 		button_25.setMinimumSize(new Dimension(88, 120));
 		button_25.setMaximumSize(new Dimension(88, 120));
@@ -414,6 +545,11 @@ public class MapUI extends JPanel {
 		add(button_25, gbc_button_25);
 		
 		JButton button_26 = new JButton("0");
+		button_26.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[26];
+			}
+		});
 		button_26.setPreferredSize(new Dimension(88, 120));
 		button_26.setMinimumSize(new Dimension(88, 120));
 		button_26.setMaximumSize(new Dimension(88, 120));
@@ -427,6 +563,11 @@ public class MapUI extends JPanel {
 		add(button_26, gbc_button_26);
 		
 		JButton button_27 = new JButton("0");
+		button_27.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[27];
+			}
+		});
 		button_27.setPreferredSize(new Dimension(88, 120));
 		button_27.setMinimumSize(new Dimension(88, 120));
 		button_27.setMaximumSize(new Dimension(88, 120));
@@ -440,6 +581,11 @@ public class MapUI extends JPanel {
 		add(button_27, gbc_button_27);
 		
 		JButton button_28 = new JButton("0");
+		button_28.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[28];
+			}
+		});
 		button_28.setPreferredSize(new Dimension(88, 120));
 		button_28.setMinimumSize(new Dimension(88, 120));
 		button_28.setMaximumSize(new Dimension(88, 120));
@@ -453,6 +599,11 @@ public class MapUI extends JPanel {
 		add(button_28, gbc_button_28);
 		
 		JButton button_29 = new JButton("0");
+		button_29.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[29];
+			}
+		});
 		button_29.setPreferredSize(new Dimension(88, 120));
 		button_29.setMinimumSize(new Dimension(88, 120));
 		button_29.setMaximumSize(new Dimension(88, 120));
@@ -466,6 +617,11 @@ public class MapUI extends JPanel {
 		add(button_29, gbc_button_29);
 		
 		JButton button_30 = new JButton("0");
+		button_30.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[30];
+			}
+		});
 		button_30.setPreferredSize(new Dimension(88, 120));
 		button_30.setMinimumSize(new Dimension(88, 120));
 		button_30.setMaximumSize(new Dimension(88, 120));
@@ -479,6 +635,8 @@ public class MapUI extends JPanel {
 		add(button_30, gbc_button_30);
 		
 		JButton button_31 = new JButton("0");
+
+
 		button_31.setPreferredSize(new Dimension(88, 120));
 		button_31.setMinimumSize(new Dimension(88, 120));
 		button_31.setMaximumSize(new Dimension(88, 120));
@@ -492,6 +650,11 @@ public class MapUI extends JPanel {
 		add(button_31, gbc_button_31);
 		
 		JButton button_32 = new JButton("0");
+		button_32.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[32];
+			}
+		});
 		button_32.setPreferredSize(new Dimension(88, 120));
 		button_32.setMinimumSize(new Dimension(88, 120));
 		button_32.setMaximumSize(new Dimension(88, 120));
@@ -505,6 +668,11 @@ public class MapUI extends JPanel {
 		add(button_32, gbc_button_32);
 		
 		JButton button_33 = new JButton("0");
+		button_33.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[33];
+			}
+		});
 		button_33.setPreferredSize(new Dimension(88, 120));
 		button_33.setMinimumSize(new Dimension(88, 120));
 		button_33.setMaximumSize(new Dimension(88, 120));
@@ -518,6 +686,11 @@ public class MapUI extends JPanel {
 		add(button_33, gbc_button_33);
 		
 		JButton button_34 = new JButton("0");
+		button_34.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[34];
+			}
+		});
 		button_34.setPreferredSize(new Dimension(88, 120));
 		button_34.setMinimumSize(new Dimension(88, 120));
 		button_34.setMaximumSize(new Dimension(88, 120));
@@ -531,6 +704,11 @@ public class MapUI extends JPanel {
 		add(button_34, gbc_button_34);
 		
 		JButton button_35 = new JButton("0");
+		button_35.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[35];
+			}
+		});
 		button_35.setPreferredSize(new Dimension(88, 120));
 		button_35.setMinimumSize(new Dimension(88, 120));
 		button_35.setMaximumSize(new Dimension(88, 120));
@@ -544,6 +722,11 @@ public class MapUI extends JPanel {
 		add(button_35, gbc_button_35);
 		
 		JButton button_36 = new JButton("0");
+		button_36.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[36];
+			}
+		});
 		button_36.setPreferredSize(new Dimension(88, 120));
 		button_36.setMinimumSize(new Dimension(88, 120));
 		button_36.setMaximumSize(new Dimension(88, 120));
@@ -557,6 +740,11 @@ public class MapUI extends JPanel {
 		add(button_36, gbc_button_36);
 		
 		JButton button_37 = new JButton("0");
+		button_37.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[37];
+			}
+		});
 		button_37.setPreferredSize(new Dimension(88, 120));
 		button_37.setMinimumSize(new Dimension(88, 120));
 		button_37.setMaximumSize(new Dimension(88, 120));
@@ -570,6 +758,11 @@ public class MapUI extends JPanel {
 		add(button_37, gbc_button_37);
 		
 		JButton button_38 = new JButton("0");
+		button_38.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[38];
+			}
+		});
 		button_38.setPreferredSize(new Dimension(88, 120));
 		button_38.setMinimumSize(new Dimension(88, 120));
 		button_38.setMaximumSize(new Dimension(88, 120));
@@ -583,6 +776,11 @@ public class MapUI extends JPanel {
 		add(button_38, gbc_button_38);
 		
 		JButton button_39 = new JButton("0");
+		button_39.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[39];
+			}
+		});
 		button_39.setPreferredSize(new Dimension(88, 120));
 		button_39.setMinimumSize(new Dimension(88, 120));
 		button_39.setMaximumSize(new Dimension(88, 120));
@@ -596,6 +794,11 @@ public class MapUI extends JPanel {
 		add(button_39, gbc_button_39);
 		
 		JButton button_40 = new JButton("0");
+		button_40.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[40];
+			}
+		});
 		button_40.setPreferredSize(new Dimension(88, 120));
 		button_40.setMinimumSize(new Dimension(88, 120));
 		button_40.setMaximumSize(new Dimension(88, 120));
@@ -609,6 +812,11 @@ public class MapUI extends JPanel {
 		add(button_40, gbc_button_40);
 		
 		JButton button_41 = new JButton("0");
+		button_41.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[41];
+			}
+		});
 		button_41.setPreferredSize(new Dimension(88, 120));
 		button_41.setMinimumSize(new Dimension(88, 120));
 		button_41.setMaximumSize(new Dimension(88, 120));
@@ -622,6 +830,11 @@ public class MapUI extends JPanel {
 		add(button_41, gbc_button_41);
 		
 		JButton button_42 = new JButton("0");
+		button_42.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[42];
+			}
+		});
 		button_42.setPreferredSize(new Dimension(88, 120));
 		button_42.setMinimumSize(new Dimension(88, 120));
 		button_42.setMaximumSize(new Dimension(88, 120));
@@ -635,6 +848,11 @@ public class MapUI extends JPanel {
 		add(button_42, gbc_button_42);
 		
 		JButton button_43 = new JButton("0");
+		button_43.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[43];
+			}
+		});
 		button_43.setPreferredSize(new Dimension(88, 120));
 		button_43.setMinimumSize(new Dimension(88, 120));
 		button_43.setMaximumSize(new Dimension(88, 120));
@@ -648,6 +866,11 @@ public class MapUI extends JPanel {
 		add(button_43, gbc_button_43);
 		
 		JButton button_44 = new JButton("0");
+		button_44.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentTile = mapArray[44];
+			}
+		});
 		button_44.setPreferredSize(new Dimension(88, 120));
 		button_44.setMinimumSize(new Dimension(88, 120));
 		button_44.setMaximumSize(new Dimension(88, 120));
