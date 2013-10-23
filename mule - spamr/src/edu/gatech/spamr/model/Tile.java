@@ -4,6 +4,7 @@ import edu.gatech.spamr.model.Player.PlayerColor;
 
 public class Tile {
 
+	//tile Variables
 	private int tileIndex;
 	private Player owner;
 	private Player.PlayerColor tileColor;
@@ -27,38 +28,39 @@ public class Tile {
 							   RIVER(4,2,0, "/edu/gatech/spamr/resources/river1.png"),
 							    TOWN(0,0,0, "/edu/gatech/spamr/resources/town.png");
 	
-	//variables
-	private final int foodProduction;
-	private final int energyProduction;
-	private final int oreProduction;
-	private String iconLocation;
-	
-	//TileType Constructor
-	TileType(int fProd, int eProd, int oProd, String icon){
-		foodProduction = fProd;
-		energyProduction = eProd;
-		oreProduction = oProd;
-		iconLocation = icon;
+		//variables for TileType
+		private final int foodProduction;
+		private final int energyProduction;
+		private final int oreProduction;
+		private String iconLocation;
+		
+		//TileType Constructor
+		TileType(int fProd, int eProd, int oProd, String icon){
+			foodProduction = fProd;
+			energyProduction = eProd;
+			oreProduction = oProd;
+			iconLocation = icon;
+		}
+		
+		//getters and setters for TileType
+		public int getFoodProduction(){
+			return foodProduction;
+		}
+		
+		public int getEnergyProduction(){
+			return energyProduction;
+		}
+		
+		public int getOreProduction(){
+			return oreProduction;
+		}
+		
+		public String getIcon(){
+			return iconLocation;
+		}
 	}
 	
-	//getters and setters
-	public int getFoodProduction(){
-		return foodProduction;
-	}
-	
-	public int getEnergyProduction(){
-		return energyProduction;
-	}
-	
-	public int getOreProduction(){
-		return oreProduction;
-	}
-	
-	public String getIcon(){
-		return iconLocation;
-	}
-	}
-	
+	//getters and setters for Tile
 	public int getTileIndex(){
 		return tileIndex;
 	}
