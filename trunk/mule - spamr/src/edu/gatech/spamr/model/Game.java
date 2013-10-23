@@ -2,6 +2,7 @@ package edu.gatech.spamr.model;
 
 import edu.gatech.spamr.model.Map.MapType;
 
+
 public class Game {
 
 	private static int currentRound = 1;		//game starts in round 1 
@@ -12,6 +13,26 @@ public class Game {
 	private static Player p3 = new Player();
 	private static Player p4 = new Player();
 	private static Map gameMap = new Map(MapType.DEFAULT);
+	private static Difficulty diff;
+	
+	public enum Difficulty{BEGINNER(8,4), STANDARD(4,2), TOURNAMENT(4,2);
+		
+		private final int startingFood;
+		private final int startingEnergy;
+		
+		Difficulty(int food, int energy){
+			startingFood = food;
+			startingEnergy = energy;
+		}
+		
+		public int getStartingFood(){
+			return startingFood;
+		}
+		
+		public int getStartingEnergy(){
+			return startingEnergy;
+		}
+	}
 	
 	//Should be called at the end of a player's turn once to update who's turn it is and what round the game is in
 	public void updateTurn(){
@@ -30,6 +51,18 @@ public class Game {
 	
 	public static int getCurrentRound(){
 		return currentRound;
+	}
+	
+	public static Map getMap(){
+		return gameMap;
+	}
+	
+	public static Difficulty getDifficulty(){
+		return diff;
+	}
+	
+	public static void setDifficulty(Difficulty d){
+		diff = d;
 	}
 	
 	//player gets
