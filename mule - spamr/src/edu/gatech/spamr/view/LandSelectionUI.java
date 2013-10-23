@@ -18,6 +18,7 @@ import java.awt.event.ActionEvent;
 
 public class LandSelectionUI extends JPanel {
 
+	//Land Selection variables
 	private MapUI mapui = new MapUI();
 	private Player currentPlayer = Game.getPlayer1();
 	private boolean freeLandSelection = true;
@@ -25,11 +26,10 @@ public class LandSelectionUI extends JPanel {
 	private int playersPassed = 0; // if it gets to 4, everyone passed
 	private GameScreenUI parent;
 	
-	public void setParent(GameScreenUI p){
-		parent = p;
-	}
 	
 	private void nextPlayer(){
+		
+		//rotate's which player is choosing a land tile
 		if(currentPlayer.equals(Game.getPlayer1()))
 			currentPlayer = Game.getPlayer2();
 		else if(currentPlayer.equals(Game.getPlayer2()))
@@ -37,9 +37,13 @@ public class LandSelectionUI extends JPanel {
 		else if(currentPlayer.equals(Game.getPlayer3()))
 			currentPlayer = Game.getPlayer4();
 		else{ // currentPlayer is Player4
+			
+			//checks to see if there is free land available
 			if(propertiesOwned>=8){
 				freeLandSelection = false;
 			}
+			
+			//checks to see if everyone passed
 			if(playersPassed<4){
 				currentPlayer = Game.getPlayer1();
 				playersPassed = 0;
@@ -56,17 +60,20 @@ public class LandSelectionUI extends JPanel {
 	 * Create the panel.
 	 */
 	public LandSelectionUI() {
+		
+		//sets prefrences for the Land Selection panel
 		setPreferredSize(new Dimension(1280, 800));
 		setMinimumSize(new Dimension(1280, 800));
 		setBackground(Color.DARK_GRAY);
 		setLayout(null);
 		
-		JPanel mapPanel = mapui;
+		JPanel mapPanel = mapui;	//names the panel
 		mapui.setMinimumSize(new Dimension(820, 600));
 		mapui.setSize(new Dimension(820, 600));
 		mapPanel.setBounds(33, 107, 820, 600);
-		add(mapPanel);
+		add(mapPanel);				//adds the panel
 		
+		//Pass Button
 		JButton passButton = new JButton("Pass");
 		passButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -79,10 +86,12 @@ public class LandSelectionUI extends JPanel {
 		passButton.setBounds(971, 662, 122, 45);
 		add(passButton);
 		
+		//purchase Button
 		JButton purchaseButton = new JButton("Purchase");
 		purchaseButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(freeLandSelection){
+					//checks if owned
 					if(!mapui.getCurrentTile().isOwned()){
 						mapui.getCurrentTile().setOwner(currentPlayer);
 						System.out.println(currentPlayer.getName() + " received tile!");
@@ -96,6 +105,7 @@ public class LandSelectionUI extends JPanel {
 					}
 				}
 				else{
+					//checks for money
 					if(currentPlayer.getMoney()>=300){
 						if(!mapui.getCurrentTile().isOwned()){
 							mapui.getCurrentTile().setOwner(currentPlayer);
@@ -134,5 +144,10 @@ public class LandSelectionUI extends JPanel {
 		add(lblMoney);
 		
 
+	}
+	
+	//getters and setters
+	public void setParent(GameScreenUI p){
+		parent = p;
 	}
 }
