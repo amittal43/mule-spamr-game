@@ -25,17 +25,22 @@ public class LandSelectionUI extends JPanel {
 	private int playersPassed = 0; // if it gets to 4, everyone passed
 	
 	private void nextPlayer(){
-		if(currentPlayer == Game.getPlayer1())
+		if(currentPlayer.equals(Game.getPlayer1()))
 			currentPlayer = Game.getPlayer2();
-		if(currentPlayer == Game.getPlayer2())
+		if(currentPlayer.equals(Game.getPlayer2()))
 			currentPlayer = Game.getPlayer3();
-		if(currentPlayer == Game.getPlayer3())
+		if(currentPlayer.equals(Game.getPlayer3()))
 			currentPlayer = Game.getPlayer4();
-		if(currentPlayer == Game.getPlayer4()){
-			if(playersPassed<4)
-				currentPlayer = Game.getPlayer1();
-			if(propertiesOwned>=8)
+		if(currentPlayer.equals(Game.getPlayer4())){
+			if(propertiesOwned>=8){
 				freeLandSelection = false;
+			}
+			if(playersPassed<4){
+				currentPlayer = Game.getPlayer1();
+				playersPassed = 0;
+			}
+			else
+				System.out.println("Land Selection Phase Over!");
 		}
 	}
 	
@@ -55,6 +60,13 @@ public class LandSelectionUI extends JPanel {
 		add(mapPanel);
 		
 		JButton passButton = new JButton("Pass");
+		passButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				playersPassed++;
+				System.out.println(currentPlayer.getName() + " passed!");
+				nextPlayer();
+			}
+		});
 		passButton.setFont(new Font("Verdana", Font.BOLD, 11));
 		passButton.setBounds(971, 662, 122, 45);
 		add(passButton);
@@ -65,8 +77,10 @@ public class LandSelectionUI extends JPanel {
 				if(freeLandSelection){
 					if(!mapui.getCurrentTile().isOwned()){
 						mapui.getCurrentTile().setOwner(currentPlayer);
-						System.out.println(currentPlayer + " received tile!");
+						System.out.println(currentPlayer.getName() + " received tile!");
+						propertiesOwned++;
 						nextPlayer();
+						return;
 					}
 					else{
 						System.out.println("Tile is already owned!");
@@ -78,9 +92,11 @@ public class LandSelectionUI extends JPanel {
 						if(!mapui.getCurrentTile().isOwned()){
 							mapui.getCurrentTile().setOwner(currentPlayer);
 							currentPlayer.updateMoney(-300);
-							System.out.println(currentPlayer + " received tile!");
-							System.out.println(currentPlayer + "'s money decreased to " + currentPlayer.getMoney());
+							System.out.println(currentPlayer.getName() + " received tile!");
+							System.out.println(currentPlayer.getName() + "'s money decreased to " + currentPlayer.getMoney());
+							propertiesOwned++;
 							nextPlayer();
+							return;
 						}
 						else{
 							System.out.println("Tile is already owned!");
@@ -91,6 +107,7 @@ public class LandSelectionUI extends JPanel {
 						System.out.println("Not Enough Money!");
 						playersPassed++; // must pass because insufficient funds
 						nextPlayer();
+						return;
 					}
 				}
 					
