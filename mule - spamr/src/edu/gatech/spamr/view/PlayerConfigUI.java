@@ -440,6 +440,10 @@ public class PlayerConfigUI extends JPanel {
 					System.out.println("Player 4's Color: " + player4.getColor().toString());
 					System.out.println("Player 4's Race: " + player4.getRace().toString());
 					
+					//pass all player data to game here
+					
+					
+					//close window
 					parent.getConfigDialog().dispose();
 					parent.getMainFrame().setContentPane(parent.getGameScreenUI());
 					parent.getMainFrame().validate();
