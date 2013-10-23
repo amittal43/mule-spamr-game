@@ -2,10 +2,13 @@ package edu.gatech.spamr.model;
 
 public class Game {
 
-	private int currentRound = 1;	//game starts in round 1 
-	private int currentTurn = 1;	//game starts with the first player going
-	private final int MAX_TURNS = 4;
-	
+	private int currentRound = 1;		//game starts in round 1 
+	private int currentTurn = 1;		//game starts with the first player going
+	private final int MAX_TURNS = 4;	
+	private Player p1;
+	private Player p2;
+	private Player p3;
+	private Player p4;
 	
 	
 	//Should be called at the end of a player's turn once to update who's turn it is and what round the game is in
