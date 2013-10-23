@@ -6,7 +6,6 @@ import javax.swing.DefaultComboBoxModel;
 
 import edu.gatech.spamr.model.Game;
 import edu.gatech.spamr.model.Player;
-import edu.gatech.spamr.model.Player.Difficulty;
 import edu.gatech.spamr.model.Player.PlayerColor;
 import edu.gatech.spamr.model.Player.Race;
 

@@ -6,7 +6,6 @@ public class Player {
 	private String name;
 	private int playerNum;
 	private Race race;
-	private Difficulty diff;
 	private PlayerColor color;
 	private int money;
 	private int food;
@@ -15,36 +14,17 @@ public class Player {
 
 	//enums
 	public enum Race{PACKER(1000), SPHEROID(1000), HUMANOID(600), LEGGITE(1000), FLAPPER(1600), BONZOID(1000), MECHTRON(1000), GOLLUMER(1000);
-	private final int startingMoney;
-	
-	Race(int s){
-		startingMoney = s;
+		private final int startingMoney;
+		
+		Race(int s){
+			startingMoney = s;
+		}
+		
+		public int getStartingMoney(){
+			return startingMoney;
+		}
 	}
 	
-	public int getStartingMoney(){
-		return startingMoney;
-	}
-	
-	}
-	public enum Difficulty{BEGINNER(8,4), STANDARD(4,2), TOURNAMENT(4,2);
-	
-	private final int startingFood;
-	private final int startingEnergy;
-	
-	Difficulty(int food, int energy){
-		startingFood = food;
-		startingEnergy = energy;
-	}
-	
-	public int getStartingFood(){
-		return startingFood;
-	}
-	
-	public int getStartingEnergy(){
-		return startingEnergy;
-	}
-	
-	}
 	
 	public enum PlayerColor{BLUE, GREEN, RED, YELLOW};
 	
@@ -52,7 +32,6 @@ public class Player {
 	public Player(){
 		name = null;
 		race = null;
-		diff = null;
 		color = null;
 		money = 0;
 		food = 0;
@@ -84,14 +63,6 @@ public class Player {
 	
 	public void setRace(Race r){
 		race = r;
-	}
-	
-	public Difficulty getDifficulty(){
-		return diff;
-	}
-	
-	public void setDifficulty(Difficulty d){
-		diff = d;
 	}
 	
 	public PlayerColor getColor(){

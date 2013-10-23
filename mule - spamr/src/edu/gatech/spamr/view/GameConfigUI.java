@@ -2,8 +2,11 @@ package edu.gatech.spamr.view;
 
 import javax.swing.JPanel;
 
+import edu.gatech.spamr.model.Game;
+import edu.gatech.spamr.model.Game.Difficulty;
 import edu.gatech.spamr.model.Map.MapType;
-import edu.gatech.spamr.model.Player.Difficulty;
+
+
 
 import java.awt.Color;
 import java.awt.Dialog;
@@ -43,7 +46,6 @@ public class GameConfigUI extends JPanel {
 
 	private JPanel gameConfigPanel = this;
 	private MainAppView parent;
-	private Difficulty selectedDifficulty = Difficulty.BEGINNER; // default difficulty
 	private int numHumans = 4; // default number of human players
 	private MapType selectedMapType = MapType.DEFAULT;
 	
@@ -53,10 +55,6 @@ public class GameConfigUI extends JPanel {
 	
 	public int getNumHumans(){
 		return numHumans;
-	}
-	
-	public Difficulty getDifficulty(){
-		return selectedDifficulty;
 	}
 	
 	public void setParent(MainAppView mainApp){
@@ -138,10 +136,11 @@ public class GameConfigUI extends JPanel {
             		numHumans = 3;
             	if(HumansComboBox.getSelectedIndex()==2)
             		numHumans = 2;
-            	selectedDifficulty = (Difficulty) DifficultyComboBox.getSelectedItem();
-            	System.out.println("Map Type: " + selectedMapType.toString());
+            	Game.setDifficulty((Difficulty) DifficultyComboBox.getSelectedItem());
+            	Game.getMap().setMapType(selectedMapType);	//sets the map in game
+            	System.out.println("Map Type: " + Game.getMap().toString());
             	System.out.println("Number of Human Players: " + numHumans + " Players");
-            	System.out.println("Difficulty: " + selectedDifficulty.toString());
+            	System.out.println("Difficulty: " + Game.getDifficulty().toString());
             	
             	parent.getConfigDialog().setContentPane(parent.getPlayerConfigUI());
             	parent.getConfigDialog().setTitle("Configure Players");
