@@ -481,8 +481,12 @@ public class MapUI extends JPanel {
 		
 		button_22.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				parent.cardChangeTo("Town");
-				System.out.println("Pushed");
+				//if it is not the LandSelection Card go the the Town Card
+				if(!(((String)parent.toString()).equals("LandSelection"))){
+					parent.cardChangeTo("Town");
+					//System.out.println("Pushed");
+				}
+				
 			}
 		});
 		
