@@ -75,6 +75,7 @@ public class Tile {
 	
 	public void setOwner(Player p){
 		owner = p;
+		owned = true;
 	}
 	
 	public TileType getTileType(){
