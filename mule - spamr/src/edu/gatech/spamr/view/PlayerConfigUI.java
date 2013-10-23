@@ -391,10 +391,13 @@ public class PlayerConfigUI extends JPanel {
 					Game.getPlayer1().setName(PlayerName.getText());
 					Game.getPlayer1().setColor(currentColor);
 					Game.getPlayer1().setRace(currentRace);
+					Game.getPlayer1().setMoney(currentRace.getStartingMoney());
+					/*
 					System.out.println();
 					System.out.println("Player 1's Name: " + Game.getPlayer1().getName());
 					System.out.println("Player 1's Color: " + Game.getPlayer1().getColor().toString());
 					System.out.println("Player 1's Race: " + Game.getPlayer1().getRace().toString());
+					*/
 					Player2.setEnabled(true);
 					Player2.doClick();
 					Player1.setEnabled(false);
@@ -405,10 +408,14 @@ public class PlayerConfigUI extends JPanel {
 					Game.getPlayer2().setName(PlayerName.getText());
 					Game.getPlayer2().setColor(currentColor);
 					Game.getPlayer2().setRace(currentRace);
+					Game.getPlayer2().setMoney(currentRace.getStartingMoney());
+					
+					/*
 					System.out.println();
 					System.out.println("Player 2's Name: " + Game.getPlayer2().getName());
 					System.out.println("Player 2's Color: " + Game.getPlayer2().getColor().toString());
 					System.out.println("Player 2's Race: " + Game.getPlayer2().getRace().toString());
+					*/
 					Player3.setEnabled(true);
 					Player3.doClick();
 					Player2.setEnabled(false);
@@ -419,10 +426,13 @@ public class PlayerConfigUI extends JPanel {
 					Game.getPlayer3().setName(PlayerName.getText());
 					Game.getPlayer3().setColor(currentColor);
 					Game.getPlayer3().setRace(currentRace);
+					Game.getPlayer3().setMoney(currentRace.getStartingMoney());
+					/*
 					System.out.println();
 					System.out.println("Player 3's Name: " + Game.getPlayer3().getName());
 					System.out.println("Player 3's Color: " + Game.getPlayer3().getColor().toString());
 					System.out.println("Player 3's Race: " + Game.getPlayer3().getRace().toString());
+					*/
 					Player4.setEnabled(true);
 					Player4.doClick();
 					Player3.setEnabled(false);
@@ -434,10 +444,13 @@ public class PlayerConfigUI extends JPanel {
 					Game.getPlayer4().setName(PlayerName.getText());
 					Game.getPlayer4().setColor(currentColor);
 					Game.getPlayer4().setRace(currentRace);
+					Game.getPlayer4().setMoney(currentRace.getStartingMoney());
+					/*
 					System.out.println();
 					System.out.println("Player 4's Name: " + Game.getPlayer4().getName());
 					System.out.println("Player 4's Color: " + Game.getPlayer4().getColor().toString());
 					System.out.println("Player 4's Race: " + Game.getPlayer4().getRace().toString());
+					*/
 					
 					//close window
 					parent.getConfigDialog().dispose();
