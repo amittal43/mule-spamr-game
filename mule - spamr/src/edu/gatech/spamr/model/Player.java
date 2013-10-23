@@ -60,16 +60,6 @@ public class Player {
 		ore = 0;
 	}
 
-	public void Player(Player p){
-		name = p.getName();
-		race  = p.getRace();
-		diff = p.getDifficulty();
-		color = p.getColor();
-		money = race.getStartingMoney();
-		food = 0;
-		energy = 0;
-		ore = 0;
-	}
 	
 	//getters and setters
 	public String getName(){
