@@ -37,7 +37,7 @@ public class TownScreenUI extends JPanel {
 	private JButton backButton;
 	
 	/**
-	 * Create the panel.
+	 * TownScreenUI is a representation of the various locations a player can go to in the town
 	 */
 	public TownScreenUI() {
 		

@@ -38,6 +38,8 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 	
 	/**
 	 * Creates the GameScreen Panel and adds the other panels as cards
+	 * 
+	 * @return a screen that has all the different locations a player can go to
 	 */
 	@SuppressWarnings("deprecation")
 	public GameScreenUI() {

@@ -50,7 +50,9 @@ public class GameConfigUI extends JPanel {
 	private MapType selectedMapType = MapType.DEFAULT;
 	
 	/**
-	 * Create the panel.
+	 * GameConfigUI consists of the logistics behind choosing the amount of players and the map type
+	 * 
+	 * Will store all information in a player variable
 	 */
 	public GameConfigUI() {
 		//setting panel prefrences

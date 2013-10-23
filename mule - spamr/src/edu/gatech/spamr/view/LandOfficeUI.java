@@ -21,7 +21,9 @@ public class LandOfficeUI extends JPanel {
 	private MapUI mapui = new MapUI();
 
 	/**
-	 * Create the panel.
+	 * LandOfficeUI creates the office is the correct dimensions
+	 * 
+	 * @return an instance of MapUI
 	 */
 	public LandOfficeUI() {
 		setPreferredSize(new Dimension(1280, 800));
