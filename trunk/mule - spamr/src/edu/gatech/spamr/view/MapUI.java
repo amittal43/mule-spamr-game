@@ -33,11 +33,15 @@ import java.awt.event.ActionEvent;
 public class MapUI extends JPanel {
 	private Map map = new Map(MapType.DEFAULT);
 	private Tile[] mapArray = map.getMapArray();
+
+	
+
 	private GameScreenUI parent;
 	
 	public void setParent(GameScreenUI gcui){
 		parent = gcui;
 	}
+
 
 	/**
 	 * Create the panel.
@@ -348,12 +352,15 @@ public class MapUI extends JPanel {
 		button_22.setContentAreaFilled(false);
 		button_22.setBorder(null);
 		button_22.setIcon(new ImageIcon(MapUI.class.getResource(mapArray[22].getTileType().getIcon())));
+		
 		button_22.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				parent.cardChangeTo("Town");
 				System.out.println("Pushed");
 			}
 		});
+		
+		
 		GridBagConstraints gbc_button_22 = new GridBagConstraints(); //right before/after this step there should be an action listener that will take the player to the town if the button is clicked on
 		gbc_button_22.insets = new Insets(0, 0, 5, 5);
 		gbc_button_22.gridx = 4;
