@@ -16,6 +16,17 @@ import edu.gatech.spamr.model.Player;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/** 
+ * The LandSelectionUI class allows a player to select land to own  
+ * 
+ * @author Sean Lachenberg
+ * @author Aditya Mittal
+ * @author Mike Vail
+ * @author Puja Sheth
+ * @author Raj Prateek
+ * @version 1.0 10/21/2013 
+ */
+
 public class LandSelectionUI extends JPanel {
 
 	//Land Selection variables
@@ -26,6 +37,9 @@ public class LandSelectionUI extends JPanel {
 	private int playersPassed = 0; // if it gets to 4, everyone passed
 	private GameScreenUI parent;
 	
+	/**
+	 * nextPlayer method to allow a rotation in turn for the players to choose land
+	 */
 	
 	private void nextPlayer(){
 		
