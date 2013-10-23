@@ -351,7 +351,6 @@ public class PlayerConfigUI extends JPanel {
 		Player3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 					selectedPlayer = player3;
-				System.out.println(selectedPlayer.getName());
 			}
 		});
 		Player3.setForeground(Color.LIGHT_GRAY);
