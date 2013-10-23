@@ -26,20 +26,20 @@ import java.awt.Component;
 public class TitleScreenUI extends JPanel {
 
 	private MainAppView parent;
-	
-	public void setParent(MainAppView main){
-		parent = main;
-	}
+
 	
 	/**
 	 * Create the panel.
 	 */
 	public TitleScreenUI() {
+		
+		//sets preferences for the Title Screen
 		setPreferredSize(new Dimension(1280, 800));
 		setMinimumSize(new Dimension(1280, 800));
 		setBackground(Color.DARK_GRAY);
 		setLayout(null);
 		
+		//Title
 		JLabel lblNewLabel = new JLabel("MULE: SPAMR Edition");
 		lblNewLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		lblNewLabel.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -49,6 +49,7 @@ public class TitleScreenUI extends JPanel {
 		lblNewLabel.setFont(new Font("Verdana", Font.BOLD, 30));
 		add(lblNewLabel);
 		
+		//start button
 		JButton btnStart = new JButton("START");
 		btnStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -59,5 +60,10 @@ public class TitleScreenUI extends JPanel {
 		btnStart.setBounds(581, 453, 132, 54);
 		add(btnStart);
 
+	}
+	
+	//getters and setters
+	public void setParent(MainAppView main){
+		parent = main;
 	}
 }

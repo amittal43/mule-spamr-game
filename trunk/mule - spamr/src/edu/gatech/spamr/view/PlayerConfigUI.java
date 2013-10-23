@@ -49,6 +49,8 @@ import javax.swing.SwingConstants;
  */ 
 
 public class PlayerConfigUI extends JPanel {
+	
+	//playerConfig Variables
 	private MainAppView parent;
 	private final ButtonGroup SelectPlayer = new ButtonGroup();
 	private final ButtonGroup SelectRace = new ButtonGroup();
@@ -62,18 +64,8 @@ public class PlayerConfigUI extends JPanel {
 	private Race currentRace = Race.HUMANOID; // default race, if none is selected
 	private boolean completed = false;
 	
-	private Player getSelectedPlayer(){
-		return selectedPlayer;
-	}
 	
-	public boolean isCompleted(){
-		return completed;
-	}
-	
-	public void setParent(MainAppView main){
-		parent = main;
-	}
-	
+	//creates an array of players
 	public Player[] getConfiguredPlayers(){
 		Player[] configPlayers = new Player[4];
 		configPlayers[0] = player1;
@@ -91,21 +83,21 @@ public class PlayerConfigUI extends JPanel {
 	 */ 
 
 	public PlayerConfigUI() {
+		
+		//sets UI preferences
 		setMinimumSize(new Dimension(309, 365));
-
 		setPreferredSize(new Dimension(309, 365));
-
 		setPreferredSize(new Dimension(309, 363));
-
 		setBackground(Color.DARK_GRAY);
 		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		setName("Player Configuration");
 		setLayout(null);
 		
+		
+		//race Buttons
 		/**
 		 * Creates the Mectron button 
 		 */
-		
 		final JButton Mechtron = new JButton("");
 		Mechtron.setIcon(new ImageIcon(PlayerConfigUI.class.getResource("/edu/gatech/spamr/resources/MULE_Mechtron.png")));
 		SelectRace.add(Mechtron);
@@ -122,7 +114,6 @@ public class PlayerConfigUI extends JPanel {
 		/**
 		 * Creates the Spheroid button
 		 */
-		
 		final JButton Spheroid = new JButton("");
 		Spheroid.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -139,7 +130,6 @@ public class PlayerConfigUI extends JPanel {
 		/**
 		 * Creates the Bonzoid button
 		 */
-		
 		final JButton Bonzoid = new JButton("");
 		Bonzoid.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -156,7 +146,6 @@ public class PlayerConfigUI extends JPanel {
 		/**
 		 * Creates the Gollumer button
 		 */
-		
 		final JButton Gollumer = new JButton("");
 		Gollumer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -173,7 +162,6 @@ public class PlayerConfigUI extends JPanel {
 		/**
 		 * Creates the Packer button
 		 */
-		
 		final JButton Packer = new JButton("");
 		Packer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -190,7 +178,6 @@ public class PlayerConfigUI extends JPanel {
 		/**
 		 * Creates the Flapper button
 		 */
-		
 		final JButton Flapper = new JButton("");
 		Flapper.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -207,7 +194,6 @@ public class PlayerConfigUI extends JPanel {
 		/**
 		 * Creates the Leggitte button
 		 */
-		
 		final JButton Leggite = new JButton("");
 		Leggite.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -224,7 +210,6 @@ public class PlayerConfigUI extends JPanel {
 		/**
 		 * Creates the Humanoid button
 		 */
-		
 		final JButton Humanoid = new JButton("");
 		Humanoid.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -238,10 +223,10 @@ public class PlayerConfigUI extends JPanel {
 		Humanoid.setBounds(202, 194, 76, 71);
 		add(Humanoid);
 		
+		//color button
 		/**
 		 * Creates a toggle button in which a user can toggle between which color he/she wants his/her player to be
 		 */
-		
 		final JButton button = new JButton("Color");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -310,7 +295,6 @@ public class PlayerConfigUI extends JPanel {
 		/**
 		 * Creates a button for the user to choose an option of 1 player
 		 */
-		
 		final JRadioButton Player1 = new JRadioButton("1");
 		Player1.setSelected(true);
 		Player1.addActionListener(new ActionListener() {
@@ -327,7 +311,6 @@ public class PlayerConfigUI extends JPanel {
 		/**
 		 * Creates a button for the user to choose an option of 2 players
 		 */
-		
 		final JRadioButton Player2 = new JRadioButton("2");
 		Player2.setEnabled(false);
 		Player2.addActionListener(new ActionListener() {
@@ -345,7 +328,6 @@ public class PlayerConfigUI extends JPanel {
 		/**
 		 * Creates a button for the user to choose an option of 3 players
 		 */
-		
 		final JRadioButton Player3 = new JRadioButton("3");
 		Player3.setEnabled(false);
 		Player3.addActionListener(new ActionListener() {
@@ -363,7 +345,6 @@ public class PlayerConfigUI extends JPanel {
 		/**
 		 * Creates a button for the user to choose an option of 4 players
 		 */
-		
 		final JRadioButton Player4 = new JRadioButton("4");
 		Player4.setEnabled(false);
 		Player4.addActionListener(new ActionListener() {
@@ -383,7 +364,6 @@ public class PlayerConfigUI extends JPanel {
 		 * 
 		 * @return player's information
 		 */
-		
 		final JButton Next = new JButton("Next");
 		Next.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -392,12 +372,12 @@ public class PlayerConfigUI extends JPanel {
 					Game.getPlayer1().setColor(currentColor);
 					Game.getPlayer1().setRace(currentRace);
 					Game.getPlayer1().setMoney(currentRace.getStartingMoney());
-					/*
+					
 					System.out.println();
 					System.out.println("Player 1's Name: " + Game.getPlayer1().getName());
 					System.out.println("Player 1's Color: " + Game.getPlayer1().getColor().toString());
 					System.out.println("Player 1's Race: " + Game.getPlayer1().getRace().toString());
-					*/
+					
 					Player2.setEnabled(true);
 					Player2.doClick();
 					Player1.setEnabled(false);
@@ -410,12 +390,12 @@ public class PlayerConfigUI extends JPanel {
 					Game.getPlayer2().setRace(currentRace);
 					Game.getPlayer2().setMoney(currentRace.getStartingMoney());
 					
-					/*
+					
 					System.out.println();
 					System.out.println("Player 2's Name: " + Game.getPlayer2().getName());
 					System.out.println("Player 2's Color: " + Game.getPlayer2().getColor().toString());
 					System.out.println("Player 2's Race: " + Game.getPlayer2().getRace().toString());
-					*/
+					
 					Player3.setEnabled(true);
 					Player3.doClick();
 					Player2.setEnabled(false);
@@ -427,12 +407,12 @@ public class PlayerConfigUI extends JPanel {
 					Game.getPlayer3().setColor(currentColor);
 					Game.getPlayer3().setRace(currentRace);
 					Game.getPlayer3().setMoney(currentRace.getStartingMoney());
-					/*
+					
 					System.out.println();
 					System.out.println("Player 3's Name: " + Game.getPlayer3().getName());
 					System.out.println("Player 3's Color: " + Game.getPlayer3().getColor().toString());
 					System.out.println("Player 3's Race: " + Game.getPlayer3().getRace().toString());
-					*/
+					
 					Player4.setEnabled(true);
 					Player4.doClick();
 					Player3.setEnabled(false);
@@ -445,12 +425,12 @@ public class PlayerConfigUI extends JPanel {
 					Game.getPlayer4().setColor(currentColor);
 					Game.getPlayer4().setRace(currentRace);
 					Game.getPlayer4().setMoney(currentRace.getStartingMoney());
-					/*
+					
 					System.out.println();
 					System.out.println("Player 4's Name: " + Game.getPlayer4().getName());
 					System.out.println("Player 4's Color: " + Game.getPlayer4().getColor().toString());
 					System.out.println("Player 4's Race: " + Game.getPlayer4().getRace().toString());
-					*/
+					
 					
 					//close window
 					parent.getConfigDialog().dispose();
@@ -464,6 +444,7 @@ public class PlayerConfigUI extends JPanel {
 		Next.setBounds(203, 316, 76, 23);
 		add(Next);
 		
+		//adding JLabels for Name and Number
 		PlayerName = new JTextField();
 		PlayerName.setBounds(104, 317, 88, 20);
 		add(PlayerName);
@@ -485,5 +466,18 @@ public class PlayerConfigUI extends JPanel {
 		
 
 	}
+	
+	//getters and setters
+		private Player getSelectedPlayer(){
+			return selectedPlayer;
+		}
+		
+		public boolean isCompleted(){
+			return completed;
+		}
+		
+		public void setParent(MainAppView main){
+			parent = main;
+		}
 	
 }

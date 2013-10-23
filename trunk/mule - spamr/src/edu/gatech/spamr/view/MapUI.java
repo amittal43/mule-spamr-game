@@ -32,27 +32,19 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class MapUI extends JPanel {
+	
+	//mapUI variables
 	private Map map = new Map(MapType.DEFAULT);
 	private Tile[] mapArray = map.getMapArray();
-
-	
-
 	private GameScreenUI parent;
 	private Tile currentTile = mapArray[0];
-	
-	public void setParent(GameScreenUI gcui){
-		parent = gcui;
-	}
-	
-	public Tile getCurrentTile(){
-		return currentTile;
-	}
-
 
 	/**
 	 * Create the panel.
 	 */
 	public MapUI() {
+		
+		//UI preferences
 		setBackground(new Color(151, 133, 31));
 		setBorder(null);
 		setMinimumSize(new Dimension(800, 600));
@@ -64,6 +56,7 @@ public class MapUI extends JPanel {
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0};
 		setLayout(gridBagLayout);
 		
+		//button info and listeners for each tile (Town is button 22)
 		JButton button = new JButton("0");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -892,5 +885,14 @@ public class MapUI extends JPanel {
 		add(button_44, gbc_button_44);
 
 	}
-
+	
+	//getters and setters
+	public void setParent(GameScreenUI gcui){
+		parent = gcui;
+	}
+	
+	public Tile getCurrentTile(){
+		return currentTile;
+	}
+	
 }

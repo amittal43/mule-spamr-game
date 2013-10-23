@@ -2,7 +2,7 @@ package edu.gatech.spamr.model;
 
 public class Player {
 
-	//data
+	//Player Variables
 	private String name;
 	private int playerNum;
 	private Race race;
@@ -12,7 +12,7 @@ public class Player {
 	private int energy;
 	private int ore;
 
-	//enums
+	//Describes the enum Race
 	public enum Race{PACKER(1000), SPHEROID(1000), HUMANOID(600), LEGGITE(1000), FLAPPER(1600), BONZOID(1000), MECHTRON(1000), GOLLUMER(1000);
 		private final int startingMoney;
 		
