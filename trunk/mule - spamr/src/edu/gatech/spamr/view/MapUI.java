@@ -22,6 +22,7 @@ import java.awt.Component;
 
 import javax.swing.border.MatteBorder;
 
+import edu.gatech.spamr.model.Game;
 import edu.gatech.spamr.model.Map;
 import edu.gatech.spamr.model.Map.MapType;
 import edu.gatech.spamr.model.Tile;
@@ -482,7 +483,7 @@ public class MapUI extends JPanel {
 		button_22.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//if it is not the LandSelection Card go the the Town Card
-				if(!(((String)parent.toString()).equals("LandSelection"))){
+				if(!(((String)GameScreenUI.getCardLayout().toString()).equals("LandSelection"))){
 					parent.cardChangeTo("Town");
 					//System.out.println("Pushed");
 				}

@@ -32,7 +32,7 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 	private LandSelectionUI lsui = new LandSelectionUI();
 	private TownScreenUI tsui = new TownScreenUI();
 	private MainAppView parent;
-	private CardLayout cardLayout = new CardLayout(0,0);
+	private static CardLayout cardLayout = new CardLayout(0,0);
 	private JPanel cards = new JPanel(cardLayout);
 	
 	/**
@@ -60,7 +60,7 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
         cardLayout.show(cards, cardName);
 	}
 	
-	public CardLayout getCardLayout(){
+	public static CardLayout getCardLayout(){
 		return cardLayout;
 	}
 	
@@ -71,5 +71,7 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 	public void setParent(MainAppView p){
 		parent = p;
 	}
+	
+
 	
 }
