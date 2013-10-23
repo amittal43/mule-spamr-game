@@ -37,6 +37,7 @@ public class MapUI extends JPanel {
 	
 
 	private GameScreenUI parent;
+	private Tile currentTile = mapArray[0];
 	
 	public void setParent(GameScreenUI gcui){
 		parent = gcui;
@@ -59,6 +60,11 @@ public class MapUI extends JPanel {
 		setLayout(gridBagLayout);
 		
 		JButton button = new JButton("0");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				currentTile = mapArray[0];
+			}
+		});
 		button.setContentAreaFilled(false);
 		button.setBorder(null);
 		button.setIcon(new ImageIcon(MapUI.class.getResource(mapArray[0].getTileType().getIcon())));
