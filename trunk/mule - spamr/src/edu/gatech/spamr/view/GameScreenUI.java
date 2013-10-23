@@ -27,28 +27,25 @@ import java.awt.event.ItemEvent;
 
 public class GameScreenUI extends JPanel {	//panel that holds cards
 
+	//GameScreenUI Variables
 	private MapUI mapui = new MapUI();
 	private TownScreenUI tsui = new TownScreenUI();
 	private MainAppView parent;
 	private CardLayout cardLayout = new CardLayout(0,0);
 	private JPanel cards = new JPanel(cardLayout);
 	
-	public void setParent(MainAppView p){
-		parent = p;
-	}
-	
-
 	/**
 	 * Creates the GameScreen Panel and adds the other panels as cards
 	 */
 	@SuppressWarnings("deprecation")
 	public GameScreenUI() {
+		
+		//setting preferences
 		setPreferredSize(new Dimension(1280, 800));
 		setMinimumSize(new Dimension(1280, 800));
 		setBackground(Color.DARK_GRAY);
 		
 		//adding each "card" to the panel
-		//cards.add(mapui);
 		cards.add(mapui, "Map");
 		mapui.setParent(this);
 		cards.add(tsui, "Town");
@@ -56,6 +53,7 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 		add(cards);
 	}
 
+	//getters and setters
 	public void cardChangeTo(String cardName) {
         cardLayout.show(cards, cardName);
 	}
@@ -70,6 +68,10 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 	
 	public void changeToTownScreen(){
 		cardLayout.show(cards, "Town");
+	}
+	
+	public void setParent(MainAppView p){
+		parent = p;
 	}
 	
 }
