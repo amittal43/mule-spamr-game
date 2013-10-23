@@ -76,7 +76,7 @@ public class PlayerConfigUI extends JPanel {
 	}
 	
 	/** 
-	 * Construct a PlayerConfigUI panel with the given instances of the player and 
+	 * Construct a PlayerConfigUI class with the given instances of the player and 
 	 * button classes as well as the various features the group wanted.
 	 * 
 	 * @return color of the current player  

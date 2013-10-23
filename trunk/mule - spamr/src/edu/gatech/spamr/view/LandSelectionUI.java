@@ -43,8 +43,11 @@ public class LandSelectionUI extends JPanel {
 	private GameScreenUI parent;
 	private JLabel playerLabel = new JLabel(Game.getPlayer1().getName());
 	private JLabel costLabel = new JLabel("0");
+	
 	/**
 	 * nextPlayer method to allow a rotation in turn for the players to choose land
+	 * 
+	 * @return the name of the player that can choose land
 	 */
 	
 	private void nextPlayer(){
@@ -89,7 +92,7 @@ public class LandSelectionUI extends JPanel {
 	 */
 	public LandSelectionUI() {
 		
-		//sets prefrences for the Land Selection panel
+		//sets preferences for the Land Selection panel
 		setPreferredSize(new Dimension(1280, 800));
 		setMinimumSize(new Dimension(1280, 800));
 		setBackground(Color.DARK_GRAY);

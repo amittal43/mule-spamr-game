@@ -31,6 +31,19 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/** 
+ * The MapUI class represents the actual application of the game
+ * 
+ *  
+ * @author Sean Lachenberg
+ * @author Aditya Mittal
+ * @author Mike Vail
+ * @author Puja Sheth
+ * @author Raj Prateek
+ * @version 1.0 10/22/2013 
+ */
+
+
 public class MapUI extends JPanel {
 	
 	//mapUI variables
@@ -40,7 +53,9 @@ public class MapUI extends JPanel {
 	private Tile currentTile = mapArray[0];
 
 	/**
-	 * Create the panel.
+	 * MapUI creates the initial map
+	 * 
+	 * @return map with all tiles displayed
 	 */
 	public MapUI() {
 		
@@ -56,7 +71,14 @@ public class MapUI extends JPanel {
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0};
 		setLayout(gridBagLayout);
 		
-		//button info and listeners for each tile (Town is button 22)
+		/**
+		 * The rest of this code goes through an algorithm that determines what type the tile is 
+		 * from a mapArray and from that the image that needs to be at that position is put into currentTile.
+		 * 
+		 * The rest will consist of all the button info and listeners for each tile.
+		 * The town will always be button 22.
+		 */
+		
 		JButton button = new JButton("0");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

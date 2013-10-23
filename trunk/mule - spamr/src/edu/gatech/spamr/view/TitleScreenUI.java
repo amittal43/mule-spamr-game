@@ -25,11 +25,14 @@ import java.awt.Component;
 
 public class TitleScreenUI extends JPanel {
 
+	//Create instance variable
 	private MainAppView parent;
 
 	
 	/**
-	 * Create the panel.
+	 * TitleScreenUI returns a screen in which the user can enter the game
+	 * 
+	 * @return screen in which player can enter game
 	 */
 	public TitleScreenUI() {
 		
