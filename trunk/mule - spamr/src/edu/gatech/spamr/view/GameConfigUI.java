@@ -138,7 +138,7 @@ public class GameConfigUI extends JPanel {
             		numHumans = 2;
             	Game.setDifficulty((Difficulty) DifficultyComboBox.getSelectedItem());
             	Game.getMap().setMapType(selectedMapType);	//sets the map in game
-            	System.out.println("Map Type: " + Game.getMap().toString());
+            	System.out.println("Map Type: " + Game.getMap().getMapType().toString());
             	System.out.println("Number of Human Players: " + numHumans + " Players");
             	System.out.println("Difficulty: " + Game.getDifficulty().toString());
             	
