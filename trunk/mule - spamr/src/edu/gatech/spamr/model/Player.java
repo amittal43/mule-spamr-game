@@ -12,15 +12,7 @@ public class Player {
 	private int food;
 	private int energy;
 	private int ore;
-	
-	//copy constructor
-	public void Player(Player p){
-		name = p.getName();
-		race  = p.getRace();
-		diff = p.getDifficulty();
-		color = p.getColor();
-	}
-	
+
 	//enums
 	public enum Race{PACKER(1000), SPHEROID(1000), HUMANOID(600), LEGGITE(1000), FLAPPER(1600), BONZOID(1000), MECHTRON(1000), GOLLUMER(1000);
 	private final int startingMoney;
@@ -56,12 +48,24 @@ public class Player {
 	
 	public enum PlayerColor{BLUE, GREEN, RED, YELLOW};
 	
+	//constructors
 	public Player(){
 		name = null;
 		race = null;
 		diff = null;
 		color = null;
 		money = 0;
+		food = 0;
+		energy = 0;
+		ore = 0;
+	}
+
+	public void Player(Player p){
+		name = p.getName();
+		race  = p.getRace();
+		diff = p.getDifficulty();
+		color = p.getColor();
+		money = race.getStartingMoney();
 		food = 0;
 		energy = 0;
 		ore = 0;
