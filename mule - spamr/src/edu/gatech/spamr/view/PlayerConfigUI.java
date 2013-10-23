@@ -390,13 +390,13 @@ public class PlayerConfigUI extends JPanel {
 		Next.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if(getSelectedPlayer().equals(player1)){
-					player1.setName(PlayerName.getText());
-					player1.setColor(currentColor);
-					player1.setRace(currentRace);
+					Game.getPlayer1().setName(PlayerName.getText());
+					Game.getPlayer1().setColor(currentColor);
+					Game.getPlayer1().setRace(currentRace);
 					System.out.println();
-					System.out.println("Player 1's Name: " + player1.getName());
-					System.out.println("Player 1's Color: " + player1.getColor().toString());
-					System.out.println("Player 1's Race: " + player1.getRace().toString());
+					System.out.println("Player 1's Name: " + Game.getPlayer1().getName());
+					System.out.println("Player 1's Color: " + Game.getPlayer1().getColor().toString());
+					System.out.println("Player 1's Race: " + Game.getPlayer1().getRace().toString());
 					Player2.setEnabled(true);
 					Player2.doClick();
 					Player1.setEnabled(false);
@@ -404,13 +404,13 @@ public class PlayerConfigUI extends JPanel {
 					return;
 				}
 				if(getSelectedPlayer().equals(player2)){
-					player2.setName(PlayerName.getText());
-					player2.setColor(currentColor);
-					player2.setRace(currentRace);
+					Game.getPlayer2().setName(PlayerName.getText());
+					Game.getPlayer2().setColor(currentColor);
+					Game.getPlayer2().setRace(currentRace);
 					System.out.println();
-					System.out.println("Player 2's Name: " + player2.getName());
-					System.out.println("Player 2's Color: " + player2.getColor().toString());
-					System.out.println("Player 2's Race: " + player2.getRace().toString());
+					System.out.println("Player 2's Name: " + Game.getPlayer2().getName());
+					System.out.println("Player 2's Color: " + Game.getPlayer2().getColor().toString());
+					System.out.println("Player 2's Race: " + Game.getPlayer2().getRace().toString());
 					Player3.setEnabled(true);
 					Player3.doClick();
 					Player2.setEnabled(false);
@@ -418,13 +418,13 @@ public class PlayerConfigUI extends JPanel {
 					return;
 				}
 				if(getSelectedPlayer().equals(player3)){
-					player3.setName(PlayerName.getText());
-					player3.setColor(currentColor);
-					player3.setRace(currentRace);
+					Game.getPlayer3().setName(PlayerName.getText());
+					Game.getPlayer3().setColor(currentColor);
+					Game.getPlayer3().setRace(currentRace);
 					System.out.println();
-					System.out.println("Player 3's Name: " + player3.getName());
-					System.out.println("Player 3's Color: " + player3.getColor().toString());
-					System.out.println("Player 3's Race: " + player3.getRace().toString());
+					System.out.println("Player 3's Name: " + Game.getPlayer3().getName());
+					System.out.println("Player 3's Color: " + Game.getPlayer3().getColor().toString());
+					System.out.println("Player 3's Race: " + Game.getPlayer3().getRace().toString());
 					Player4.setEnabled(true);
 					Player4.doClick();
 					Player3.setEnabled(false);
@@ -433,36 +433,13 @@ public class PlayerConfigUI extends JPanel {
 					return;
 				}
 				if(getSelectedPlayer().equals(player4)){
-					player4.setName(PlayerName.getText());
-					player4.setColor(currentColor);
-					player4.setRace(currentRace);
+					Game.getPlayer4().setName(PlayerName.getText());
+					Game.getPlayer4().setColor(currentColor);
+					Game.getPlayer4().setRace(currentRace);
 					System.out.println();
-					System.out.println("Player 4's Name: " + player4.getName());
-					System.out.println("Player 4's Color: " + player4.getColor().toString());
-					System.out.println("Player 4's Race: " + player4.getRace().toString());
-					
-					/*			//currently does not work
-					//pass all player data to game here
-					Game.getPlayer1().setName(player1.getName());
-					Game.getPlayer1().setColor(player1.getColor());
-					Game.getPlayer1().setRace(player1.getRace());
-					Game.getPlayer1().setMoney(player1.getRace().getStartingMoney());
-					
-					Game.getPlayer2().setName(player2.getName());
-					Game.getPlayer2().setColor(player2.getColor());
-					Game.getPlayer2().setRace(player2.getRace());
-					Game.getPlayer2().setMoney(player2.getRace().getStartingMoney());
-					
-					Game.getPlayer3().setName(player3.getName());
-					Game.getPlayer3().setColor(player3.getColor());
-					Game.getPlayer3().setRace(player3.getRace());
-					Game.getPlayer3().setMoney(player3.getRace().getStartingMoney());
-					
-					Game.getPlayer4().setName(player4.getName());
-					Game.getPlayer4().setColor(player4.getColor());
-					Game.getPlayer4().setRace(player4.getRace());
-					Game.getPlayer4().setMoney(player4.getRace().getStartingMoney());
-					*/
+					System.out.println("Player 4's Name: " + Game.getPlayer4().getName());
+					System.out.println("Player 4's Color: " + Game.getPlayer4().getColor().toString());
+					System.out.println("Player 4's Race: " + Game.getPlayer4().getRace().toString());
 					
 					//close window
 					parent.getConfigDialog().dispose();
