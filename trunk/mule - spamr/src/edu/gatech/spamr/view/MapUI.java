@@ -483,8 +483,7 @@ public class MapUI extends JPanel {
 		button_22.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//if it is not the LandSelection Card go the the Town Card
-				System.out.println(GameScreenUI.getCardLayout().toString());
-				if(!((GameScreenUI.getCardLayout().toString()).equals("java.awt.CardLayout[hgap=0,vgap=0]"))){
+				if(parent.getLandSelectionOver()){
 					parent.cardChangeTo("Town");
 					//System.out.println("Pushed");
 				}
