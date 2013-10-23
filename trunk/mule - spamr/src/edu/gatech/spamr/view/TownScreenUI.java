@@ -41,7 +41,7 @@ public class TownScreenUI extends JPanel {
 		setPreferredSize((new Dimension (1280,800)));
 		setBackground(Color.LIGHT_GRAY);
 		JPanel buttonPanel = new JPanel(new GridLayout(2,2));
-		buttonPanel.setPreferredSize(new Dimension(960,600) );
+		buttonPanel.setPreferredSize(new Dimension(800,500) );
 		setLayout(new BorderLayout());
 		//JPanel buttonPanel = new JPanel(new FlowLayout());
 		//buttonPanel.setPreferredSize((new Dimension (640,400)));
