@@ -23,15 +23,20 @@ public class LandSelectionUI extends JPanel {
 	private boolean freeLandSelection = true;
 	private int propertiesOwned = 0; // if it gets to 8, free land selection is over
 	private int playersPassed = 0; // if it gets to 4, everyone passed
+	private GameScreenUI parent;
+	
+	public void setParent(GameScreenUI p){
+		parent = p;
+	}
 	
 	private void nextPlayer(){
 		if(currentPlayer.equals(Game.getPlayer1()))
 			currentPlayer = Game.getPlayer2();
-		if(currentPlayer.equals(Game.getPlayer2()))
+		else if(currentPlayer.equals(Game.getPlayer2()))
 			currentPlayer = Game.getPlayer3();
-		if(currentPlayer.equals(Game.getPlayer3()))
+		else if(currentPlayer.equals(Game.getPlayer3()))
 			currentPlayer = Game.getPlayer4();
-		if(currentPlayer.equals(Game.getPlayer4())){
+		else{ // currentPlayer is Player4
 			if(propertiesOwned>=8){
 				freeLandSelection = false;
 			}
@@ -39,8 +44,11 @@ public class LandSelectionUI extends JPanel {
 				currentPlayer = Game.getPlayer1();
 				playersPassed = 0;
 			}
-			else
+			else{
 				System.out.println("Land Selection Phase Over!");
+				parent.cardChangeTo("Map");
+				parent.setLandSelectionOver();
+			}
 		}
 	}
 	
