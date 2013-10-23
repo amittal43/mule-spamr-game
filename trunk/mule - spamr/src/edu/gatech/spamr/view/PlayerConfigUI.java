@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
+import edu.gatech.spamr.model.Game;
 import edu.gatech.spamr.model.Player;
 import edu.gatech.spamr.model.Player.Difficulty;
 import edu.gatech.spamr.model.Player.PlayerColor;
@@ -441,7 +442,25 @@ public class PlayerConfigUI extends JPanel {
 					System.out.println("Player 4's Race: " + player4.getRace().toString());
 					
 					//pass all player data to game here
+					Game.getPlayer1().setName(player1.getName());
+					Game.getPlayer1().setColor(player1.getColor());
+					Game.getPlayer1().setRace(player1.getRace());
+					Game.getPlayer1().setMoney(player1.getRace().getStartingMoney());
 					
+					Game.getPlayer2().setName(player2.getName());
+					Game.getPlayer2().setColor(player2.getColor());
+					Game.getPlayer2().setRace(player2.getRace());
+					Game.getPlayer2().setMoney(player2.getRace().getStartingMoney());
+					
+					Game.getPlayer3().setName(player3.getName());
+					Game.getPlayer3().setColor(player3.getColor());
+					Game.getPlayer3().setRace(player3.getRace());
+					Game.getPlayer3().setMoney(player3.getRace().getStartingMoney());
+					
+					Game.getPlayer4().setName(player4.getName());
+					Game.getPlayer4().setColor(player4.getColor());
+					Game.getPlayer4().setRace(player4.getRace());
+					Game.getPlayer4().setMoney(player4.getRace().getStartingMoney());
 					
 					//close window
 					parent.getConfigDialog().dispose();
