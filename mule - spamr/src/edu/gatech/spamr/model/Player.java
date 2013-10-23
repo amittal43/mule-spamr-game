@@ -81,6 +81,10 @@ public class Player {
 		money = m;
 	}
 	
+	public void updateMoney(int n){ //updates the player's money.
+		money += n;
+	}
+	
 	public int getFood(){
 		return food;
 	}
