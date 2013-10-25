@@ -21,15 +21,19 @@ public class Round {
 		return roundNumber;
 	}
 	
+	public void setRoundNumber(int round){ // for debugging purposes
+		roundNumber = round;
+	}
+	
 	public void nextRound(){
 		roundNumber++;
 	}
 	
-	public int getFoodRequirement(int round){
-		return foodRequirement[round];
+	public int getFoodRequirement(){
+		return foodRequirement[roundNumber];
 	}
 	
-	public int getGamblingBonus(int round){
-		return gamblingBonus[round];
+	public int getGamblingBonus(){
+		return gamblingBonus[roundNumber];
 	}
 }
