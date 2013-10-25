@@ -8,6 +8,7 @@ public class Game {
 	//turn & round variables
 	private static int currentRound = 1;		//game starts in round 1 
 	private static int currentTurn = 1;			//game starts with the first player going
+	private static int numRounds = 6;           //initialize at default number of rounds
 	private final int MAX_TURNS = 4;			//we assume a 4 player game so it has 4 turns per round
 	
 	//creates player object for each person
@@ -22,14 +23,16 @@ public class Game {
 	
 	//creates and describes the Difficulty enum
 	//each enum holds the starting food and energy for players in the game
-	public enum Difficulty{BEGINNER(8,4), STANDARD(4,2), TOURNAMENT(4,2);
+	public enum Difficulty{BEGINNER(8,4,6), STANDARD(4,2,12), TOURNAMENT(4,2,12);
 		
 		private final int startingFood;
 		private final int startingEnergy;
+		private final int numRounds;
 		
-		Difficulty(int food, int energy){
+		Difficulty(int food, int energy, int rounds){
 			startingFood = food;
 			startingEnergy = energy;
+			numRounds = rounds;
 		}
 		
 		public int getStartingFood(){
@@ -38,6 +41,10 @@ public class Game {
 		
 		public int getStartingEnergy(){
 			return startingEnergy;
+		}
+		
+		public int getNumRounds(){
+			return numRounds;
 		}
 	}
 	
@@ -71,6 +78,14 @@ public class Game {
 	
 	public static void setDifficulty(Difficulty d){
 		diff = d;
+	}
+	
+	public static void setNumRounds(int rounds){
+		numRounds = rounds;
+	}
+	
+	public static int getNumRounds(){
+		return numRounds;
 	}
 	
 	//player gets so their data can be updated by player class getters and setters
