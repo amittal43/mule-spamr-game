@@ -48,7 +48,7 @@ public class TownScreenUI extends JPanel {
 		buttonPanel.setPreferredSize(new Dimension(800,500) );
 		setLayout(new BorderLayout());
 		JLabel town =  new JLabel("TOWN",JLabel.CENTER);	//title
-		town.setBackground(Color.WHITE);
+		town.setBackground(Color.DARK_GRAY);
 		town.setFont(new Font("Serif", Font.BOLD, 48));
 		
 		//create a store button in which the player can go to the store
@@ -58,6 +58,7 @@ public class TownScreenUI extends JPanel {
 		//store Button
 		ImageIcon storeIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/Store-final.JPG"));
 		JButton storeButton = new JButton(storeIcon);
+		storeButton.setBackground(Color.DARK_GRAY);
 		storeButton.setBounds(1, 0, 112, 300);
 		buttonPanel.add(storeButton);
 		

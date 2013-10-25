@@ -25,6 +25,7 @@ import javax.swing.border.MatteBorder;
 import edu.gatech.spamr.model.Game;
 import edu.gatech.spamr.model.Map;
 import edu.gatech.spamr.model.Map.MapType;
+import edu.gatech.spamr.model.Player;
 import edu.gatech.spamr.model.Tile;
 
 import java.awt.Color;

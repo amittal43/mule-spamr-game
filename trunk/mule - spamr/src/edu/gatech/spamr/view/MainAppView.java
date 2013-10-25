@@ -27,6 +27,7 @@ public class MainAppView {
 	private GameConfigUI gcui = new GameConfigUI();
 	private PlayerConfigUI pcui = new PlayerConfigUI();
 	private GameScreenUI game = new GameScreenUI();
+	//private TownScreenUI town = new TownScreenUI();
 	
 	//sets preferences for the window
 	public void setUpConfigDialog(){
@@ -35,6 +36,8 @@ public class MainAppView {
 		configDialog.setContentPane(gcui);
 		configDialog.setVisible(true);
 	}
+	
+	
 	
 	
 	/**

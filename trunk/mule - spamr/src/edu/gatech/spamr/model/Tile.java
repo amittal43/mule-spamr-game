@@ -1,5 +1,7 @@
 package edu.gatech.spamr.model;
 
+import java.awt.Color;
+
 import edu.gatech.spamr.model.Player.PlayerColor;
 
 public class Tile {
@@ -10,6 +12,7 @@ public class Tile {
 	private Player.PlayerColor tileColor;
 	private boolean owned;
 	private TileType type;
+	private Color c;
 	
 	//Tile Constructor
 	Tile(int index, TileType t){
@@ -19,6 +22,8 @@ public class Tile {
 		owner = null;
 		tileColor = PlayerColor.BLUE; // default
 	}
+	
+	public enum TileColor{BLUE, GREEN, RED, YELLOW, BLACK }
 	
 	//description of TileTypes available
 	public enum TileType{MOUNTAIN1(1,1,2,"/edu/gatech/spamr/resources/mountain1.png"),
@@ -93,8 +98,9 @@ public class Tile {
 	public void setOwned(boolean own){
 		owned = own;
 	}
-	
-	
-	
+
+	public void setBorderColor(Color color) {
+		color = c;
+	}
 	
 }
