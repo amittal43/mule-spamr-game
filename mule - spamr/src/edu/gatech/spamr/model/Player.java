@@ -1,5 +1,17 @@
 package edu.gatech.spamr.model;
 
+/** 
+ * The Player class represents the an information holder which
+ * contains all the player related information i.e. name, resources
+ *  
+ * @author Sean Lachenberg
+ * @author Aditya Mittal
+ * @author Mike Vail
+ * @author Puja Sheth
+ * @author Raj Prateek
+ * @version 1.0 10/22/2013 
+ */
+
 public class Player {
 
 	//Player Variables

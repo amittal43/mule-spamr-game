@@ -2,6 +2,17 @@ package edu.gatech.spamr.model;
 
 import edu.gatech.spamr.model.Map.MapType;
 
+/** 
+ * The Game class represents the actual application of the game
+ * 
+ *  
+ * @author Sean Lachenberg
+ * @author Aditya Mittal
+ * @author Mike Vail
+ * @author Puja Sheth
+ * @author Raj Prateek
+ * @version 1.0 10/22/2013 
+ */
 
 public class Game {
 	

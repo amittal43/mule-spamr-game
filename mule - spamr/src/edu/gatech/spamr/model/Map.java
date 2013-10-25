@@ -4,6 +4,16 @@ import java.util.ArrayList;
 
 import edu.gatech.spamr.model.Tile.TileType;
 
+/** 
+ * The Map class represents the actual locations and images of the map
+ *  
+ * @author Sean Lachenberg
+ * @author Aditya Mittal
+ * @author Mike Vail
+ * @author Puja Sheth
+ * @author Raj Prateek
+ * @version 1.0 10/22/2013 
+ */
 
 public class Map {
 	

@@ -1,5 +1,16 @@
 package edu.gatech.spamr.model;
 
+/** 
+ * The Round class represents turns that all 4 players go through 
+ *  
+ * @author Sean Lachenberg
+ * @author Aditya Mittal
+ * @author Mike Vail
+ * @author Puja Sheth
+ * @author Raj Prateek
+ * @version 1.0 10/22/2013 
+ */
+
 public class Round {
 
 	private int roundNumber = 0;
