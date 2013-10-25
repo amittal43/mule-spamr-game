@@ -75,7 +75,7 @@ public class TownScreenUI extends JPanel {
 		pubButton = new JButton();
 		pubButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				parent.cardChangeTo("Pub");
 			}
 		});
 		pubButton.setIcon(new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/Pub-alpha.jpg")));
