@@ -29,6 +29,7 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 
 	//GameScreenUI Variables
 	private MapUI mapui = new MapUI();
+	private PubUI pubui = new PubUI();
 	private LandSelectionUI lsui = new LandSelectionUI();
 	private boolean landSelectionOver = false;
 	private TownScreenUI tsui = new TownScreenUI();
@@ -55,7 +56,11 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 		cards.add(lsui, "LandSelection");
 		lsui.setParent(this);
 		cards.add(tsui, "Town");
+		tsui.setParent(this);
+		cards.add(pubui, "Pub");
 		cardLayout.show(cards, "LandSelection");
+		
+		
 		add(cards);
 	}
 
