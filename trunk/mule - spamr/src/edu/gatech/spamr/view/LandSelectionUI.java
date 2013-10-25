@@ -126,6 +126,7 @@ public class LandSelectionUI extends JPanel {
 					//checks if owned
 					if(!mapui.getCurrentTile().isOwned()){
 						mapui.getCurrentTile().setOwner(currentPlayer);
+						mapui.colorTile(mapui.getCurrentTile(), mapui.getCurrentButton());
 						System.out.println(currentPlayer.getName() + " received tile!");
 						propertiesOwned++;
 						nextPlayer();
@@ -141,6 +142,7 @@ public class LandSelectionUI extends JPanel {
 					if(currentPlayer.getMoney()>=300){
 						if(!mapui.getCurrentTile().isOwned()){
 							mapui.getCurrentTile().setOwner(currentPlayer);
+							mapui.colorTile(mapui.getCurrentTile(), mapui.getCurrentButton());
 							currentPlayer.updateMoney(-300);
 							System.out.println(currentPlayer.getName() + " received tile!");
 							System.out.println(currentPlayer.getName() + "'s money decreased to " + currentPlayer.getMoney());
