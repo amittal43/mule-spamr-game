@@ -2,6 +2,18 @@ package edu.gatech.spamr.model;
 
 import java.util.Random;
 
+/** 
+ * The LandOffice class represents the location where players can 
+ * buy/sell land against the computer
+ *  
+ * @author Sean Lachenberg
+ * @author Aditya Mittal
+ * @author Mike Vail
+ * @author Puja Sheth
+ * @author Raj Prateek
+ * @version 1.0 10/23/2013 
+ */
+
 public class LandOffice {
 	
 	//TODO
