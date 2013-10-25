@@ -14,6 +14,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
+
 import javax.swing.JPanel;
 
 /** 
@@ -35,6 +36,7 @@ public class TownScreenUI extends JPanel {
 	private JButton pubButton;
 	private JButton landOfficeButton;
 	private JButton backButton;
+	private GameScreenUI parent;
 	
 	/**
 	 * TownScreenUI is a representation of the various locations a player can go to in the town
@@ -71,10 +73,16 @@ public class TownScreenUI extends JPanel {
 		
 		//create a pub button in which the player can go to the pub
 		pubButton = new JButton();
+		pubButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		pubButton.setIcon(new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/Pub-alpha.jpg")));
 		pubButton.setBounds(225, 0, 112, 300);
 		ImageIcon pubIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/Pub-alpha.jpg"));
 		buttonPanel.add(pubButton);
+		
 		
 		//create a land office button in which the player can go to the office to buy/trade land with computer
 		landOfficeButton = new JButton();
@@ -99,7 +107,11 @@ public class TownScreenUI extends JPanel {
 		//adds the panel
 		add(buttonPanel,BorderLayout.CENTER);
 		add(town,BorderLayout.PAGE_START);
-
 	}
+		public void setParent(GameScreenUI gcui){
+			parent = gcui;
+		}
 	
 }
+	
+
