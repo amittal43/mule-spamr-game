@@ -2,6 +2,7 @@ package edu.gatech.spamr.model;
 
 public class Timer {
 	
+	private long turnTime = 0;
 	private long turnEnd = 0;
 	private long timeLeft = 0;
 	boolean endTurn = false;
@@ -19,9 +20,17 @@ public class Timer {
 		}
 	}
 	
-	public void setTurnEndTime(Player player, Round round){
+	public long getTurnTime(){
+		return turnTime;
+	}
+	
+	public void setTurnTime(Player player, Round round){
+		turnTime = calcTurnTime(player,round);
+	}
+	
+	public void setTurnEndTime(Player player, Round round){ // must setTurnTime before this is called
 		long start = System.currentTimeMillis();
-		turnEnd = start + calcTurnTime(player, round);
+		turnEnd = start + turnTime;
 	}
 	
 	public long getTimeRemaining(){
@@ -41,6 +50,7 @@ public class Timer {
 	}
 	
 	public void startTurn(Player player, Round round){
+		setTurnTime(player,round);
 		setTurnEndTime(player,round);
 		while(System.currentTimeMillis()<turnEnd && endTurn==false){
 			System.out.println(getSecondsRemaining()); // just to check
