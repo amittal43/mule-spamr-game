@@ -60,6 +60,11 @@ public class TownScreenUI extends JPanel {
 		//store Button
 		ImageIcon storeIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/Store-final.JPG"));
 		JButton storeButton = new JButton(storeIcon);
+		storeButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				parent.cardChangeTo("Store");
+			}
+		});
 		storeButton.setBackground(Color.DARK_GRAY);
 		storeButton.setBounds(1, 0, 112, 300);
 		buttonPanel.add(storeButton);
@@ -99,9 +104,10 @@ public class TownScreenUI extends JPanel {
 		backButton.setFont(new Font("Serif", Font.PLAIN, 30));
 		backButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				parent.cardChangeTo("Map");
 			}
 		});
-		add(backButton,BorderLayout.PAGE_END);
+		add(backButton,BorderLayout.SOUTH);
 		
 		
 		//adds the panel

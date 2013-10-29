@@ -36,6 +36,7 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 	private MainAppView parent;
 	private static CardLayout cardLayout = new CardLayout(0,0);
 	private JPanel cards = new JPanel(cardLayout);
+	private StoreUI storeui = new StoreUI();
 	
 	/**
 	 * Creates the GameScreen Panel and adds the other panels as cards
@@ -58,6 +59,9 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 		cards.add(tsui, "Town");
 		tsui.setParent(this);
 		cards.add(pubui, "Pub");
+		pubui.setParent(this);
+		cards.add(storeui, "Store");
+		storeui.setParent(this);
 		cardLayout.show(cards, "LandSelection");
 		
 		
@@ -89,6 +93,6 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 		return landSelectionOver;
 	}
 	
-
+	
 	
 }
