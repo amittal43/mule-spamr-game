@@ -67,7 +67,7 @@ public class Tile {
 		public int getEnergyProduction(){
 			return energyProduction;
 		}
-		
+		 
 		public int getOreProduction(){
 			return oreProduction;
 		}
