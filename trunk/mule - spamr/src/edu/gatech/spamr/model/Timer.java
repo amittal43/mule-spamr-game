@@ -9,14 +9,13 @@ public class Timer {
 
 	public long calcTurnTime(Player player, Round round){
 		if(player.getFood() >= round.getFoodRequirement()){ // no food shortage
-			return 47130; //47.13 seconds
+			return 50000; //50.00 seconds
 		}
 		else if(player.getFood()==0){// complete food shortage
-			return 4670; //4.67 seconds
+			return 5000; //5.00 seconds
 		}
 		else{ // partial food shortage
-			double foodRatio = (double)player.getFood()/ (double)round.getFoodRequirement();
-			return 4670 + (long) (42455 * foodRatio); // 4.67 + 42.455 secs * ratio of food to requirement
+			return 30000; // 30.00 seconds
 		}
 	}
 	
