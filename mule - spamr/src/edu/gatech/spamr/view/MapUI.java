@@ -49,7 +49,7 @@ import java.awt.event.ActionEvent;
 public class MapUI extends JPanel {
 	
 	//mapUI variables
-	private Map map = new Map(MapType.DEFAULT);
+	private Map map = Game.getMap();
 	private Tile[] mapArray = map.getMapArray();
 	private JButton[] button = new JButton[45];
 	private GameScreenUI parent;
@@ -162,6 +162,7 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				currentTile = mapArray[0];
 				currentButton = button;
+				System.out.println(mapArray[0].isOwned());
 			}
 		});
 		button.setContentAreaFilled(false);
@@ -174,9 +175,9 @@ public class MapUI extends JPanel {
 		gbc_button.insets = new Insets(0, 0, 5, 5);
 		gbc_button.gridx = 0;
 		gbc_button.gridy = 0;
-		
-		add(button, gbc_button);
 		colorTile(mapArray[0],button);
+		add(button, gbc_button);
+		
 		
 		
 		
