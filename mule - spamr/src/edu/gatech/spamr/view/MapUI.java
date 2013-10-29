@@ -802,7 +802,7 @@ public class MapUI extends JPanel {
 		add(button_30, gbc_button_30);
 		
 		final JButton button_31 = new JButton("0");
-		button_30.addActionListener(new ActionListener() {
+		button_31.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[31];
 				currentButton = button_31;
