@@ -34,7 +34,7 @@ import javax.swing.border.EtchedBorder;
 public class LandSelectionUI extends JPanel {
 
 	//Land Selection variables
-	private MapUI mapui = new MapUI();
+	private MapUI mapui = Game.getMapUI();
 	private Player currentPlayer = Game.getPlayer1();
 	private Tile currentTile = mapui.getCurrentTile();
 	private boolean freeLandSelection = true;

@@ -1,6 +1,7 @@
 package edu.gatech.spamr.model;
 
 import edu.gatech.spamr.model.Map.MapType;
+import edu.gatech.spamr.view.MapUI;
 
 /** 
  * The Game class represents the actual application of the game
@@ -30,6 +31,7 @@ public class Game {
 	
 	//stores what map the game is going to use and the difficulty level
 	private static Map gameMap = new Map(MapType.DEFAULT);
+	private static MapUI gameMapUI = new MapUI();
 	private static Difficulty diff;
 	
 	//creates and describes the Difficulty enum
@@ -81,6 +83,10 @@ public class Game {
 	//no setter for map as map class has a way to set type
 	public static Map getMap(){
 		return gameMap;
+	}
+	
+	public static MapUI getMapUI(){
+		return gameMapUI;
 	}
 	
 	public static Difficulty getDifficulty(){
