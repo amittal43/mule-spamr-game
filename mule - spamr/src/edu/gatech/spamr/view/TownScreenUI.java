@@ -14,8 +14,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
-
 import javax.swing.JPanel;
+
+import edu.gatech.spamr.model.Timer;
 
 /** 
  * The TownScreenUI class creates a panel for the player to go to the store
@@ -37,6 +38,8 @@ public class TownScreenUI extends JPanel {
 	private JButton landOfficeButton;
 	private JButton backButton;
 	private GameScreenUI parent;
+	//private Timer storeTimer;
+	//private JLabel timeRemaining;
 	
 	/**
 	 * TownScreenUI is a representation of the various locations a player can go to in the town
@@ -109,10 +112,14 @@ public class TownScreenUI extends JPanel {
 		});
 		add(backButton,BorderLayout.SOUTH);
 		
+		//create a timer count down
+		//storeTimer = new Timer();
+		//timeRemaining = new JLabel("Remaining Time:" + storeTimer);
 		
 		//adds the panel
 		add(buttonPanel,BorderLayout.CENTER);
 		add(town,BorderLayout.PAGE_START);
+		//add(timeRemaining,BorderLayout.NORTH);
 	}
 		public void setParent(GameScreenUI gcui){
 			parent = gcui;
