@@ -11,6 +11,8 @@ import java.awt.Font;
 
 import javax.swing.SwingConstants;
 
+import edu.gatech.spamr.model.Game;
+
 import java.awt.Dimension;
 import java.awt.event.ItemEvent;
 
@@ -71,6 +73,11 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 	//getters and setters
 	public void cardChangeTo(String cardName) {
         cardLayout.show(cards, cardName);
+        //if(cardName.equals("Map")){
+        	//System.out.println("updating Colors");
+        	//Game.getMapUI().updateBorders(Game.getMapUI().getTiles(), Game.getMapUI().getButtons());
+        //} 
+        
 	}
 	
 	public static CardLayout getCardLayout(){

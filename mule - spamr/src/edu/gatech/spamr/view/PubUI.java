@@ -38,6 +38,14 @@ public class PubUI extends JPanel {
 		
 		gambleButton = new JButton("CLICK TO GAMBLE");
 		buttonPanel.add(gambleButton);
+		gambleButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//give gold to player
+				//change turn to next player
+				//update round if necessary
+				parent.cardChangeTo("Town");
+			}
+		});
 	
 		JButton backbutton = new JButton("GO BACK");
 		buttonPanel.add(backbutton);
