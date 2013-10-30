@@ -80,6 +80,9 @@ public class MapUI extends JPanel {
 		}
 	}
 
+	
+	
+	
 	/**
 	 * MapUI creates the initial map
 	 * 

@@ -2,9 +2,12 @@ package edu.gatech.spamr.view;
 
 import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JDialog;
 import javax.swing.JFrame;
+
+import edu.gatech.spamr.model.Game;
 
 /** 
  * The MainAppView class represents the actual application of the game
@@ -83,6 +86,7 @@ public class MainAppView {
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
+	
 	//getters and setters
 	public JFrame getMainFrame(){
 		return mainFrame;

@@ -43,7 +43,7 @@ public class PubUI extends JPanel {
 				//give gold to player
 				//change turn to next player
 				//update round if necessary
-				parent.cardChangeTo("Town");
+				parent.cardChangeTo("Map");
 			}
 		});
 	
