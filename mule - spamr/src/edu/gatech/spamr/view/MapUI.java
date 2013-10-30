@@ -117,7 +117,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				currentTile = mapArray[0];
 				currentButton = button[0];
-				System.out.println(mapArray[0].isOwned());
+				if(mapArray[0].isOwned()){
+					System.out.println(mapArray[0].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[0].setContentAreaFilled(false);
@@ -143,6 +147,11 @@ public class MapUI extends JPanel {
 				//colorTile(mapArray[0],button);
 				currentTile = mapArray[1];
 				currentButton = button[1];
+				if(mapArray[1].isOwned()){
+					System.out.println(mapArray[1].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[1].setPreferredSize(new Dimension(88, 120));
@@ -164,7 +173,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentButton = button[2];
 				currentTile = mapArray[2];
-				
+				if(mapArray[2].isOwned()){
+					System.out.println(mapArray[2].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[2].setPreferredSize(new Dimension(88, 120));
@@ -185,6 +198,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentButton = button[3];
 				currentTile = mapArray[3];
+				if(mapArray[3].isOwned()){
+					System.out.println(mapArray[3].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[3].setPreferredSize(new Dimension(88, 120));
@@ -205,6 +223,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentButton = button[4];
 				currentTile = mapArray[4];
+				if(mapArray[4].isOwned()){
+					System.out.println(mapArray[4].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[4].setPreferredSize(new Dimension(88, 120));
@@ -225,6 +248,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[5];
 				currentButton = button[5];
+				if(mapArray[5].isOwned()){
+					System.out.println(mapArray[5].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[5].setPreferredSize(new Dimension(88, 120));
@@ -245,6 +273,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentButton = button[6];
 				currentTile = mapArray[6];
+				if(mapArray[6].isOwned()){
+					System.out.println(mapArray[6].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[6].setPreferredSize(new Dimension(88, 120));
@@ -265,6 +298,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentButton = button[7];
 				currentTile = mapArray[7];
+				if(mapArray[7].isOwned()){
+					System.out.println(mapArray[7].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[7].setPreferredSize(new Dimension(88, 120));
@@ -285,6 +323,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentButton = button[8];
 				currentTile = mapArray[8];
+				if(mapArray[8].isOwned()){
+					System.out.println(mapArray[8].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		
@@ -307,6 +350,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentButton = button[9];
 				currentTile = mapArray[9];
+				if(mapArray[9].isOwned()){
+					System.out.println(mapArray[9].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[9].setPreferredSize(new Dimension(88, 120));
@@ -328,6 +376,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentButton = button[10];
 				currentTile = mapArray[10];
+				if(mapArray[10].isOwned()){
+					System.out.println(mapArray[10].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[10].setPreferredSize(new Dimension(88, 120));
@@ -348,6 +401,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentButton = button[11];
 				currentTile = mapArray[11];
+				if(mapArray[11].isOwned()){
+					System.out.println(mapArray[11].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[11].setPreferredSize(new Dimension(88, 120));
@@ -368,6 +426,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[12];
 				currentButton = button[12];
+				if(mapArray[12].isOwned()){
+					System.out.println(mapArray[12].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[12].setPreferredSize(new Dimension(88, 120));
@@ -388,6 +451,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[13];
 				currentButton = button[13];
+				if(mapArray[13].isOwned()){
+					System.out.println(mapArray[13].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[13].setPreferredSize(new Dimension(88, 120));
@@ -408,6 +476,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentButton = button[14];
 				currentTile = mapArray[14];
+				if(mapArray[14].isOwned()){
+					System.out.println(mapArray[14].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[14].setPreferredSize(new Dimension(88, 120));
@@ -428,6 +501,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentButton = button[15];
 				currentTile = mapArray[15];
+				if(mapArray[15].isOwned()){
+					System.out.println(mapArray[15].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[15].setPreferredSize(new Dimension(88, 120));
@@ -448,6 +526,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[16];
 				currentButton = button[16];
+				if(mapArray[16].isOwned()){
+					System.out.println(mapArray[16].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[16].setPreferredSize(new Dimension(88, 120));
@@ -468,6 +551,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[17];
 				currentButton = button[17];
+				if(mapArray[17].isOwned()){
+					System.out.println(mapArray[17].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[17].setPreferredSize(new Dimension(88, 120));
@@ -488,6 +576,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[18];
 				currentButton = button[18];
+				if(mapArray[18].isOwned()){
+					System.out.println(mapArray[18].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[18].setPreferredSize(new Dimension(88, 120));
@@ -508,6 +601,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[19];
 				currentButton = button[19];
+				if(mapArray[19].isOwned()){
+					System.out.println(mapArray[19].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[19].setPreferredSize(new Dimension(88, 120));
@@ -528,6 +626,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[20];
 				currentButton = button[20];
+				if(mapArray[20].isOwned()){
+					System.out.println(mapArray[20].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[20].setPreferredSize(new Dimension(88, 120));
@@ -548,6 +651,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[21];
 				currentButton = button[21];
+				if(mapArray[21].isOwned()){
+					System.out.println(mapArray[21].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[21].setPreferredSize(new Dimension(88, 120));
@@ -569,6 +677,7 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[22];
 				currentButton = button[22];
+				
 			}
 		});
 		button[22].setPreferredSize(new Dimension(88, 120));
@@ -602,6 +711,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[23];
 				currentButton = button[23];
+				if(mapArray[23].isOwned()){
+					System.out.println(mapArray[23].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[23].setPreferredSize(new Dimension(88, 120));
@@ -622,6 +736,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[24];
 				currentButton = button[24];
+				if(mapArray[24].isOwned()){
+					System.out.println(mapArray[24].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[24].setPreferredSize(new Dimension(88, 120));
@@ -642,6 +761,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[25];
 				currentButton = button[25];
+				if(mapArray[25].isOwned()){
+					System.out.println(mapArray[25].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[25].setPreferredSize(new Dimension(88, 120));
@@ -662,6 +786,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[26];
 				currentButton = button[26];
+				if(mapArray[26].isOwned()){
+					System.out.println(mapArray[26].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[26].setPreferredSize(new Dimension(88, 120));
@@ -682,6 +811,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[27];
 				currentButton = button[27];
+				if(mapArray[27].isOwned()){
+					System.out.println(mapArray[27].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[27].setPreferredSize(new Dimension(88, 120));
@@ -702,6 +836,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[28];
 				currentButton = button[28];
+				if(mapArray[28].isOwned()){
+					System.out.println(mapArray[28].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[28].setPreferredSize(new Dimension(88, 120));
@@ -722,6 +861,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[29];
 				currentButton = button[29];
+				if(mapArray[29].isOwned()){
+					System.out.println(mapArray[29].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[29].setPreferredSize(new Dimension(88, 120));
@@ -742,6 +886,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[30];
 				currentButton = button[30];
+				if(mapArray[30].isOwned()){
+					System.out.println(mapArray[30].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[30].setPreferredSize(new Dimension(88, 120));
@@ -762,6 +911,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[31];
 				currentButton = button[31];
+				if(mapArray[31].isOwned()){
+					System.out.println(mapArray[31].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 
@@ -784,6 +938,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[32];
 				currentButton = button[32];
+				if(mapArray[32].isOwned()){
+					System.out.println(mapArray[32].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[32].setPreferredSize(new Dimension(88, 120));
@@ -804,6 +963,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[33];
 				currentButton = button[33];
+				if(mapArray[33].isOwned()){
+					System.out.println(mapArray[33].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[33].setPreferredSize(new Dimension(88, 120));
@@ -824,6 +988,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[34];
 				currentButton = button[34];
+				if(mapArray[34].isOwned()){
+					System.out.println(mapArray[34].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[34].setPreferredSize(new Dimension(88, 120));
@@ -844,6 +1013,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[35];
 				currentButton = button[35];
+				if(mapArray[35].isOwned()){
+					System.out.println(mapArray[35].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[35].setPreferredSize(new Dimension(88, 120));
@@ -864,6 +1038,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[36];
 				currentButton = button[36];
+				if(mapArray[36].isOwned()){
+					System.out.println(mapArray[36].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[36].setPreferredSize(new Dimension(88, 120));
@@ -884,6 +1063,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[37];
 				currentButton = button[37];
+				if(mapArray[37].isOwned()){
+					System.out.println(mapArray[37].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[37].setPreferredSize(new Dimension(88, 120));
@@ -904,6 +1088,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[38];
 				currentButton = button[38];
+				if(mapArray[38].isOwned()){
+					System.out.println(mapArray[38].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[38].setPreferredSize(new Dimension(88, 120));
@@ -924,6 +1113,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[39];
 				currentButton = button[39];
+				if(mapArray[39].isOwned()){
+					System.out.println(mapArray[39].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[39].setPreferredSize(new Dimension(88, 120));
@@ -944,6 +1138,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[40];
 				currentButton = button[40];
+				if(mapArray[40].isOwned()){
+					System.out.println(mapArray[40].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[40].setPreferredSize(new Dimension(88, 120));
@@ -984,6 +1183,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[42];
 				currentButton = button[42];
+				if(mapArray[42].isOwned()){
+					System.out.println(mapArray[42].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[42].setPreferredSize(new Dimension(88, 120));
@@ -1004,6 +1208,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[43];
 				currentButton = button[43];
+				if(mapArray[43].isOwned()){
+					System.out.println(mapArray[43].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[43].setPreferredSize(new Dimension(88, 120));
@@ -1024,6 +1233,11 @@ public class MapUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				currentTile = mapArray[44];
 				currentButton = button[44];
+				if(mapArray[44].isOwned()){
+					System.out.println(mapArray[44].getOwner().getName() + " owns this tile");
+				} else {
+					System.out.println("Tile not Owned");
+				}
 			}
 		});
 		button[44].setPreferredSize(new Dimension(88, 120));
