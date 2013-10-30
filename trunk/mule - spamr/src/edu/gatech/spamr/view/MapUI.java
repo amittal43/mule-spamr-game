@@ -73,6 +73,7 @@ public class MapUI extends JPanel {
 	//should be called whenver MapUI is switched to
 	public void updateBorders(Tile[] tiles, JButton[] buts){
 		for (int i = 0; i < tiles.length; i++) {	//tiles and buts should have the same length
+			//System.out.println(i);
 			//System.out.println(tiles[i]);
 			//System.out.println(buts[i]);
 			colorTile(tiles[i], buts[i]);
@@ -1034,7 +1035,6 @@ public class MapUI extends JPanel {
 		colorTile(mapArray[44],button[44]);
 		add(button[44], gbc_button_44);
 		
-
 	}
 	
 	//getters and setters
