@@ -54,10 +54,10 @@ public class PubUI extends JPanel {
 		buttonPanel.add(gambleButton);
 		gambleButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//give gold to player
-				//change turn to next player
-				//update round if necessary
+				//Pub.calcGamble(Game.getCurrentRound(), #timeleft); //int for how much money player gets
+				Game.updateTurn(); //updates turn/round count in game (not current player)
 				parent.cardChangeTo("Map");
+				Timer.startTurn(Game.getCurrentPlayer(), Game.getCurrentRound());
 			}
 		});
 	

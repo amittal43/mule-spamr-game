@@ -13,27 +13,28 @@ package edu.gatech.spamr.model;
 
 public class Round {
 
-	private int roundNumber = 0;
-	private int[] foodRequirement = {3,3,3,3,4,4,4,4,5,5,5,5};
-	private int[] gamblingBonus = {50,50,50,100,100,100,100,150,150,150,150,200};
+	private static int roundNumber = 0;
+	private static final int[] foodRequirement = {3,3,3,3,4,4,4,4,5,5,5,5};
+	private static final int[] gamblingBonus = {50,50,50,100,100,100,100,150,150,150,150,200};
 	
-	public int getRoundNumber(){
+	public static int getRoundNumber(){
 		return roundNumber;
 	}
 	
-	public void setRoundNumber(int round){ // for debugging purposes
+	public static void setRoundNumber(int round){ // for debugging purposes
 		roundNumber = round;
 	}
 	
-	public void nextRound(){
+	public static void nextRound(){
 		roundNumber++;
 	}
 	
-	public int getFoodRequirement(){
+	public static int getFoodRequirement(){
 		return foodRequirement[roundNumber];
 	}
 	
-	public int getGamblingBonus(){
+	public static int getGamblingBonus(){
 		return gamblingBonus[roundNumber];
 	}
+
 }
