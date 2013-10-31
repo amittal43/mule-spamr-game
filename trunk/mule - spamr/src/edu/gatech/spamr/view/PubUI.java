@@ -61,7 +61,7 @@ public class PubUI extends JPanel {
 				
 				//turn change
 				Game.updateTurn(); //updates turn/round count in game (not current player)
-				parent.cardChangeTo("Map");
+				parent.cardChangeTo("TurnScreen");
 				System.out.println("Turn changes to " + Game.getCurrentPlayer().getName());
 				//blocks turn changing?
 				parent.getTurnScreenUI().getTurnDialog().setVisible(true);
