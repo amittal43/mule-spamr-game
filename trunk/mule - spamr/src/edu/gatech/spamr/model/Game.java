@@ -102,7 +102,7 @@ public class Game {
 	
 	//TODO make a real score heuristic
 	private static int scorePlayer(Player p){
-		return p.getName().length();
+		return p.getMoney()/100;
 	}
 	
 	
