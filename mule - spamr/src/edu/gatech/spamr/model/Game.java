@@ -158,6 +158,10 @@ public class Game {
 		return playOrder[currentTurn];
 	}
 	
+	public static void setPlayerOrder(Player[] order){
+		playOrder = order;
+	}
+	
 	//player gets so their data can be updated by player class getters and setters
 	public static Player getPlayer1(){
 		return p1;
