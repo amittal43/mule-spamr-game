@@ -39,7 +39,8 @@ public class StartTurnDialog extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public StartTurnDialog(Player current) {
+	public StartTurnDialog(final Player current) {
+		
 		setMinimumSize(new Dimension(420, 260));
 		setSize(new Dimension(420, 260));
 		setModal(true);
@@ -63,6 +64,8 @@ public class StartTurnDialog extends JDialog {
 		JButton btnNewButton = new JButton("GO");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				System.out.println( current.getName() + " pressed GO");
+				dispose();
 			}
 		});
 		btnNewButton.setFont(new Font("Verdana", Font.BOLD, 16));
