@@ -58,14 +58,11 @@ public class PubUI extends JPanel {
 				System.out.println(Game.getCurrentPlayer().getName() + " recieves " + Game.getCurrentRound().getGamblingBonus() + " money!");
 				//updates money
 				Game.getCurrentPlayer().setMoney(Game.getCurrentPlayer().getMoney() + (Game.getCurrentRound().getGamblingBonus()));
+				
+				//turn change
 				Game.updateTurn(); //updates turn/round count in game (not current player)
 				parent.cardChangeTo("Map");
-				
-				//needs to start turn after button press resolves it is currently starting the turn and 
-				//letting it time out before the map is shown
-				//Timer.startTurn(Game.getCurrentPlayer(), Game.getCurrentRound());
 				System.out.println("Turn changes to " + Game.getCurrentPlayer().getName());
-				
 				//starts Timer Thread
 				(new Thread(new Timer())).start(); //needs to deal with interrupting current turn's timer
 				
