@@ -60,6 +60,7 @@ public class PubUI extends JPanel {
 				//needs to start turn after button press resolves it is currently starting the turn and 
 				//letting it time out before the map is shown
 				//Timer.startTurn(Game.getCurrentPlayer(), Game.getCurrentRound());
+				System.out.println("Turn changes to " + Game.getCurrentPlayer().getName());
 			}
 		});
 	
