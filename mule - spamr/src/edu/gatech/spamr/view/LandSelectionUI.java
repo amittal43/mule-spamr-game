@@ -14,6 +14,7 @@ import javax.swing.JLabel;
 import edu.gatech.spamr.model.Game;
 import edu.gatech.spamr.model.Player;
 import edu.gatech.spamr.model.Tile;
+import edu.gatech.spamr.model.Timer;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -83,10 +84,13 @@ public class LandSelectionUI extends JPanel {
 				System.out.println("Land Selection Phase Over!");
 				parent.cardChangeTo("TurnScreen");
 				parent.setLandSelectionOver();
+
 				//Game.decidePlayOrder(new Player[]{Game.getPlayer1(),Game.getPlayer2(), Game.getPlayer3(), Game.getPlayer4()});
 				//parent.getTurnScreenUI().getTurnDialog().setCurrentPlayerText(Game.getCurrentPlayer().getName());
 				parent.getTurnScreenUI().getTurnDialog().setVisible(true);
-				}
+				(new Thread(new Timer())).start();
+			}
+
 		}
 	}
 	
@@ -165,9 +169,9 @@ public class LandSelectionUI extends JPanel {
 						return;
 					}
 				}
-					
 			}
 		});
+		
 		purchaseButton.setFont(new Font("Verdana", Font.BOLD, 11));
 		purchaseButton.setBounds(971, 580, 122, 45);
 		add(purchaseButton);
