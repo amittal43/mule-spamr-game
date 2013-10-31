@@ -78,7 +78,7 @@ public class Game {
 	}
 	
 	
-	//should determine play order
+	//should determine play order (if 2 players have the same score the later one moves up in turn order)
 	public static void decidePlayOrder(Player[] players){
 		int[] pscores = new int[players.length]; //array of player scores
 		for(int i = 0; i < players.length; i++) {
@@ -102,7 +102,7 @@ public class Game {
 	
 	//TODO make a real score heuristic
 	private static int scorePlayer(Player p){
-		return p.getMoney()/100;
+		return p.getMoney()/100; //currently just keeps reversing turn order
 	}
 	
 	
