@@ -45,12 +45,12 @@ public class PubUI extends JPanel {
 		setPreferredSize((new Dimension (1280,800)));
 		setBackground(Color.LIGHT_GRAY);
 		JPanel buttonPanel = new JPanel(new FlowLayout());	//creates the panel
-		//buttonPanel.setPreferredSize(new Dimension(200, 800));
+		
 		setLayout(new BorderLayout());
 		JLabel pub =  new JLabel("PUB",JLabel.CENTER);	//title
-		//pub.setBackground(Color.DARK_GRAY);
+		
 		pub.setFont(new Font("Serif", Font.BOLD, 48));
-		//setLayout(new BorderLayout());
+
 		add(pub, BorderLayout.NORTH);
 		add(buttonPanel, BorderLayout.EAST);
 		
