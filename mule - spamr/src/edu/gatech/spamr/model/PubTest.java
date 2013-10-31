@@ -4,6 +4,19 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+/** 
+ * The PubTest class represents a test in which we the developers can
+ * determine if the player can gamble his or her resources and time 
+ * remaining within the turn
+ *  
+ * @author Sean Lachenberg
+ * @author Aditya Mittal
+ * @author Mike Vail
+ * @author Puja Sheth
+ * @author Raj Prateek
+ * @version 1.0 10/22/2013 
+ */
+
 public class PubTest {
 
 	@Test

@@ -20,13 +20,26 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
+/**
+ * PubUI class to create a location in which the players can gamble
+ * 
+ * @author Puja Sheth
+ * @author Mike Vail
+ * @author Sean Lachenberg
+ * @author Raj Prateek
+ * @author Aditya Mittal
+ *
+ */
 
 public class PubUI extends JPanel {
 	
-	 
 	private GameScreenUI parent;
 	
 	JButton gambleButton;
+	
+	/**
+	 * PubUI panel creation to include a border layout and various buttons
+	 */
 	
 	public PubUI(){
 		setPreferredSize((new Dimension (1280,800)));

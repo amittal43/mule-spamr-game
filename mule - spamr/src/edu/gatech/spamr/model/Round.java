@@ -19,9 +19,21 @@ public class Round {
 	private static final int[] foodRequirement = {3,3,3,3,4,4,4,4,5,5,5,5};
 	private static final int[] gamblingBonus = {50,50,50,100,100,100,100,150,150,150,150,200};
 
+	/**
+	 * getRoundNumber method
+	 * 
+	 * @return roundNumber
+	 */
+	
 	public static int getRoundNumber(){
 		return roundNumber;
 	}
+	
+	/**
+	 * calcTurn method which calculates the players' turns based off the players' scores
+	 * 
+	 * @return turn of the player that should be starting
+	 */
 
 	public Player[] calcTurn(){
 		Player[] turn = new Player[4];
@@ -46,18 +58,39 @@ public class Round {
 
 	}
 
+	/**
+	 * setRoundNumber used for debugging purposes to round the number
+	 * @param round
+	 */
+	
 	public static void setRoundNumber(int round){ // for debugging purposes
 		roundNumber = round;
 	}
 
+	/**
+	 * nextRound method increases roundNumber variable
+	 */
+	
 	public static void nextRound(){
 		roundNumber++;
 	}
 
+	/**
+	 * getFoodRequirement method to obtain food of player
+	 * 
+	 * @return foodRequirement
+	 */
+	
 	public static int getFoodRequirement(){
 		return foodRequirement[roundNumber];
 	}
 
+	/**
+	 * getGambingBonus method to obtain bonus based on round
+	 * 
+	 * @return gamblingBonus
+	 */
+	
 	public static int getGamblingBonus(){
 		return gamblingBonus[roundNumber];
 	}
