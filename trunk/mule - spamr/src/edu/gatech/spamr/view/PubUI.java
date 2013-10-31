@@ -63,8 +63,7 @@ public class PubUI extends JPanel {
 				Game.updateTurn(); //updates turn/round count in game (not current player)
 				parent.cardChangeTo("Map");
 				System.out.println("Turn changes to " + Game.getCurrentPlayer().getName());
-				//starts Timer Thread
-				(new Thread(new Timer())).start(); //needs to deal with interrupting current turn's timer
+				parent.getTurnScreenUI().getTurnDialog().setVisible(true);
 				
 			}
 		});

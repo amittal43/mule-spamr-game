@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 
 import edu.gatech.spamr.model.Game;
 import edu.gatech.spamr.model.Player;
+import edu.gatech.spamr.model.Timer;
 
 import java.awt.Font;
 import java.awt.event.ActionListener;
@@ -65,6 +66,7 @@ public class StartTurnDialog extends JDialog {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println( current.getName() + " pressed GO");
+				(new Thread(new Timer())).start(); //starts timer
 				dispose();
 			}
 		});
