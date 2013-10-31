@@ -31,6 +31,7 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 
 	//GameScreenUI Variables
 	private MapUI mapui = new MapUI();
+	private TurnScreenUI turnui = new TurnScreenUI(this);
 	private PubUI pubui = new PubUI();
 	private LandSelectionUI lsui = new LandSelectionUI();
 	private boolean landSelectionOver = false;
@@ -45,7 +46,6 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 	 * 
 	 * @return a screen that has all the different locations a player can go to
 	 */
-	@SuppressWarnings("deprecation")
 	public GameScreenUI() {
 		
 		//setting preferences
@@ -54,8 +54,8 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 		setBackground(Color.DARK_GRAY);
 		
 		//adding each "card" to the panel
-		cards.add(mapui, "Map");
-		mapui.setParent(this);
+		cards.add(turnui, "TurnScreen");
+		turnui.setParent(this);
 		cards.add(lsui, "LandSelection");
 		lsui.setParent(this);
 		cards.add(tsui, "Town");
@@ -100,6 +100,13 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 		return landSelectionOver;
 	}
 	
+	public MapUI getMapUI(){
+		return mapui;
+	}
+	
+	public TurnScreenUI getTurnScreenUI(){
+		return turnui;
+	}
 	
 	
 }
