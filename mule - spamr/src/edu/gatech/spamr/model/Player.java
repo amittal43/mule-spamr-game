@@ -1,5 +1,7 @@
 package edu.gatech.spamr.model;
 
+import java.awt.Color;
+
 /** 
  * The Player class represents the an information holder which
  * contains all the player related information i.e. name, resources
@@ -38,7 +40,18 @@ public class Player {
 	}
 	
 	
-	public enum PlayerColor{BLUE, GREEN, RED, YELLOW};
+	public enum PlayerColor{BLUE(Color.BLUE), GREEN(Color.GREEN), RED(Color.RED), YELLOW(Color.YELLOW), BLACK(Color.BLACK);
+	
+	private final Color col;
+	
+	PlayerColor(Color c){
+		col = c;
+	}
+	
+	public Color getRGB(){
+		return col;
+	}
+	}
 	
 	//constructors
 	public Player(){
@@ -126,6 +139,9 @@ public class Player {
 		ore = o;
 	}
 	
+	public Color getRGB(){
+		return color.getRGB();
+	}
 }
 
 
