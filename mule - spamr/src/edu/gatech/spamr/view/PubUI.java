@@ -57,7 +57,9 @@ public class PubUI extends JPanel {
 				//Pub.calcGamble(Game.getCurrentRound(), #timeleft); //int for how much money player gets
 				Game.updateTurn(); //updates turn/round count in game (not current player)
 				parent.cardChangeTo("Map");
-				Timer.startTurn(Game.getCurrentPlayer(), Game.getCurrentRound());
+				//needs to start turn after button press resolves it is currently starting the turn and 
+				//letting it time out before the map is shown
+				//Timer.startTurn(Game.getCurrentPlayer(), Game.getCurrentRound());
 			}
 		});
 	
