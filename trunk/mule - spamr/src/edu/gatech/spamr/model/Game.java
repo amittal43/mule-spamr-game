@@ -23,8 +23,6 @@ public class Game {
 	private static int numRounds = 6;           //initialize at default number of rounds
 	private final int MAX_TURNS = 4;			//we assume a 4 player game so it has 4 turns per round
 	
-	
-	
 	//creates player object for each person
 	private static Player p1 = new Player();
 	private static Player p2 = new Player();
@@ -73,40 +71,21 @@ public class Game {
 	 */
 	public static void updateTurn(){
 		if (currentTurn == 3){
+			playOrder = currentRound.calcTurn();
 			currentTurn = 0;
 			currentRound.nextRound();//updates the round number
-			decidePlayOrder(playOrder);//updates the order of play
 		} else {
 			currentTurn++;
 		}
 	}
-	
+
 	
 	/**
 	 * determines play order based off of score
 	 * in the case of a tie in score the person who acted last in the previous turn has priority
 	 * @param players
 	 */
-	public static void decidePlayOrder(Player[] players){
-		int[] pscores = new int[players.length]; //array of player scores
-		for(int i = 0; i < players.length; i++) {
-			pscores[i] = scorePlayer(players[i]);
-		}
-		
-		Player[] toReturn = new Player[players.length];
-		for(int i = 0; i < players.length;i++){
-			int min = 1000;
-			int minInd = -1;
-			for(int j = 0; j < players.length; j++) {
-				min = Math.min(pscores[j],min);
-				if (min == pscores[j])
-					minInd = j;
-			}
-			toReturn[i] = players[minInd];
-			pscores[minInd] = 1001;
-		}
-		playOrder = toReturn;
-	}
+	
 	
 	//TODO make a real score heuristic
 	private static int scorePlayer(Player p){
