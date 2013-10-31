@@ -139,11 +139,9 @@ public class Player {
 		ore = o;
 	}
 	
+
 	public Color getRGB(){
 		return color.getRGB();
 	}
 }
-
-
-
 
