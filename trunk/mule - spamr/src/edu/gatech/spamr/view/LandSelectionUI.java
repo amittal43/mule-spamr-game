@@ -84,9 +84,9 @@ public class LandSelectionUI extends JPanel {
 				System.out.println("Land Selection Phase Over!");
 				parent.cardChangeTo("TurnScreen");
 				parent.setLandSelectionOver();
-
+				Game.setPlayerOrder(Game.getCurrentRound().calcTurn());
 				//Game.decidePlayOrder(new Player[]{Game.getPlayer1(),Game.getPlayer2(), Game.getPlayer3(), Game.getPlayer4()});
-				//parent.getTurnScreenUI().getTurnDialog().setCurrentPlayerText(Game.getCurrentPlayer().getName());
+				parent.getTurnScreenUI().getTurnDialog().setCurrentPlayerText(Game.getCurrentPlayer().getName());
 				parent.getTurnScreenUI().getTurnDialog().setVisible(true);
 				//(new Thread(new Timer())).start();
 			}
