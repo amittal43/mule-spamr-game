@@ -54,8 +54,9 @@ public class MapUI extends JPanel {
 	private JButton[] button = new JButton[45];
 	private GameScreenUI parent;
 	private Tile currentTile = mapArray[0];
-	private JButton currentButton;
-	int i;
+	private Tile lastTile;
+	private JButton currentButton = button[22]; // town tile border will be null when cursor moves
+	private JButton lastButton = button[22];
 	
 	public void colorTile(Tile tile, JButton button){
 		if (tile.isOwned()){
@@ -71,12 +72,13 @@ public class MapUI extends JPanel {
 		}
 	
 	//should be called whenver MapUI is switched to
-	public void updateBorders(Tile[] tiles, JButton[] buts){
-		for (int i = 0; i < tiles.length; i++) {	//tiles and buts should have the same length
+	public void updateBorders(){
+		for (int i = 0; i < mapArray.length; i++) {	//tiles and buts should have the same length
 			//System.out.println(i);
 			//System.out.println(tiles[i]);
 			//System.out.println(buts[i]);
-			colorTile(tiles[i], buts[i]);
+			if(mapArray[i].isOwned())
+				button[i].setBorder(new LineBorder(mapArray[i].getOwner().getRGB(),2));;
 		}
 	}
 
@@ -90,7 +92,6 @@ public class MapUI extends JPanel {
 	 */
 	public MapUI() {
 		
-
 		
 		//UI preferences
 		setBackground(new Color(151, 133, 31));
@@ -115,16 +116,24 @@ public class MapUI extends JPanel {
 		button[0] = new JButton("0");
 		button[0].addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				lastTile = currentTile;
 				currentTile = mapArray[0];
+				lastButton = currentButton;
 				currentButton = button[0];
+				if(lastTile.isOwned()==false)
+					lastButton.setBorder(null);
 				if(mapArray[0].isOwned()){
 					System.out.println(mapArray[0].getOwner().getName() + " owns this tile");
 				} else {
 					System.out.println("Tile not Owned");
+					currentButton.setBorder(new LineBorder(Color.BLACK,2));
+
 				}
 			}
 		});
 		button[0].setContentAreaFilled(false);
+		if(mapArray[0].isOwned())
+			button[0].setBorder(new LineBorder(mapArray[0].getOwner().getRGB(), 2));
 		button[0].setBorder(null);
 		button[0].setIcon(new ImageIcon(MapUI.class.getResource(mapArray[0].getTileType().getIcon())));
 		button[0].setMaximumSize(new Dimension(88, 120));
@@ -145,12 +154,18 @@ public class MapUI extends JPanel {
 		button[1].addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//colorTile(mapArray[0],button);
+				lastTile = currentTile;
 				currentTile = mapArray[1];
+				lastButton = currentButton;
 				currentButton = button[1];
+				if(lastTile.isOwned()==false)
+					lastButton.setBorder(null);
 				if(mapArray[1].isOwned()){
 					System.out.println(mapArray[1].getOwner().getName() + " owns this tile");
 				} else {
 					System.out.println("Tile not Owned");
+					currentButton.setBorder(new LineBorder(Color.BLACK,2));
+
 				}
 			}
 		});
@@ -171,12 +186,18 @@ public class MapUI extends JPanel {
 		button[2] = new JButton("0");
 		button[2].addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				lastButton = currentButton;
 				currentButton = button[2];
+				lastTile = currentTile;
 				currentTile = mapArray[2];
+				if(lastTile.isOwned()==false)
+					lastButton.setBorder(null);
 				if(mapArray[2].isOwned()){
 					System.out.println(mapArray[2].getOwner().getName() + " owns this tile");
 				} else {
 					System.out.println("Tile not Owned");
+					button[2].setBorder(new LineBorder(Color.BLACK,2));
+
 				}
 			}
 		});
