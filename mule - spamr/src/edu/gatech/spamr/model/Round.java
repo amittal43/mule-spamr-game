@@ -23,8 +23,8 @@ public class Round {
 		return roundNumber;
 	}
 
-	public int[] calcTurn(){
-		int[] turn = new int[4];
+	public Player[] calcTurn(){
+		Player[] turn = new Player[4];
 		int score1 = Game.getPlayer1().calcScore();
 		int score2 = Game.getPlayer2().calcScore();
 		int score3 = Game.getPlayer3().calcScore();
@@ -34,13 +34,13 @@ public class Round {
 		Arrays.sort(array);
 		for(int i =0;i<4;i++){
 			if (array[i] == score1)
-				turn[i]=Game.getPlayer1().getPlayerNum();
+				turn[i]=Game.getPlayer1();
 			else if(array[i] == score2)
-				turn[i]=Game.getPlayer2().getPlayerNum();
+				turn[i]=Game.getPlayer2();
 			else if (array[i] == score3)
-				turn[i]=Game.getPlayer3().getPlayerNum();
+				turn[i]=Game.getPlayer3();
 			else if (array[i] == score4)
-				turn[i]=Game.getPlayer4().getPlayerNum();
+				turn[i]=Game.getPlayer4();
 		}
 		return turn;
 
