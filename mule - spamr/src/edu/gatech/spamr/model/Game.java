@@ -70,7 +70,8 @@ public class Game {
 	public static void updateTurn(){
 		if (currentTurn == 3){
 			currentTurn = 0;
-			currentRound.nextRound();
+			currentRound.nextRound();//updates the round number
+			decidePlayOrder(playOrder);//updates the order of play
 		} else {
 			currentTurn++;
 		}
@@ -78,7 +79,7 @@ public class Game {
 	
 	
 	//should determine play order
-	public void decidePlayOrder(Player[] players){
+	public static void decidePlayOrder(Player[] players){
 		int[] pscores = new int[players.length]; //array of player scores
 		for(int i = 0; i < players.length; i++) {
 			pscores[i] = scorePlayer(players[i]);
@@ -99,7 +100,8 @@ public class Game {
 		playOrder = toReturn;
 	}
 	
-	private int scorePlayer(Player p){
+	//TODO make a real score heuristic
+	private static int scorePlayer(Player p){
 		return p.getName().length();
 	}
 	
