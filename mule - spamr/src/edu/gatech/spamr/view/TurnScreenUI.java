@@ -51,6 +51,7 @@ public class TurnScreenUI extends JPanel {
 		dialog = new JDialog(SwingUtilities.getWindowAncestor(parent));
 		dialog.setSize(new Dimension(420,260));
 		dialog.setVisible(false);
+		turndialog.setParent(this);
 		if(!SwingUtilities.isEventDispatchThread())
 			dialog.setContentPane(turndialog.getContentPane());
 		//add(currentTurn);
