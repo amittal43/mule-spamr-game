@@ -1,12 +1,20 @@
 package edu.gatech.spamr.model;
 
-public class Timer {
+public class Timer implements Runnable {
 	
 	private static long turnTime = 0;
 	private static long turnEnd = 0;
 	private static long timeLeft = 0;
 	static boolean endTurn = false;
 
+	//Runnable method
+	public void run() {
+        System.out.println("Timer is running!");
+        startTurn(Game.getCurrentPlayer(), Game.getCurrentRound());
+    }
+	
+	
+	/////////methods/////////
 	public static long calcTurnTime(Player player, Round round){
 		if(player.getFood() >= round.getFoodRequirement()){ // no food shortage
 			return 50000; //50.00 seconds
@@ -52,10 +60,13 @@ public class Timer {
 		setTurnTime(player,round);
 		setTurnEndTime(player,round);
 		while(System.currentTimeMillis()<turnEnd && endTurn==false){
-			System.out.println(getSecondsRemaining()); // just to check
+			//System.out.println(getSecondsRemaining()); // just to check
 		}
 		setTimeLeft(getTimeRemaining());
 		System.out.println("Turn is over with " + ((double)timeLeft/1000) + " seconds left");
 	}
+	
+	
+	
 	
 }
