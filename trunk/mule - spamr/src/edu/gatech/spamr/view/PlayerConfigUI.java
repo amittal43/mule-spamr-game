@@ -372,6 +372,8 @@ public class PlayerConfigUI extends JPanel {
 					Game.getPlayer1().setColor(currentColor);
 					Game.getPlayer1().setRace(currentRace);
 					Game.getPlayer1().setMoney(currentRace.getStartingMoney());
+					Game.getPlayer1().setFood(Game.getDifficulty().getStartingFood());
+					Game.getPlayer1().setEnergy(Game.getDifficulty().getStartingEnergy());
 					
 					System.out.println();
 					System.out.println("Player 1's Name: " + Game.getPlayer1().getName());
@@ -389,6 +391,8 @@ public class PlayerConfigUI extends JPanel {
 					Game.getPlayer2().setColor(currentColor);
 					Game.getPlayer2().setRace(currentRace);
 					Game.getPlayer2().setMoney(currentRace.getStartingMoney());
+					Game.getPlayer2().setFood(Game.getDifficulty().getStartingFood());
+					Game.getPlayer2().setEnergy(Game.getDifficulty().getStartingEnergy());
 					
 					
 					System.out.println();
@@ -407,6 +411,8 @@ public class PlayerConfigUI extends JPanel {
 					Game.getPlayer3().setColor(currentColor);
 					Game.getPlayer3().setRace(currentRace);
 					Game.getPlayer3().setMoney(currentRace.getStartingMoney());
+					Game.getPlayer3().setFood(Game.getDifficulty().getStartingFood());
+					Game.getPlayer3().setEnergy(Game.getDifficulty().getStartingEnergy());
 					
 					System.out.println();
 					System.out.println("Player 3's Name: " + Game.getPlayer3().getName());
@@ -425,6 +431,9 @@ public class PlayerConfigUI extends JPanel {
 					Game.getPlayer4().setColor(currentColor);
 					Game.getPlayer4().setRace(currentRace);
 					Game.getPlayer4().setMoney(currentRace.getStartingMoney());
+					Game.getPlayer4().setFood(Game.getDifficulty().getStartingFood());
+					Game.getPlayer4().setEnergy(Game.getDifficulty().getStartingEnergy());
+					
 					
 					System.out.println();
 					System.out.println("Player 4's Name: " + Game.getPlayer4().getName());
