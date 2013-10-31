@@ -2,12 +2,12 @@ package edu.gatech.spamr.model;
 
 public class Timer {
 	
-	private long turnTime = 0;
-	private long turnEnd = 0;
-	private long timeLeft = 0;
-	boolean endTurn = false;
+	private static long turnTime = 0;
+	private static long turnEnd = 0;
+	private static long timeLeft = 0;
+	static boolean endTurn = false;
 
-	public long calcTurnTime(Player player, Round round){
+	public static long calcTurnTime(Player player, Round round){
 		if(player.getFood() >= round.getFoodRequirement()){ // no food shortage
 			return 50000; //50.00 seconds
 		}
@@ -23,24 +23,24 @@ public class Timer {
 		return turnTime;
 	}
 	
-	public void setTurnTime(Player player, Round round){
+	public static void setTurnTime(Player player, Round round){
 		turnTime = calcTurnTime(player,round);
 	}
 	
-	public void setTurnEndTime(Player player, Round round){ // must setTurnTime before this is called
+	public static void setTurnEndTime(Player player, Round round){ // must setTurnTime before this is called
 		long start = System.currentTimeMillis();
 		turnEnd = start + turnTime;
 	}
 	
-	public long getTimeRemaining(){
+	public static long getTimeRemaining(){
 		return turnEnd - System.currentTimeMillis();
 	}
 	
-	public double getSecondsRemaining(){
+	public static double getSecondsRemaining(){
 		return (double)getTimeRemaining()/1000;
 	}
 	
-	public void setTimeLeft(long time){
+	public static void setTimeLeft(long time){
 		timeLeft = time;
 	}
 	
@@ -48,7 +48,7 @@ public class Timer {
 		endTurn = true;
 	}
 	
-	public void startTurn(Player player, Round round){
+	public static void startTurn(Player player, Round round){
 		setTurnTime(player,round);
 		setTurnEndTime(player,round);
 		while(System.currentTimeMillis()<turnEnd && endTurn==false){

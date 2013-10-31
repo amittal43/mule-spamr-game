@@ -18,16 +18,21 @@ import edu.gatech.spamr.view.MapUI;
 public class Game {
 	
 	//turn & round variables
-	private static int currentRound = 1;		//game starts in round 1 
-	private static int currentTurn = 1;			//game starts with the first player going
+	private static Round currentRound = new Round();		//game starts in round 0
+	private static int currentTurn = 0;			//game starts with the first player going
 	private static int numRounds = 6;           //initialize at default number of rounds
 	private final int MAX_TURNS = 4;			//we assume a 4 player game so it has 4 turns per round
+	
+	
 	
 	//creates player object for each person
 	private static Player p1 = new Player();
 	private static Player p2 = new Player();
 	private static Player p3 = new Player();
 	private static Player p4 = new Player();
+	
+	//play order
+	private static Player[] playOrder = new Player[]{p1, p2, p3, p4};
 	
 	//stores what map the game is going to use and the difficulty level
 	private static Map gameMap = new Map(MapType.DEFAULT);
@@ -62,21 +67,50 @@ public class Game {
 	}
 	
 	//Should be called at the end of a player's turn once to update who's turn it is and what round the game is in
-	public void updateTurn(){
-		if (currentTurn == 4){
-			currentTurn = 1;
-			currentRound++;
+	public static void updateTurn(){
+		if (currentTurn == 3){
+			currentTurn = 0;
+			currentRound.nextRound();
 		} else {
 			currentTurn++;
 		}
 	}
+	
+	
+	//should determine play order
+	public void decidePlayOrder(Player[] players){
+		int[] pscores = new int[players.length]; //array of player scores
+		for(int i = 0; i < players.length; i++) {
+			pscores[i] = scorePlayer(players[i]);
+		}
+		
+		Player[] toReturn = new Player[players.length];
+		for(int i = 0; i < players.length;i++){
+			int min = 1000;
+			int minInd = -1;
+			for(int j = 0; j < players.length; j++) {
+				min = Math.min(pscores[j],min);
+				if (min == pscores[j])
+					minInd = j;
+			}
+			toReturn[i] = players[minInd];
+			pscores[minInd] = 1001;
+		}
+		playOrder = toReturn;
+	}
+	
+	private int scorePlayer(Player p){
+		return p.getName().length();
+	}
+	
+	
 	
 	//getters and setters 
 	public static int getCurrentTurn(){
 		return currentTurn;
 	}
 	
-	public static int getCurrentRound(){
+	public static Round getCurrentRound(){
 		return currentRound;
 	}
 	
@@ -103,6 +137,15 @@ public class Game {
 	
 	public static int getNumRounds(){
 		return numRounds;
+	}
+	
+	//playorder getter/setters
+	public Player[] getPlayOrder() {
+		return playOrder;
+	}
+	
+	public static Player getCurrentPlayer(){
+		return playOrder[currentTurn];
 	}
 	
 	//player gets so their data can be updated by player class getters and setters
