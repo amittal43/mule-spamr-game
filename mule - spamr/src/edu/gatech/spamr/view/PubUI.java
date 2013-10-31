@@ -58,7 +58,7 @@ public class PubUI extends JPanel {
 				int bonus = Pub.calcGamble(Game.getCurrentRound(), Timer.getTimeRemaining()); //int for how much money player gets
 				System.out.println(Game.getCurrentPlayer().getName() + " recieves " + bonus + " money!");
 				
-				Game.getCurrentPlayer().setMoney(Game.getCurrentPlayer().getMoney() + bonus);
+				Game.getCurrentPlayer().updateMoney(bonus);
 				
 				
 				//turn change
