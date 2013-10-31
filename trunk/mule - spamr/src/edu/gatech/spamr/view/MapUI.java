@@ -54,7 +54,7 @@ public class MapUI extends JPanel {
 	private JButton[] button = new JButton[45];
 	private GameScreenUI parent;
 	private Tile currentTile = mapArray[0];
-	private Tile lastTile;
+	private Tile lastTile = mapArray[22]; // just to initialize
 	private JButton currentButton = button[22]; // town tile border will be null when cursor moves
 	private JButton lastButton = button[22];
 	
