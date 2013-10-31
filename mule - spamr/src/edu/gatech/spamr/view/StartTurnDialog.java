@@ -23,6 +23,7 @@ public class StartTurnDialog extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	JLabel lblPlayer = new JLabel();
+	private TurnScreenUI parent;
 
 	/**
 	 * Launch the application.
@@ -77,5 +78,9 @@ public class StartTurnDialog extends JDialog {
 	
 	public void setCurrentPlayerText(String current){
 		lblPlayer.setText(current);
+	}
+	
+	public void setParent(TurnScreenUI turnui){
+		parent = turnui;
 	}
 }
