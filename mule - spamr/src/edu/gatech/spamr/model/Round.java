@@ -41,8 +41,14 @@ public class Round {
 		int score2 = Game.getPlayer2().calcScore();
 		int score3 = Game.getPlayer3().calcScore();
 		int score4 = Game.getPlayer4().calcScore();
+		
+//		int score1 = player1.calcScore();
+//		int score2 = player2.calcScore();
+//		int score3 = player3.calcScore();
+//		int score4 = player4.calcScore();
+		
 
-		int array[] = {score1, score2, score3, score4};
+		int array[] = {score1, score2, score3, score4}; //least score goes first
 		Arrays.sort(array);
 		for(int i =0;i<4;i++){
 			if (array[i] == score1)
@@ -53,6 +59,14 @@ public class Round {
 				turn[i]=Game.getPlayer3();
 			else if (array[i] == score4)
 				turn[i]=Game.getPlayer4();
+//			if (array[i] == score1)
+//				turn[i]= player1;
+//			else if(array[i] == score2)
+//				turn[i]= player2;
+//			else if (array[i] == score3)
+//				turn[i]= player3;
+//			else if (array[i] == score4)
+//				turn[i]= player4;
 		}
 		return turn;
 
