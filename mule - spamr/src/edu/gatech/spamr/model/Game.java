@@ -66,7 +66,11 @@ public class Game {
 		}
 	}
 	
-	//Should be called at the end of a player's turn once to update who's turn it is and what round the game is in
+	/**
+	 * Should be called at the end of a player's turn once 
+	 * to update who's turn it is and what round the game is in
+	 * it also updates the order of play
+	 */
 	public static void updateTurn(){
 		if (currentTurn == 3){
 			currentTurn = 0;
@@ -78,7 +82,11 @@ public class Game {
 	}
 	
 	
-	//should determine play order (if 2 players have the same score the later one moves up in turn order)
+	/**
+	 * determines play order based off of score
+	 * in the case of a tie in score the person who acted last in the previous turn has priority
+	 * @param players
+	 */
 	public static void decidePlayOrder(Player[] players){
 		int[] pscores = new int[players.length]; //array of player scores
 		for(int i = 0; i < players.length; i++) {
