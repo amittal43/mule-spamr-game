@@ -109,6 +109,11 @@ public class Player {
 		return energy;
 	}
 	
+	public int calcScore(){
+		int score = getMoney()/100 + getOre() +getFood() + getEnergy();
+		return score;
+	}
+	
 	public void setEnergy(int e){
 		energy = e;
 	}
