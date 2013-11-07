@@ -41,16 +41,24 @@ public class Game {
 	
 	//creates and describes the Difficulty enum
 	//each enum holds the starting food and energy for players in the game
-	public enum Difficulty{BEGINNER(8,4,6), STANDARD(4,2,12), TOURNAMENT(4,2,12);
+	public enum Difficulty{BEGINNER(8,4,6,16,16,0,25), STANDARD(4,2,12,8,8,8,14), TOURNAMENT(4,2,12,8,8,8,14);
 		
 		private final int startingFood;
 		private final int startingEnergy;
 		private final int numRounds;
+		private final int storeFood;
+		private final int storeEnergy;
+		private final int storeOre;
+		private final int storeMULE;
 		
-		Difficulty(int food, int energy, int rounds){
+		Difficulty(int food, int energy, int rounds, int sFood, int sEnergy, int sOre, int sMULE){
 			startingFood = food;
 			startingEnergy = energy;
 			numRounds = rounds;
+			storeFood = sFood;
+			storeEnergy = sEnergy;
+			storeOre = sOre;
+			storeMULE = sMULE;
 		}
 		
 		public int getStartingFood(){
@@ -63,6 +71,22 @@ public class Game {
 		
 		public int getNumRounds(){
 			return numRounds;
+		}
+		
+		public int getStoreFood(){
+			return storeFood;
+		}
+		
+		public int getStoreEnergy(){
+			return storeEnergy;
+		}
+		
+		public int getStoreOre(){
+			return storeOre;
+		}
+		
+		public int getStoreMULES(){
+			return storeMULE;
 		}
 	}
 	
