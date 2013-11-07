@@ -55,7 +55,7 @@ public class PubUI extends JPanel {
 		add(buttonPanel, BorderLayout.EAST);
 		
 		gambleButton = new JButton("CLICK TO GAMBLE");
-		gambleButton.addActionListener(new ActionListener() {
+		/*gambleButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Pub pub = new Pub();
 				
@@ -63,22 +63,24 @@ public class PubUI extends JPanel {
 				
 			
 			}
-		});
+		});*/
 		buttonPanel.add(gambleButton);
 		gambleButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				int bonus = Pub.calcGamble(Game.getCurrentRound(), Timer.getTimeRemaining()); //int for how much money player gets
+				//updates player money
+				int bonus = Pub.calcGamble(Game.getCurrentRound(), Timer.getTimeRemaining()); 
 				System.out.println(Game.getCurrentPlayer().getName() + " recieves " + bonus + " money!");
-				
 				Game.getCurrentPlayer().updateMoney(bonus);
-				
 				
 				//turn change
 				Game.updateTurn(); //updates turn/round count in game (not current player)
-				parent.cardChangeTo("TurnScreen");
 				System.out.println("Turn changes to " + Game.getCurrentPlayer().getName());
-				//blocks turn changing?
+				
+				//screen change
+				parent.cardChangeTo("TurnScreen");
+				
+				//pop-up
 				parent.getTurnScreenUI().getTurnDialog().setVisible(true);
 				
 			}

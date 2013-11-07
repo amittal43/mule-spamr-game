@@ -36,37 +36,33 @@ public class Round {
 	 */
 
 	public Player[] calcTurn(){
-		Player[] turn = new Player[4];
+		Player[] turn = new Player[4];	//stores players in order of score
+		boolean[] notUsed = {true, true, true, true};
+		//calculates score
 		int score1 = Game.getPlayer1().calcScore();
 		int score2 = Game.getPlayer2().calcScore();
 		int score3 = Game.getPlayer3().calcScore();
 		int score4 = Game.getPlayer4().calcScore();
 		
-//		int score1 = player1.calcScore();
-//		int score2 = player2.calcScore();
-//		int score3 = player3.calcScore();
-//		int score4 = player4.calcScore();
-		
-
-		int array[] = {score1, score2, score3, score4}; //least score goes first
+		//sorts scores
+		int array[] = {score1, score2, score3, score4};
 		Arrays.sort(array);
+		
+		//matches score placement with player [
 		for(int i =0;i<4;i++){
-			if (array[i] == score1)
+			if (array[i] == score1 && notUsed[0]) {
 				turn[i]=Game.getPlayer1();
-			else if(array[i] == score2)
+				notUsed[0] = false;
+			} else if(array[i] == score2 && notUsed[1]) {
 				turn[i]=Game.getPlayer2();
-			else if (array[i] == score3)
+				notUsed[1] = false;
+			} else if (array[i] == score3 && notUsed[2]) {
 				turn[i]=Game.getPlayer3();
-			else if (array[i] == score4)
+				notUsed[2] = false;
+			} else if (array[i] == score4 && notUsed[3]) {
 				turn[i]=Game.getPlayer4();
-//			if (array[i] == score1)
-//				turn[i]= player1;
-//			else if(array[i] == score2)
-//				turn[i]= player2;
-//			else if (array[i] == score3)
-//				turn[i]= player3;
-//			else if (array[i] == score4)
-//				turn[i]= player4;
+				notUsed[3] = false;
+			}
 		}
 		return turn;
 

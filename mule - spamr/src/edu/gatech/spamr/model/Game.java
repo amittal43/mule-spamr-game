@@ -29,10 +29,10 @@ public class Game {
 	private static Player p3 = new Player();
 	private static Player p4 = new Player();
 	
-	private static Player currentPlayer;
-	
 	//play order
 	private static Player[] playOrder = new Player[]{p1, p2, p3, p4};
+	
+	private static Player currentPlayer = playOrder[currentTurn];
 	
 	//stores what map the game is going to use and the difficulty level
 	private static Map gameMap = new Map(MapType.DEFAULT);
@@ -103,6 +103,7 @@ public class Game {
 		} else {
 			currentTurn++;
 		}
+		currentPlayer = playOrder[currentTurn];
 	}
 
 	

@@ -30,8 +30,9 @@ public class StartTurnDialog extends JDialog {
 	 */
 	public static void main(String[] args) {
 		try {
-			StartTurnDialog dialog = new StartTurnDialog(Game.getCurrentPlayer());
+			StartTurnDialog dialog = new StartTurnDialog();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setCurrentPlayerText(Game.getCurrentPlayer().getName()); //updating string to print
 			dialog.setVisible(true);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -41,8 +42,9 @@ public class StartTurnDialog extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public StartTurnDialog(final Player current) {
+	public StartTurnDialog() {
 		
+		//dialog box basics
 		setMinimumSize(new Dimension(420, 260));
 		setSize(new Dimension(420, 260));
 		setModal(true);
@@ -52,27 +54,29 @@ public class StartTurnDialog extends JDialog {
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
-		{
-			JLabel lblCurrentPlayer = new JLabel("Current Player:");
-			lblCurrentPlayer.setFont(new Font("Verdana", Font.BOLD, 18));
-			lblCurrentPlayer.setBounds(123, 11, 198, 40);
-			contentPanel.add(lblCurrentPlayer);
-		}
 		
+		//Current Player label
+		/*JLabel lblCurrentPlayer = new JLabel("Current Player:");
+		lblCurrentPlayer.setFont(new Font("Verdana", Font.BOLD, 18));
+		lblCurrentPlayer.setBounds(123, 11, 198, 40);
+		contentPanel.add(lblCurrentPlayer);
+		
+		//player name label
 		lblPlayer.setFont(new Font("Verdana", Font.BOLD, 18));
 		lblPlayer.setBounds(123, 56, 198, 47);
-		contentPanel.add(lblPlayer);
+		contentPanel.add(lblPlayer); */
 		
+		//go button
 		JButton btnNewButton = new JButton("GO");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println( current.getName() + " pressed GO");
+				System.out.println("Pressed GO");
 				(new Thread(new Timer())).start(); //starts timer
 				dispose();
 			}
 		});
 		btnNewButton.setFont(new Font("Verdana", Font.BOLD, 16));
-		btnNewButton.setBounds(168, 142, 101, 82);
+		btnNewButton.setBounds(123, 80, 198, 80); //(168, 142, 101, 82);
 		contentPanel.add(btnNewButton);
 	}
 	

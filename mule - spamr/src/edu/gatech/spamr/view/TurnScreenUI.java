@@ -20,7 +20,7 @@ public class TurnScreenUI extends JPanel {
 	private MapUI mapui = new MapUI();
 	private Player currentPlayer = Game.getPlayer1();
 	private JDialog dialog;
-	private StartTurnDialog turndialog = new StartTurnDialog(Game.getCurrentPlayer());
+	private StartTurnDialog turndialog = new StartTurnDialog();
 	
 	/**
 	 * Create the panel.
