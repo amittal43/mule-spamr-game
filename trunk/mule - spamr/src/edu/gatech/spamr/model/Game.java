@@ -1,6 +1,7 @@
 package edu.gatech.spamr.model;
 
 import edu.gatech.spamr.model.Map.MapType;
+import edu.gatech.spamr.view.GameScreenUI;
 import edu.gatech.spamr.view.MapUI;
 
 /** 
@@ -16,6 +17,9 @@ import edu.gatech.spamr.view.MapUI;
  */
 
 public class Game {
+	
+	//keeping the gameScreenUI naming consistent as parent
+	private static GameScreenUI parent;
 	
 	//turn & round variables
 	private static Round currentRound = new Round();		//game starts in round 0
@@ -182,6 +186,15 @@ public class Game {
 	public static void setTurnTimer(Thread t){
 		turnTimer = t;
 	}
+	
+	public static GameScreenUI getParent(){
+		return parent;
+	}
+	
+	public static void setParent(GameScreenUI p){
+		parent = p;
+	}
+	
 	
 	//player gets so their data can be updated by player class getters and setters
 	public static Player getPlayer1(){
