@@ -1,5 +1,7 @@
 package edu.gatech.spamr.model;
 
+import edu.gatech.spamr.model.Game.Difficulty;
+
 public class Store {
 	
 	private int foodQuantity = Game.getDifficulty().getStoreFood();
@@ -135,4 +137,6 @@ public class Store {
 		System.out.println("not a valid Resource ENUM!");
 		return -1;
 	}
+
+	
 }

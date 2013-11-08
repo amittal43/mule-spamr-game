@@ -8,6 +8,8 @@ import edu.gatech.spamr.model.Map.MapType;
 
 
 
+import edu.gatech.spamr.model.Store;
+
 import java.awt.Color;
 import java.awt.Dialog;
 import java.awt.Frame;
