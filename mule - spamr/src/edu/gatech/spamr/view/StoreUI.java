@@ -42,7 +42,8 @@ public class StoreUI extends JPanel{
 //		JButton buyMule = new JButton("BUY MULE");
 //		buttonPanel.add(buyMule);
 		
-		JButton foodButton = new JButton();
+		ImageIcon foodIcon = new ImageIcon(StoreUI.class.getResource("/edu/gatech/spamr/resources/food-05.jpg"));
+		JButton foodButton = new JButton(foodIcon);
 		foodButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			//	selected = "FOOD";
@@ -53,16 +54,20 @@ public class StoreUI extends JPanel{
 		foodButton.setSize(200, 200);
 		foodButton.setLocation(230, 116);
 		add(foodButton);
-		JButton energyButton = new JButton();
+		
+		ImageIcon energyIcon = new ImageIcon(StoreUI.class.getResource("/edu/gatech/spamr/resources/energy-drinks.jpg"));
+		JButton energyButton = new JButton(energyIcon);
 		energyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			//	selected = "ENERGY";
+		//		selected = "ENERGY";
 			}
 		});
 		energyButton.setSize(200, 200);
 		energyButton.setLocation(649, 116);
 		add(energyButton);
-		JButton oreButton = new JButton();
+		
+		ImageIcon oreIcon = new ImageIcon(StoreUI.class.getResource("/edu/gatech/spamr/resources/stone_2120340.JPG"));
+		JButton oreButton = new JButton(oreIcon);
 		oreButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			//	selected = "ORE";
@@ -71,7 +76,9 @@ public class StoreUI extends JPanel{
 		oreButton.setSize(200, 200);
 		oreButton.setLocation(230, 343);
 		add(oreButton);
-		JButton muleButton = new JButton();
+		
+		ImageIcon muleIcon = new ImageIcon(StoreUI.class.getResource("/edu/gatech/spamr/resources/DARPAs-robot-mule-in-field-test.jpg"));
+		JButton muleButton = new JButton(muleIcon);
 		muleButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				

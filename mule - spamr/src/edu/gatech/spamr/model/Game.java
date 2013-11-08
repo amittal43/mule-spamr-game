@@ -22,6 +22,7 @@ public class Game {
 	private static int currentTurn = 0;			//game starts with the first player going
 	private static int numRounds = 6;           //initialize at default number of rounds
 	private final int MAX_TURNS = 4;			//we assume a 4 player game so it has 4 turns per round
+	private static Store store;
 	
 	//creates player object for each person
 	private static Player p1 = new Player();
@@ -64,6 +65,8 @@ public class Game {
 			storeOre = sOre;
 			storeMULE = sMULE;
 		}
+		
+		//public Store store = new Store();
 		
 		public int getStartingFood(){
 			return startingFood;
