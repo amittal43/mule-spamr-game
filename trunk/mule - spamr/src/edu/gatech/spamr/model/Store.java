@@ -6,6 +6,7 @@ public class Store {
 	private int energyQuantity = Game.getDifficulty().getStoreEnergy();
 	private int oreQuantity = Game.getDifficulty().getStoreOre();
 	private int muleQuantity = Game.getDifficulty().getStoreMULES();
+	//public Resource selected;
 	
 	// starting prices
 	private int foodPrice = 30;
