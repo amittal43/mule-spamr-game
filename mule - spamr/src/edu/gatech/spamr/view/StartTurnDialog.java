@@ -71,7 +71,8 @@ public class StartTurnDialog extends JDialog {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Pressed GO");
-				(new Thread(new Timer())).start(); //starts timer
+				Game.setTurnTimer(new Thread(new Timer()));
+				Game.getTurnTimer().start(); //starts timer
 				dispose();
 			}
 		});
