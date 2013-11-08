@@ -76,7 +76,7 @@ public class PubUI extends JPanel {
 				
 				//interrupts the current timer
 				System.out.println("Timer Thread: " + Game.getTurnTimer().toString());
-				Game.getTurnTimer().interrupt();
+				Timer.requestStop();
 				
 				
 				//turn change

@@ -2,6 +2,7 @@ package edu.gatech.spamr.model;
 
 public class Timer implements Runnable {
 	
+	private volatile static boolean stop = false;
 	private static long turnTime = 0;
 	private static long turnEnd = 0;
 	private static long timeLeft = 0;
@@ -10,15 +11,9 @@ public class Timer implements Runnable {
 	//Runnable method
 	public void run() {
         System.out.println("Timer is running!");
-        try {
-			startTurn(Game.getCurrentPlayer(), Game.getCurrentRound());
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			System.out.println("Interrupted");
-		}
-        
-        
+        requestStart();
+        //the while loop
+        startTurn(Game.getCurrentPlayer(), Game.getCurrentRound());
     }
 	
 	
@@ -63,24 +58,31 @@ public class Timer implements Runnable {
 		timeLeft = time;
 	}
 	
-	public void setEndTurn(){
-		endTurn = true;
-	}
 	
-	public static void startTurn(Player player, Round round) throws InterruptedException{
+	
+	public static void startTurn(Player player, Round round) {
 		setTurnTime(player,round);
 		setTurnEndTime(player,round);
-		while(System.currentTimeMillis()<turnEnd && endTurn==false){
+		while(System.currentTimeMillis()<turnEnd && !stop){
 			//System.out.println(getSecondsRemaining()); // just to check
-			if (Thread.interrupted()) {
-			    throw new InterruptedException();
-			}
+
 		}
 		setTimeLeft(getTimeRemaining());
 		System.out.println("Turn is over with " + ((double)timeLeft/1000) + " seconds left");
 	}
 	
+	public static void requestStop() {
+        stop = true;
+        System.out.println("Thread should have stopped");
+    }
 	
-	
+	public static void requestStart() {
+		stop = false;
+		turnTime = 0;
+		turnEnd = 0;
+		timeLeft = 0;
+		endTurn = false;
+        System.out.println("Thread should be reset");
+    }
 	
 }
