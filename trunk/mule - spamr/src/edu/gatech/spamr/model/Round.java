@@ -64,6 +64,15 @@ public class Round {
 				notUsed[3] = false;
 			}
 		}
+		
+		System.out.println("");//space for visibility
+		System.out.println("Round: " + roundNumber);
+		System.out.println("Player Order should be: "); // prints out turn order
+		System.out.println("First: " + turn[0].getName());
+		System.out.println("Second: " + turn[1].getName());
+		System.out.println("Third: " + turn[2].getName());
+		System.out.println("Last: " + turn[3].getName());
+		
 		return turn;
 
 	}

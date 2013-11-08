@@ -108,9 +108,9 @@ public class Game {
 	 */
 	public static void updateTurn(){
 		if (currentTurn == 3){
+			currentRound.nextRound();//updates the round number
 			playOrder = currentRound.calcTurn();
 			currentTurn = 0;
-			currentRound.nextRound();//updates the round number
 		} else {
 			currentTurn++;
 		}
