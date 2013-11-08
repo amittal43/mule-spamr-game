@@ -40,6 +40,7 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 	private static CardLayout cardLayout = new CardLayout(0,0);
 	private JPanel cards = new JPanel(cardLayout);
 	private StoreUI storeui = new StoreUI();
+	private MuleMenuUI muleui = new MuleMenuUI();
 	
 	/**
 	 * Creates the GameScreen Panel and adds the other panels as cards
@@ -64,6 +65,8 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 		pubui.setParent(this);
 		cards.add(storeui, "Store");
 		storeui.setParent(this);
+		cards.add(muleui, "Mule");
+		muleui.setParent(this);
 		cardLayout.show(cards, "LandSelection");
 		
 		
