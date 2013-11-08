@@ -24,12 +24,25 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
+/** 
+ * The StoreUI class creates a panel for the player to buy/sell items  
+ * 
+ * @author Sean Lachenberg
+ * @author Aditya Mittal
+ * @author Mike Vail
+ * @author Puja Sheth
+ * @author Raj Prateek
+ * @version 1.0 11/05/2013 
+ */
+
 public class StoreUI extends JPanel{
 	
 	private GameScreenUI parent;
 	private Resource selected = Resource.FOOD;
 	
-	
+	/**
+	 * StoreUI panel to create the store in which the player can buy/sell items
+	 */
 	
 	public StoreUI(){
 		setPreferredSize((new Dimension (1280,800)));
