@@ -13,16 +13,20 @@ import javax.swing.border.EtchedBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.JButton;
 
+import edu.gatech.spamr.model.Game;
+import edu.gatech.spamr.model.Store;
 import edu.gatech.spamr.model.Store.Resource;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.border.MatteBorder;
 
 public class MuleMenuUI extends JPanel {
 
 	private GameScreenUI parent;
 	private MapUI mapui = new MapUI();
+	private Store store = Game.getStore();
 	
 	JButton btnFoodMule = new JButton("Food Mule");
 	JButton btnEnergyMule = new JButton("Energy Mule");
@@ -115,8 +119,24 @@ public class MuleMenuUI extends JPanel {
 		
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// buyMule() method
-				parent.cardChangeTo("Store");
+				if(Game.getCurrentPlayer().getMoney()<store.getMulePrice(selectedMule)){
+					System.out.println("Insufficient Funds");
+					parent.cardChangeTo("Store");
+				}
+				
+				else if(mapui.getCurrentTile().getOwner() != Game.getCurrentPlayer()){
+					System.out.println("You Do Not Own This Tile");
+					System.out.println("You paid for the MULE anyways");
+					System.out.println("The MULE ran away!");
+					Game.getCurrentPlayer().updateMoney(store.getMulePrice(selectedMule));
+					parent.cardChangeTo("Store");
+				}
+				
+				else{
+					System.out.println("" + Game.getCurrentPlayer().getName() + " placed a " + selectedMule.toString() + " MULE on Tile " + mapui.getCurrentTile().getTileIndex());
+					Game.getStore().buyMULE(selectedMule, Game.getCurrentPlayer(), mapui.getCurrentTile());
+					parent.cardChangeTo("Store");
+				}
 			}
 		});
 		btnConfirm.setBounds(1000, 650, 170, 58);
