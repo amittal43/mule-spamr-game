@@ -3,6 +3,7 @@ package edu.gatech.spamr.model;
 import java.awt.Color;
 
 import edu.gatech.spamr.model.Player.PlayerColor;
+import edu.gatech.spamr.model.Store.Resource;
 
 /** 
  * The Tile class represents the an array in which the map is represented
@@ -25,6 +26,7 @@ public class Tile {
 	private boolean owned;
 	private TileType type;
 	private Color c;
+	private Resource mule = null;
 	
 	//Tile Constructor
 	Tile(int index, TileType t){
@@ -114,6 +116,10 @@ public class Tile {
 
 	public void setBorderColor(Color color) {
 		color = c;
+	}
+	
+	public void setMule(Resource type){
+		mule = type;
 	}
 	
 }
