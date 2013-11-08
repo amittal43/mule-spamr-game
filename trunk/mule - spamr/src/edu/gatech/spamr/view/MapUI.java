@@ -94,7 +94,7 @@ public class MapUI extends JPanel {
 		
 		
 		//UI preferences
-		setBackground(new Color(151, 133, 31));
+		setBackground(Color.LIGHT_GRAY);
 		setBorder(null);
 		setMinimumSize(new Dimension(800, 600));
 		setPreferredSize(new Dimension(800, 600));
