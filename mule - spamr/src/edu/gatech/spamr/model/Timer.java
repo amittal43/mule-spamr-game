@@ -79,6 +79,7 @@ public class Timer implements Runnable {
 			//screen change
 			parent.cardChangeTo("TurnScreen");
 			//pop-up
+			parent.getTurnScreenUI().getTurnDialog().setCurrentPlayerText(Game.getCurrentPlayer().getName());
 			parent.getTurnScreenUI().getTurnDialog().setVisible(true);
 			
 			requestStop();
