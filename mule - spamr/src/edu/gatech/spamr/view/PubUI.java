@@ -86,6 +86,7 @@ public class PubUI extends JPanel {
 				parent.cardChangeTo("TurnScreen");
 				
 				//pop-up
+				parent.getTurnScreenUI().getTurnDialog().setCurrentPlayerText(Game.getCurrentPlayer().getName());
 				parent.getTurnScreenUI().getTurnDialog().setVisible(true);
 				
 			}
