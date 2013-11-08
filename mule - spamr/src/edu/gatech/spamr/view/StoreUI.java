@@ -109,8 +109,9 @@ public class StoreUI extends JPanel{
 		JButton muleButton = new JButton(muleIcon);
 		muleButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				parent.cardChangeTo("Mule");
 				
-				JDialog dialog = new JDialog();
+				/*JDialog dialog = new JDialog();
 				dialog.setPreferredSize(new Dimension(400,400));
 				dialog.setVisible(true);
 				dialog.setLayout(new FlowLayout());
@@ -137,7 +138,7 @@ public class StoreUI extends JPanel{
 						//selected = "ORE MULE";
 					}
 					
-				});
+				});*/
 								
 			}
 		});
