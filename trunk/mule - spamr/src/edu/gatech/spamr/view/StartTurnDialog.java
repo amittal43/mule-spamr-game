@@ -26,7 +26,7 @@ public class StartTurnDialog extends JDialog {
 	private TurnScreenUI parent;
 
 	/**
-	 * Launch the application.
+	 * Launch the application. Never runs in normal application
 	 */
 	public static void main(String[] args) {
 		try {
@@ -56,7 +56,7 @@ public class StartTurnDialog extends JDialog {
 		contentPanel.setLayout(null);
 		
 		//Current Player label
-		/*JLabel lblCurrentPlayer = new JLabel("Current Player:");
+		JLabel lblCurrentPlayer = new JLabel("Current Player:");
 		lblCurrentPlayer.setFont(new Font("Verdana", Font.BOLD, 18));
 		lblCurrentPlayer.setBounds(123, 11, 198, 40);
 		contentPanel.add(lblCurrentPlayer);
@@ -64,7 +64,7 @@ public class StartTurnDialog extends JDialog {
 		//player name label
 		lblPlayer.setFont(new Font("Verdana", Font.BOLD, 18));
 		lblPlayer.setBounds(123, 56, 198, 47);
-		contentPanel.add(lblPlayer); */
+		contentPanel.add(lblPlayer);
 		
 		//go button
 		JButton btnNewButton = new JButton("GO");
@@ -77,7 +77,7 @@ public class StartTurnDialog extends JDialog {
 			}
 		});
 		btnNewButton.setFont(new Font("Verdana", Font.BOLD, 16));
-		btnNewButton.setBounds(123, 80, 198, 80); //(168, 142, 101, 82);
+		btnNewButton.setBounds(123, 146, 198, 80); //(168, 142, 101, 82);
 		contentPanel.add(btnNewButton);
 	}
 	
