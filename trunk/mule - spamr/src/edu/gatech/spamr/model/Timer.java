@@ -10,7 +10,15 @@ public class Timer implements Runnable {
 	//Runnable method
 	public void run() {
         System.out.println("Timer is running!");
-        startTurn(Game.getCurrentPlayer(), Game.getCurrentRound());
+        try {
+			startTurn(Game.getCurrentPlayer(), Game.getCurrentRound());
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("Interrupted");
+		}
+        
+        
     }
 	
 	
@@ -59,11 +67,14 @@ public class Timer implements Runnable {
 		endTurn = true;
 	}
 	
-	public static void startTurn(Player player, Round round){
+	public static void startTurn(Player player, Round round) throws InterruptedException{
 		setTurnTime(player,round);
 		setTurnEndTime(player,round);
 		while(System.currentTimeMillis()<turnEnd && endTurn==false){
 			//System.out.println(getSecondsRemaining()); // just to check
+			if (Thread.interrupted()) {
+			    throw new InterruptedException();
+			}
 		}
 		setTimeLeft(getTimeRemaining());
 		System.out.println("Turn is over with " + ((double)timeLeft/1000) + " seconds left");
