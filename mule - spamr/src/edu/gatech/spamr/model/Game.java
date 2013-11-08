@@ -46,7 +46,6 @@ public class Game {
 	private static MapUI gameMapUI = new MapUI();
 	private static Difficulty diff;
 	
-	//Game muleSpamr = new Game();
 	
 	//creates and describes the Difficulty enum
 	//each enum holds the starting food and energy for players in the game
@@ -100,6 +99,9 @@ public class Game {
 			return storeMULE;
 		}
 	}
+	
+	//Store
+	private static Store shop;
 	
 	/**
 	 * Should be called at the end of a player's turn once 
@@ -197,6 +199,10 @@ public class Game {
 	
 	public static void setParent(GameScreenUI p){
 		parent = p;
+	}
+	
+	public static Store getStore(){
+		return shop;
 	}
 	
 	
