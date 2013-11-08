@@ -31,8 +31,10 @@ public class Game {
 	
 	//play order
 	private static Player[] playOrder = new Player[]{p1, p2, p3, p4};
-	
 	private static Player currentPlayer = playOrder[currentTurn];
+	
+	//Timer used for each turn
+	private static Thread turnTimer;
 	
 	//stores what map the game is going to use and the difficulty level
 	private static Map gameMap = new Map(MapType.DEFAULT);
@@ -166,6 +168,14 @@ public class Game {
 	
 	public static void setPlayerOrder(Player[] order){
 		playOrder = order;
+	}
+	
+	public static Thread getTurnTimer() {
+		return turnTimer;
+	}
+	
+	public static void setTurnTimer(Thread t){
+		turnTimer = t;
 	}
 	
 	//player gets so their data can be updated by player class getters and setters
