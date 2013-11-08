@@ -15,6 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import edu.gatech.spamr.model.Game;
+import edu.gatech.spamr.model.Player;
 import edu.gatech.spamr.model.Store;
 import edu.gatech.spamr.model.Game.Difficulty;
 import edu.gatech.spamr.model.Store.Resource;
@@ -127,6 +128,7 @@ public class StoreUI extends JPanel{
 				
 				//looks at which resource is selected (defaulted at food normally)
 				if(selected.equals(Resource.FOOD)) {
+					
 					if(Game.getStore().getFoodQuantity() > 0){
 						if(Game.getCurrentPlayer().getMoney() >= Game.getStore().getFoodPrice()){
 							Game.getStore().buyResource(Game.getCurrentPlayer(), Resource.FOOD, 1);
@@ -158,7 +160,23 @@ public class StoreUI extends JPanel{
 		sellButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-			}
+				//switches between what resource is being sold
+				if(selected.equals(Resource.FOOD)) {
+					if(Game.getCurrentPlayer().getFood() > 0){
+						Game.getStore().sellResource(Game.getCurrentPlayer(), Resource.FOOD, 1);
+					}//quantity
+				} else if(selected.equals(Resource.ENERGY)) {
+					if(Game.getCurrentPlayer().getEnergy() > 0){
+						Game.getStore().sellResource(Game.getCurrentPlayer(), Resource.ENERGY, 1);
+					}//quantity
+				} else if(selected.equals(Resource.ORE)) {
+					if(Game.getCurrentPlayer().getOre() > 0){
+						Game.getStore().sellResource(Game.getCurrentPlayer(), Resource.ORE, 1);
+					}//quantity
+				} else {
+					System.out.println("somehow you messed up selling a resource?");
+				}
+			} //listener
 		});
 		buttonPanel.add(sellButton);
 		
