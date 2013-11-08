@@ -116,6 +116,10 @@ public class Game {
 		}
 		currentPlayer = playOrder[currentTurn];
 	}
+	
+	public static void calcTurnOrder(){
+		playOrder = currentRound.calcTurn();
+	}
 
 	
 	/**
