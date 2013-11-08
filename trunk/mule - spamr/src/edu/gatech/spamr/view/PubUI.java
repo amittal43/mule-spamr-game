@@ -44,15 +44,16 @@ public class PubUI extends JPanel {
 	public PubUI(){
 		setPreferredSize((new Dimension (1280,800)));
 		setBackground(Color.LIGHT_GRAY);
-		JPanel buttonPanel = new JPanel(new FlowLayout());	//creates the panel
-		
-		setLayout(new BorderLayout());
+		JPanel buttonPanel = new JPanel(new FlowLayout());
+		buttonPanel.setBounds(1008, 0, 272, 800);
+		setLayout(null);
 		JLabel pub =  new JLabel("PUB",JLabel.CENTER);	//title
+		pub.setBounds(0, 0, 1280, 48);
 		
 		pub.setFont(new Font("Serif", Font.BOLD, 48));
 
-		add(pub, BorderLayout.NORTH);
-		add(buttonPanel, BorderLayout.EAST);
+		add(pub);
+		add(buttonPanel);
 		
 		gambleButton = new JButton("CLICK TO GAMBLE");
 		/*gambleButton.addActionListener(new ActionListener() {

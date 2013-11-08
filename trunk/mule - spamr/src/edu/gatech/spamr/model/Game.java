@@ -41,6 +41,8 @@ public class Game {
 	private static MapUI gameMapUI = new MapUI();
 	private static Difficulty diff;
 	
+	//Game muleSpamr = new Game();
+	
 	//creates and describes the Difficulty enum
 	//each enum holds the starting food and energy for players in the game
 	public enum Difficulty{BEGINNER(8,4,6,16,16,0,25), STANDARD(4,2,12,8,8,8,14), TOURNAMENT(4,2,12,8,8,8,14);
