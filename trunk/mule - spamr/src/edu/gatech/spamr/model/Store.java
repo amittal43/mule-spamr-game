@@ -79,4 +79,60 @@ public class Store {
 		}
 	}
 	
+	//getters and setters
+	public int getFoodQuantity(){
+		return foodQuantity;
+	}
+	
+	public void setFoodQuantity(int f){
+		foodQuantity = f;
+	}
+	
+	public int getOreQuantity(){
+		return oreQuantity;
+	}
+	
+	public void setOreQuantity(int o){
+		oreQuantity = o;
+	}
+	
+	public int getEnergyQuantity(){
+		return energyQuantity;
+	}
+	
+	public void setEnergyQuantity(int e){
+		energyQuantity = e;
+	}
+	
+	public int getMuleQuantity(){
+		return muleQuantity;
+	}
+	
+	public void setMuleQuantity(int m){
+		muleQuantity = m;
+	}
+	
+	public int getFoodPrice(){
+		return foodPrice;
+	}
+	
+	public int getEnergyPrice(){
+		return energyPrice;
+	}
+	
+	public int getOrePrice(){
+		return orePrice;
+	}
+	
+	public int getMulePrice(Resource r) {
+		if (r.equals(Resource.FOOD))
+			return mulePrice + foodFee;
+		if (r.equals(Resource.ENERGY))
+			return mulePrice + energyFee;
+		if (r.equals(Resource.ORE))
+			return mulePrice + oreFee;
+		
+		System.out.println("not a valid Resource ENUM!");
+		return -1;
+	}
 }

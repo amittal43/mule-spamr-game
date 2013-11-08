@@ -14,6 +14,9 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import edu.gatech.spamr.model.Game;
+import edu.gatech.spamr.model.Store.Resource;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
@@ -46,9 +49,26 @@ public class StoreUI extends JPanel{
 		JButton foodButton = new JButton(foodIcon);
 		foodButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			//	selected = "FOOD";
 				
-			}
+				
+				System.out.println("");
+				System.out.println("PlayerFood: " + Game.getCurrentPlayer().getFood());
+				System.out.println("PlayerMoney: " + Game.getCurrentPlayer().getMoney());
+				System.out.println("Difficulty?: " + Game.getDifficulty());
+				System.out.println("StoreFood: " + Game.getStore().getFoodQuantity());
+				System.out.println("FoodCost: " + Game.getStore().getFoodPrice());
+				
+				
+				if(Game.getStore().getFoodQuantity() > 0){
+					if(Game.getCurrentPlayer().getMoney() >= Game.getStore().getFoodPrice()){
+						Game.getStore().buyResource(Game.getCurrentPlayer(), Resource.FOOD, 1);
+					}//money
+				}//quantity
+				System.out.println("");
+				System.out.println("PlayerFoodAfter: " + Game.getCurrentPlayer().getFood());
+				System.out.println("PlayerMoneyAfter: " + Game.getCurrentPlayer().getMoney());
+				System.out.println("StoreFoodAfter: " + Game.getStore().getFoodQuantity());
+			}//actionPerformed
 			
 		});
 		foodButton.setSize(200, 200);
@@ -59,7 +79,11 @@ public class StoreUI extends JPanel{
 		JButton energyButton = new JButton(energyIcon);
 		energyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-		//		selected = "ENERGY";
+				if(Game.getStore().getEnergyQuantity() > 0){
+					if(Game.getCurrentPlayer().getMoney() >= Game.getStore().getEnergyPrice()){
+						Game.getStore().buyResource(Game.getCurrentPlayer(), Resource.ENERGY, 1);
+					}//money
+				}//quantity
 			}
 		});
 		energyButton.setSize(200, 200);
@@ -70,7 +94,11 @@ public class StoreUI extends JPanel{
 		JButton oreButton = new JButton(oreIcon);
 		oreButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			//	selected = "ORE";
+				if(Game.getStore().getOreQuantity() > 0){
+					if(Game.getCurrentPlayer().getMoney() >= Game.getStore().getOrePrice()){
+						Game.getStore().buyResource(Game.getCurrentPlayer(), Resource.ORE, 1);
+					}//money
+				}//quantity
 			}
 		});
 		oreButton.setSize(200, 200);
