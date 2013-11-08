@@ -1,6 +1,7 @@
 package edu.gatech.spamr.view;
 
 import javax.swing.JPanel;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -9,6 +10,7 @@ import java.awt.GridLayout;
 
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
+import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -16,31 +18,114 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
-
-
-
 public class StoreUI extends JPanel{
 	
 	private GameScreenUI parent;
+//	private Resource selected;
+	
 	
 	
 	public StoreUI(){
 		setPreferredSize((new Dimension (1280,800)));
 		setBackground(Color.LIGHT_GRAY);
-		JPanel buttonPanel = new JPanel(new FlowLayout());	//creates the panel
-		//buttonPanel.setPreferredSize(new Dimension(200, 800));
-		setLayout(new BorderLayout());
-		JLabel pub =  new JLabel("STORE",JLabel.CENTER);	//title
-		//pub.setBackground(Color.DARK_GRAY);
-		pub.setFont(new Font("Serif", Font.BOLD, 48));
-		//setLayout(new BorderLayout());
-		add(pub, BorderLayout.NORTH);
-		add(buttonPanel, BorderLayout.EAST);
+		JPanel buttonPanel = new JPanel(new FlowLayout());
+		buttonPanel.setBounds(1000, 0, 280, 800);
+		setLayout(null);
+		JLabel store =  new JLabel("STORE",JLabel.CENTER);	
+		store.setBounds(125, 6, 845, 48);
 		
-		JButton buyMule = new JButton("BUY MULE");
-		buttonPanel.add(buyMule);
+		store.setFont(new Font("Serif", Font.BOLD, 48));
 		
-	
+		add(store);
+		add(buttonPanel);
+		
+//		JButton buyMule = new JButton("BUY MULE");
+//		buttonPanel.add(buyMule);
+		
+		JButton foodButton = new JButton();
+		foodButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			//	selected = "FOOD";
+				
+			}
+			
+		});
+		foodButton.setSize(200, 200);
+		foodButton.setLocation(230, 116);
+		add(foodButton);
+		JButton energyButton = new JButton();
+		energyButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			//	selected = "ENERGY";
+			}
+		});
+		energyButton.setSize(200, 200);
+		energyButton.setLocation(649, 116);
+		add(energyButton);
+		JButton oreButton = new JButton();
+		oreButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			//	selected = "ORE";
+			}
+		});
+		oreButton.setSize(200, 200);
+		oreButton.setLocation(230, 343);
+		add(oreButton);
+		JButton muleButton = new JButton();
+		muleButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				JDialog dialog = new JDialog();
+				dialog.setPreferredSize(new Dimension(400,400));
+				dialog.setVisible(true);
+				dialog.setLayout(new FlowLayout());
+				JButton energyMule = new JButton("Energy Mule");
+				JButton foodMule = new JButton("Food Mule");
+				JButton oreMule = new JButton("Ore Mule");
+				dialog.add(energyMule);
+				dialog.add(foodMule);
+				dialog.add(oreMule);
+				energyMule.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						//selected = "ENERGY MULE";
+					}
+					
+				});
+				foodMule.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						//selected = "FOOD MULE";
+					}
+					
+				});
+				oreMule.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						//selected = "ORE MULE";
+					}
+					
+				});
+								
+			}
+		});
+		muleButton.setSize(200, 200);
+		muleButton.setLocation(649, 343);
+		add(muleButton);
+		
+		JButton buyButton = new JButton("BUY");
+		buyButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		buttonPanel.add(buyButton);
+		
+		JButton sellButton = new JButton("SELL");
+		sellButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		buttonPanel.add(sellButton);
+		
 		JButton backbutton = new JButton("GO BACK");
 		buttonPanel.add(backbutton);
 		backbutton.addActionListener(new ActionListener() {
