@@ -19,6 +19,17 @@ import java.awt.event.ActionEvent;
 import java.awt.Dimension;
 import java.awt.Dialog.ModalityType;
 
+/** 
+ * The StartTurnDialog class creates an instance of a JDialog  
+ * 
+ * @author Sean Lachenberg
+ * @author Aditya Mittal
+ * @author Mike Vail
+ * @author Puja Sheth
+ * @author Raj Prateek
+ * @version 1.0 11/05/2013 
+ */
+
 public class StartTurnDialog extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();

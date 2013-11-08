@@ -14,9 +14,20 @@ import java.awt.Dimension;
 import java.awt.Color;
 import java.awt.Font;
 
+/** 
+ * The TurnScreenUI class creates a panel which helps manage the different aspects of the game  
+ * 
+ * @author Sean Lachenberg
+ * @author Aditya Mittal
+ * @author Mike Vail
+ * @author Puja Sheth
+ * @author Raj Prateek
+ * @version 1.0 11/05/2013 
+ */
+
 public class TurnScreenUI extends JPanel {
 
-	
+	//instance variables
 	private GameScreenUI parent;
 	private MapUI mapui = new MapUI();
 	private Player currentPlayer = Game.getPlayer1();

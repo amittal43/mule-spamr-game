@@ -22,6 +22,17 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.border.MatteBorder;
 
+/** 
+ * The MuleMenuUI class creates a panel for the player to choose mules based on types  
+ * 
+ * @author Sean Lachenberg
+ * @author Aditya Mittal
+ * @author Mike Vail
+ * @author Puja Sheth
+ * @author Raj Prateek
+ * @version 1.0 11/05/2013 
+ */
+
 public class MuleMenuUI extends JPanel {
 
 	private GameScreenUI parent;
@@ -67,6 +78,7 @@ public class MuleMenuUI extends JPanel {
 		
 		btnFoodMule.setBorder(new LineBorder(Color.BLACK,2));
 		btnFoodMule.addActionListener(new ActionListener() {
+			//create action listener
 			public void actionPerformed(ActionEvent e) {
 				selectedMule = Resource.FOOD;
 				lastSelected = currentSelected;
