@@ -78,7 +78,7 @@ public class MapUI extends JPanel {
 			//System.out.println(tiles[i]);
 			//System.out.println(buts[i]);
 			if(mapArray[i].isOwned())
-				button[i].setBorder(new LineBorder(mapArray[i].getOwner().getRGB(),2));;
+				button[i].setBorder(new LineBorder(mapArray[i].getOwner().getRGB(),2));
 		}
 	}
 
@@ -1273,6 +1273,7 @@ public class MapUI extends JPanel {
 		colorTile(mapArray[44],button[44]);
 		add(button[44], gbc_button_44);
 		
+		updateBorders();
 	}
 	
 	//getters and setters
