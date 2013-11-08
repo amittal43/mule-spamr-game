@@ -89,7 +89,7 @@ public class Timer implements Runnable {
 	
 	public static void requestStop() {
         stop = true;
-        System.out.println("Thread should have stopped");
+        //System.out.println("Thread should have stopped");
     }
 	
 	public static void requestStart() {
@@ -98,7 +98,7 @@ public class Timer implements Runnable {
 		turnEnd = 0;
 		timeLeft = 0;
 		parent = Game.getParent();
-        System.out.println("Thread should be reset");
+        //System.out.println("Thread should be reset");
     }
 	
 }
