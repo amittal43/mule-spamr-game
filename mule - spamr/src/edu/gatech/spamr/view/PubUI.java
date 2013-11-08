@@ -73,6 +73,11 @@ public class PubUI extends JPanel {
 				System.out.println(Game.getCurrentPlayer().getName() + " recieves " + bonus + " money!");
 				Game.getCurrentPlayer().updateMoney(bonus);
 				
+				//interrupts the current timer
+				System.out.println("Timer Thread: " + Game.getTurnTimer().toString());
+				Game.getTurnTimer().interrupt();
+				
+				
 				//turn change
 				Game.updateTurn(); //updates turn/round count in game (not current player)
 				System.out.println("Turn changes to " + Game.getCurrentPlayer().getName());

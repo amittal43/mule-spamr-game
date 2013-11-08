@@ -28,7 +28,12 @@ public class TimerTest {
 		Round round = new Round();
 		round.setRoundNumber(11);
 		Timer timer = new Timer();
-		timer.startTurn(p1, round);
+		try {
+			timer.startTurn(p1, round);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
