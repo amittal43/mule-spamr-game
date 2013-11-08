@@ -137,8 +137,8 @@ public class StoreUI extends JPanel{
 						}//money
 					}//quantity	
 					System.out.println(Game.getCurrentPlayer().getName() + "'s Food after purchase: " + Game.getCurrentPlayer().getFood());
-					System.out.println(Game.getCurrentPlayer().getName() + "'s current Money after purchase: " + Game.getCurrentPlayer().getMoney());
-					System.out.println("Store's current Food after purchase: " + Game.getStore().getFoodQuantity());
+					System.out.println(Game.getCurrentPlayer().getName() + "'s Money after purchase: " + Game.getCurrentPlayer().getMoney());
+					System.out.println("Store's Food after purchase: " + Game.getStore().getFoodQuantity());
 					
 				} else if(selected.equals(Resource.ENERGY)) {
 					if(Game.getStore().getEnergyQuantity() > 0){
@@ -150,8 +150,8 @@ public class StoreUI extends JPanel{
 						}//money
 					}//quantity
 					System.out.println(Game.getCurrentPlayer().getName() + "'s Energy after purchase: " + Game.getCurrentPlayer().getEnergy());
-					System.out.println(Game.getCurrentPlayer().getName() + "'s current Money after purchase: " + Game.getCurrentPlayer().getMoney());
-					System.out.println("Store's current Energy after purchase: " + Game.getStore().getEnergyQuantity());
+					System.out.println(Game.getCurrentPlayer().getName() + "'s Money after purchase: " + Game.getCurrentPlayer().getMoney());
+					System.out.println("Store's Energy after purchase: " + Game.getStore().getEnergyQuantity());
 					
 				} else if(selected.equals(Resource.ORE)) {
 					System.out.println(Game.getCurrentPlayer().getName() + "'s current Ore: " + Game.getCurrentPlayer().getOre());
@@ -163,8 +163,8 @@ public class StoreUI extends JPanel{
 						}//money
 					}//quantity
 					System.out.println(Game.getCurrentPlayer().getName() + "'s Ore after purchase: " + Game.getCurrentPlayer().getOre());
-					System.out.println(Game.getCurrentPlayer().getName() + "'s current Money after purchase: " + Game.getCurrentPlayer().getMoney());
-					System.out.println("Store's current Ore after purchase: " + Game.getStore().getOreQuantity());
+					System.out.println(Game.getCurrentPlayer().getName() + "'s Money after purchase: " + Game.getCurrentPlayer().getMoney());
+					System.out.println("Store's Ore after purchase: " + Game.getStore().getOreQuantity());
 	
 				} else {
 					System.out.println("Invalid Resource Selected?");
@@ -179,17 +179,47 @@ public class StoreUI extends JPanel{
 				
 				//switches between what resource is being sold
 				if(selected.equals(Resource.FOOD)) {
+					
+					System.out.println(Game.getCurrentPlayer().getName() + "'s current Food: " + Game.getCurrentPlayer().getFood());
+					System.out.println(Game.getCurrentPlayer().getName() + "'s current Money: " + Game.getCurrentPlayer().getMoney());
+					System.out.println("Store's current Food: " + Game.getStore().getFoodQuantity());
+					
 					if(Game.getCurrentPlayer().getFood() > 0){
 						Game.getStore().sellResource(Game.getCurrentPlayer(), Resource.FOOD, 1);
 					}//quantity
+					
+					System.out.println(Game.getCurrentPlayer().getName() + "'s Food after selling: " + Game.getCurrentPlayer().getFood());
+					System.out.println(Game.getCurrentPlayer().getName() + "'s Money after selling: " + Game.getCurrentPlayer().getMoney());
+					System.out.println("Store's Food after selling: " + Game.getStore().getFoodQuantity());
+					
 				} else if(selected.equals(Resource.ENERGY)) {
+					
+					System.out.println(Game.getCurrentPlayer().getName() + "'s current Energy: " + Game.getCurrentPlayer().getEnergy());
+					System.out.println(Game.getCurrentPlayer().getName() + "'s current Money: " + Game.getCurrentPlayer().getMoney());
+					System.out.println("Store's current Energy: " + Game.getStore().getEnergyQuantity());
+					
 					if(Game.getCurrentPlayer().getEnergy() > 0){
 						Game.getStore().sellResource(Game.getCurrentPlayer(), Resource.ENERGY, 1);
 					}//quantity
+					
+					System.out.println(Game.getCurrentPlayer().getName() + "'s Energy after selling: " + Game.getCurrentPlayer().getEnergy());
+					System.out.println(Game.getCurrentPlayer().getName() + "'s Money after selling: " + Game.getCurrentPlayer().getMoney());
+					System.out.println("Store's Energy after selling: " + Game.getStore().getEnergyQuantity());
+					
 				} else if(selected.equals(Resource.ORE)) {
+					
+					System.out.println(Game.getCurrentPlayer().getName() + "'s current Ore: " + Game.getCurrentPlayer().getOre());
+					System.out.println(Game.getCurrentPlayer().getName() + "'s current Money: " + Game.getCurrentPlayer().getMoney());
+					System.out.println("Store's current Ore: " + Game.getStore().getOreQuantity());
+					
 					if(Game.getCurrentPlayer().getOre() > 0){
 						Game.getStore().sellResource(Game.getCurrentPlayer(), Resource.ORE, 1);
 					}//quantity
+					
+					System.out.println(Game.getCurrentPlayer().getName() + "'s Ore after selling: " + Game.getCurrentPlayer().getOre());
+					System.out.println(Game.getCurrentPlayer().getName() + "'s Money after selling: " + Game.getCurrentPlayer().getMoney());
+					System.out.println("Store's Ore after selling: " + Game.getStore().getOreQuantity());
+					
 				} else {
 					System.out.println("somehow you messed up selling a resource?");
 				}
