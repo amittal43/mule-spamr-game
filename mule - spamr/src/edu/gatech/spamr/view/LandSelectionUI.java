@@ -90,7 +90,7 @@ public class LandSelectionUI extends JPanel {
 				System.out.println("Second: " + test[1].getName());
 				System.out.println("Third: " + test[2].getName());
 				System.out.println("Last: " + test[3].getName());
-				Game.setPlayerOrder(Game.getCurrentRound().calcTurn());
+				Game.calcTurnOrder();
 				//Game.decidePlayOrder(new Player[]{Game.getPlayer1(),Game.getPlayer2(), Game.getPlayer3(), Game.getPlayer4()});
 				parent.getTurnScreenUI().getTurnDialog().setCurrentPlayerText(Game.getCurrentPlayer().getName());
 				parent.getTurnScreenUI().getTurnDialog().setVisible(true);
