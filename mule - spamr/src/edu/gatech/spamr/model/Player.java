@@ -123,8 +123,7 @@ public class Player {
 	}
 	
 	public int calcScore(){
-		int score = getMoney()/100 + getOre() +getFood() + getEnergy();
-		return score;
+		return (money/100) + ore + food + energy;
 	}
 	
 	public void setEnergy(int e){
