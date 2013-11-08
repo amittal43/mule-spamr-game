@@ -122,4 +122,8 @@ public class Tile {
 		mule = type;
 	}
 	
+	public Resource getMule(){
+		return mule;
+	}
+	
 }

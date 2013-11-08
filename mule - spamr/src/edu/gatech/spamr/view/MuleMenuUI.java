@@ -145,9 +145,13 @@ public class MuleMenuUI extends JPanel {
 				}
 				
 				else{
-					System.out.println("" + Game.getCurrentPlayer().getName() + " placed a " + selectedMule.toString() + " MULE on Tile " + mapui.getCurrentTile().getTileIndex());
-					Game.getStore().buyMULE(selectedMule, Game.getCurrentPlayer(), mapui.getCurrentTile());
-					parent.cardChangeTo("Store");
+					if(null == mapui.getCurrentTile().getMule()){
+						System.out.println("" + Game.getCurrentPlayer().getName() + " placed a " + selectedMule.toString() + " MULE on Tile " + mapui.getCurrentTile().getTileIndex());
+						Game.getStore().buyMULE(selectedMule, Game.getCurrentPlayer(), mapui.getCurrentTile());
+						parent.cardChangeTo("Store");
+					} else {
+						System.out.println(Game.getCurrentPlayer().getName() + " already has a MULE here, your new MULE ran away!");
+					}
 				}
 			}
 		});
