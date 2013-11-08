@@ -44,7 +44,7 @@ public class Game {
 	//stores what map the game is going to use and the difficulty level
 	private static Map gameMap = new Map(MapType.DEFAULT);
 	private static MapUI gameMapUI = new MapUI();
-	private static Difficulty diff;
+	private static Difficulty diff = Difficulty.TOURNAMENT;
 	
 	
 	//creates and describes the Difficulty enum
@@ -69,7 +69,6 @@ public class Game {
 			storeMULE = sMULE;
 		}
 		
-		//public Store store = new Store();
 		
 		public int getStartingFood(){
 			return startingFood;
@@ -100,8 +99,7 @@ public class Game {
 		}
 	}
 	
-	//Store
-	private static Store shop;
+	private static Store shop = new Store();
 	
 	/**
 	 * Should be called at the end of a player's turn once 
@@ -201,9 +199,6 @@ public class Game {
 		parent = p;
 	}
 	
-	public static Store getStore(){
-		return shop;
-	}
 	
 	
 	//player gets so their data can be updated by player class getters and setters
@@ -218,5 +213,9 @@ public class Game {
 	}
 	public static Player getPlayer4(){
 		return p4;
+	}
+
+	public static Store getStore() {
+		return shop;
 	}
 }
