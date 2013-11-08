@@ -1,12 +1,15 @@
 package edu.gatech.spamr.model;
 
+import edu.gatech.spamr.view.GameScreenUI;
+
 public class Timer implements Runnable {
+	
+	private static GameScreenUI parent;
 	
 	private volatile static boolean stop = false;
 	private static long turnTime = 0;
 	private static long turnEnd = 0;
 	private static long timeLeft = 0;
-	static boolean endTurn = false;
 
 	//Runnable method
 	public void run() {
@@ -68,6 +71,19 @@ public class Timer implements Runnable {
 
 		}
 		setTimeLeft(getTimeRemaining());
+		if (timeLeft <= 0){
+			System.out.println("Turn is over with " + ((double)timeLeft/1000) + " seconds left");
+			//updates turn
+			Game.updateTurn();
+			System.out.println("Turn changes to " + Game.getCurrentPlayer().getName());
+			//screen change
+			parent.cardChangeTo("TurnScreen");
+			//pop-up
+			parent.getTurnScreenUI().getTurnDialog().setVisible(true);
+			
+			requestStop();
+			
+		}
 		System.out.println("Turn is over with " + ((double)timeLeft/1000) + " seconds left");
 	}
 	
@@ -81,7 +97,7 @@ public class Timer implements Runnable {
 		turnTime = 0;
 		turnEnd = 0;
 		timeLeft = 0;
-		endTurn = false;
+		parent = Game.getParent();
         System.out.println("Thread should be reset");
     }
 	

@@ -68,6 +68,7 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 		
 		
 		add(cards);
+		Game.setParent(this);
 	}
 
 	//getters and setters

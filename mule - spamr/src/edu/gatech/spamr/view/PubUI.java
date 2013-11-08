@@ -75,7 +75,6 @@ public class PubUI extends JPanel {
 				Game.getCurrentPlayer().updateMoney(bonus);
 				
 				//interrupts the current timer
-				System.out.println("Timer Thread: " + Game.getTurnTimer().toString());
 				Timer.requestStop();
 				
 				
