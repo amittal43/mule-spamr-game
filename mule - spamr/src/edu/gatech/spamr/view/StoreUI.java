@@ -26,7 +26,7 @@ import java.awt.Color;
 public class StoreUI extends JPanel{
 	
 	private GameScreenUI parent;
-//	private Resource selected;
+	private Resource selected = Resource.FOOD;
 	
 	
 	
@@ -51,11 +51,7 @@ public class StoreUI extends JPanel{
 		JButton foodButton = new JButton(foodIcon);
 		foodButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(Game.getStore().getFoodQuantity() > 0){
-					if(Game.getCurrentPlayer().getMoney() >= Game.getStore().getFoodPrice()){
-						Game.getStore().buyResource(Game.getCurrentPlayer(), Resource.FOOD, 1);
-					}//money
-				}//quantity
+				selected = Resource.FOOD;
 			}//actionPerformed
 		});
 		foodButton.setSize(200, 200);
@@ -66,11 +62,7 @@ public class StoreUI extends JPanel{
 		JButton energyButton = new JButton(energyIcon);
 		energyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(Game.getStore().getEnergyQuantity() > 0){
-					if(Game.getCurrentPlayer().getMoney() >= Game.getStore().getEnergyPrice()){
-						Game.getStore().buyResource(Game.getCurrentPlayer(), Resource.ENERGY, 1);
-					}//money
-				}//quantity
+				selected = Resource.ENERGY;
 			}
 		});
 		energyButton.setSize(200, 200);
@@ -81,11 +73,7 @@ public class StoreUI extends JPanel{
 		JButton oreButton = new JButton(oreIcon);
 		oreButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(Game.getStore().getOreQuantity() > 0){
-					if(Game.getCurrentPlayer().getMoney() >= Game.getStore().getOrePrice()){
-						Game.getStore().buyResource(Game.getCurrentPlayer(), Resource.ORE, 1);
-					}//money
-				}//quantity
+				selected = Resource.ORE;
 			}
 		});
 		oreButton.setSize(200, 200);
@@ -137,6 +125,31 @@ public class StoreUI extends JPanel{
 		buyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				//looks at which resource is selected (defaulted at food normally)
+				if(selected.equals(Resource.FOOD)) {
+					if(Game.getStore().getFoodQuantity() > 0){
+						if(Game.getCurrentPlayer().getMoney() >= Game.getStore().getFoodPrice()){
+							Game.getStore().buyResource(Game.getCurrentPlayer(), Resource.FOOD, 1);
+						}//money
+					}//quantity	
+					
+				} else if(selected.equals(Resource.ENERGY)) {
+					if(Game.getStore().getEnergyQuantity() > 0){
+						if(Game.getCurrentPlayer().getMoney() >= Game.getStore().getEnergyPrice()){
+							Game.getStore().buyResource(Game.getCurrentPlayer(), Resource.ENERGY, 1);
+						}//money
+					}//quantity
+				
+				} else if(selected.equals(Resource.ORE)) {
+					if(Game.getStore().getOreQuantity() > 0){
+						if(Game.getCurrentPlayer().getMoney() >= Game.getStore().getOrePrice()){
+							Game.getStore().buyResource(Game.getCurrentPlayer(), Resource.ORE, 1);
+						}//money
+					}//quantity
+				}
+				else {
+					System.out.println("Invalid Resource Selected?");
+				}
 			}
 		});
 		buttonPanel.add(buyButton);
