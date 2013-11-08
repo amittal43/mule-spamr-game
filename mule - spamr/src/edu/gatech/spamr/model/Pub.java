@@ -27,6 +27,11 @@ public class Pub {
 	public static int calcGamble(Round round, long timeLeft){
 		Random rand = new Random();
 		double secondsLeft = (double) timeLeft/1000;
+		
+		//currently there is a bug where turn sometimes doesn't end and we don't know why yet.
+		if (secondsLeft < 0)
+			secondsLeft = 0;
+		
 		System.out.println("Seconds left = " + secondsLeft);
 		return (int)(round.getGamblingBonus() + rand.nextInt((int)(2 * (2.14 * secondsLeft)+1))); // convert seconds to BTU then double
 	}
