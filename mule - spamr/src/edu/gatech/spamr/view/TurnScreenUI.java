@@ -4,6 +4,7 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
+import javax.swing.WindowConstants;
 import javax.swing.border.EtchedBorder;
 
 import edu.gatech.spamr.model.Game;
@@ -50,6 +51,7 @@ public class TurnScreenUI extends JPanel {
 		
 		dialog = new JDialog(SwingUtilities.getWindowAncestor(parent));
 		dialog.setSize(new Dimension(420,260));
+		dialog.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 		dialog.setVisible(false);
 		turndialog.setParent(this);
 		if(!SwingUtilities.isEventDispatchThread())
