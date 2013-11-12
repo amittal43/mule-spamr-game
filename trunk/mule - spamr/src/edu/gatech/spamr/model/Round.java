@@ -18,6 +18,7 @@ public class Round {
 	private static int roundNumber = 0;
 	private static final int[] foodRequirement = {3,3,3,3,4,4,4,4,5,5,5,5};
 	private static final int[] gamblingBonus = {50,50,50,100,100,100,100,150,150,150,150,200};
+	private static final int[] randomNumber = {25, 25, 25, 50, 50, 50, 50, 75, 75, 75, 75, 100};
 
 	/**
 	 * getRoundNumber method
@@ -27,6 +28,11 @@ public class Round {
 	
 	public static int getRoundNumber(){
 		return roundNumber;
+	}
+	
+	public static int getRandomNumber(){
+		//int i = Round.getRoundNumber();
+		return randomNumber[roundNumber];
 	}
 	
 	/**
@@ -103,6 +109,7 @@ public class Round {
 	public static int getFoodRequirement(){
 		return foodRequirement[roundNumber];
 	}
+	
 
 	/**
 	 * getGambingBonus method to obtain bonus based on round
