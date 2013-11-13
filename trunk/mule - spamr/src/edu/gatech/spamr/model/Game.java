@@ -111,6 +111,11 @@ public class Game {
 			currentRound.nextRound();//updates the round number
 			playOrder = currentRound.calcTurn();
 			currentTurn = 0;
+			
+			for(Tile tile : gameMap.getMapArray()){
+				tile.processProduction();
+			}
+			
 		} else {
 			currentTurn++;
 		}
