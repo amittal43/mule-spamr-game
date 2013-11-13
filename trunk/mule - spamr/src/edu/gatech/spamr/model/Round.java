@@ -31,7 +31,6 @@ public class Round {
 	}
 	
 	public static int getRandomNumber(){
-		//int i = Round.getRoundNumber();
 		return randomNumber[roundNumber];
 	}
 	
