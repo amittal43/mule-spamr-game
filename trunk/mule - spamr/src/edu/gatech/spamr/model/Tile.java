@@ -127,9 +127,11 @@ public class Tile {
 	}
 	
 	public void processProduction(){
-		if(!isOwned() || mule==null)
+		if(!isOwned() || mule==null || owner.getEnergy()==0)
 			return;
 
+		owner.setEnergy(owner.getEnergy()-1); // one unit of energy used to produce
+		
 		if(mule==Resource.FOOD){
 			System.out.println(owner.getName() + " produced " + type.getFoodProduction() + " Food on Tile " + tileIndex);
 			owner.setFood(owner.getFood() + type.getFoodProduction());
@@ -144,6 +146,7 @@ public class Tile {
 			System.out.println(owner.getName() + " produced " + type.getOreProduction() + " Ore on Tile " + tileIndex);
 			owner.setOre(owner.getOre() + type.getOreProduction());
 		}
+		
 	}
 	
 }
