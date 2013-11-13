@@ -126,4 +126,24 @@ public class Tile {
 		return mule;
 	}
 	
+	public void processProduction(){
+		if(!isOwned() || mule==null)
+			return;
+
+		if(mule==Resource.FOOD){
+			System.out.println(owner.getName() + " produced " + type.getFoodProduction() + " Food on Tile " + tileIndex);
+			owner.setFood(owner.getFood() + type.getFoodProduction());
+		}
+		
+		else if(mule==Resource.ENERGY){
+			System.out.println(owner.getName() + " produced " + type.getEnergyProduction() + " Energy on Tile " + tileIndex);
+			owner.setEnergy(owner.getEnergy() + type.getEnergyProduction());
+		}
+		
+		else if(mule==Resource.ORE){
+			System.out.println(owner.getName() + " produced " + type.getOreProduction() + " Ore on Tile " + tileIndex);
+			owner.setOre(owner.getOre() + type.getOreProduction());
+		}
+	}
+	
 }
