@@ -127,8 +127,12 @@ public class Tile {
 	}
 	
 	public void processProduction(){
-		if(!isOwned() || mule==null || owner.getEnergy()==0)
+		if(!isOwned() || mule==null)
 			return;
+		
+		if(owner.getEnergy()==0){
+			System.out.println("The MULE on Tile " + tileIndex + " doesn't have enough energy to produce");
+		}
 
 		owner.setEnergy(owner.getEnergy()-1); // one unit of energy used to produce
 		
