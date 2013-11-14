@@ -44,18 +44,20 @@ public class PubUI extends JPanel {
 	public PubUI(){
 		setPreferredSize((new Dimension (1280,800)));
 		setBackground(Color.LIGHT_GRAY);
-		JPanel buttonPanel = new JPanel(new FlowLayout());
+		JPanel buttonPanel = new JPanel();
 		buttonPanel.setBounds(1008, 0, 272, 800);
 		setLayout(null);
 		JLabel pub =  new JLabel("PUB",JLabel.CENTER);	//title
-		pub.setBounds(0, 0, 1280, 48);
+		pub.setBounds(0, 0, 1009, 48);
 		
 		pub.setFont(new Font("Serif", Font.BOLD, 48));
 
 		add(pub);
 		add(buttonPanel);
+		buttonPanel.setLayout(null);
 		
 		gambleButton = new JButton("CLICK TO GAMBLE");
+		gambleButton.setBounds(53, 124, 197, 109);
 		/*gambleButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Pub pub = new Pub();
@@ -93,6 +95,7 @@ public class PubUI extends JPanel {
 		});
 	
 		JButton backbutton = new JButton("GO BACK");
+		backbutton.setBounds(53, 287, 197, 109);
 		buttonPanel.add(backbutton);
 		backbutton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
