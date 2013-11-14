@@ -75,7 +75,7 @@ public class Timer implements Runnable {
 			System.out.println("Turn is over with " + ((double)timeLeft/1000) + " seconds left");
 			
 			//updates turn
-			Game.updateTurn();
+			parent.getGame().updateTurn();
 			
 			System.out.println("Turn changes to " + player.getName());
 			//screen change
