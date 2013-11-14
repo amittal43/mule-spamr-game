@@ -37,20 +37,6 @@ public class StartTurnDialog extends JDialog {
 	private TurnScreenUI parent;
 
 	/**
-	 * Launch the application. Never runs in normal application
-	 */
-	public static void main(String[] args) {
-		try {
-			StartTurnDialog dialog = new StartTurnDialog();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setCurrentPlayerText(Game.getCurrentPlayer().getName()); //updating string to print
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	/**
 	 * Create the dialog.
 	 */
 	public StartTurnDialog() {
@@ -82,8 +68,8 @@ public class StartTurnDialog extends JDialog {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Pressed GO");
-				Game.setTurnTimer(new Thread(new Timer()));
-				Game.getTurnTimer().start(); //starts timer
+				parent.getParent().getGame().setTurnTimer(new Thread(new Timer()));
+				parent.getParent().getGame().getTurnTimer().start(); //starts timer
 				dispose();
 			}
 		});

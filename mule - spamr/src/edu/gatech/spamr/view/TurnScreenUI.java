@@ -30,7 +30,7 @@ public class TurnScreenUI extends JPanel {
 	//instance variables
 	private GameScreenUI parent;
 	private MapUI mapui = new MapUI();
-	private Player currentPlayer = Game.getPlayer1();
+	private Player currentPlayer = parent.getGame().getPlayer1();
 	private JDialog dialog;
 	private StartTurnDialog turndialog = new StartTurnDialog();
 	
@@ -73,6 +73,10 @@ public class TurnScreenUI extends JPanel {
 	
 	public void setParent(GameScreenUI p){
 		parent = p;
+	}
+	
+	public GameScreenUI getParent(){
+		return parent;
 	}
 	
 	public StartTurnDialog getTurnDialog(){
