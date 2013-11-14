@@ -12,6 +12,7 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 
 import edu.gatech.spamr.model.Game;
+import edu.gatech.spamr.model.Timer;
 
 import java.awt.Dimension;
 import java.awt.event.ItemEvent;
@@ -41,6 +42,7 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 	private JPanel cards = new JPanel(cardLayout);
 	private StoreUI storeui = new StoreUI();
 	private MuleMenuUI muleui = new MuleMenuUI();
+	private Timer stopWatch = new Timer();
 	
 	/**
 	 * Creates the GameScreen Panel and adds the other panels as cards
@@ -120,5 +122,7 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 		return parent.getGame();
 	}
 	
-	
+	public Timer getTimer(){
+		return stopWatch;
+	}
 }

@@ -72,12 +72,12 @@ public class PubUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				
 				//updates player money
-				int bonus = Pub.calcGamble(parent.getGame().getCurrentRound(), Timer.getTimeRemaining()); 
+				int bonus = Pub.calcGamble(parent.getGame().getCurrentRound(), parent.getTimer().getTimeRemaining()); 
 				System.out.println(parent.getGame().getCurrentPlayer().getName() + " recieves " + bonus + " money!");
 				parent.getGame().getCurrentPlayer().updateMoney(bonus);
 				
 				//interrupts the current timer
-				Timer.requestStop();
+				parent.getTimer().requestStop();
 				
 				
 				//turn change
