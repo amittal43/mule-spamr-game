@@ -21,6 +21,7 @@ public class RandomEvent {
 	boolean badEvent;
 	Player player;
 	int id;
+	public final int[] randomNumber = {25, 25, 25, 50, 50, 50, 50, 75, 75, 75, 75, 100};
 	
 	Random random = new Random();
 	int num = random.nextInt(7) + 1;
@@ -51,7 +52,7 @@ public class RandomEvent {
 	RandomEvent event7 = new RandomEvent("YOUR SPACE GYPSY INLAWS MADE A MESS OF THE TOWN", true, player, 7);
 	
 	
-	public void ProcessEvent(){
+	public void ProcessEvent(int RoundNum){
 		if (id == 1){
 			player.setFood(player.getFood() +3);
 			player.setEnergy(player.getEnergy() +2);
@@ -61,15 +62,15 @@ public class RandomEvent {
 			player.setOre(player.getOre() +2);
 		}
 		if(id == 3)
-			player.setMoney(player.getMoney() + 8*Round.getRandomNumber());
+			player.setMoney(player.getMoney() + 8*randomNumber[RoundNum]) ;
 		if(id == 4)
-			player.setMoney(player.getMoney() +2*Round.getRandomNumber());
+			player.setMoney(player.getMoney() + 2*randomNumber[RoundNum]) ;
 		if (id == 5)
-			player.setMoney(player.getMoney() + 4*Round.getRandomNumber());
+			player.setMoney(player.getMoney() + 4*randomNumber[RoundNum]);
 		if(id == 6)
 			player.setFood(player.getFood() - player.getEnergy()/2);
 		if(id == 7)
-			player.setMoney(player.getMoney() -2*Round.getRandomNumber());
+			player.setMoney(player.getMoney() - 2*randomNumber[RoundNum]);
 		
 	}
 	
