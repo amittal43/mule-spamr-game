@@ -19,45 +19,45 @@ import edu.gatech.spamr.view.MapUI;
 public class Game {
 	
 	//keeping the gameScreenUI naming consistent as parent
-	private static GameScreenUI parent;
+	public  GameScreenUI parent;
 	
 	//turn & round variables
-	private static Round currentRound = new Round();		//game starts in round 0
-	private static int currentTurn = 0;			//game starts with the first player going
-	private static int numRounds = 6;           //initialize at default number of rounds
-	private final int MAX_TURNS = 4;			//we assume a 4 player game so it has 4 turns per round
-	private static Store store;
+	public  Round currentRound = new Round();		//game starts in round 0
+	public  int currentTurn = 0;			//game starts with the first player going
+	public  int numRounds = 6;           //initialize at default number of rounds
+	public final int MAX_TURNS = 4;			//we assume a 4 player game so it has 4 turns per round
+	public  Store store;
 	
 	//creates player object for each person
-	private static Player p1 = new Player();
-	private static Player p2 = new Player();
-	private static Player p3 = new Player();
-	private static Player p4 = new Player();
+	public  Player p1 = new Player();
+	public  Player p2 = new Player();
+	public  Player p3 = new Player();
+	public  Player p4 = new Player();
 	
 	//play order
-	private static Player[] playOrder = new Player[]{p1, p2, p3, p4};
-	private static Player currentPlayer = playOrder[currentTurn];
+	public  Player[] playOrder = new Player[]{p1, p2, p3, p4};
+	public  Player currentPlayer = playOrder[currentTurn];
 	
 	//Timer used for each turn
-	private static Thread turnTimer;
+	public  Thread turnTimer;
 	
 	//stores what map the game is going to use and the difficulty level
-	private static Map gameMap = new Map(MapType.DEFAULT);
-	private static MapUI gameMapUI = new MapUI();
-	private static Difficulty diff = Difficulty.TOURNAMENT;
+	public  Map gameMap = new Map(MapType.DEFAULT);
+	public  MapUI gameMapUI = new MapUI();
+	public  Difficulty diff = Difficulty.TOURNAMENT;
 	
 	
 	//creates and describes the Difficulty enum
 	//each enum holds the starting food and energy for players in the game
 	public enum Difficulty{BEGINNER(8,4,6,16,16,0,25), STANDARD(4,2,12,8,8,8,14), TOURNAMENT(4,2,12,8,8,8,14);
 		
-		private final int startingFood;
-		private final int startingEnergy;
-		private final int numRounds;
-		private final int storeFood;
-		private final int storeEnergy;
-		private final int storeOre;
-		private final int storeMULE;
+		public final int startingFood;
+		public final int startingEnergy;
+		public final int numRounds;
+		public final int storeFood;
+		public final int storeEnergy;
+		public final int storeOre;
+		public final int storeMULE;
 		
 		Difficulty(int food, int energy, int rounds, int sFood, int sEnergy, int sOre, int sMULE){
 			startingFood = food;
@@ -99,17 +99,17 @@ public class Game {
 		}
 	}
 	
-	private static Store shop = new Store();
+	public  Store shop = new Store();
 	
 	/**
 	 * Should be called at the end of a player's turn once 
 	 * to update who's turn it is and what round the game is in
 	 * it also updates the order of play
 	 */
-	public static void updateTurn(){
+	public  void updateTurn(){
 		if (currentTurn == 3){
 			currentRound.nextRound();//updates the round number
-			playOrder = currentRound.calcTurn();
+			playOrder = currentRound.calcTurn(p1, p2, p3, p4);
 			currentTurn = 0;
 			
 			for(Tile tile : gameMap.getMapArray()){
@@ -122,8 +122,8 @@ public class Game {
 		currentPlayer = playOrder[currentTurn];
 	}
 	
-	public static void calcTurnOrder(){
-		playOrder = currentRound.calcTurn();
+	public  void calcTurnOrder(){
+		playOrder = currentRound.calcTurn(p1, p2, p3, p4);
 	}
 
 	
@@ -135,43 +135,43 @@ public class Game {
 	
 	
 	//TODO make a real score heuristic
-	private static int scorePlayer(Player p){
+	public  int scorePlayer(Player p){
 		return p.getMoney()/100; //currently just keeps reversing turn order
 	}
 	
 	
 	
 	//getters and setters 
-	public static int getCurrentTurn(){
+	public  int getCurrentTurn(){
 		return currentTurn;
 	}
 	
-	public static Round getCurrentRound(){
+	public  Round getCurrentRound(){
 		return currentRound;
 	}
 	
 	//no setter for map as map class has a way to set type
-	public static Map getMap(){
+	public  Map getMap(){
 		return gameMap;
 	}
 	
-	public static MapUI getMapUI(){
+	public  MapUI getMapUI(){
 		return gameMapUI;
 	}
 	
-	public static Difficulty getDifficulty(){
+	public  Difficulty getDifficulty(){
 		return diff;
 	}
 	
-	public static void setDifficulty(Difficulty d){
+	public  void setDifficulty(Difficulty d){
 		diff = d;
 	}
 	
-	public static void setNumRounds(int rounds){
+	public  void setNumRounds(int rounds){
 		numRounds = rounds;
 	}
 	
-	public static int getNumRounds(){
+	public  int getNumRounds(){
 		return numRounds;
 	}
 	
@@ -180,47 +180,47 @@ public class Game {
 		return playOrder;
 	}
 	
-	public static Player getCurrentPlayer(){
+	public  Player getCurrentPlayer(){
 		return playOrder[currentTurn];
 	}
 	
-	public static void setPlayerOrder(Player[] order){
+	public  void setPlayerOrder(Player[] order){
 		playOrder = order;
 	}
 	
-	public static Thread getTurnTimer() {
+	public  Thread getTurnTimer() {
 		return turnTimer;
 	}
 	
-	public static void setTurnTimer(Thread t){
+	public  void setTurnTimer(Thread t){
 		turnTimer = t;
 	}
 	
-	public static GameScreenUI getParent(){
+	public  GameScreenUI getParent(){
 		return parent;
 	}
 	
-	public static void setParent(GameScreenUI p){
+	public  void setParent(GameScreenUI p){
 		parent = p;
 	}
 	
 	
 	
 	//player gets so their data can be updated by player class getters and setters
-	public static Player getPlayer1(){
+	public  Player getPlayer1(){
 		return p1;
 	}
-	public static Player getPlayer2(){
+	public  Player getPlayer2(){
 		return p2;
 	}
-	public static Player getPlayer3(){
+	public  Player getPlayer3(){
 		return p3;
 	}
-	public static Player getPlayer4(){
+	public  Player getPlayer4(){
 		return p4;
 	}
 
-	public static Store getStore() {
+	public  Store getStore() {
 		return shop;
 	}
 }

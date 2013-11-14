@@ -15,10 +15,10 @@ import java.util.Arrays;
 
 public class Round {
 
-	private static int roundNumber = 0;
-	private static final int[] foodRequirement = {3,3,3,3,4,4,4,4,5,5,5,5};
-	private static final int[] gamblingBonus = {50,50,50,100,100,100,100,150,150,150,150,200};
-	private static final int[] randomNumber = {25, 25, 25, 50, 50, 50, 50, 75, 75, 75, 75, 100};
+	public int roundNumber = 0;
+	public final int[] foodRequirement = {3,3,3,3,4,4,4,4,5,5,5,5};
+	public final int[] gamblingBonus = {50,50,50,100,100,100,100,150,150,150,150,200};
+	public final int[] randomNumber = {25, 25, 25, 50, 50, 50, 50, 75, 75, 75, 75, 100};
 
 	/**
 	 * getRoundNumber method
@@ -26,11 +26,11 @@ public class Round {
 	 * @return roundNumber
 	 */
 	
-	public static int getRoundNumber(){
+	public int getRoundNumber(){
 		return roundNumber;
 	}
 	
-	public static int getRandomNumber(){
+	public int getRandomNumber(){
 		return randomNumber[roundNumber];
 	}
 	
@@ -40,14 +40,14 @@ public class Round {
 	 * @return turn of the player that should be starting
 	 */
 
-	public Player[] calcTurn(){
+	public Player[] calcTurn(Player p1, Player p2, Player p3, Player p4){
 		Player[] turn = new Player[4];	//stores players in order of score
 		boolean[] notUsed = {true, true, true, true};
 		//calculates score
-		int score1 = Game.getPlayer1().calcScore();
-		int score2 = Game.getPlayer2().calcScore();
-		int score3 = Game.getPlayer3().calcScore();
-		int score4 = Game.getPlayer4().calcScore();
+		int score1 = p1.calcScore();
+		int score2 = p2.calcScore();
+		int score3 = p3.calcScore();
+		int score4 = p4.calcScore();
 		
 		//sorts scores
 		int array[] = {score1, score2, score3, score4};
@@ -56,16 +56,16 @@ public class Round {
 		//matches score placement with player [
 		for(int i =0;i<4;i++){
 			if (array[i] == score1 && notUsed[0]) {
-				turn[i]=Game.getPlayer1();
+				turn[i]=p1;
 				notUsed[0] = false;
 			} else if(array[i] == score2 && notUsed[1]) {
-				turn[i]=Game.getPlayer2();
+				turn[i]=p2;
 				notUsed[1] = false;
 			} else if (array[i] == score3 && notUsed[2]) {
-				turn[i]=Game.getPlayer3();
+				turn[i]=p3;
 				notUsed[2] = false;
 			} else if (array[i] == score4 && notUsed[3]) {
-				turn[i]=Game.getPlayer4();
+				turn[i]=p4;
 				notUsed[3] = false;
 			}
 		}
@@ -87,7 +87,7 @@ public class Round {
 	 * @param round
 	 */
 	
-	public static void setRoundNumber(int round){ // for debugging purposes
+	public void setRoundNumber(int round){ // for debugging purposes
 		roundNumber = round;
 	}
 
@@ -95,7 +95,7 @@ public class Round {
 	 * nextRound method increases roundNumber variable
 	 */
 	
-	public static void nextRound(){
+	public void nextRound(){
 		roundNumber++;
 	}
 
@@ -105,7 +105,7 @@ public class Round {
 	 * @return foodRequirement
 	 */
 	
-	public static int getFoodRequirement(){
+	public int getFoodRequirement(){
 		return foodRequirement[roundNumber];
 	}
 	
@@ -116,7 +116,7 @@ public class Round {
 	 * @return gamblingBonus
 	 */
 	
-	public static int getGamblingBonus(){
+	public int getGamblingBonus(){
 		return gamblingBonus[roundNumber];
 	}
 
