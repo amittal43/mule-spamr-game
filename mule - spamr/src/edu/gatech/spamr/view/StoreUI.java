@@ -47,7 +47,7 @@ public class StoreUI extends JPanel{
 	public StoreUI(){
 		setPreferredSize((new Dimension (1280,800)));
 		setBackground(Color.LIGHT_GRAY);
-		JPanel buttonPanel = new JPanel(new FlowLayout());
+		JPanel buttonPanel = new JPanel();
 		buttonPanel.setBounds(1000, 0, 280, 800);
 		setLayout(null);
 		JLabel store =  new JLabel("STORE",JLabel.CENTER);	
@@ -136,6 +136,7 @@ public class StoreUI extends JPanel{
 		add(muleButton);
 		
 		JButton buyButton = new JButton("BUY");
+		buyButton.setBounds(77, 17, 155, 103);
 		buyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -184,9 +185,11 @@ public class StoreUI extends JPanel{
 				}
 			}
 		});
+		buttonPanel.setLayout(null);
 		buttonPanel.add(buyButton);
 		
 		JButton sellButton = new JButton("SELL");
+		sellButton.setBounds(77, 156, 155, 103);
 		sellButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -241,6 +244,7 @@ public class StoreUI extends JPanel{
 		buttonPanel.add(sellButton);
 		
 		JButton backbutton = new JButton("GO BACK");
+		backbutton.setBounds(77, 309, 155, 103);
 		buttonPanel.add(backbutton);
 		backbutton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
