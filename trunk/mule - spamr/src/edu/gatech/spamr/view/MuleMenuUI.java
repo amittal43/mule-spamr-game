@@ -37,7 +37,7 @@ public class MuleMenuUI extends JPanel {
 
 	private GameScreenUI parent;
 	private MapUI mapui = new MapUI();
-	private Store store = Game.getStore();
+	private Store store = parent.getGame().getStore();
 	
 	JButton btnFoodMule = new JButton("Food Mule");
 	JButton btnEnergyMule = new JButton("Energy Mule");
@@ -131,26 +131,26 @@ public class MuleMenuUI extends JPanel {
 		
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(Game.getCurrentPlayer().getMoney()<store.getMulePrice(selectedMule)){
+				if(parent.getGame().getCurrentPlayer().getMoney()<store.getMulePrice(selectedMule)){
 					System.out.println("Insufficient Funds");
 					parent.cardChangeTo("Store");
 				}
 				
-				else if(mapui.getCurrentTile().getOwner() != Game.getCurrentPlayer()){
+				else if(mapui.getCurrentTile().getOwner() != parent.getGame().getCurrentPlayer()){
 					System.out.println("You Do Not Own This Tile");
 					System.out.println("You paid for the MULE anyways");
 					System.out.println("The MULE ran away!");
-					Game.getCurrentPlayer().updateMoney(store.getMulePrice(selectedMule));
+					parent.getGame().getCurrentPlayer().updateMoney(store.getMulePrice(selectedMule));
 					parent.cardChangeTo("Store");
 				}
 				
 				else{
 					if(null == mapui.getCurrentTile().getMule()){
-						System.out.println("" + Game.getCurrentPlayer().getName() + " placed a " + selectedMule.toString() + " MULE on Tile " + mapui.getCurrentTile().getTileIndex());
-						Game.getStore().buyMULE(selectedMule, Game.getCurrentPlayer(), mapui.getCurrentTile());
+						System.out.println("" + parent.getGame().getCurrentPlayer().getName() + " placed a " + selectedMule.toString() + " MULE on Tile " + mapui.getCurrentTile().getTileIndex());
+						parent.getGame().getStore().buyMULE(selectedMule, parent.getGame().getCurrentPlayer(), mapui.getCurrentTile());
 						parent.cardChangeTo("Store");
 					} else {
-						System.out.println(Game.getCurrentPlayer().getName() + " already has a MULE here, your new MULE ran away!");
+						System.out.println(parent.getGame().getCurrentPlayer().getName() + " already has a MULE here, your new MULE ran away!");
 					}
 				}
 			}

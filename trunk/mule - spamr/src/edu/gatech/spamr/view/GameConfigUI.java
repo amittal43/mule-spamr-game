@@ -131,8 +131,8 @@ public class GameConfigUI extends JPanel {
             		numHumans = 2;
             	
             	//updates Game with difficulty and map selected
-            	Game.setDifficulty((Difficulty) DifficultyComboBox.getSelectedItem());
-            	Game.getMap().setMapType((MapType) MapComboBox.getSelectedItem());
+            	parent.getGame().setDifficulty((Difficulty) DifficultyComboBox.getSelectedItem());
+            	parent.getGame().getMap().setMapType((MapType) MapComboBox.getSelectedItem());
             	
             	//print debugging
             	/*

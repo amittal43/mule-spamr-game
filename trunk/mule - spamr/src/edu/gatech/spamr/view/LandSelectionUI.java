@@ -35,15 +35,15 @@ import javax.swing.border.EtchedBorder;
 public class LandSelectionUI extends JPanel {
 
 	//Land Selection variables
-	private MapUI mapui = Game.getMapUI();
-	private Player currentPlayer = Game.getPlayer1();
-	private Tile currentTile = mapui.getCurrentTile();
 	private boolean freeLandSelection = true;
 	private int propertiesOwned = 0; // if it gets to 8, free land selection is over
 	private int playersPassed = 0; // if it gets to 4, everyone passed
 	private GameScreenUI parent;
-	private JLabel playerLabel = new JLabel(Game.getPlayer1().getName());
+	private MapUI mapui = parent.getGame().getMapUI();
+	private Player currentPlayer = parent.getGame().getPlayer1();
+	private JLabel playerLabel = new JLabel(parent.getGame().getPlayer1().getName());
 	private JLabel costLabel = new JLabel("0");
+	private Tile currentTile = mapui.getCurrentTile();
 	
 	/**
 	 * nextPlayer method to allow a rotation in turn for the players to choose land
@@ -54,16 +54,16 @@ public class LandSelectionUI extends JPanel {
 	private void nextPlayer(){
 		
 		//rotate's which player is choosing a land tile
-		if(currentPlayer.equals(Game.getPlayer1())){
-			currentPlayer = Game.getPlayer2();
+		if(currentPlayer.equals(parent.getGame().getPlayer1())){
+			currentPlayer = parent.getGame().getPlayer2();
 			playerLabel.setText(currentPlayer.getName());
 		}
-		else if(currentPlayer.equals(Game.getPlayer2())){
-			currentPlayer = Game.getPlayer3();
+		else if(currentPlayer.equals(parent.getGame().getPlayer2())){
+			currentPlayer = parent.getGame().getPlayer3();
 			playerLabel.setText(currentPlayer.getName());
 		}
-		else if(currentPlayer.equals(Game.getPlayer3())){
-			currentPlayer = Game.getPlayer4();
+		else if(currentPlayer.equals(parent.getGame().getPlayer3())){
+			currentPlayer = parent.getGame().getPlayer4();
 			playerLabel.setText(currentPlayer.getName());
 		}
 		else{ // currentPlayer is Player4
@@ -76,7 +76,7 @@ public class LandSelectionUI extends JPanel {
 			
 			//checks to see if everyone passed
 			if(playersPassed<4){
-				currentPlayer = Game.getPlayer1();
+				currentPlayer = parent.getGame().getPlayer1();
 				playerLabel.setText(currentPlayer.getName());
 				playersPassed = 0;
 			}
@@ -85,14 +85,14 @@ public class LandSelectionUI extends JPanel {
 				parent.cardChangeTo("TurnScreen");
 				parent.setLandSelectionOver();
 				/*System.out.println("Player Order should be: "); // debugging
-				Player[] test = Game.getCurrentRound().calcTurn();
+				Player[] test = parent.getGame().getCurrentRound().calcTurn();
 				System.out.println("First: " + test[0].getName());
 				System.out.println("Second: " + test[1].getName());
 				System.out.println("Third: " + test[2].getName());
 				System.out.println("Last: " + test[3].getName());*/
-				Game.calcTurnOrder();
-				//Game.decidePlayOrder(new Player[]{Game.getPlayer1(),Game.getPlayer2(), Game.getPlayer3(), Game.getPlayer4()});
-				parent.getTurnScreenUI().getTurnDialog().setCurrentPlayerText(Game.getCurrentPlayer().getName());
+				parent.getGame().calcTurnOrder();
+				//parent.getGame().decidePlayOrder(new Player[]{parent.getGame().getPlayer1(),parent.getGame().getPlayer2(), parent.getGame().getPlayer3(), parent.getGame().getPlayer4()});
+				parent.getTurnScreenUI().getTurnDialog().setCurrentPlayerText(parent.getGame().getCurrentPlayer().getName());
 				parent.getTurnScreenUI().getTurnDialog().setVisible(true);
 				//(new Thread(new Timer())).start();
 			}
