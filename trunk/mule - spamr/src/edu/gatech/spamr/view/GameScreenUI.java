@@ -71,7 +71,7 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 		
 		
 		add(cards);
-		Game.setParent(this);
+		//Game.setParent(this);
 	}
 
 	//getters and setters
@@ -92,6 +92,10 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 		return cards;
 	}
 	
+	public MainAppView getMainAppView(){
+		return parent;
+	}
+	
 	public void setParent(MainAppView p){
 		parent = p;
 	}
@@ -110,6 +114,10 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 	
 	public TurnScreenUI getTurnScreenUI(){
 		return turnui;
+	}
+	
+	public Game getGame(){
+		return parent.getGame();
 	}
 	
 	
