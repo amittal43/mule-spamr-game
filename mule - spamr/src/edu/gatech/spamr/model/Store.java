@@ -4,11 +4,12 @@ import edu.gatech.spamr.model.Game.Difficulty;
 
 public class Store {
 	
-	private int foodQuantity = Game.getDifficulty().getStoreFood();
-	private int energyQuantity = Game.getDifficulty().getStoreEnergy();
-	private int oreQuantity = Game.getDifficulty().getStoreOre();
-	private int muleQuantity = Game.getDifficulty().getStoreMULES();
-	//public Resource selected;
+	//beginner Difficulty starting food
+	private int foodQuantity = 16;
+	private int energyQuantity = 16;
+	private int oreQuantity = 0;
+	private int muleQuantity = 25;
+
 	
 	// starting prices
 	private int foodPrice = 30;
