@@ -368,17 +368,17 @@ public class PlayerConfigUI extends JPanel {
 		Next.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if(getSelectedPlayer().equals(player1)){
-					Game.getPlayer1().setName(PlayerName.getText());
-					Game.getPlayer1().setColor(currentColor);
-					Game.getPlayer1().setRace(currentRace);
-					Game.getPlayer1().setMoney(currentRace.getStartingMoney());
-					Game.getPlayer1().setFood(Game.getDifficulty().getStartingFood());
-					Game.getPlayer1().setEnergy(Game.getDifficulty().getStartingEnergy());
+					parent.getGame().getPlayer1().setName(PlayerName.getText());
+					parent.getGame().getPlayer1().setColor(currentColor);
+					parent.getGame().getPlayer1().setRace(currentRace);
+					parent.getGame().getPlayer1().setMoney(currentRace.getStartingMoney());
+					parent.getGame().getPlayer1().setFood(parent.getGame().getDifficulty().getStartingFood());
+					parent.getGame().getPlayer1().setEnergy(parent.getGame().getDifficulty().getStartingEnergy());
 					
 					System.out.println();
-					System.out.println("Player 1's Name: " + Game.getPlayer1().getName());
-					System.out.println("Player 1's Color: " + Game.getPlayer1().getColor().toString());
-					System.out.println("Player 1's Race: " + Game.getPlayer1().getRace().toString());
+					System.out.println("Player 1's Name: " + parent.getGame().getPlayer1().getName());
+					System.out.println("Player 1's Color: " + parent.getGame().getPlayer1().getColor().toString());
+					System.out.println("Player 1's Race: " + parent.getGame().getPlayer1().getRace().toString());
 					
 					Player2.setEnabled(true);
 					Player2.doClick();
@@ -387,18 +387,18 @@ public class PlayerConfigUI extends JPanel {
 					return;
 				}
 				if(getSelectedPlayer().equals(player2)){
-					Game.getPlayer2().setName(PlayerName.getText());
-					Game.getPlayer2().setColor(currentColor);
-					Game.getPlayer2().setRace(currentRace);
-					Game.getPlayer2().setMoney(currentRace.getStartingMoney());
-					Game.getPlayer2().setFood(Game.getDifficulty().getStartingFood());
-					Game.getPlayer2().setEnergy(Game.getDifficulty().getStartingEnergy());
+					parent.getGame().getPlayer2().setName(PlayerName.getText());
+					parent.getGame().getPlayer2().setColor(currentColor);
+					parent.getGame().getPlayer2().setRace(currentRace);
+					parent.getGame().getPlayer2().setMoney(currentRace.getStartingMoney());
+					parent.getGame().getPlayer2().setFood(parent.getGame().getDifficulty().getStartingFood());
+					parent.getGame().getPlayer2().setEnergy(parent.getGame().getDifficulty().getStartingEnergy());
 					
 					
 					System.out.println();
-					System.out.println("Player 2's Name: " + Game.getPlayer2().getName());
-					System.out.println("Player 2's Color: " + Game.getPlayer2().getColor().toString());
-					System.out.println("Player 2's Race: " + Game.getPlayer2().getRace().toString());
+					System.out.println("Player 2's Name: " + parent.getGame().getPlayer2().getName());
+					System.out.println("Player 2's Color: " + parent.getGame().getPlayer2().getColor().toString());
+					System.out.println("Player 2's Race: " + parent.getGame().getPlayer2().getRace().toString());
 					
 					Player3.setEnabled(true);
 					Player3.doClick();
@@ -407,17 +407,17 @@ public class PlayerConfigUI extends JPanel {
 					return;
 				}
 				if(getSelectedPlayer().equals(player3)){
-					Game.getPlayer3().setName(PlayerName.getText());
-					Game.getPlayer3().setColor(currentColor);
-					Game.getPlayer3().setRace(currentRace);
-					Game.getPlayer3().setMoney(currentRace.getStartingMoney());
-					Game.getPlayer3().setFood(Game.getDifficulty().getStartingFood());
-					Game.getPlayer3().setEnergy(Game.getDifficulty().getStartingEnergy());
+					parent.getGame().getPlayer3().setName(PlayerName.getText());
+					parent.getGame().getPlayer3().setColor(currentColor);
+					parent.getGame().getPlayer3().setRace(currentRace);
+					parent.getGame().getPlayer3().setMoney(currentRace.getStartingMoney());
+					parent.getGame().getPlayer3().setFood(parent.getGame().getDifficulty().getStartingFood());
+					parent.getGame().getPlayer3().setEnergy(parent.getGame().getDifficulty().getStartingEnergy());
 					
 					System.out.println();
-					System.out.println("Player 3's Name: " + Game.getPlayer3().getName());
-					System.out.println("Player 3's Color: " + Game.getPlayer3().getColor().toString());
-					System.out.println("Player 3's Race: " + Game.getPlayer3().getRace().toString());
+					System.out.println("Player 3's Name: " + parent.getGame().getPlayer3().getName());
+					System.out.println("Player 3's Color: " + parent.getGame().getPlayer3().getColor().toString());
+					System.out.println("Player 3's Race: " + parent.getGame().getPlayer3().getRace().toString());
 					
 					Player4.setEnabled(true);
 					Player4.doClick();
@@ -427,18 +427,18 @@ public class PlayerConfigUI extends JPanel {
 					return;
 				}
 				if(getSelectedPlayer().equals(player4)){
-					Game.getPlayer4().setName(PlayerName.getText());
-					Game.getPlayer4().setColor(currentColor);
-					Game.getPlayer4().setRace(currentRace);
-					Game.getPlayer4().setMoney(currentRace.getStartingMoney());
-					Game.getPlayer4().setFood(Game.getDifficulty().getStartingFood());
-					Game.getPlayer4().setEnergy(Game.getDifficulty().getStartingEnergy());
+					parent.getGame().getPlayer4().setName(PlayerName.getText());
+					parent.getGame().getPlayer4().setColor(currentColor);
+					parent.getGame().getPlayer4().setRace(currentRace);
+					parent.getGame().getPlayer4().setMoney(currentRace.getStartingMoney());
+					parent.getGame().getPlayer4().setFood(parent.getGame().getDifficulty().getStartingFood());
+					parent.getGame().getPlayer4().setEnergy(parent.getGame().getDifficulty().getStartingEnergy());
 					
 					
 					System.out.println();
-					System.out.println("Player 4's Name: " + Game.getPlayer4().getName());
-					System.out.println("Player 4's Color: " + Game.getPlayer4().getColor().toString());
-					System.out.println("Player 4's Race: " + Game.getPlayer4().getRace().toString());
+					System.out.println("Player 4's Name: " + parent.getGame().getPlayer4().getName());
+					System.out.println("Player 4's Color: " + parent.getGame().getPlayer4().getColor().toString());
+					System.out.println("Player 4's Race: " + parent.getGame().getPlayer4().getRace().toString());
 					
 					
 					//close window

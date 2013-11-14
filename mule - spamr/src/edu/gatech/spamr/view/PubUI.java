@@ -62,7 +62,7 @@ public class PubUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				Pub pub = new Pub();
 				
-			//pub.calcGamble(Game.getRound(), );
+			//pub.calcGamble(parent.getGame().getRound(), );
 				
 			
 			}
@@ -72,23 +72,23 @@ public class PubUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				
 				//updates player money
-				int bonus = Pub.calcGamble(Game.getCurrentRound(), Timer.getTimeRemaining()); 
-				System.out.println(Game.getCurrentPlayer().getName() + " recieves " + bonus + " money!");
-				Game.getCurrentPlayer().updateMoney(bonus);
+				int bonus = Pub.calcGamble(parent.getGame().getCurrentRound(), Timer.getTimeRemaining()); 
+				System.out.println(parent.getGame().getCurrentPlayer().getName() + " recieves " + bonus + " money!");
+				parent.getGame().getCurrentPlayer().updateMoney(bonus);
 				
 				//interrupts the current timer
 				Timer.requestStop();
 				
 				
 				//turn change
-				Game.updateTurn(); //updates turn/round count in game (not current player)
-				System.out.println("Turn changes to " + Game.getCurrentPlayer().getName());
+				parent.getGame().updateTurn(); //updates turn/round count in game (not current player)
+				System.out.println("Turn changes to " + parent.getGame().getCurrentPlayer().getName());
 				
 				//screen change
 				parent.cardChangeTo("TurnScreen");
 				
 				//pop-up
-				parent.getTurnScreenUI().getTurnDialog().setCurrentPlayerText(Game.getCurrentPlayer().getName());
+				parent.getTurnScreenUI().getTurnDialog().setCurrentPlayerText(parent.getGame().getCurrentPlayer().getName());
 				parent.getTurnScreenUI().getTurnDialog().setVisible(true);
 				
 			}

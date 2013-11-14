@@ -49,10 +49,10 @@ import java.awt.event.ActionEvent;
 public class MapUI extends JPanel {
 	
 	//mapUI variables
-	private Map map = Game.getMap();
-	private Tile[] mapArray = map.getMapArray();
 	private JButton[] button = new JButton[45];
 	private GameScreenUI parent;
+	private Map map = parent.getGame().getMap();
+	private Tile[] mapArray = map.getMapArray();
 	private Tile currentTile = mapArray[0];
 	private Tile lastTile = mapArray[22]; // just to initialize
 	private JButton currentButton = button[22]; // town tile border will be null when cursor moves
