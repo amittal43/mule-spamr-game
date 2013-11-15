@@ -63,8 +63,8 @@ public class TownScreenUI extends JPanel {
 		
 		
 		//store Button
-		//ImageIcon storeIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/potter/STORE.JPG"));
-		//JButton storeButton = new JButton(storeIcon);
+		ImageIcon storeIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/potter/STORE.JPG"));
+		JButton storeButton = new JButton(storeIcon);
 		storeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				parent.cardChangeTo("Store");
