@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.LayoutManager;
 
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
@@ -47,12 +48,13 @@ public class TownScreenUI extends JPanel {
 	public TownScreenUI() {
 		
 		//sets preferences for TownScreen
-		setPreferredSize((new Dimension (1280,800)));
+		setPreferredSize(new Dimension(1280, 751));
 		setBackground(Color.LIGHT_GRAY);
-		JPanel buttonPanel = new JPanel(new GridLayout(2,2));	//creates the panel
-		buttonPanel.setPreferredSize(new Dimension(800,500) );
-		setLayout(new BorderLayout());
+//		JPanel buttonPanel = new JPanel(new GridLayout(2,2));	//creates the panel
+//		buttonPanel.setPreferredSize(new Dimension(800,500) );
+		
 		JLabel town =  new JLabel("TOWN",JLabel.CENTER);	//title
+		town.setBounds(587, 23, 152, 48);
 		town.setBackground(Color.DARK_GRAY);
 		town.setFont(new Font("Serif", Font.BOLD, 48));
 		
@@ -68,16 +70,17 @@ public class TownScreenUI extends JPanel {
 				parent.cardChangeTo("Store");
 			}
 		});
+		setLayout(null);
 		storeButton.setBackground(Color.DARK_GRAY);
-		storeButton.setBounds(1, 0, 112, 300);
-		buttonPanel.add(storeButton);
+		storeButton.setBounds(118, 93, 490, 304);
+		add(storeButton);
 		
 		//create an assay button in which the player can go assay 
 		assayButton = new JButton();
 		ImageIcon assayIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/potter/ASSAYOFFICE.jpg"));
 		JButton assayButton = new JButton(assayIcon);
-		assayButton.setBounds(113, 0, 112, 300);
-		buttonPanel.add(assayButton);
+		assayButton.setBounds(681, 93, 520, 304);
+		add(assayButton);
 		
 		//create a pub button in which the player can go to the pub
 		pubButton = new JButton();
@@ -87,39 +90,38 @@ public class TownScreenUI extends JPanel {
 			}
 		});
 		pubButton.setIcon(new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/potter/PUB.jpg")));
-		pubButton.setBounds(225, 0, 112, 300);
-		ImageIcon pubIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/Pub-alpha.jpg"));
-		buttonPanel.add(pubButton);
-		
+		pubButton.setBounds(118, 403, 490, 304);
+		add(pubButton);
+
 		
 		//create a land office button in which the player can go to the office to buy/trade land with computer
 		landOfficeButton = new JButton();
 		landOfficeButton.setIcon(new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/potter/LANDOFFICE.jpg")));
-		landOfficeButton.setBounds(338, 0, 112, 300);
+		landOfficeButton.setBounds(691, 403, 520, 304);
 		landOfficeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				parent.cardChangeTo("LandOffice");
 			}
 		});
-		ImageIcon landIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/Land-Office-final.jpg"));
-		buttonPanel.add(landOfficeButton);
+		add(landOfficeButton);
 		
 		backButton = new JButton("Click to go Back");
+		backButton.setBounds(537, 706, 246, 39);
 		backButton.setFont(new Font("Serif", Font.PLAIN, 30));
 		backButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				parent.cardChangeTo("TurnScreen");
 			}
 		});
-		add(backButton,BorderLayout.SOUTH);
+		add(backButton);
 		
 		//create a timer count down
 		//storeTimer = new Timer();
 		//timeRemaining = new JLabel("Remaining Time:" + storeTimer);
 		
 		//adds the panel
-		add(buttonPanel,BorderLayout.CENTER);
-		add(town,BorderLayout.PAGE_START);
+//		add(buttonPanel,BorderLayout.CENTER);
+		add(town);
 		//add(timeRemaining,BorderLayout.NORTH);
 	}
 		public void setParent(GameScreenUI gcui){
