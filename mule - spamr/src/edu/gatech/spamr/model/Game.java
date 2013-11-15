@@ -37,9 +37,7 @@ public class Game {
 	//play order
 	public  Player[] playOrder = new Player[]{p1, p2, p3, p4};
 	public  Player currentPlayer = playOrder[currentTurn];
-	
-	//Timer used for each turn
-	public  Thread turnTimer;
+
 	
 	//stores what map the game is going to use and the difficulty level
 	public  Map gameMap = new Map(MapType.DEFAULT);
@@ -186,14 +184,6 @@ public class Game {
 	
 	public  void setPlayerOrder(Player[] order){
 		playOrder = order;
-	}
-	
-	public  Thread getTurnTimer() {
-		return turnTimer;
-	}
-	
-	public  void setTurnTimer(Thread t){
-		turnTimer = t;
 	}
 	
 	public  GameScreenUI getParent(){
