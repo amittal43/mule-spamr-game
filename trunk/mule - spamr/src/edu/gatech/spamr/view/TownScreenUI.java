@@ -74,7 +74,7 @@ public class TownScreenUI extends JPanel {
 		
 		//create an assay button in which the player can go assay 
 		assayButton = new JButton();
-		ImageIcon assayIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/Assay-Office-final.jpg"));
+		ImageIcon assayIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/potter/ASSAYOFFICE.jpg"));
 		JButton assayButton = new JButton(assayIcon);
 		assayButton.setBounds(113, 0, 112, 300);
 		buttonPanel.add(assayButton);
