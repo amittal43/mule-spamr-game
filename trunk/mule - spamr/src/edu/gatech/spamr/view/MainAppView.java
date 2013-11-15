@@ -27,11 +27,13 @@ public class MainAppView {
 	private JFrame mainFrame;
 	private JDialog configDialog;
 	private TitleScreenUI title = new TitleScreenUI();
-	private GameConfigUI gcui = new GameConfigUI();
+	private GameConfigUI gcui;
 	private PlayerConfigUI pcui = new PlayerConfigUI();
 	private GameScreenUI gamescreen;
 	private Game game;
+	private LoadDialog ldialog;
 	private  Thread turnTimer;
+	
 	//private TownScreenUI town = new TownScreenUI();
 	
 	//sets preferences for the window
@@ -79,13 +81,16 @@ public class MainAppView {
 		mainFrame.setTitle("MULE: SPAMR Edition");
 		mainFrame.setContentPane(title);
 		
-		//adds cards to the frame
-		title.setParent(this);
-		gcui.setParent(this);
-		pcui.setParent(this);
 		game = new Game();
 		gamescreen = new GameScreenUI(this);
 		gamescreen.setParent(this);
+		
+		ldialog = new LoadDialog(this);
+		
+		title.setParent(this);
+		gcui = new GameConfigUI();
+		gcui.setParent(this);
+		pcui.setParent(this);
 		
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
@@ -116,6 +121,10 @@ public class MainAppView {
 		return game;
 	}
 	
+	public LoadDialog getLoadDialog(){
+		return ldialog;
+	}
+
 	public Thread getTurnTimer() {
 		return turnTimer;
 	}
@@ -123,4 +132,5 @@ public class MainAppView {
 	public void setTurnTimer(Thread t){
 		turnTimer = t;
 	}
+
 }

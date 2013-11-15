@@ -1,5 +1,6 @@
 package edu.gatech.spamr.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import edu.gatech.spamr.model.Tile.TileType;
@@ -15,7 +16,12 @@ import edu.gatech.spamr.model.Tile.TileType;
  * @version 1.0 10/22/2013 
  */
 
-public class Map {
+public class Map implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5224619347516431430L;
 	
 	private MapType mapType;
 	private Tile[] properties = new Tile[45];

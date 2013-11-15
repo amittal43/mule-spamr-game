@@ -46,6 +46,7 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 	private LandOfficeUI landui = new LandOfficeUI();
 	private MuleMenuUI muleui;
 	private Timer stopWatch = new Timer();
+	private SaveDialog sdialog = new SaveDialog(this);
 	
 	/**
 	 * Creates the GameScreen Panel and adds the other panels as cards
@@ -140,5 +141,9 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 	
 	public Timer getTimer(){
 		return stopWatch;
+	}
+	
+	public SaveDialog getSaveDialog(){
+		return sdialog;
 	}
 }
