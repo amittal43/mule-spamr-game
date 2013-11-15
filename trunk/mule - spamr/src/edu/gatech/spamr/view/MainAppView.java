@@ -31,6 +31,7 @@ public class MainAppView {
 	private PlayerConfigUI pcui = new PlayerConfigUI();
 	private GameScreenUI gamescreen;
 	private Game game;
+	private  Thread turnTimer;
 	//private TownScreenUI town = new TownScreenUI();
 	
 	//sets preferences for the window
@@ -115,4 +116,11 @@ public class MainAppView {
 		return game;
 	}
 	
+	public Thread getTurnTimer() {
+		return turnTimer;
+	}
+	
+	public void setTurnTimer(Thread t){
+		turnTimer = t;
+	}
 }
