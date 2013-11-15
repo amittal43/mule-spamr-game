@@ -51,6 +51,10 @@ public class PubUI extends JPanel {
 		pub.setBounds(0, 0, 1009, 48);
 		
 		pub.setFont(new Font("Serif", Font.BOLD, 48));
+		
+		ImageIcon table = new ImageIcon("/edu/gatech/spamr/resources/potter/Leakycauldron.jpg");
+		JButton cauldron = new JButton(table);
+		add(cauldron);
 
 		add(pub);
 		add(buttonPanel);

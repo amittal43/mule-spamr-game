@@ -45,13 +45,13 @@ public class StoreUI extends JPanel{
 	 */
 	
 	public StoreUI(){
-		setPreferredSize((new Dimension (1280,800)));
+		setPreferredSize(new Dimension(1280, 751));
 		setBackground(Color.LIGHT_GRAY);
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setBounds(1000, 0, 280, 800);
 		setLayout(null);
 		JLabel store =  new JLabel("STORE",JLabel.CENTER);	
-		store.setBounds(125, 6, 845, 48);
+		store.setBounds(93, 6, 845, 48);
 		
 		store.setFont(new Font("Serif", Font.BOLD, 48));
 		
@@ -72,8 +72,8 @@ public class StoreUI extends JPanel{
 				selected = Resource.FOOD;
 			}//actionPerformed
 		});
-		foodButton.setSize(446, 315);
-		foodButton.setLocation(12, 79);
+		foodButton.setSize(428, 315);
+		foodButton.setLocation(40, 103);
 
 //		foodButton.setSize(316, 267);
 //		foodButton.setLocation(148, 89);
@@ -93,7 +93,7 @@ public class StoreUI extends JPanel{
 		});
 
 		energyButton.setSize(418, 315);
-		energyButton.setLocation(570, 79);
+		energyButton.setLocation(546, 103);
 
 //		energyButton.setSize(410, 353);
 //		energyButton.setLocation(536, 61);
@@ -108,15 +108,15 @@ public class StoreUI extends JPanel{
 			}
 		});
 
-		oreButton.setSize(446, 305);
-		oreButton.setLocation(12, 482);
+		oreButton.setSize(428, 256);
+		oreButton.setLocation(40, 473);
 
 //		oreButton.setSize(344, 279);
 //		oreButton.setLocation(163, 412);
 
 		add(oreButton);
 		
-		ImageIcon muleIcon = new ImageIcon(StoreUI.class.getResource("/edu/gatech/spamr/resources/potter/Thestrals.gif"));
+		ImageIcon muleIcon = new ImageIcon(StoreUI.class.getResource("/edu/gatech/spamr/resources/potter/Thestral_on_land.gif"));
 		JButton muleButton = new JButton(muleIcon);
 		muleButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -154,8 +154,8 @@ public class StoreUI extends JPanel{
 			}
 		});
 
-		muleButton.setSize(307, 263);
-		muleButton.setLocation(637, 507);
+		muleButton.setSize(418, 218);
+		muleButton.setLocation(546, 487);
 
 //		muleButton.setSize(316, 248);
 //		muleButton.setLocation(598, 443);

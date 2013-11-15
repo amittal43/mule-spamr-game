@@ -97,7 +97,7 @@ public class TownScreenUI extends JPanel {
 		//create a land office button in which the player can go to the office to buy/trade land with computer
 		landOfficeButton = new JButton();
 		landOfficeButton.setIcon(new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/potter/LANDOFFICE.jpg")));
-		landOfficeButton.setBounds(691, 403, 520, 304);
+		landOfficeButton.setBounds(681, 403, 520, 304);
 		landOfficeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				parent.cardChangeTo("LandOffice");
