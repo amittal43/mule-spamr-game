@@ -84,6 +84,12 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 	//getters and setters
 	public void cardChangeTo(String cardName) {
         cardLayout.show(cards, cardName);
+        
+        if(cardName.equals("TurnScreen"))
+        	turnui.getMapUI().updateBorders();
+        
+        if(cardName.equals("Mule"))
+        	muleui.getMapUI().updateBorders();
         //if(cardName.equals("Map")){
         	//System.out.println("updating Colors");
         	//Game.getMapUI().updateBorders(Game.getMapUI().getTiles(), Game.getMapUI().getButtons());
