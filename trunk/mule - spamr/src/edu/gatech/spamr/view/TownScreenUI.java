@@ -61,7 +61,7 @@ public class TownScreenUI extends JPanel {
 		
 		
 		//store Button
-		ImageIcon storeIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/Store-final.JPG"));
+		ImageIcon storeIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/potter/STORE.JPG"));
 		JButton storeButton = new JButton(storeIcon);
 		storeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -86,7 +86,7 @@ public class TownScreenUI extends JPanel {
 				parent.cardChangeTo("Pub");
 			}
 		});
-		pubButton.setIcon(new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/Pub-alpha.jpg")));
+		pubButton.setIcon(new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/potter/PUB.jpg")));
 		pubButton.setBounds(225, 0, 112, 300);
 		ImageIcon pubIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/Pub-alpha.jpg"));
 		buttonPanel.add(pubButton);
@@ -94,7 +94,7 @@ public class TownScreenUI extends JPanel {
 		
 		//create a land office button in which the player can go to the office to buy/trade land with computer
 		landOfficeButton = new JButton();
-		landOfficeButton.setIcon(new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/Land-Office-final.jpg")));
+		landOfficeButton.setIcon(new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/potter/LANDOFFICE.jpg")));
 		landOfficeButton.setBounds(338, 0, 112, 300);
 		landOfficeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

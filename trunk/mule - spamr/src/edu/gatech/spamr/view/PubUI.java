@@ -42,10 +42,10 @@ public class PubUI extends JPanel {
 	 */
 	
 	public PubUI(){
-		setPreferredSize((new Dimension (1280,800)));
+		setPreferredSize(new Dimension(1280, 755));
 		setBackground(Color.LIGHT_GRAY);
 		JPanel buttonPanel = new JPanel();
-		buttonPanel.setBounds(1008, 0, 272, 800);
+		buttonPanel.setBounds(1006, 0, 274, 753);
 		setLayout(null);
 		JLabel pub =  new JLabel("PUB",JLabel.CENTER);	//title
 		pub.setBounds(0, 0, 1009, 48);

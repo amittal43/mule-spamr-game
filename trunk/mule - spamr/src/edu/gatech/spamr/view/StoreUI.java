@@ -61,40 +61,40 @@ public class StoreUI extends JPanel{
 //		JButton buyMule = new JButton("BUY MULE");
 //		buttonPanel.add(buyMule);
 		
-		ImageIcon foodIcon = new ImageIcon(StoreUI.class.getResource("/edu/gatech/spamr/resources/food-05.jpg"));
+		ImageIcon foodIcon = new ImageIcon(StoreUI.class.getResource("/edu/gatech/spamr/resources/potter/tumblr_ky1liq2l1Q1qzahuvo1_500.png"));
 		JButton foodButton = new JButton(foodIcon);
 		foodButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				selected = Resource.FOOD;
 			}//actionPerformed
 		});
-		foodButton.setSize(200, 200);
-		foodButton.setLocation(230, 116);
+		foodButton.setSize(316, 267);
+		foodButton.setLocation(148, 89);
 		add(foodButton);
 		
-		ImageIcon energyIcon = new ImageIcon(StoreUI.class.getResource("/edu/gatech/spamr/resources/energy-drinks.jpg"));
+		ImageIcon energyIcon = new ImageIcon(StoreUI.class.getResource("/edu/gatech/spamr/resources/potter/ENERGY.JPG"));
 		JButton energyButton = new JButton(energyIcon);
 		energyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				selected = Resource.ENERGY;
 			}
 		});
-		energyButton.setSize(200, 200);
-		energyButton.setLocation(649, 116);
+		energyButton.setSize(410, 353);
+		energyButton.setLocation(536, 61);
 		add(energyButton);
 		
-		ImageIcon oreIcon = new ImageIcon(StoreUI.class.getResource("/edu/gatech/spamr/resources/stone_2120340.JPG"));
+		ImageIcon oreIcon = new ImageIcon(StoreUI.class.getResource("/edu/gatech/spamr/resources/potter/Calico_silver_ore.jpg"));
 		JButton oreButton = new JButton(oreIcon);
 		oreButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				selected = Resource.ORE;
 			}
 		});
-		oreButton.setSize(200, 200);
-		oreButton.setLocation(230, 343);
+		oreButton.setSize(344, 279);
+		oreButton.setLocation(163, 412);
 		add(oreButton);
 		
-		ImageIcon muleIcon = new ImageIcon(StoreUI.class.getResource("/edu/gatech/spamr/resources/DARPAs-robot-mule-in-field-test.jpg"));
+		ImageIcon muleIcon = new ImageIcon(StoreUI.class.getResource("/edu/gatech/spamr/resources/potter/Thestrals.gif"));
 		JButton muleButton = new JButton(muleIcon);
 		muleButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -131,8 +131,8 @@ public class StoreUI extends JPanel{
 								
 			}
 		});
-		muleButton.setSize(200, 200);
-		muleButton.setLocation(649, 343);
+		muleButton.setSize(316, 248);
+		muleButton.setLocation(598, 443);
 		add(muleButton);
 		
 		JButton buyButton = new JButton("BUY");
