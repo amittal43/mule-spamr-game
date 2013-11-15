@@ -68,14 +68,20 @@ public class StartTurnDialog extends JDialog {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Pressed GO");
+				
+				//randomEvent
 				boolean first = false;
 				if(parent.getParent().getGame().getCurrentTurn() == 0){
 					first = true;
 				}
 				Player currentPlayer = parent.getParent().getGame().getCurrentPlayer();
 				parent.getParent().getGame().getCurrentRound().RandomEvent(currentPlayer, first);
+				
+				//timer
 				parent.getParent().getGame().setTurnTimer(new Thread(new Timer()));
 				parent.getParent().getGame().getTurnTimer().start(); //starts timer
+				
+				//closes window
 				dispose();
 			}
 		});
