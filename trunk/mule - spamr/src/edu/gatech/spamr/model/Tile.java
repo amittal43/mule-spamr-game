@@ -48,8 +48,8 @@ public class Tile implements Serializable{
 	//description of TileTypes available
 	public enum TileType{MOUNTAIN1(1,1,2,"/edu/gatech/spamr/resources/mountain1.gif"),
 							MOUNTAIN2(1,1,3,"/edu/gatech/spamr/resources/mountain2.gif"),
-							 MOUNTAIN3(1,1,4, "/edu/gatech/spamr/resources/Mountain-3.gif"), 
-							  PLAIN(2,3,1, "/edu/gatech/spamr/resources/grass.gif"),
+							 MOUNTAIN3(1,1,4, "/edu/gatech/spamr/resources/mountain1.gif"), 
+							  PLAIN(2,3,1, "/edu/gatech/spamr/resources/potter/snow.jpg"),
 							   RIVER(4,2,0, "/edu/gatech/spamr/resources/riverTest2-2.gif"),
 							   RIVER2(4,2,0, "/edu/gatech/spamr/resources/riverTest3.gif"),
 							    TOWN(0,0,0, "/edu/gatech/spamr/resources/potter/Hogwarts_night_tile.jpg");
