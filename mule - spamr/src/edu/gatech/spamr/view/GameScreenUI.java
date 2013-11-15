@@ -28,6 +28,8 @@ import java.awt.event.ItemEvent;
  * @version 1.0 10/15/2013 
  */
 
+
+
 public class GameScreenUI extends JPanel {	//panel that holds cards
 
 	//GameScreenUI Variables
@@ -41,6 +43,7 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 	private static CardLayout cardLayout = new CardLayout(0,0);
 	private JPanel cards = new JPanel(cardLayout);
 	private StoreUI storeui = new StoreUI();
+	private LandOfficeUI landui = new LandOfficeUI();
 	private MuleMenuUI muleui;
 	private Timer stopWatch = new Timer();
 	
@@ -72,6 +75,8 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 		pubui.setParent(this);
 		cards.add(storeui, "Store");
 		storeui.setParent(this);
+		cards.add(landui, "LandOffice");
+		landui.setParent(this);
 		cards.add(muleui, "Mule");
 		muleui.setParent(this);
 		cardLayout.show(cards, "LandSelection");
