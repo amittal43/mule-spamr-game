@@ -39,11 +39,11 @@ public class LandSelectionUI extends JPanel {
 	private int propertiesOwned = 0; // if it gets to 8, free land selection is over
 	private int playersPassed = 0; // if it gets to 4, everyone passed
 	private GameScreenUI parent;
-	private MapUI mapui = parent.getGame().getMapUI();
-	private Player currentPlayer = parent.getGame().getPlayer1();
-	private JLabel playerLabel = new JLabel(parent.getGame().getPlayer1().getName());
+	private MapUI mapui;
+	private Player currentPlayer;
+	private JLabel playerLabel;
 	private JLabel costLabel = new JLabel("0");
-	private Tile currentTile = mapui.getCurrentTile();
+	private Tile currentTile;
 	
 	/**
 	 * nextPlayer method to allow a rotation in turn for the players to choose land
@@ -103,7 +103,13 @@ public class LandSelectionUI extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public LandSelectionUI() {
+	public LandSelectionUI(GameScreenUI p) {
+		
+		parent = p;
+		mapui = new MapUI(parent.getGame().getMap());
+		currentPlayer = parent.getGame().getPlayer1();
+		playerLabel = new JLabel(parent.getGame().getPlayer1().getName());
+		currentTile = mapui.getCurrentTile();
 		
 		//sets preferences for the Land Selection panel
 		setPreferredSize(new Dimension(1280, 800));

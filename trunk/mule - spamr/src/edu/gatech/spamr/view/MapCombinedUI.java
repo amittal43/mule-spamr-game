@@ -5,6 +5,8 @@ import java.awt.Container;
 
 import javax.swing.JPanel;
 
+import edu.gatech.spamr.model.Map;
+
 public class MapCombinedUI extends JPanel {
 	private MapUI map;
 	private PersonInfo person;
@@ -13,7 +15,7 @@ public class MapCombinedUI extends JPanel {
 	 * Create the panel.
 	 */
 	public MapCombinedUI() {
-		map = new MapUI();
+		map = new MapUI(new Map(null));
 		person = new PersonInfo();	
 	}
 	

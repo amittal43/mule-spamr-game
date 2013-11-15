@@ -31,17 +31,17 @@ import java.awt.event.ItemEvent;
 public class GameScreenUI extends JPanel {	//panel that holds cards
 
 	//GameScreenUI Variables
-	private MapUI mapui = new MapUI();
-	private TurnScreenUI turnui = new TurnScreenUI(this);
+	private MainAppView parent;
+	//private MapUI mapui = new MapUI(this.getGame().getMap());
+	private TurnScreenUI turnui;
 	private PubUI pubui = new PubUI();
-	private LandSelectionUI lsui = new LandSelectionUI();
+	private LandSelectionUI lsui;
 	private boolean landSelectionOver = false;
 	private TownScreenUI tsui = new TownScreenUI();
-	private MainAppView parent;
 	private static CardLayout cardLayout = new CardLayout(0,0);
 	private JPanel cards = new JPanel(cardLayout);
 	private StoreUI storeui = new StoreUI();
-	private MuleMenuUI muleui = new MuleMenuUI();
+	private MuleMenuUI muleui;
 	private Timer stopWatch = new Timer();
 	
 	/**
@@ -49,7 +49,12 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 	 * 
 	 * @return a screen that has all the different locations a player can go to
 	 */
-	public GameScreenUI() {
+	public GameScreenUI(MainAppView main) {
+		
+		parent = main;
+		turnui = new TurnScreenUI(this);
+		lsui = new LandSelectionUI(this);
+		muleui = new MuleMenuUI(this);
 		
 		//setting preferences
 		setPreferredSize(new Dimension(1280, 800));
@@ -110,9 +115,9 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 		return landSelectionOver;
 	}
 	
-	public MapUI getMapUI(){
+	/*public MapUI getMapUI(){
 		return mapui;
-	}
+	}*/
 	
 	public TurnScreenUI getTurnScreenUI(){
 		return turnui;

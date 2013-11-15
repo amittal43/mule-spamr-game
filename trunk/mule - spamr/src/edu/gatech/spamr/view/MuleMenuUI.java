@@ -36,8 +36,8 @@ import javax.swing.border.MatteBorder;
 public class MuleMenuUI extends JPanel {
 
 	private GameScreenUI parent;
-	private MapUI mapui = new MapUI();
-	private Store store = parent.getGame().getStore();
+	private MapUI mapui;
+	private Store store;
 	
 	JButton btnFoodMule = new JButton("Food Mule");
 	JButton btnEnergyMule = new JButton("Energy Mule");
@@ -53,7 +53,11 @@ public class MuleMenuUI extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public MuleMenuUI() {
+	public MuleMenuUI(GameScreenUI p) {
+		
+		parent = p;
+		store = parent.getGame().getStore();
+		mapui = new MapUI(parent.getGame().getMap());
 		
 		setBackground(Color.DARK_GRAY);
 		setMinimumSize(new Dimension(1280, 800));
