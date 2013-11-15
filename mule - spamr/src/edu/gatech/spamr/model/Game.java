@@ -43,7 +43,7 @@ public class Game {
 	
 	//stores what map the game is going to use and the difficulty level
 	public  Map gameMap = new Map(MapType.DEFAULT);
-	public  MapUI gameMapUI = new MapUI();
+	//public  MapUI gameMapUI = new MapUI();
 	public  Difficulty diff = Difficulty.TOURNAMENT;
 	
 	
@@ -155,9 +155,9 @@ public class Game {
 		return gameMap;
 	}
 	
-	public  MapUI getMapUI(){
+	/*public  MapUI getMapUI(){
 		return gameMapUI;
-	}
+	}*/
 	
 	public  Difficulty getDifficulty(){
 		return diff;

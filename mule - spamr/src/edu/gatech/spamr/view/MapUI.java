@@ -51,10 +51,10 @@ public class MapUI extends JPanel {
 	//mapUI variables
 	private JButton[] button = new JButton[45];
 	private GameScreenUI parent;
-	private Map map = parent.getGame().getMap();
-	private Tile[] mapArray = map.getMapArray();
-	private Tile currentTile = mapArray[0];
-	private Tile lastTile = mapArray[22]; // just to initialize
+	private Map map;
+	private Tile[] mapArray;
+	private Tile currentTile;
+	private Tile lastTile;
 	private JButton currentButton = button[22]; // town tile border will be null when cursor moves
 	private JButton lastButton = button[22];
 	
@@ -90,8 +90,12 @@ public class MapUI extends JPanel {
 	 * 
 	 * @return map with all tiles displayed
 	 */
-	public MapUI() {
+	public MapUI(Map m) {
 		
+		map = m;
+		mapArray = map.getMapArray();
+		currentTile = mapArray[0];
+		lastTile = mapArray[22]; // just to initialize
 		
 		//UI preferences
 		setBackground(Color.LIGHT_GRAY);
@@ -1294,6 +1298,10 @@ public class MapUI extends JPanel {
 	
 	public Tile[] getTiles(){
 		return mapArray;
+	}
+	
+	public void setMap(Map m){
+		map = m;
 	}
 	
 }

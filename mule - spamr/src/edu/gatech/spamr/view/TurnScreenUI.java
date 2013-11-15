@@ -29,8 +29,8 @@ public class TurnScreenUI extends JPanel {
 
 	//instance variables
 	private GameScreenUI parent;
-	private MapUI mapui = new MapUI();
-	private Player currentPlayer = parent.getGame().getPlayer1();
+	private MapUI mapui;
+	private Player currentPlayer;
 	private JDialog dialog;
 	private StartTurnDialog turndialog = new StartTurnDialog();
 	
@@ -39,6 +39,8 @@ public class TurnScreenUI extends JPanel {
 	 */
 	public TurnScreenUI(GameScreenUI gcui) {
 		parent = gcui;
+		currentPlayer = parent.getGame().getPlayer1();
+		mapui = new MapUI(parent.getGame().getMap());
 		
 		setBackground(Color.DARK_GRAY);
 		setMinimumSize(new Dimension(1280, 800));

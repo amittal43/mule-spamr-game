@@ -1,6 +1,9 @@
 package edu.gatech.spamr.view;
 
 import javax.swing.JPanel;
+
+import edu.gatech.spamr.model.Map;
+
 import java.awt.Color;
 import java.awt.Dimension;
 
@@ -18,7 +21,7 @@ import java.awt.Dimension;
 public class LandOfficeUI extends JPanel {
 	
 	//creates an instance variable of MapUI
-	private MapUI mapui = new MapUI();
+	private MapUI mapui = new MapUI(new Map(null));
 
 	/**
 	 * LandOfficeUI creates the office is the correct dimensions

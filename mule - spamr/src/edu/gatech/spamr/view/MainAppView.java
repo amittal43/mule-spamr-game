@@ -29,8 +29,8 @@ public class MainAppView {
 	private TitleScreenUI title = new TitleScreenUI();
 	private GameConfigUI gcui = new GameConfigUI();
 	private PlayerConfigUI pcui = new PlayerConfigUI();
-	private GameScreenUI gamescreen = new GameScreenUI();
-	private Game game = new Game();
+	private GameScreenUI gamescreen;
+	private Game game;
 	//private TownScreenUI town = new TownScreenUI();
 	
 	//sets preferences for the window
@@ -82,6 +82,8 @@ public class MainAppView {
 		title.setParent(this);
 		gcui.setParent(this);
 		pcui.setParent(this);
+		game = new Game();
+		gamescreen = new GameScreenUI(this);
 		gamescreen.setParent(this);
 		
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
