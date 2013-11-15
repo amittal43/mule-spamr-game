@@ -62,7 +62,7 @@ public class StoreUI extends JPanel{
 //		buttonPanel.add(buyMule);
 		
 
-		ImageIcon foodIcon = new ImageIcon(StoreUI.class.getResource("/edu/gatech/spamr/resources/potter/FOOD.jpg"));
+		ImageIcon foodIcon = new ImageIcon(StoreUI.class.getResource("/edu/gatech/spamr/resources/potter/FOOD.png"));
 
 		//ImageIcon foodIcon = new ImageIcon(StoreUI.class.getResource("/edu/gatech/spamr/resources/potter/tumblr_ky1liq2l1Q1qzahuvo1_500.png"));
 
