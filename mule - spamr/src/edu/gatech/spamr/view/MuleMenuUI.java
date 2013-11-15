@@ -168,4 +168,9 @@ public class MuleMenuUI extends JPanel {
 	public void setParent(GameScreenUI gameScreenUI) {
 		parent = gameScreenUI;
 	}
+
+
+	public MapUI getMapUI() {
+		return mapui;
+	}
 }

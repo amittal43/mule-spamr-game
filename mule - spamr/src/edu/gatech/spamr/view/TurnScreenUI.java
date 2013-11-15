@@ -84,6 +84,10 @@ public class TurnScreenUI extends JPanel {
 	public StartTurnDialog getTurnDialog(){
 		return turndialog;
 	}
+	
+	public MapUI getMapUI(){
+		return mapui;
+	}
 
 
 }
