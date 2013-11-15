@@ -98,6 +98,7 @@ public class TownScreenUI extends JPanel {
 		landOfficeButton.setBounds(338, 0, 112, 300);
 		landOfficeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				parent.cardChangeTo("LandOffice");
 			}
 		});
 		ImageIcon landIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/Land-Office-final.jpg"));
@@ -107,7 +108,7 @@ public class TownScreenUI extends JPanel {
 		backButton.setFont(new Font("Serif", Font.PLAIN, 30));
 		backButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				parent.cardChangeTo("Map");
+				parent.cardChangeTo("TurnScreen");
 			}
 		});
 		add(backButton,BorderLayout.SOUTH);
