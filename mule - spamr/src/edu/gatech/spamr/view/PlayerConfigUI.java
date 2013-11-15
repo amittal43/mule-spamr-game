@@ -375,13 +375,16 @@ public class PlayerConfigUI extends JPanel {
 					parent.getGame().getPlayer1().setFood(parent.getGame().getDifficulty().getStartingFood());
 					parent.getGame().getPlayer1().setEnergy(parent.getGame().getDifficulty().getStartingEnergy());
 					
+					
 					System.out.println();
 					System.out.println("Player 1's Name: " + parent.getGame().getPlayer1().getName());
 					System.out.println("Player 1's Color: " + parent.getGame().getPlayer1().getColor().toString());
 					System.out.println("Player 1's Race: " + parent.getGame().getPlayer1().getRace().toString());
 					
+					
 					Player2.setEnabled(true);
 					Player2.doClick();
+					button.doClick();
 					Player1.setEnabled(false);
 					PlayerName.setText("");
 					return;
@@ -402,6 +405,7 @@ public class PlayerConfigUI extends JPanel {
 					
 					Player3.setEnabled(true);
 					Player3.doClick();
+					button.doClick();
 					Player2.setEnabled(false);
 					PlayerName.setText("");
 					return;
@@ -414,6 +418,7 @@ public class PlayerConfigUI extends JPanel {
 					parent.getGame().getPlayer3().setFood(parent.getGame().getDifficulty().getStartingFood());
 					parent.getGame().getPlayer3().setEnergy(parent.getGame().getDifficulty().getStartingEnergy());
 					
+					
 					System.out.println();
 					System.out.println("Player 3's Name: " + parent.getGame().getPlayer3().getName());
 					System.out.println("Player 3's Color: " + parent.getGame().getPlayer3().getColor().toString());
@@ -421,6 +426,7 @@ public class PlayerConfigUI extends JPanel {
 					
 					Player4.setEnabled(true);
 					Player4.doClick();
+					button.doClick();
 					Player3.setEnabled(false);
 					PlayerName.setText("");
 					Next.setText("Confirm");
