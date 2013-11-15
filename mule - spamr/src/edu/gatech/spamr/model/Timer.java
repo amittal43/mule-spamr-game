@@ -64,6 +64,7 @@ public class Timer implements Runnable {
 	
 	
 	public  void startTurn(Player player, Round round) {
+		System.out.println("Timer STARTS HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 		setTurnTime(player,round);
 		setTurnEndTime(player,round);
 		while(System.currentTimeMillis()<turnEnd && !stop){
