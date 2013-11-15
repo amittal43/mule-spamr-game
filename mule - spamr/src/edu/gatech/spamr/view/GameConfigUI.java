@@ -115,8 +115,17 @@ public class GameConfigUI extends JPanel {
 		//Continue Button
 		JButton btnContinue = new JButton("Continue");
 		btnContinue.setFont(new Font("Verdana", Font.BOLD, 12));
-		btnContinue.setBounds(102, 303, 103, 36);
+		btnContinue.setBounds(180, 301, 103, 36);
 		add(btnContinue);
+		
+		JButton btnLoadGame = new JButton("Load Game");
+		btnLoadGame.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				parent.getLoadDialog().setVisible(true);
+			}
+		});
+		btnLoadGame.setBounds(47, 301, 117, 31);
+		add(btnLoadGame);
 		
 		//buttonListener for Continue Button
 		btnContinue.addActionListener(new ActionListener() {  

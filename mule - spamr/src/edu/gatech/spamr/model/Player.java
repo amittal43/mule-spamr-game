@@ -1,6 +1,7 @@
 package edu.gatech.spamr.model;
 
 import java.awt.Color;
+import java.io.Serializable;
 
 /** 
  * The Player class represents the an information holder which
@@ -14,7 +15,12 @@ import java.awt.Color;
  * @version 1.0 10/22/2013 
  */
 
-public class Player {
+public class Player implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2534000258605748416L;
 
 	//Player Variables
 	private String name;

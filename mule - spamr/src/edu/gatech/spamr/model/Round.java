@@ -1,5 +1,6 @@
 package edu.gatech.spamr.model;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -14,8 +15,12 @@ import java.util.Random;
  * @version 1.0 10/22/2013 
  */
 
-public class Round {
+public class Round implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3247528578074538411L;
 	public int roundNumber = 0;
 	public final int[] foodRequirement = {3,3,3,3,4,4,4,4,5,5,5,5};
 	public final int[] gamblingBonus = {50,50,50,100,100,100,100,150,150,150,150,200};

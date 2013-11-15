@@ -1,5 +1,13 @@
 package edu.gatech.spamr.model;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
 import edu.gatech.spamr.model.Map.MapType;
 import edu.gatech.spamr.view.GameScreenUI;
 import edu.gatech.spamr.view.MapUI;
@@ -16,8 +24,13 @@ import edu.gatech.spamr.view.MapUI;
  * @version 1.0 10/22/2013 
  */
 
-public class Game {
+public class Game implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5331329139065557361L;
+
 	//keeping the gameScreenUI naming consistent as parent
 	public  GameScreenUI parent;
 	
@@ -26,7 +39,7 @@ public class Game {
 	public  int currentTurn = 0;			//game starts with the first player going
 	public  int numRounds = 6;           //initialize at default number of rounds
 	public final int MAX_TURNS = 4;			//we assume a 4 player game so it has 4 turns per round
-	public  Store store;
+	public  Store store = new Store();
 	
 	//creates player object for each person
 	public  Player p1 = new Player();
@@ -97,8 +110,6 @@ public class Game {
 		}
 	}
 	
-	public  Store shop = new Store();
-	
 	/**
 	 * Should be called at the end of a player's turn once 
 	 * to update who's turn it is and what round the game is in
@@ -124,6 +135,35 @@ public class Game {
 		playOrder = currentRound.calcTurn(p1, p2, p3, p4);
 	}
 
+	public void save(String filename){
+		try {
+			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filename));
+			out.writeObject(this);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static Game load(String filename){
+		Game game = null;
+		
+		try {
+			ObjectInputStream in = new ObjectInputStream(new FileInputStream(filename));
+			game = (Game) in.readObject();
+		} 
+		catch (FileNotFoundException e){
+			e.printStackTrace();
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e){
+			e.printStackTrace();
+		}
+		
+		
+		return game;
+	}
 	
 	/**
 	 * determines play order based off of score
@@ -211,6 +251,6 @@ public class Game {
 	}
 
 	public  Store getStore() {
-		return shop;
+		return store;
 	}
 }

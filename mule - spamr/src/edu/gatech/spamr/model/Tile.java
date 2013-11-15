@@ -1,6 +1,7 @@
 package edu.gatech.spamr.model;
 
 import java.awt.Color;
+import java.io.Serializable;
 
 import edu.gatech.spamr.model.Player.PlayerColor;
 import edu.gatech.spamr.model.Store.Resource;
@@ -17,8 +18,13 @@ import edu.gatech.spamr.model.Store.Resource;
  * @version 1.0 10/22/2013 
  */
 
-public class Tile {
+public class Tile implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7801672119397358752L;
+	
 	//tile Variables
 	private int tileIndex;
 	private Player owner;
@@ -46,7 +52,7 @@ public class Tile {
 							  PLAIN(2,3,1, "/edu/gatech/spamr/resources/grass.gif"),
 							   RIVER(4,2,0, "/edu/gatech/spamr/resources/riverTest2-2.gif"),
 							   RIVER2(4,2,0, "/edu/gatech/spamr/resources/riverTest3.gif"),
-							    TOWN(0,0,0, "/edu/gatech/spamr/resources/potter/Diagonalley.jpg");
+							    TOWN(0,0,0, "/edu/gatech/spamr/resources/potter/Hogwarts_night_tile.jpg");
 	
 		//variables for TileType
 		private final int foodProduction;

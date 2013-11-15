@@ -1,8 +1,13 @@
 package edu.gatech.spamr.model;
 
-import edu.gatech.spamr.model.Game.Difficulty;
+import java.io.Serializable;
 
-public class Store {
+public class Store implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8447124918015466998L;
 	
 	//beginner Difficulty starting food
 	private int foodQuantity = 16;

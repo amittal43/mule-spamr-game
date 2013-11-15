@@ -13,6 +13,9 @@ import edu.gatech.spamr.model.Player;
 import java.awt.Dimension;
 import java.awt.Color;
 import java.awt.Font;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 /** 
  * The TurnScreenUI class creates a panel which helps manage the different aspects of the game  
@@ -67,6 +70,15 @@ public class TurnScreenUI extends JPanel {
 		dialog.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 		dialog.setVisible(false);
 		turndialog.setParent(this);
+		
+		JButton saveButton = new JButton("Save");
+		saveButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				parent.getSaveDialog().setVisible(true);
+			}
+		});
+		saveButton.setBounds(1038, 683, 117, 25);
+		add(saveButton);
 		if(!SwingUtilities.isEventDispatchThread())
 			dialog.setContentPane(turndialog.getContentPane());
 		//add(currentTurn);
