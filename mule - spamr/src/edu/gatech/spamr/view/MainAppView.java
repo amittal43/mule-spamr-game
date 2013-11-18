@@ -121,6 +121,10 @@ public class MainAppView {
 		return game;
 	}
 	
+	public void setGame(Game g){
+		game = g;
+	}
+	
 	public LoadDialog getLoadDialog(){
 		return ldialog;
 	}
