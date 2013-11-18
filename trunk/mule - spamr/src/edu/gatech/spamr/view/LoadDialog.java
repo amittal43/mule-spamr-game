@@ -72,7 +72,7 @@ public class LoadDialog extends JDialog {
 						System.out.println("Player 4: " + parent.getGame().getPlayer4().getName());
 						System.out.println("Score: " + parent.getGame().getPlayer4().calcScore());
 						parent.getGameScreenUI().getTurnScreenUI().setMapUI(new MapUI(parent.getGame().getMap()));
-						parent.getGameScreenUI().cardChangeTo("TurnScreen");
+						parent.getGameScreenUI().cardChangeTo("LandSelection");
 						parent.getGameScreenUI().getTurnScreenUI().getTurnDialog().setCurrentPlayerText(parent.getGame().getCurrentPlayer().getName());
 						parent.getGameScreenUI().getTurnScreenUI().getTurnDialog().setVisible(true);
 						dispose();
