@@ -41,7 +41,7 @@ public class StatPanel extends JPanel {
 		
 		setMinimumSize(new Dimension(300, 800));
 		setMaximumSize(new Dimension(300, 800));
-		setPreferredSize(new Dimension(300, 800));
+		setPreferredSize(new Dimension(300, 753));
 		setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Player Info");
@@ -53,11 +53,11 @@ public class StatPanel extends JPanel {
 //		String p3 = parent.getGame().p3.getName();
 //		String p4 = parent.getGame().p4.getName();
 		 lblNewLabel_1 = new JLabel("Current Player :"+player);
-		lblNewLabel_1.setBounds(12, 51, 166, 22);
+		lblNewLabel_1.setBounds(12, 51, 191, 22);
 		add(lblNewLabel_1);
 		
 		 lblNewLabel_2 = new JLabel("Money :");
-		lblNewLabel_2.setBounds(22, 86, 47, 16);
+		lblNewLabel_2.setBounds(22, 86, 66, 16);
 		add(lblNewLabel_2);
 		 money= Integer.toString(currentp.getMoney());
 		 lblNewLabel_3 = new JLabel(money);
@@ -65,7 +65,7 @@ public class StatPanel extends JPanel {
 		add(lblNewLabel_3);
 		
 		 lblNewLabel_4 = new JLabel("Energy :");
-		lblNewLabel_4.setBounds(21, 109, 48, 16);
+		lblNewLabel_4.setBounds(21, 109, 67, 16);
 		add(lblNewLabel_4);
 		 energy= Integer.toString(currentp.getEnergy());
 		 lblNewLabel_5 = new JLabel(energy);
@@ -73,7 +73,7 @@ public class StatPanel extends JPanel {
 		add(lblNewLabel_5);
 
 		 lblNewLabel_6 = new JLabel("Ore :");
-		lblNewLabel_6.setBounds(22, 129, 30, 16);
+		lblNewLabel_6.setBounds(22, 129, 66, 16);
 		add(lblNewLabel_6);
 		ore= Integer.toString(currentp.getOre());
 		lblNewLabel_7 = new JLabel(ore);
@@ -81,7 +81,7 @@ public class StatPanel extends JPanel {
 		add(lblNewLabel_7);
 		
 		 lblNewLabel_8 = new JLabel("Food :");
-		lblNewLabel_8.setBounds(22, 151, 37, 16);
+		lblNewLabel_8.setBounds(22, 151, 56, 16);
 		add(lblNewLabel_8);
 		 food= Integer.toString(currentp.getFood());
 		lblNewLabel_9 = new JLabel(food);
