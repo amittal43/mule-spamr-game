@@ -98,6 +98,11 @@ public class Round implements Serializable {
 			eventID = random.nextInt(7) + 1;
 		}
 		
+		System.out.println("Food Before Event: " + currPlayer.getFood());
+		System.out.println("Energy Before Event: " + currPlayer.getEnergy());
+		System.out.println("Ore Before Event: " + currPlayer.getOre());
+		System.out.println("Money Before Event: " + currPlayer.getMoney());
+		
 		if (eventID == 1){ //1,2,3,4 good events
 			currPlayer.setFood(currPlayer.getFood() +3);
 			currPlayer.setEnergy(currPlayer.getEnergy() +2);
@@ -120,7 +125,7 @@ public class Round implements Serializable {
 			System.out.println("FLYING CAT-BUGS ATE THE ROOF OFF YOUR HOUSE");
 		}
 		else if(eventID == 6){
-			currPlayer.setFood(currPlayer.getFood() - currPlayer.getEnergy()/2);
+			currPlayer.setFood(currPlayer.getFood() - currPlayer.getFood()/2);
 			System.out.println("MISCHIEVOUS UGA STUDENTS BROKE INTO YOUR STORAGE SHED AND STOLE HALF YOUR FOOD");
 		}
 		else if(eventID == 7){
@@ -129,6 +134,11 @@ public class Round implements Serializable {
 		} else {
 			System.out.println("no event occured, eventID = " + eventID);
 		}
+		
+		System.out.println("Food After Event: " + currPlayer.getFood());
+		System.out.println("Energy After Event: " + currPlayer.getEnergy());
+		System.out.println("Ore After Event: " + currPlayer.getOre());
+		System.out.println("Money After Event: " + currPlayer.getMoney());
 	}
 	
 	

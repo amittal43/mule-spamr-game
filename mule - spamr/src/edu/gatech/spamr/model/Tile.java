@@ -135,28 +135,31 @@ public class Tile implements Serializable{
 	public void processProduction(){
 		if(!isOwned() || mule==null)
 			return;
-		
+		System.out.println("Food before Production: " + owner.getFood());
 		if(owner.getEnergy()==0){
 			System.out.println("The MULE on Tile " + tileIndex + " doesn't have enough energy to produce");
-		}
+		}else{
 
-		owner.setEnergy(owner.getEnergy()-1); // one unit of energy used to produce
-		
-		if(mule==Resource.FOOD){
-			System.out.println(owner.getName() + " produced " + type.getFoodProduction() + " Food on Tile " + tileIndex);
-			owner.setFood(owner.getFood() + type.getFoodProduction());
+			owner.setEnergy(owner.getEnergy()-1); // one unit of energy used to produce
+			
+			if(mule==Resource.FOOD){
+				System.out.println(owner.getName() + " produced " + type.getFoodProduction() + " Food on Tile " + tileIndex);
+				
+				owner.setFood(owner.getFood() + type.getFoodProduction());
+				
+			}
+			
+			else if(mule==Resource.ENERGY){
+				System.out.println(owner.getName() + " produced " + type.getEnergyProduction() + " Energy on Tile " + tileIndex);
+				owner.setEnergy(owner.getEnergy() + type.getEnergyProduction());
+			}
+			
+			else if(mule==Resource.ORE){
+				System.out.println(owner.getName() + " produced " + type.getOreProduction() + " Ore on Tile " + tileIndex);
+				owner.setOre(owner.getOre() + type.getOreProduction());
+			}
 		}
-		
-		else if(mule==Resource.ENERGY){
-			System.out.println(owner.getName() + " produced " + type.getEnergyProduction() + " Energy on Tile " + tileIndex);
-			owner.setEnergy(owner.getEnergy() + type.getEnergyProduction());
-		}
-		
-		else if(mule==Resource.ORE){
-			System.out.println(owner.getName() + " produced " + type.getOreProduction() + " Ore on Tile " + tileIndex);
-			owner.setOre(owner.getOre() + type.getOreProduction());
-		}
-		
+		System.out.println("Food after Production: " + owner.getFood());
 	}
 	
 }
