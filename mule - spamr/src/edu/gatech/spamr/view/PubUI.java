@@ -19,6 +19,7 @@ import edu.gatech.spamr.model.Timer;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import java.util.Random;
 
 /**
  * PubUI class to create a location in which the players can gamble
@@ -74,9 +75,9 @@ public class PubUI extends JPanel {
 		buttonPanel.add(gambleButton);
 		gambleButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				Random rand = new Random();
 				//updates player money
-				int bonus = Pub.calcGamble(parent.getGame().getCurrentRound(), parent.getTimer().getTimeRemaining()); 
+				int bonus = Pub.calcGamble(parent.getGame().getCurrentRound(), rand.nextInt(50001));//parent.getTimer().getTimeRemaining()); 
 				System.out.println(parent.getGame().getCurrentPlayer().getName() + " recieves " + bonus + " money!");
 				parent.getGame().getCurrentPlayer().updateMoney(bonus);
 				
