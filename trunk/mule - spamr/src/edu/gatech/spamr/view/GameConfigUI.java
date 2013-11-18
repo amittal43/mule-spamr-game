@@ -122,6 +122,7 @@ public class GameConfigUI extends JPanel {
 		btnLoadGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				parent.getLoadDialog().setVisible(true);
+				parent.getConfigDialog().dispose();
 			}
 		});
 		btnLoadGame.setBounds(47, 301, 117, 31);

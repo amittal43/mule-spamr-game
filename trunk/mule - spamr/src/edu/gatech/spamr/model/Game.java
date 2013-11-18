@@ -144,7 +144,7 @@ public class Game implements Serializable {
 		}
 	}
 	
-	public static Game load(String filename){
+	public Game load(String filename){
 		Game game = null;
 		
 		try {

@@ -58,8 +58,23 @@ public class LoadDialog extends JDialog {
 				JButton LoadButton = new JButton("Load");
 				LoadButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						parent.getGame().load(fileNameField.getText());
+						parent.setGame(parent.getGame().load(fileNameField.getText()));
+						parent.getMainFrame().setContentPane(parent.getGameScreenUI());
+						parent.getMainFrame().validate();
+						parent.getMainFrame().repaint();
+						System.out.println("Current Round is " + parent.getGame().getCurrentRound().getRoundNumber());
+						System.out.println("Player 1: " + parent.getGame().getPlayer1().getName());
+						System.out.println("Score: " + parent.getGame().getPlayer1().calcScore());
+						System.out.println("Player 2: " + parent.getGame().getPlayer2().getName());
+						System.out.println("Score: " + parent.getGame().getPlayer2().calcScore());
+						System.out.println("Player 3: " + parent.getGame().getPlayer3().getName());
+						System.out.println("Score: " + parent.getGame().getPlayer3().calcScore());
+						System.out.println("Player 4: " + parent.getGame().getPlayer4().getName());
+						System.out.println("Score: " + parent.getGame().getPlayer4().calcScore());
+						parent.getGameScreenUI().getTurnScreenUI().setMapUI(new MapUI(parent.getGame().getMap()));
 						parent.getGameScreenUI().cardChangeTo("TurnScreen");
+						parent.getGameScreenUI().getTurnScreenUI().getTurnDialog().setCurrentPlayerText(parent.getGame().getCurrentPlayer().getName());
+						parent.getGameScreenUI().getTurnScreenUI().getTurnDialog().setVisible(true);
 						dispose();
 					}
 				});

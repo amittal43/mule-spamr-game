@@ -100,6 +100,10 @@ public class TurnScreenUI extends JPanel {
 	public MapUI getMapUI(){
 		return mapui;
 	}
+	
+	public void setMapUI(MapUI m){
+		mapui = m;
+	}
 
 
 }
