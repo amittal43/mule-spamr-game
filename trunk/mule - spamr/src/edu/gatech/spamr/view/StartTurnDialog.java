@@ -77,7 +77,8 @@ public class StartTurnDialog extends JDialog {
 				Player currentPlayer = parent.getParent().getGame().getCurrentPlayer();
 				parent.getParent().getGame().getCurrentRound().RandomEvent(currentPlayer, first);
 				
-				//timer
+				//timer 
+				//Currently not working for some reason
 				parent.getParent().getMainAppView().setTurnTimer(new Thread(new Timer()));
 				parent.getParent().getMainAppView().getTurnTimer().start(); //starts timer
 				

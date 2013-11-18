@@ -93,9 +93,9 @@ public class Round implements Serializable {
 		Random random = new Random();
 		int eventID;
 		if(first){
-			eventID = random.nextInt()%4 + 1;
+			eventID = random.nextInt(4) + 1;
 		} else {
-			eventID = random.nextInt()%7 + 1;
+			eventID = random.nextInt(7) + 1;
 		}
 		
 		if (eventID == 1){ //1,2,3,4 good events
@@ -103,30 +103,32 @@ public class Round implements Serializable {
 			currPlayer.setEnergy(currPlayer.getEnergy() +2);
 			System.out.println("YOU JUST RECEIVED A PACKAGE FROM THE GT ALUMNI CONTAINING 3 FOOD AND 2 ENERGY UNITS");
 		}
-		if(eventID == 2){
+		else if(eventID == 2){
 			currPlayer.setOre(currPlayer.getOre() +2);
 			System.out.println("A WANDERING TECH STUDENT REPAID YOUR HOSPITALITY BY LEAVING TWO BARS OF ORE");
 		}
-		if(eventID == 3){
+		else if(eventID == 3){
 			currPlayer.setMoney(currPlayer.getMoney() + 8*randomNumber[roundNumber]);
 			System.out.println("THE MUSEUM BOUGHT YOUR ANTIQUE PERSONAL COMPUTER");
 		}
-		if(eventID == 4){
+		else if(eventID == 4){
 			currPlayer.setMoney(currPlayer.getMoney() + 2*randomNumber[roundNumber]);
 			System.out.println("YOU FOUND A DEAD MOOSE RAT AND SOLD THE HIDE");
 		}
-		if (eventID == 5){ //5,6,7 bad events
+		else if (eventID == 5){ //5,6,7 bad events
 			currPlayer.setMoney(currPlayer.getMoney() + 4*randomNumber[roundNumber]);
 			System.out.println("FLYING CAT-BUGS ATE THE ROOF OFF YOUR HOUSE");
 		}
-		if(eventID == 6){
+		else if(eventID == 6){
 			currPlayer.setFood(currPlayer.getFood() - currPlayer.getEnergy()/2);
 			System.out.println("MISCHIEVOUS UGA STUDENTS BROKE INTO YOUR STORAGE SHED AND STOLE HALF YOUR FOOD");
 		}
-		if(eventID == 7){
+		else if(eventID == 7){
 			currPlayer.setMoney(currPlayer.getMoney() - 2*randomNumber[roundNumber]);
 			System.out.println("YOUR SPACE GYPSY INLAWS MADE A MESS OF THE TOWN");
-		}	
+		} else {
+			System.out.println("no event occured, eventID = " + eventID);
+		}
 	}
 	
 	
