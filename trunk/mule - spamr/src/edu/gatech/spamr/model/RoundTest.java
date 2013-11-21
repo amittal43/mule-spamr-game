@@ -17,15 +17,20 @@ public class RoundTest {
 		Player p2 = new Player();
 		Player p3 = new Player();
 		Player p4 = new Player();
+		
+		//Only money is set. Food,Energy and Ore are set to 0. 
 		p1.setMoney(1000);
 		p2.setMoney(800);
 		p3.setMoney(600);
 		p4.setMoney(400);
-
+		
+		//Score is calculate by (Money/100) + Ore + Food + Energy.
+		//expected sorted player array
 		Player sorted[] = {p4,p3,p2,p1};
 
 		Round round = new Round();
-
+		
+		//result from calcTurn() method.
 		Player calcResult[] = round.calcTurn(p1, p2, p3, p4);
 
 		assertTrue(calcResult[0]==sorted[0] && calcResult[1]==sorted[1] && 
@@ -38,15 +43,20 @@ public class RoundTest {
 		Player p2 = new Player();
 		Player p3 = new Player();
 		Player p4 = new Player();
+		
+		//Only Ore is set. Food,Energy and Ore are set to 0.
 		p1.setOre(1000);
 		p2.setOre(800);
 		p3.setOre(600);
 		p4.setOre(400);
 
+		//Score is calculate by (Money/100) + Ore + Food + Energy.
+		//expected sorted player array :
 		Player sorted[] = {p4,p3,p2,p1};
 
 		Round round = new Round();
 
+		//result from calcTurn() method.
 		Player calcResult[] = round.calcTurn(p1, p2, p3, p4);
 
 		assertTrue(calcResult[0]==sorted[0] && calcResult[1]==sorted[1] && 
@@ -59,15 +69,20 @@ public class RoundTest {
 		Player p2 = new Player();
 		Player p3 = new Player();
 		Player p4 = new Player();
+		
+		//Only Food is set. Food,Energy and Ore are set to 0.
 		p1.setFood(1000);
 		p2.setFood(800);
 		p3.setFood(600);
 		p4.setFood(400);
-
+		
+		//Score is calculate by (Money/100) + Ore + Food + Energy.
+		//expected sorted player array :
 		Player sorted[] = {p4,p3,p2,p1};
 
 		Round round = new Round();
 
+		//result from calcTurn() method.
 		Player calcResult[] = round.calcTurn(p1, p2, p3, p4);
 
 		assertTrue(calcResult[0]==sorted[0] && calcResult[1]==sorted[1] && 
@@ -80,15 +95,20 @@ public class RoundTest {
 		Player p2 = new Player();
 		Player p3 = new Player();
 		Player p4 = new Player();
+		
+		//Only Energy is set. Food,Energy and Ore are set to 0.
 		p1.setEnergy(1000);
 		p2.setEnergy(800);
 		p3.setEnergy(600);
 		p4.setEnergy(400);
 
+		//Score is calculate by (Money/100) + Ore + Food + Energy.
+		//expected sorted player array :		
 		Player sorted[] = {p4,p3,p2,p1};
 
 		Round round = new Round();
 
+		//result from calcTurn() method.
 		Player calcResult[] = round.calcTurn(p1, p2, p3, p4);
 
 		assertTrue(calcResult[0]==sorted[0] && calcResult[1]==sorted[1] && 
@@ -101,6 +121,8 @@ public class RoundTest {
 		Player p2 = new Player();
 		Player p3 = new Player();
 		Player p4 = new Player();
+		
+		// Energy, Food, Ore and Money are set for all players.
 		p1.setEnergy(400);
 		p2.setEnergy(600);
 		p3.setEnergy(800);
@@ -122,11 +144,12 @@ public class RoundTest {
 		p4.setMoney(1000);
 		
 		//Score is calculate by (Money/100) + Ore + Food + Energy.
-		//p1=1240. p2=1830. p3=2420. p4= 3010.  
+		//p1=1240. p2=1830. p3=2420. p4= 3010. Expected sorted array :
 		Player correctSort[] = {p1,p2,p3,p4};
 
 		Round round = new Round();
-
+		
+		//result from calcTurn() method.
 		Player calcResult[] = round.calcTurn(p1, p2, p3, p4);
 
 		assertTrue(calcResult[0]==correctSort[0] && calcResult[1]==correctSort[1] && 
