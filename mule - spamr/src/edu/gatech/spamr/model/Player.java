@@ -36,8 +36,8 @@ public class Player implements Serializable {
 	public enum Race{PACKER(1000), SPHEROID(1000), HUMANOID(600), LEGGITE(1000), FLAPPER(1600), BONZOID(1000), MECHTRON(1000), GOLLUMER(1000);
 		private final int startingMoney;
 		
-		Race(int s){
-			startingMoney = s;
+		Race(int cash){
+			startingMoney = cash;
 		}
 		
 		public int getStartingMoney(){
@@ -50,8 +50,8 @@ public class Player implements Serializable {
 	
 	private final Color col;
 	
-	PlayerColor(Color c){
-		col = c;
+	PlayerColor(Color hue){
+		col = hue;
 	}
 	
 	public Color getRGB(){
@@ -76,8 +76,8 @@ public class Player implements Serializable {
 		return name;
 	}
 	
-	public void setName(String n){
-		name = n;
+	public void setName(String nam){
+		name = nam;
 	}
 	
 	public int getPlayerNum(){
@@ -92,36 +92,36 @@ public class Player implements Serializable {
 		return race;
 	}
 	
-	public void setRace(Race r){
-		race = r;
+	public void setRace(Race rce){
+		race = rce;
 	}
 	
 	public PlayerColor getColor(){
 		return color;
 	}
 	
-	public void setColor(PlayerColor c){
-		color = c;
+	public void setColor(PlayerColor clr){
+		color = clr;
 	}
 	
 	public int getMoney(){
 		return money;
 	}
 	
-	public void setMoney(int m){
-		money = m;
+	public void setMoney(int cash){
+		money = cash;
 	}
 	
-	public void updateMoney(int n){ //updates the player's money.
-		money += n;
+	public void updateMoney(int amount){ //updates the player's money.
+		money += amount;
 	}
 	
 	public int getFood(){
 		return food;
 	}
 	
-	public void setFood(int f){
-		food = f;
+	public void setFood(int quantity){
+		food = quantity;
 	}
 	
 	public int getEnergy(){
@@ -129,19 +129,19 @@ public class Player implements Serializable {
 	}
 	
 	public int calcScore(){
-		return (money/100) + ore + food + energy;
+		return money/100 + ore + food + energy;
 	}
 	
-	public void setEnergy(int e){
-		energy = e;
+	public void setEnergy(int quantity){
+		energy = quantity;
 	}
 	
 	public int getOre(){
 		return ore;
 	}
 	
-	public void setOre(int o){
-		ore = o;
+	public void setOre(int quantity){
+		ore = quantity;
 	}
 	
 
