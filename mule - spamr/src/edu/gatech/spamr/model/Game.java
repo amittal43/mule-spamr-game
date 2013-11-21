@@ -27,7 +27,7 @@ import edu.gatech.spamr.view.MapUI;
 public class Game implements Serializable {
 	
 	/**
-	 * 
+	 * Method creation for Serializable
 	 */
 	private static final long serialVersionUID = 5331329139065557361L;
 
