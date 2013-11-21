@@ -52,8 +52,8 @@ public class Map implements Serializable{
 	
 	
 	//creates an array of tiles representing the map
-	public Map(MapType m){
-		mapType = m;
+	public Map(MapType map){
+		mapType = map;
 		TileType[] mapLayout = mapType.getMapLayout();
 		//loops through the enums in the mapLayout and creates tiles for each of them
 		for(int i=0; i<properties.length; i++){	
