@@ -72,18 +72,16 @@ public class Store implements Serializable {
 			p.setFood(p.getFood() - number);
 			foodQuantity += number;
 			p.updateMoney(foodPrice/2);
-		}
-		
-		if(r == Resource.ENERGY){
+		} else if(r == Resource.ENERGY){
 			p.setEnergy(p.getEnergy() - number);
 			energyQuantity += number;
 			p.updateMoney(energyPrice/2);
-		}
-		
-		if(r == Resource.ORE){
+		} else if(r == Resource.ORE){
 			p.setOre(p.getOre() - number);
 			oreQuantity += number;
 			p.updateMoney(orePrice/2);
+		} else {
+			System.out.println(r + " is not a valid resource to sell.");
 		}
 	}
 	
