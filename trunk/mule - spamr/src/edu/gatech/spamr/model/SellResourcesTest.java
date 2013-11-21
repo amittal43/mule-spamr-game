@@ -17,7 +17,7 @@ public class SellResourcesTest {
 	Player p2;
 	Player p3;
 	
-	@Before
+	/*@Before
 	public void setUp() {
 		
 		//initalizing the store
@@ -45,9 +45,9 @@ public class SellResourcesTest {
 	    p3.setEnergy(5);
 	    p3.setOre(5);
 	    p3.setMoney(100);    
-	}
+	}*/
 
-	@Test
+	/*@Test
 	public final void testSellResource() {
 		
 		//player owns no resources and tries to sell them
@@ -151,6 +151,28 @@ public class SellResourcesTest {
 		
 		
 		fail("Not yet implemented"); // TODO
+	} */
+	
+	@Test
+	public final void testSellNoFood(){
+		
+		//initialize scenario
+		Store testStore = new Store();
+		Player testPlayer = new Player();
+		testPlayer.setFood(0);
+		testPlayer.setMoney(0);
+		Resource testResource = Resource.FOOD;
+		int testQuantity = 5;
+		
+		//run the function
+		testStore.sellResource(testPlayer, testResource, testQuantity);
+		
+		//check the results
+		assertEquals(0, testPlayer.getMoney());		
+		assertEquals(0, testPlayer.getFood());
+		assertEquals(16, testStore.getFoodQuantity());
+		
 	}
+	
 
 }

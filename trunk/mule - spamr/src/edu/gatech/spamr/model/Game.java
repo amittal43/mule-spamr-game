@@ -13,7 +13,7 @@ import edu.gatech.spamr.view.GameScreenUI;
 import edu.gatech.spamr.view.MapUI;
 
 /** 
- * The Game class represents the actual application of the game
+ * The Game class represents the actual application of the game.
  * 
  *  
  * @author Sean Lachenberg

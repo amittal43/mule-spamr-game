@@ -29,59 +29,59 @@ public class Store implements Serializable {
 	
 	public enum Resource{FOOD, ENERGY, ORE}
 	
-	public void buyResource(Player p, Resource r, int number){ // still need to implement money differences
-		if(r==Resource.FOOD){
-			p.setFood(p.getFood() + number);
-			foodQuantity -= number;
-			p.updateMoney(-(foodPrice * number));
+	public void buyResource(Player currentPlayer, Resource relevantResource, int quantity){ // still need to implement money differences
+		if(relevantResource==Resource.FOOD){
+			currentPlayer.setFood(currentPlayer.getFood() + quantity);
+			foodQuantity -= quantity;
+			currentPlayer.updateMoney(-(foodPrice * quantity));
 		}
 		
-		if(r==Resource.ENERGY){
-			p.setEnergy(p.getEnergy() + number);
-			energyQuantity -= number;
-			p.updateMoney(-(energyPrice * number));
+		if(relevantResource==Resource.ENERGY){
+			currentPlayer.setEnergy(currentPlayer.getEnergy() + quantity);
+			energyQuantity -= quantity;
+			currentPlayer.updateMoney(-(energyPrice * quantity));
 		}
 		
-		if(r==Resource.ORE){
-			p.setOre(p.getOre() + number);
-			oreQuantity -= number;
-			p.updateMoney(-(orePrice * number));
+		if(relevantResource==Resource.ORE){
+			currentPlayer.setOre(currentPlayer.getOre() + quantity);
+			oreQuantity -= quantity;
+			currentPlayer.updateMoney(-(orePrice * quantity));
 		}
 	}
 	
-	public void buyMULE(Resource type, Player player, Tile tile){
+	public void buyMULE(Resource type, Player currentPlayer, Tile tile){
 		muleQuantity--;
 		
 		if(type == Resource.FOOD){
-			player.updateMoney(-(mulePrice + foodFee));
+			currentPlayer.updateMoney(-(mulePrice + foodFee));
 		}
 		
 		if(type == Resource.ENERGY){
-			player.updateMoney(-(mulePrice + energyFee));
+			currentPlayer.updateMoney(-(mulePrice + energyFee));
 		}
 		
 		if(type == Resource.ORE){
-			player.updateMoney(-(mulePrice + oreFee));
+			currentPlayer.updateMoney(-(mulePrice + oreFee));
 		}
 		
 		tile.setMule(type);
 	}
 	
-	public void sellResource(Player p, Resource r, int number){
-		if(r == Resource.FOOD){
-			p.setFood(p.getFood() - number);
-			foodQuantity += number;
-			p.updateMoney(foodPrice/2);
-		} else if(r == Resource.ENERGY){
-			p.setEnergy(p.getEnergy() - number);
-			energyQuantity += number;
-			p.updateMoney(energyPrice/2);
-		} else if(r == Resource.ORE){
-			p.setOre(p.getOre() - number);
-			oreQuantity += number;
-			p.updateMoney(orePrice/2);
+	public void sellResource(Player currentPlayer, Resource relevantResource, int quantity){
+		if(relevantResource == Resource.FOOD){
+			currentPlayer.setFood(currentPlayer.getFood() - quantity);
+			foodQuantity += quantity;
+			currentPlayer.updateMoney(foodPrice/2);
+		} else if(relevantResource == Resource.ENERGY){
+			currentPlayer.setEnergy(currentPlayer.getEnergy() - quantity);
+			energyQuantity += quantity;
+			currentPlayer.updateMoney(energyPrice/2);
+		} else if(relevantResource == Resource.ORE){
+			currentPlayer.setOre(currentPlayer.getOre() - quantity);
+			oreQuantity += quantity;
+			currentPlayer.updateMoney(orePrice/2);
 		} else {
-			System.out.println(r + " is not a valid resource to sell.");
+			System.out.println(relevantResource + " is not a valid resource to sell.");
 		}
 	}
 	
@@ -90,32 +90,32 @@ public class Store implements Serializable {
 		return foodQuantity;
 	}
 	
-	public void setFoodQuantity(int f){
-		foodQuantity = f;
+	public void setFoodQuantity(int food){
+		foodQuantity = food;
 	}
 	
 	public int getOreQuantity(){
 		return oreQuantity;
 	}
 	
-	public void setOreQuantity(int o){
-		oreQuantity = o;
+	public void setOreQuantity(int ore){
+		oreQuantity = ore;
 	}
 	
 	public int getEnergyQuantity(){
 		return energyQuantity;
 	}
 	
-	public void setEnergyQuantity(int e){
-		energyQuantity = e;
+	public void setEnergyQuantity(int energy){
+		energyQuantity = energy;
 	}
 	
 	public int getMuleQuantity(){
 		return muleQuantity;
 	}
 	
-	public void setMuleQuantity(int m){
-		muleQuantity = m;
+	public void setMuleQuantity(int mule){
+		muleQuantity = mule;
 	}
 	
 	public int getFoodPrice(){
@@ -130,16 +130,22 @@ public class Store implements Serializable {
 		return orePrice;
 	}
 	
-	public int getMulePrice(Resource r) {
-		if (r.equals(Resource.FOOD))
-			return mulePrice + foodFee;
-		if (r.equals(Resource.ENERGY))
-			return mulePrice + energyFee;
-		if (r.equals(Resource.ORE))
-			return mulePrice + oreFee;
+	public int getMulePrice(Resource type) {
+		int toReturn = -1;
 		
-		System.out.println("not a valid Resource ENUM!");
-		return -1;
+		if (type.equals(Resource.FOOD)){
+			toReturn = mulePrice + foodFee;
+			
+		} else if (type.equals(Resource.ENERGY)){
+			toReturn = mulePrice + energyFee;
+			
+		} else if (type.equals(Resource.ORE)){
+			toReturn = mulePrice + oreFee;
+			
+		} else {
+			System.out.println("not a valid Resource ENUM!");
+		}
+		return toReturn;
 	}
 
 	
