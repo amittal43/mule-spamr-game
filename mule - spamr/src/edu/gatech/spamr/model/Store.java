@@ -68,20 +68,37 @@ public class Store implements Serializable {
 	}
 	
 	public void sellResource(Player currentPlayer, Resource relevantResource, int quantity){
-		if(relevantResource == Resource.FOOD){
-			currentPlayer.setFood(currentPlayer.getFood() - quantity);
-			foodQuantity += quantity;
-			currentPlayer.updateMoney(foodPrice/2);
-		} else if(relevantResource == Resource.ENERGY){
-			currentPlayer.setEnergy(currentPlayer.getEnergy() - quantity);
-			energyQuantity += quantity;
-			currentPlayer.updateMoney(energyPrice/2);
-		} else if(relevantResource == Resource.ORE){
-			currentPlayer.setOre(currentPlayer.getOre() - quantity);
-			oreQuantity += quantity;
-			currentPlayer.updateMoney(orePrice/2);
+		if(quantity > 0){
+			if(relevantResource == Resource.FOOD){
+				if (currentPlayer.getFood() >= quantity){
+					currentPlayer.setFood(currentPlayer.getFood() - quantity);
+					foodQuantity += quantity;
+					currentPlayer.updateMoney(foodPrice*quantity/2);
+				}else {
+					System.out.println("Player doesn't have " + quantity + " Food to sell");
+				}
+			} else if(relevantResource == Resource.ENERGY){
+				if (currentPlayer.getEnergy() >= quantity) {
+					currentPlayer.setEnergy(currentPlayer.getEnergy() - quantity);
+					energyQuantity += quantity;
+					currentPlayer.updateMoney(energyPrice*quantity/2);
+				} else {
+					System.out.println("Player doesn't have " + quantity + " Energy to sell");
+				}
+			} else if(relevantResource == Resource.ORE){
+				if (currentPlayer.getOre() >= quantity){
+					currentPlayer.setOre(currentPlayer.getOre() - quantity);
+					oreQuantity += quantity;
+					currentPlayer.updateMoney(orePrice*quantity/2);
+				} else {
+					System.out.println("Player doesn't have " + quantity + " Ore to sell");
+				}
+			} else {
+				//should not be possible to reach because there are only the 3 above enums defined
+				System.out.println(relevantResource + " is not a valid resource to sell this way.");
+			}
 		} else {
-			System.out.println(relevantResource + " is not a valid resource to sell.");
+			System.out.println(quantity + " is not a valid quantity to sell");
 		}
 	}
 	
