@@ -50,20 +50,31 @@ public class Store implements Serializable {
 	}
 	
 	public void buyMULE(Resource type, Player currentPlayer, Tile tile){
-		muleQuantity--;
-		
+		if(muleQuantity != 0){
+			muleQuantity--;
+		}	
 		if(type == Resource.FOOD){
-			currentPlayer.updateMoney(-(mulePrice + foodFee));
-		}
-		
+			if(currentPlayer.getMoney() < (mulePrice + foodFee)){
+				System.out.println("Player doesn't have enough money!");
+			}	
+			else	
+				currentPlayer.updateMoney(-(mulePrice + foodFee));
+		}		
 		if(type == Resource.ENERGY){
-			currentPlayer.updateMoney(-(mulePrice + energyFee));
-		}
-		
+
+			if(currentPlayer.getMoney() < (mulePrice + energyFee)){
+				System.out.println("Player doesn't have enough money!");
+			}	
+			else
+				currentPlayer.updateMoney(-(mulePrice + energyFee));
+		}		
 		if(type == Resource.ORE){
-			currentPlayer.updateMoney(-(mulePrice + oreFee));
-		}
-		
+			if(currentPlayer.getMoney() < (mulePrice + oreFee)){
+				System.out.println("Player doesn't have enough money!");
+			}	
+			else
+				currentPlayer.updateMoney(-(mulePrice + oreFee));
+		}		
 		tile.setMule(type);
 	}
 	
