@@ -58,13 +58,10 @@ public class StoreUI extends JPanel{
 		add(store);
 		add(buttonPanel);
 		
-//		JButton buyMule = new JButton("BUY MULE");
-//		buttonPanel.add(buyMule);
 		
 
 		ImageIcon foodIcon = new ImageIcon(StoreUI.class.getResource("/edu/gatech/spamr/resources/potter/FOOD.png"));
 
-		//ImageIcon foodIcon = new ImageIcon(StoreUI.class.getResource("/edu/gatech/spamr/resources/potter/tumblr_ky1liq2l1Q1qzahuvo1_500.png"));
 
 		JButton foodButton = new JButton(foodIcon);
 		foodButton.addActionListener(new ActionListener() {
@@ -82,8 +79,6 @@ public class StoreUI extends JPanel{
 		
 
 		ImageIcon energyIcon = new ImageIcon(StoreUI.class.getResource("/edu/gatech/spamr/resources/potter/ENERGY.jpg"));
-
-		//ImageIcon energyIcon = new ImageIcon(StoreUI.class.getResource("/edu/gatech/spamr/resources/potter/ENERGY.JPG"));
 
 		JButton energyButton = new JButton(energyIcon);
 		energyButton.addActionListener(new ActionListener() {
