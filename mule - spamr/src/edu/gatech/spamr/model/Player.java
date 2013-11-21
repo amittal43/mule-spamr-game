@@ -16,6 +16,8 @@ import java.io.Serializable;
  */
 
 public class Player implements Serializable {
+	
+	
 
 	/**
 	 * 
@@ -32,12 +34,16 @@ public class Player implements Serializable {
 	private int energy;
 	private int ore;
 
+	public Player(String name){
+		this.name=name;
+	}
 	//Describes the enum Race
 	public enum Race{PACKER(1000), SPHEROID(1000), HUMANOID(600), LEGGITE(1000), FLAPPER(1600), BONZOID(1000), MECHTRON(1000), GOLLUMER(1000);
 		private final int startingMoney;
 		
-		Race(int cash){
-			startingMoney = cash;
+		
+		Race(int s){
+			startingMoney = s;
 		}
 		
 		public int getStartingMoney(){
@@ -50,8 +56,8 @@ public class Player implements Serializable {
 	
 	private final Color col;
 	
-	PlayerColor(Color hue){
-		col = hue;
+	PlayerColor(Color c){
+		col = c;
 	}
 	
 	public Color getRGB(){
@@ -76,8 +82,8 @@ public class Player implements Serializable {
 		return name;
 	}
 	
-	public void setName(String nam){
-		name = nam;
+	public void setName(String n){
+		name = n;
 	}
 	
 	public int getPlayerNum(){
@@ -92,36 +98,36 @@ public class Player implements Serializable {
 		return race;
 	}
 	
-	public void setRace(Race rce){
-		race = rce;
+	public void setRace(Race r){
+		race = r;
 	}
 	
 	public PlayerColor getColor(){
 		return color;
 	}
 	
-	public void setColor(PlayerColor clr){
-		color = clr;
+	public void setColor(PlayerColor c){
+		color = c;
 	}
 	
 	public int getMoney(){
 		return money;
 	}
 	
-	public void setMoney(int cash){
-		money = cash;
+	public void setMoney(int m){
+		money = m;
 	}
 	
-	public void updateMoney(int amount){ //updates the player's money.
-		money += amount;
+	public void updateMoney(int n){ //updates the player's money.
+		money += n;
 	}
 	
 	public int getFood(){
 		return food;
 	}
 	
-	public void setFood(int quantity){
-		food = quantity;
+	public void setFood(int f){
+		food = f;
 	}
 	
 	public int getEnergy(){
@@ -129,19 +135,19 @@ public class Player implements Serializable {
 	}
 	
 	public int calcScore(){
-		return money/100 + ore + food + energy;
+		return (money/100) + ore + food + energy;
 	}
 	
-	public void setEnergy(int quantity){
-		energy = quantity;
+	public void setEnergy(int e){
+		energy = e;
 	}
 	
 	public int getOre(){
 		return ore;
 	}
 	
-	public void setOre(int quantity){
-		ore = quantity;
+	public void setOre(int o){
+		ore = o;
 	}
 	
 
