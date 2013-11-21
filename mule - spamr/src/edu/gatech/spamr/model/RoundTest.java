@@ -1,5 +1,8 @@
 package edu.gatech.spamr.model;
 import static org.junit.Assert.*;
+
+import java.util.Random;
+
 import org.junit.Test;
 
 /*
@@ -28,7 +31,9 @@ public class RoundTest {
 		//expected sorted player array
 		Player sorted[] = {p4,p3,p2,p1};
 
+		//Initializing a round and setting it to a random Round number.
 		Round round = new Round();
+		round.setRoundNumber((new Random()).nextInt(15));
 		
 		//result from calcTurn() method.
 		Player calcResult[] = round.calcTurn(p1, p2, p3, p4);
@@ -54,7 +59,9 @@ public class RoundTest {
 		//expected sorted player array :
 		Player sorted[] = {p4,p3,p2,p1};
 
+		//Initializing a round and setting it to a random Round number.
 		Round round = new Round();
+		round.setRoundNumber((new Random()).nextInt(15));
 
 		//result from calcTurn() method.
 		Player calcResult[] = round.calcTurn(p1, p2, p3, p4);
@@ -80,7 +87,9 @@ public class RoundTest {
 		//expected sorted player array :
 		Player sorted[] = {p4,p3,p2,p1};
 
+		//Initializing a round and setting it to a random Round number.
 		Round round = new Round();
+		round.setRoundNumber((new Random()).nextInt(15));
 
 		//result from calcTurn() method.
 		Player calcResult[] = round.calcTurn(p1, p2, p3, p4);
@@ -106,7 +115,9 @@ public class RoundTest {
 		//expected sorted player array :		
 		Player sorted[] = {p4,p3,p2,p1};
 
+		//Initializing a round and setting it to a random Round number.
 		Round round = new Round();
+		round.setRoundNumber((new Random()).nextInt(15));
 
 		//result from calcTurn() method.
 		Player calcResult[] = round.calcTurn(p1, p2, p3, p4);
@@ -151,7 +162,9 @@ public class RoundTest {
 		//If player scores are ordered in decreasing order of scores
 		Player wrongSort[] = {p4,p3,p2,p1};
 
+		//Initializing a round and setting it to a random Round number.
 		Round round = new Round();
+		round.setRoundNumber((new Random()).nextInt(15));
 		
 		//result from calcTurn() method.
 		Player calcResult[] = round.calcTurn(p1, p2, p3, p4);
@@ -179,7 +192,9 @@ public class RoundTest {
 		Player sorted1[] = {p4,p3,p2,p1};
 		Player sorted2[] = {p3,p4,p2,p1};
 
+		//Initializing a round and setting it to a random Round number.
 		Round round = new Round();
+		round.setRoundNumber((new Random()).nextInt(15));
 
 		//result from calcTurn() method. 
 		Player calcResult[] = round.calcTurn(p1, p2, p3, p4);
