@@ -16,10 +16,10 @@ public class RoundTest {
 
 	@Test
 	public void calcTurnMoneyTest1() {
-		Player p1 = new Player();
-		Player p2 = new Player();
-		Player p3 = new Player();
-		Player p4 = new Player();
+		Player p1 = new Player("p1");
+		Player p2 = new Player("p2");
+		Player p3 = new Player("p3");
+		Player p4 = new Player("p4");
 		
 		//Only money is set. Food,Energy and Ore are set to 0. 
 		p1.setMoney(1000);
@@ -44,10 +44,10 @@ public class RoundTest {
 	
 	@Test
 	public void calcTurnOreTest2() {
-		Player p1 = new Player();
-		Player p2 = new Player();
-		Player p3 = new Player();
-		Player p4 = new Player();
+		Player p1 = new Player("p1");
+		Player p2 = new Player("p2");
+		Player p3 = new Player("p3");
+		Player p4 = new Player("p4");
 		
 		//Only Ore is set. Food,Energy and Ore are set to 0.
 		p1.setOre(1000);
@@ -72,10 +72,10 @@ public class RoundTest {
 	
 	@Test
 	public void calcTurnFoodTest3() {
-		Player p1 = new Player();
-		Player p2 = new Player();
-		Player p3 = new Player();
-		Player p4 = new Player();
+		Player p1 = new Player("p1");
+		Player p2 = new Player("p2");
+		Player p3 = new Player("p3");
+		Player p4 = new Player("p4");
 		
 		//Only Food is set. Food,Energy and Ore are set to 0.
 		p1.setFood(1000);
@@ -100,10 +100,10 @@ public class RoundTest {
 	
 	@Test
 	public void calcTurnEnergyTest4() {
-		Player p1 = new Player();
-		Player p2 = new Player();
-		Player p3 = new Player();
-		Player p4 = new Player();
+		Player p1 = new Player("p1");
+		Player p2 = new Player("p2");
+		Player p3 = new Player("p3");
+		Player p4 = new Player("p4");
 		
 		//Only Energy is set. Food,Energy and Ore are set to 0.
 		p1.setEnergy(1000);
@@ -128,10 +128,10 @@ public class RoundTest {
 	
 	@Test
 	public void calcTurnOverallTest5() {
-		Player p1 = new Player();
-		Player p2 = new Player();
-		Player p3 = new Player();
-		Player p4 = new Player();
+		Player p1 = new Player("p1");
+		Player p2 = new Player("p2");
+		Player p3 = new Player("p3");
+		Player p4 = new Player("p4");
 		
 		// Energy, Food, Ore and Money are set for all players.
 		p1.setEnergy(400);
@@ -176,10 +176,10 @@ public class RoundTest {
 	
 	@Test
 	public void calcTurnOverallTest6() {
-		Player p1 = new Player();
-		Player p2 = new Player();
-		Player p3 = new Player();
-		Player p4 = new Player();
+		Player p1 = new Player("p1");
+		Player p2 = new Player("p2");
+		Player p3 = new Player("p3");
+		Player p4 = new Player("p4");
 		
 		//Only Energy is set. Two players have 0 energy so that their scores are also 0.
 		p1.setEnergy(1000);
