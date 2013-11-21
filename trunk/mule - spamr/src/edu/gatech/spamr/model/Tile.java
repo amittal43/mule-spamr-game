@@ -31,13 +31,13 @@ public class Tile implements Serializable{
 	private Player.PlayerColor tileColor;
 	private boolean owned;
 	private TileType type;
-	private Color c;
+	private Color colr;
 	private Resource mule = null;
 	
 	//Tile Constructor
-	Tile(int index, TileType t){
+	Tile(int index, TileType ttype){
 		tileIndex = index;
-		type = t;
+		type = ttype;
 		owned = false;
 		owner = null;
 		tileColor = PlayerColor.BLUE; // default
@@ -91,16 +91,16 @@ public class Tile implements Serializable{
 		return tileIndex;
 	}
 	
-	public void setTileIndex(int i){
-		tileIndex = i;
+	public void setTileIndex(int indx){
+		tileIndex = indx;
 	}
 	
 	public Player getOwner(){
 		return owner;
 	}
 	
-	public void setOwner(Player p){
-		owner = p;
+	public void setOwner(Player play){
+		owner = play;
 		owned = true;
 	}
 	
@@ -108,8 +108,8 @@ public class Tile implements Serializable{
 		return type;
 	}
 	
-	public void setTileType(TileType t){
-		type = t;
+	public void setTileType(TileType kind){
+		type = kind;
 	}
 	
 	public boolean isOwned(){
@@ -121,7 +121,7 @@ public class Tile implements Serializable{
 	}
 
 	public void setBorderColor(Color color) {
-		color = c;
+		color = colr;
 	}
 	
 	public void setMule(Resource type){
@@ -133,8 +133,9 @@ public class Tile implements Serializable{
 	}
 	
 	public void processProduction(){
-		if(!isOwned() || mule==null)
+		if(!isOwned() || mule==null){
 			return;
+		}
 		System.out.println("Food before Production: " + owner.getFood());
 		if(owner.getEnergy()==0){
 			System.out.println("The MULE on Tile " + tileIndex + " doesn't have enough energy to produce");

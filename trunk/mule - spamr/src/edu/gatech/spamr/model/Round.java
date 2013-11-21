@@ -46,14 +46,14 @@ public class Round implements Serializable {
 	 * @return turn of the player that should be starting
 	 */
 
-	public Player[] calcTurn(Player p1, Player p2, Player p3, Player p4){
+	public Player[] calcTurn(Player player1, Player player2, Player player3, Player player4){
 		Player[] turn = new Player[4];	//stores players in order of score
 		boolean[] notUsed = {true, true, true, true};
 		//calculates score
-		int score1 = p1.calcScore();
-		int score2 = p2.calcScore();
-		int score3 = p3.calcScore();
-		int score4 = p4.calcScore();
+		int score1 = player1.calcScore();
+		int score2 = player2.calcScore();
+		int score3 = player3.calcScore();
+		int score4 = player4.calcScore();
 		
 		//sorts scores
 		int array[] = {score1, score2, score3, score4};
@@ -62,16 +62,16 @@ public class Round implements Serializable {
 		//matches score placement with player [
 		for(int i =0;i<4;i++){
 			if (array[i] == score1 && notUsed[0]) {
-				turn[i]=p1;
+				turn[i]=player1;
 				notUsed[0] = false;
 			} else if(array[i] == score2 && notUsed[1]) {
-				turn[i]=p2;
+				turn[i]=player2;
 				notUsed[1] = false;
 			} else if (array[i] == score3 && notUsed[2]) {
-				turn[i]=p3;
+				turn[i]=player3;
 				notUsed[2] = false;
 			} else if (array[i] == score4 && notUsed[3]) {
-				turn[i]=p4;
+				turn[i]=player4;
 				notUsed[3] = false;
 			}
 		}
