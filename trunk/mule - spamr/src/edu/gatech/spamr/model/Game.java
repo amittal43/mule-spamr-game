@@ -42,13 +42,13 @@ public class Game implements Serializable {
 	public  Store store = new Store();
 	
 	//creates player object for each person
-	public  Player p1 = new Player();
-	public  Player p2 = new Player();
-	public  Player p3 = new Player();
-	public  Player p4 = new Player();
+	public  Player player1 = new Player();
+	public  Player player2 = new Player();
+	public  Player player3 = new Player();
+	public  Player player4 = new Player();
 	
 	//play order
-	public  Player[] playOrder = new Player[]{p1, p2, p3, p4};
+	public  Player[] playOrder = new Player[]{player1, player2, player3, player4};
 	public  Player currentPlayer = playOrder[currentTurn];
 
 	
@@ -116,9 +116,9 @@ public class Game implements Serializable {
 	 * it also updates the order of play
 	 */
 	public  void updateTurn(){
-		if (currentTurn == 3){
+		if (currentTurn >= 3){
 			currentRound.nextRound();//updates the round number
-			playOrder = currentRound.calcTurn(p1, p2, p3, p4);
+			playOrder = currentRound.calcTurn(player1, player2, player3, player4);
 			currentTurn = 0;
 			
 			for(Tile tile : gameMap.getMapArray()){
@@ -132,7 +132,7 @@ public class Game implements Serializable {
 	}
 	
 	public  void calcTurnOrder(){
-		playOrder = currentRound.calcTurn(p1, p2, p3, p4);
+		playOrder = currentRound.calcTurn(player1, player2, player3, player4);
 	}
 
 	public void save(String filename){
@@ -173,8 +173,8 @@ public class Game implements Serializable {
 	
 	
 	//TODO make a real score heuristic
-	public  int scorePlayer(Player p){
-		return p.getMoney()/100; //currently just keeps reversing turn order
+	public  int scorePlayer(Player playerToRate){
+		return playerToRate.getMoney()/100; //currently just keeps reversing turn order
 	}
 	
 	
@@ -238,16 +238,16 @@ public class Game implements Serializable {
 	
 	//player gets so their data can be updated by player class getters and setters
 	public  Player getPlayer1(){
-		return p1;
+		return player1;
 	}
 	public  Player getPlayer2(){
-		return p2;
+		return player2;
 	}
 	public  Player getPlayer3(){
-		return p3;
+		return player3;
 	}
 	public  Player getPlayer4(){
-		return p4;
+		return player4;
 	}
 
 	public  Store getStore() {
