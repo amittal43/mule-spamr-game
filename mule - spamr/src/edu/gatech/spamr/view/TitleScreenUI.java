@@ -11,11 +11,14 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
 
 import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.image.BufferedImage;
 
 
 /** 
@@ -34,9 +37,8 @@ public class TitleScreenUI extends JPanel {
 
 	//Create instance variable
 	private MainAppView parent;
-	ImageIcon icon;
-	JLabel background;
-
+	private Image background;
+	
 	
 	/**
 	 * TitleScreenUI returns a screen in which the user can enter the game
@@ -46,15 +48,35 @@ public class TitleScreenUI extends JPanel {
 	public TitleScreenUI() {
 		
 		//sets preferences for the Title Screen
-		setPreferredSize(new Dimension(1280, 800));
-		setMinimumSize(new Dimension(1280, 800));
+		//setPreferredSize(new Dimension(1280, 800));
+		//setMinimumSize(new Dimension(1280, 800));
 		
 		//set the background with image
-		icon = new ImageIcon("/mule-spamr/src/edu/gatech/spamr/resources/potter/game_screen.jpg");
-		background = new JLabel(icon);
-		background.setOpaque(false);
-		JFrame frame = new JFrame();
-		frame.add(background);
+		background = new ImageIcon("/mule-spamr/src/edu/gatech/spamr/resources/potter/game_screen.jpg").getImage();
+		Dimension size = new Dimension(background.getWidth(null), background.getHeight(null));
+		setPreferredSize(size);
+		setMinimumSize(size);
+		setMaximumSize(size);
+		setSize(size);
+		setLayout(null);
+		
+		JButton btnStart = new JButton("START");
+		btnStart.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				parent.setUpConfigDialog();
+			}
+		});
+		btnStart.setFont(new Font("Verdana", Font.BOLD, 18));
+		btnStart.setBounds(581, 453, 132, 54);
+		add(btnStart);
+		
+	}
+	
+		public void paintComponent(Graphics g) {
+			Graphics2D g2d = (Graphics2D)g;
+			g2d.drawImage(background, 0, 0, null);
+			
+		}
 		
 		//Title
 //		JLabel lblNewLabel = new JLabel("MULE: SPAMR Edition");
@@ -66,18 +88,19 @@ public class TitleScreenUI extends JPanel {
 //		lblNewLabel.setFont(new Font("Verdana", Font.BOLD, 30));
 //		add(lblNewLabel);
 		
+		//public void startButton() {
 		//start button
-		JButton btnStart = new JButton("START");
-		btnStart.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				parent.setUpConfigDialog();
-			}
-		});
-		btnStart.setFont(new Font("Verdana", Font.BOLD, 18));
-		btnStart.setBounds(581, 453, 132, 54);
-		add(btnStart);
+//		JButton btnStart = new JButton("START");
+//		btnStart.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent arg0) {
+//				parent.setUpConfigDialog();
+//			}
+//		});
+//		btnStart.setFont(new Font("Verdana", Font.BOLD, 18));
+//		btnStart.setBounds(581, 453, 132, 54);
+//		add(btnStart);
 
-	}
+//	}
 	
 	//getters and setters
 	public void setParent(MainAppView main){
