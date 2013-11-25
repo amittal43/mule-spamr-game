@@ -4,11 +4,13 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 import java.awt.Color;
 
 import javax.swing.JLabel;
 
+import java.awt.Component;
 import java.awt.Font;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -42,7 +44,7 @@ public class TitleScreenUI extends JPanel {
 
 	//Create instance variable
 	private MainAppView parent;
-	private BufferedImage background;
+	private Image background;
 	
 	
 	/**
@@ -53,22 +55,18 @@ public class TitleScreenUI extends JPanel {
 	public TitleScreenUI() {
 		
 		//sets preferences for the Title Screen
-		//setPreferredSize(new Dimension(1280, 800));
-		//setMinimumSize(new Dimension(1280, 800));
+//		setPreferredSize(new Dimension(1280, 800));
+//		setMinimumSize(new Dimension(1280, 800));
 		
 		//set the background with image
-		try {
-			background = ImageIO.read(new File("/mule-spamr/src/edu/gatech/spamr/resources/potter/game_screen.jpg"));
-		} catch (IOException ex) {
-			System.err.println("No Such File Found");
-			ex.printStackTrace();
-		}
+		background = new ImageIcon(":/mule-spamr/src/edu/gatech/spamr/resources/potter/game_screen.jpg").getImage();
 		Dimension size = new Dimension(background.getWidth(null), background.getHeight(null));
 		setPreferredSize(size);
 		setMinimumSize(size);
 		setMaximumSize(size);
 		setSize(size);
 		setLayout(null);
+		setVisible(true);
 		
 	}
 	
@@ -76,6 +74,7 @@ public class TitleScreenUI extends JPanel {
 			super.paintComponent(g);
 			g.drawImage(background, 0, 0, null);
 		}
+		
 		
 		//Title
 //		JLabel lblNewLabel = new JLabel("MULE: SPAMR Edition");
@@ -87,19 +86,19 @@ public class TitleScreenUI extends JPanel {
 //		lblNewLabel.setFont(new Font("Verdana", Font.BOLD, 30));
 //		add(lblNewLabel);
 		
-		//public void startButton() {
+		{
 		//start button
-//		JButton btnStart = new JButton("START");
-//		btnStart.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent arg0) {
-//				parent.setUpConfigDialog();
-//			}
-//		});
-//		btnStart.setFont(new Font("Verdana", Font.BOLD, 18));
-//		btnStart.setBounds(581, 453, 132, 54);
-//		add(btnStart);
+		JButton btnStart = new JButton("START");
+		btnStart.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				parent.setUpConfigDialog();
+			}
+		});
+		btnStart.setFont(new Font("Verdana", Font.BOLD, 18));
+		btnStart.setBounds(581, 453, 132, 54);
+		add(btnStart);
 
-//	}
+	}
 	
 	//getters and setters
 	public void setParent(MainAppView main){
