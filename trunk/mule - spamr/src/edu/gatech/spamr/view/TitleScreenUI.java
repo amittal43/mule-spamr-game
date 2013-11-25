@@ -1,5 +1,6 @@
 package edu.gatech.spamr.view;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -13,12 +14,16 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.RenderingHints;
+import java.awt.Toolkit;
 
 import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 
 /** 
@@ -37,7 +42,7 @@ public class TitleScreenUI extends JPanel {
 
 	//Create instance variable
 	private MainAppView parent;
-	private Image background;
+	private BufferedImage background;
 	
 	
 	/**
@@ -52,7 +57,12 @@ public class TitleScreenUI extends JPanel {
 		//setMinimumSize(new Dimension(1280, 800));
 		
 		//set the background with image
-		background = new ImageIcon("/mule-spamr/src/edu/gatech/spamr/resources/potter/game_screen.jpg").getImage();
+		try {
+			background = ImageIO.read(new File("/mule-spamr/src/edu/gatech/spamr/resources/potter/game_screen.jpg"));
+		} catch (IOException ex) {
+			System.err.println("No Such File Found");
+			ex.printStackTrace();
+		}
 		Dimension size = new Dimension(background.getWidth(null), background.getHeight(null));
 		setPreferredSize(size);
 		setMinimumSize(size);
@@ -60,22 +70,11 @@ public class TitleScreenUI extends JPanel {
 		setSize(size);
 		setLayout(null);
 		
-		JButton btnStart = new JButton("START");
-		btnStart.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				parent.setUpConfigDialog();
-			}
-		});
-		btnStart.setFont(new Font("Verdana", Font.BOLD, 18));
-		btnStart.setBounds(581, 453, 132, 54);
-		add(btnStart);
-		
 	}
 	
 		public void paintComponent(Graphics g) {
-			Graphics2D g2d = (Graphics2D)g;
-			g2d.drawImage(background, 0, 0, null);
-			
+			super.paintComponent(g);
+			g.drawImage(background, 0, 0, null);
 		}
 		
 		//Title
