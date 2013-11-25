@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 
 import java.awt.Font;
 import java.awt.Dimension;
+import java.awt.Graphics;
 
 import javax.swing.JButton;
 
@@ -32,6 +33,7 @@ public class TitleScreenUI extends JPanel {
 
 	//Create instance variable
 	private MainAppView parent;
+	ImageIcon icon = new ImageIcon("/mule-spamr/src/edu/gatech/spamr/resources/potter/game_screen.jpg");
 
 	
 	/**
@@ -46,8 +48,15 @@ public class TitleScreenUI extends JPanel {
 		setMinimumSize(new Dimension(1280, 800));
 		
 		//set the background with image
-		setLayout(null);
-		JLabel background = new JLabel(new ImageIcon("/mule-spamr/src/edu/gatech/spamr/resources/potter/game_screen.jpg"));
+		JLabel background = new JLabel() 
+		{
+			public void paintComponent(Graphics g) {
+				g.drawImage(icon.getImage(), 0, 0, null);
+				super.paintComponent(g);
+			}
+		};
+		
+		background.setOpaque(false);
 		add(background);
 		
 		//Title
