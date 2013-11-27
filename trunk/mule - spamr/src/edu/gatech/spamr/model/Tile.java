@@ -2,6 +2,7 @@ package edu.gatech.spamr.model;
 
 import java.awt.Color;
 import java.io.Serializable;
+import java.util.Random;
 
 import edu.gatech.spamr.model.Player.PlayerColor;
 import edu.gatech.spamr.model.Store.Resource;
@@ -84,6 +85,30 @@ public class Tile implements Serializable{
 		public String getIcon(){
 			return iconLocation;
 		}
+		
+		public static TileType getRandomTileType(){
+			Random random = new Random();
+			int randomNum = random.nextInt()%5;
+			
+			if(randomNum==0){
+				return MOUNTAIN1;
+			}
+			else if(randomNum==1){
+				return MOUNTAIN2;
+			}
+			else if(randomNum==2){
+				return MOUNTAIN3;
+			}
+			else if(randomNum==3){
+				return PLAIN;
+			}
+			else if(randomNum==4){
+				return RIVER;
+			}
+			else{
+				return RIVER2;
+			}
+		}
 	}
 	
 	//getters and setters for Tile
@@ -121,7 +146,7 @@ public class Tile implements Serializable{
 	}
 
 	public void setBorderColor(Color color) {
-		color = colr;
+		colr = color;
 	}
 	
 	public void setMule(Resource type){

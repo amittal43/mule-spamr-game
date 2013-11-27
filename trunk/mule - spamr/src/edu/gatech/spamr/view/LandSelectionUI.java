@@ -248,4 +248,8 @@ public class LandSelectionUI extends JPanel {
 	public void setParent(GameScreenUI p){
 		parent = p;
 	}
+	
+	public void setMapUI(MapUI map){
+		mapui = map;
+	}
 }

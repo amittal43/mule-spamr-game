@@ -193,6 +193,14 @@ public class Game implements Serializable {
 		return gameMap;
 	}
 	
+	public void setMap(Map m){
+		gameMap = m;
+	}
+	
+	public void setMapType(MapType type){
+		gameMap.setMapType(type);
+	}
+	
 	/*public  MapUI getMapUI(){
 		return gameMapUI;
 	}*/
