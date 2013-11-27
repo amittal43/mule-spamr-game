@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Point;
 
 import javax.swing.JLabel;
 
@@ -12,6 +13,7 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 
 import edu.gatech.spamr.model.Game;
+import edu.gatech.spamr.model.Map;
 import edu.gatech.spamr.model.Timer;
 
 import java.awt.Dimension;
@@ -47,6 +49,7 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 	private MuleMenuUI muleui;
 	private Timer stopWatch = new Timer();
 	private SaveDialog sdialog = new SaveDialog(this);
+	private StatPanel stats = new StatPanel(this);
 	
 	/**
 	 * Creates the GameScreen Panel and adds the other panels as cards
@@ -56,20 +59,28 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 	public GameScreenUI(MainAppView main) {
 		
 		parent = main;
-		turnui = new TurnScreenUI(this);
-		lsui = new LandSelectionUI(this);
-		muleui = new MuleMenuUI(this);
+		//turnui = new TurnScreenUI(this);
+		//lsui = new LandSelectionUI(this);
+		//muleui = new MuleMenuUI(this);
 		
 		//setting preferences
 		setPreferredSize(new Dimension(1280, 800));
 		setMinimumSize(new Dimension(1280, 800));
 		setBackground(Color.DARK_GRAY);
+		setLayout(null);
+		cards.setLocation(0, 0);
+		cards.setSize(new Dimension(980, 800));
+		cards.setPreferredSize(new Dimension(980, 800));
+		
+		stats.setLocation(new Point(980,0));
+		stats.setSize(new Dimension(300, 800));
+		add(stats);
 		
 		//adding each "card" to the panel
-		cards.add(turnui, "TurnScreen");
+		/*cards.add(turnui, "TurnScreen");
 		turnui.setParent(this);
 		cards.add(lsui, "LandSelection");
-		lsui.setParent(this);
+		lsui.setParent(this);*/
 		cards.add(tsui, "Town");
 		tsui.setParent(this);
 		cards.add(pubui, "Pub");
@@ -78,9 +89,9 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 		storeui.setParent(this);
 		cards.add(landui, "LandOffice");
 		landui.setParent(this);
-		cards.add(muleui, "Mule");
-		muleui.setParent(this);
-		cardLayout.show(cards, "LandSelection");
+		//cards.add(muleui, "Mule");
+		//muleui.setParent(this);
+		//cardLayout.show(cards, "LandSelection");
 		
 		
 		add(cards);
@@ -151,5 +162,18 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 	
 	public SaveDialog getSaveDialog(){
 		return sdialog;
+	}
+	
+	public void initializeMapScreens(){
+		lsui = new LandSelectionUI(this);
+		turnui = new TurnScreenUI(this);
+		muleui = new MuleMenuUI(this);
+		cards.add(turnui, "TurnScreen");
+		turnui.setParent(this);
+		cards.add(lsui, "LandSelection");
+		lsui.setParent(this);
+		cards.add(muleui, "Mule");
+		muleui.setParent(this);
+		cardLayout.show(cards, "LandSelection");
 	}
 }

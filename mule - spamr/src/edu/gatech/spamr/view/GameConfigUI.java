@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 
 import edu.gatech.spamr.model.Game;
 import edu.gatech.spamr.model.Game.Difficulty;
+import edu.gatech.spamr.model.Map;
 import edu.gatech.spamr.model.Map.MapType;
 
 
@@ -71,8 +72,8 @@ public class GameConfigUI extends JPanel {
 		add(lblGameConfiguration);
 		
 		//Map combobox
-		final JComboBox MapComboBox = new JComboBox();
-		MapComboBox.setModel(new DefaultComboBoxModel(MapType.values()));
+		final JComboBox<MapType> MapComboBox = new JComboBox();
+		MapComboBox.setModel(new DefaultComboBoxModel<MapType>(MapType.values()));
 		MapComboBox.setFont(new Font("Verdana", Font.BOLD, 11));
 		MapComboBox.setBounds(47, 113, 103, 20);
 		add(MapComboBox);
@@ -142,7 +143,9 @@ public class GameConfigUI extends JPanel {
             	
             	//updates Game with difficulty and map selected
             	parent.getGame().setDifficulty((Difficulty) DifficultyComboBox.getSelectedItem());
-            	parent.getGame().getMap().setMapType((MapType) MapComboBox.getSelectedItem());
+            	parent.getGame().setMap(new Map((MapType)MapComboBox.getSelectedItem()));
+            	//parent.getGame().setMapType((MapType)MapComboBox.getSelectedItem());
+            	parent.getGameScreenUI().initializeMapScreens();
             	
             	//print debugging
             	/*

@@ -49,8 +49,8 @@ public class StatPanel extends JPanel {
 		lblNewLabel.setFont(new Font("Verdana", Font.BOLD, 13));
 		lblNewLabel.setBounds(93, 5, 95, 33);
 		add(lblNewLabel);
-		currentp=parent.getGame().getCurrentPlayer();
-		 player = currentp.getName();
+	/*	//currentp=parent.getGame().getCurrentPlayer();
+		// player = currentp.getName();
 //		String p2 = parent.getGame().p2.getName();
 //		String p3 = parent.getGame().p3.getName();
 //		String p4 = parent.getGame().p4.getName();
@@ -124,7 +124,7 @@ public class StatPanel extends JPanel {
 		lblNewLabel_13.setBounds(12, 363, 276, 22);
 		add(lblNewLabel_13);
 		
-		
+		*/
 	}
 	public void setParent(GameScreenUI gcui){
 		parent=gcui;
