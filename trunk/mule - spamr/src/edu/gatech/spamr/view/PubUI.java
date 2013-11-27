@@ -38,6 +38,8 @@ public class PubUI extends JPanel {
 	
 	JButton gambleButton;
 	
+	Pub pubInstance = Pub.getInstance();
+	
 	/**
 	 * PubUI panel creation to include a border layout and various buttons
 	 */
@@ -77,7 +79,7 @@ public class PubUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				Random rand = new Random();
 				//updates player money
-				int bonus = Pub.calcGamble(parent.getGame().getCurrentRound(), rand.nextInt(50001));//parent.getTimer().getTimeRemaining()); 
+				int bonus = pubInstance.calcGamble(parent.getGame().getCurrentRound(), rand.nextInt(50001));//parent.getTimer().getTimeRemaining()); 
 				System.out.println(parent.getGame().getCurrentPlayer().getName() + " recieves " + bonus + " money!");
 				parent.getGame().getCurrentPlayer().updateMoney(bonus);
 				

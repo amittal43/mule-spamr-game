@@ -16,6 +16,17 @@ import java.util.Random;
 
 public class Pub {
 	
+	private static Pub instance = null;
+	private Pub(){} // Singleton -> private constructor
+	
+	public static Pub getInstance(){
+		if(instance == null){
+			instance = new Pub();
+		}
+		
+		return instance;
+	}
+	
 
 	/**
 	 * calcGamble method to calculate the amount a player can gamble in terms of time
