@@ -14,10 +14,11 @@ import org.junit.Test;
  */
 
 public class PubTest {
+	
+	Pub pub = Pub.getInstance();
 
 	@Test
 	public void testNoTimeRemaining() {
-		Pub pub = new Pub();
 		Round round = new Round();
 		round.setRoundNumber(0);
 
@@ -37,7 +38,6 @@ public class PubTest {
 
 	@Test
 	public void test10secRange() {
-		Pub pub = new Pub();
 		Round round = new Round();
 		round.setRoundNumber(0);
 		long timeleft = 10000; // 10 seconds
@@ -58,8 +58,7 @@ public class PubTest {
 	}
 
 	@Test
-	public void test20secRange() {
-		Pub pub = new Pub();
+	public void test20secRange(){
 		Round round = new Round();
 		round.setRoundNumber(0);
 		long timeleft = 20000; // 20 seconds
@@ -82,7 +81,6 @@ public class PubTest {
 
 	@Test
 	public void test30secRange() {
-		Pub pub = new Pub();
 		Round round = new Round();
 		round.setRoundNumber(0);
 		long timeleft = 30000; // 30 seconds
@@ -104,7 +102,6 @@ public class PubTest {
 
 	@Test
 	public void test40secRange() {
-		Pub pub = new Pub();
 		Round round = new Round();
 		round.setRoundNumber(0);
 		long timeleft = 40000; // 40 seconds
@@ -126,7 +123,6 @@ public class PubTest {
 
 	@Test
 	public void test50secRange() {
-		Pub pub = new Pub();
 		Round round = new Round();
 		round.setRoundNumber(0);
 		long timeleft = 50000; // 50 seconds
