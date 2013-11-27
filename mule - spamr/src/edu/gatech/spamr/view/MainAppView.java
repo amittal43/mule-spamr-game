@@ -3,7 +3,15 @@ package edu.gatech.spamr.view;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 
@@ -26,7 +34,7 @@ public class MainAppView {
 	//MainAppView variables
 	private JFrame mainFrame;
 	private JDialog configDialog;
-	private TitleScreenUI title = new TitleScreenUI();
+	private SplashScreen title = new SplashScreen();
 	private GameConfigUI gcui;
 	private PlayerConfigUI pcui = new PlayerConfigUI();
 	private GameScreenUI gamescreen;
@@ -56,6 +64,8 @@ public class MainAppView {
 				try {
 					MainAppView window = new MainAppView();
 					window.mainFrame.setVisible(true);
+					window.mainFrame.setResizable(false);
+					window.music();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -136,5 +146,31 @@ public class MainAppView {
 	public void setTurnTimer(Thread t){
 		turnTimer = t;
 	}
-
+	
+	public void music(){
+        URL url = null;
+        try {
+            url = new File("src/edu/gatech/spamr/resources/potter/hedwig.wav").toURI().toURL();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        Clip clip = null;
+        try {
+            clip = AudioSystem.getClip();
+        } catch (LineUnavailableException e) {
+            e.printStackTrace();
+        }
+        AudioInputStream ais = null;
+        try {
+            ais = AudioSystem.getAudioInputStream(url);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            clip.open(ais);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        clip.loop(Clip.LOOP_CONTINUOUSLY);
+    }
 }
