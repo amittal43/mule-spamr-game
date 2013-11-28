@@ -47,16 +47,15 @@ public class StoreUI extends JPanel{
 	public StoreUI(){
 		setPreferredSize(new Dimension(1280, 751));
 		setBackground(Color.LIGHT_GRAY);
-		JPanel buttonPanel = new JPanel();
-		buttonPanel.setBounds(1000, 0, 280, 800);
+	
 		setLayout(null);
 		JLabel store =  new JLabel("STORE",JLabel.CENTER);	
-		store.setBounds(93, 6, 845, 48);
+		store.setBounds(-16, 6, 845, 48);
 		
 		store.setFont(new Font("Serif", Font.BOLD, 48));
 		
 		add(store);
-		add(buttonPanel);
+
 		
 		
 
@@ -69,8 +68,8 @@ public class StoreUI extends JPanel{
 				selected = Resource.FOOD;
 			}//actionPerformed
 		});
-		foodButton.setSize(428, 315);
-		foodButton.setLocation(40, 103);
+		foodButton.setSize(352, 278);
+		foodButton.setLocation(33, 118);
 
 //		foodButton.setSize(316, 267);
 //		foodButton.setLocation(148, 89);
@@ -87,15 +86,15 @@ public class StoreUI extends JPanel{
 			}
 		});
 
-		energyButton.setSize(418, 315);
-		energyButton.setLocation(546, 103);
+		energyButton.setSize(370, 278);
+		energyButton.setLocation(420, 118);
 
 //		energyButton.setSize(410, 353);
 //		energyButton.setLocation(536, 61);
 
 		add(energyButton);
 		
-		ImageIcon oreIcon = new ImageIcon(StoreUI.class.getResource("/edu/gatech/spamr/resources/potter/Calico_silver_ore.jpg"));
+		ImageIcon oreIcon = new ImageIcon(StoreUI.class.getResource("/edu/gatech/spamr/resources/potter/Collectible-Harry-Potter-Sorcerers-Stone1.jpg"));
 		JButton oreButton = new JButton(oreIcon);
 		oreButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -103,8 +102,8 @@ public class StoreUI extends JPanel{
 			}
 		});
 
-		oreButton.setSize(428, 256);
-		oreButton.setLocation(40, 473);
+		oreButton.setSize(352, 218);
+		oreButton.setLocation(33, 455);
 
 //		oreButton.setSize(344, 279);
 //		oreButton.setLocation(163, 412);
@@ -149,16 +148,26 @@ public class StoreUI extends JPanel{
 			}
 		});
 
-		muleButton.setSize(418, 218);
-		muleButton.setLocation(546, 487);
+		muleButton.setSize(383, 218);
+		muleButton.setLocation(409, 455);
 
 //		muleButton.setSize(316, 248);
 //		muleButton.setLocation(598, 443);
 
 		add(muleButton);
+
+		
+		JButton backbutton = new JButton("GO BACK");
+		backbutton.setBounds(667, 689, 155, 60);
+		add(backbutton);
+		
+		JButton sellButton = new JButton("SELL");
+		sellButton.setBounds(390, 689, 155, 60);
+		add(sellButton);
 		
 		JButton buyButton = new JButton("BUY");
-		buyButton.setBounds(77, 17, 155, 103);
+		buyButton.setBounds(162, 688, 155, 63);
+		add(buyButton);
 		buyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -207,11 +216,6 @@ public class StoreUI extends JPanel{
 				}
 			}
 		});
-		buttonPanel.setLayout(null);
-		buttonPanel.add(buyButton);
-		
-		JButton sellButton = new JButton("SELL");
-		sellButton.setBounds(77, 156, 155, 103);
 		sellButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -263,11 +267,6 @@ public class StoreUI extends JPanel{
 				}
 			} //listener
 		});
-		buttonPanel.add(sellButton);
-		
-		JButton backbutton = new JButton("GO BACK");
-		backbutton.setBounds(77, 309, 155, 103);
-		buttonPanel.add(backbutton);
 		backbutton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				parent.cardChangeTo("Town");

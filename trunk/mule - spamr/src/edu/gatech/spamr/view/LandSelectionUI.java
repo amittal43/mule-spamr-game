@@ -112,7 +112,7 @@ public class LandSelectionUI extends JPanel {
 		currentTile = mapui.getCurrentTile();
 		
 		//sets preferences for the Land Selection panel
-		setPreferredSize(new Dimension(1280, 800));
+		setPreferredSize(new Dimension(1280, 755));
 		setMinimumSize(new Dimension(1280, 800));
 		setBackground(Color.DARK_GRAY);
 		setLayout(null);
@@ -121,7 +121,7 @@ public class LandSelectionUI extends JPanel {
 		mapui.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		mapui.setMinimumSize(new Dimension(820, 600));
 		mapui.setSize(new Dimension(820, 600));
-		mapPanel.setBounds(33, 107, 820, 600);
+		mapPanel.setBounds(38, 80, 820, 600);
 		add(mapPanel);				//adds the panel
 		
 		//Pass Button
@@ -134,7 +134,7 @@ public class LandSelectionUI extends JPanel {
 			}
 		});
 		passButton.setFont(new Font("Verdana", Font.BOLD, 11));
-		passButton.setBounds(971, 662, 122, 45);
+		passButton.setBounds(543, 692, 122, 45);
 		add(passButton);
 		
 		//purchase Button
@@ -185,7 +185,7 @@ public class LandSelectionUI extends JPanel {
 		});
 		
 		purchaseButton.setFont(new Font("Verdana", Font.BOLD, 11));
-		purchaseButton.setBounds(971, 580, 122, 45);
+		purchaseButton.setBounds(229, 692, 122, 45);
 		add(purchaseButton);
 		
 		JLabel landSelectionLabel = new JLabel("Land Selection Phase");
@@ -197,13 +197,13 @@ public class LandSelectionUI extends JPanel {
 		JLabel currentPlayerLabel = new JLabel("Current Player:");
 		currentPlayerLabel.setForeground(Color.LIGHT_GRAY);
 		currentPlayerLabel.setFont(new Font("Verdana", Font.BOLD, 20));
-		currentPlayerLabel.setBounds(956, 107, 209, 58);
+		currentPlayerLabel.setBounds(456, 25, 209, 58);
 		add(currentPlayerLabel);
 		
 		JLabel playerActiveLabel = playerLabel;
 		playerActiveLabel.setFont(new Font("Verdana", Font.BOLD | Font.ITALIC, 20));
 		playerActiveLabel.setForeground(Color.LIGHT_GRAY);
-		playerActiveLabel.setBounds(956, 159, 163, 35);
+		playerActiveLabel.setBounds(678, 37, 163, 35);
 		add(playerActiveLabel);
 		
 		/*JLabel moneyLabel = new JLabel("Money:"); // finish other JLabels later

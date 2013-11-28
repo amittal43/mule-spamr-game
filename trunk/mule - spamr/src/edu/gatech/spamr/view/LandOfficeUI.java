@@ -38,8 +38,8 @@ public class LandOfficeUI extends JPanel {
 	public LandOfficeUI() {
 		setPreferredSize(new Dimension(1280, 755));
 		setBackground(Color.LIGHT_GRAY);
-		JPanel buttonPanel = new JPanel();
-		buttonPanel.setBounds(1006, 0, 274, 753);
+	
+		
 		setLayout(null);
 		JLabel pub =  new JLabel("LAND OFFICE",JLabel.CENTER);	//title
 		pub.setBounds(0, 0, 1009, 48);
@@ -48,26 +48,26 @@ public class LandOfficeUI extends JPanel {
 	
 
 		add(pub);
-		add(buttonPanel);
-		buttonPanel.setLayout(null);
+	
+	
 		
 		JButton backButton = new JButton("GO BACK");
+		backButton.setBounds(684, 617, 155, 103);
+		add(backButton);
+		
+		JButton sellButton = new JButton("SELL");
+		sellButton.setBounds(412, 617, 155, 103);
+		add(sellButton);
+		
+		
+		JButton buyButton = new JButton("BUY");
+		buyButton.setBounds(138, 617, 155, 103);
+		add(buyButton);
 		backButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				parent.cardChangeTo("Town");
 			}
 		});
-		backButton.setBounds(77, 309, 155, 103);
-		buttonPanel.add(backButton);
-		
-		
-		JButton buyButton = new JButton("BUY");
-		buyButton.setBounds(77, 17, 155, 103);
-		buttonPanel.add(buyButton);
-		
-		JButton sellButton = new JButton("SELL");
-		sellButton.setBounds(77, 156, 155, 103);
-		buttonPanel.add(sellButton);
 		
 //		setPreferredSize(new Dimension(1280, 800));
 //		setMinimumSize(new Dimension(1280, 800));
