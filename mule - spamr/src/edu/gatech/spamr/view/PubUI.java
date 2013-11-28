@@ -47,24 +47,30 @@ public class PubUI extends JPanel {
 	public PubUI(){
 		setPreferredSize(new Dimension(1280, 755));
 		setBackground(Color.LIGHT_GRAY);
-		JPanel buttonPanel = new JPanel();
-		buttonPanel.setBounds(1006, 0, 274, 753);
+		
+	
 		setLayout(null);
 		JLabel pub =  new JLabel("PUB",JLabel.CENTER);	//title
-		pub.setBounds(0, 0, 1009, 48);
+		pub.setBounds(-173, 6, 1009, 48);
 		
 		pub.setFont(new Font("Serif", Font.BOLD, 48));
 		
-		ImageIcon table = new ImageIcon("/edu/gatech/spamr/resources/potter/Leakycauldron.jpg");
-		JButton cauldron = new JButton(table);
-		add(cauldron);
 
+		
+		ImageIcon table = new ImageIcon(PubUI.class.getResource("/edu/gatech/spamr/resources/potter/Leakycauldron.jpg"));
+		JButton cauldron = new JButton(table);
+		
+		add(cauldron);
+		cauldron.setBounds(51, 208, 401, 320);
 		add(pub);
-		add(buttonPanel);
-		buttonPanel.setLayout(null);
+	
+	
 		
 		gambleButton = new JButton("CLICK TO GAMBLE");
-		gambleButton.setBounds(53, 124, 197, 109);
+		gambleButton.setBounds(124, 635, 197, 85);
+		add(gambleButton);
+
+		
 		/*gambleButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Pub pub = new Pub();
@@ -74,7 +80,7 @@ public class PubUI extends JPanel {
 			
 			}
 		});*/
-		buttonPanel.add(gambleButton);
+
 		gambleButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Random rand = new Random();
@@ -101,20 +107,19 @@ public class PubUI extends JPanel {
 			}
 		});
 	
-		JButton backbutton = new JButton("GO BACK");
-		backbutton.setBounds(53, 287, 197, 109);
-		buttonPanel.add(backbutton);
-		backbutton.addActionListener(new ActionListener() {
+		JButton backButton = new JButton("GO BACK");
+		backButton.setBounds(418, 635, 197, 80);
+		add(backButton);
+		backButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				parent.cardChangeTo("Town");
 			}
 		});
-		
 	}
+	
 	
 	public void setParent(GameScreenUI gcui){
 		parent = gcui;
 	}
-	
 
 }

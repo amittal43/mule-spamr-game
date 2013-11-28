@@ -54,17 +54,13 @@ public class TownScreenUI extends JPanel {
 //		buttonPanel.setPreferredSize(new Dimension(800,500) );
 		
 		JLabel town =  new JLabel("TOWN",JLabel.CENTER);	//title
-		town.setBounds(587, 23, 152, 48);
+		town.setBounds(372, 8, 152, 48);
 		town.setBackground(Color.DARK_GRAY);
 		town.setFont(new Font("Serif", Font.BOLD, 48));
 		
 		//create a store button in which the player can go to the store
-		storeButton = new JButton();
-		
-		
-		//store Button
-		//ImageIcon storeIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/potter/STORE.JPG"));
-		//JButton storeButton = new JButton(storeIcon);
+		ImageIcon storeIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/potter/STORE.JPG"));
+		storeButton = new JButton(storeIcon);
 		storeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				parent.cardChangeTo("Store");
@@ -72,14 +68,13 @@ public class TownScreenUI extends JPanel {
 		});
 		setLayout(null);
 		storeButton.setBackground(Color.DARK_GRAY);
-		storeButton.setBounds(118, 93, 490, 304);
+		storeButton.setBounds(57, 68, 371, 304);
 		add(storeButton);
 		
 		//create an assay button in which the player can go assay 
-		assayButton = new JButton();
 		ImageIcon assayIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/potter/ASSAYOFFICE.jpg"));
-		JButton assayButton = new JButton(assayIcon);
-		assayButton.setBounds(681, 93, 520, 304);
+		assayButton = new JButton(assayIcon);
+		assayButton.setBounds(484, 68, 390, 304);
 		add(assayButton);
 		
 		//create a pub button in which the player can go to the pub
@@ -90,14 +85,14 @@ public class TownScreenUI extends JPanel {
 			}
 		});
 		pubButton.setIcon(new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/potter/PUB.jpg")));
-		pubButton.setBounds(118, 403, 490, 304);
+		pubButton.setBounds(57, 403, 371, 304);
 		add(pubButton);
 
 		
 		//create a land office button in which the player can go to the office to buy/trade land with computer
 		landOfficeButton = new JButton();
 		landOfficeButton.setIcon(new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/potter/LANDOFFICE.jpg")));
-		landOfficeButton.setBounds(681, 403, 520, 304);
+		landOfficeButton.setBounds(484, 403, 390, 304);
 		landOfficeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				parent.cardChangeTo("LandOffice");
@@ -106,7 +101,7 @@ public class TownScreenUI extends JPanel {
 		add(landOfficeButton);
 		
 		backButton = new JButton("Click to go Back");
-		backButton.setBounds(537, 706, 246, 39);
+		backButton.setBounds(341, 706, 246, 39);
 		backButton.setFont(new Font("Serif", Font.PLAIN, 30));
 		backButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
