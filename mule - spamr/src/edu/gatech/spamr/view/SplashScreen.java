@@ -85,10 +85,11 @@ public class SplashScreen extends JPanel implements MouseMotionListener {
 
         addMouseMotionListener(this);
 
-        Timer t = new Timer(100, new ActionListener() {
+        Timer t = new Timer(50, new ActionListener() {
 
         	@Override
             public void actionPerformed(ActionEvent arg0) {
+        		
                 val++;
                 RescaleOp rescale = new RescaleOp(1.0f,val-7.0f, null);
                 background = rescale.filter(background,null);
@@ -107,6 +108,7 @@ public class SplashScreen extends JPanel implements MouseMotionListener {
 
         });
         t.start();
+        
         //music();
     }
 
