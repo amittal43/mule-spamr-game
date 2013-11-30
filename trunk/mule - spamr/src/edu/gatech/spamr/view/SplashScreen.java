@@ -44,10 +44,25 @@ public class SplashScreen extends JPanel implements MouseMotionListener {
     private BufferedImage leftFoot;
     private Point cursorPoint;
     private float val = 0.0f;
+    int count=0;
+    private BufferedImage foot100;
+    private BufferedImage foot75;
+    private BufferedImage foot50;
+    private BufferedImage foot25;
+    private BufferedImage foot100u;
+    private BufferedImage foot75u;
+    private BufferedImage foot50u;
+    private BufferedImage foot25u;
+    private BufferedImage foot100d;
+    private BufferedImage foot75d;
+    private BufferedImage foot50d;
+    private BufferedImage foot25d;
 
     private AudioClip audioClip;
 
-    private int x = 250, y = 750;
+    private int x = 300, y = 600;
+    private int x2 = 200 , y2=300;
+    private int oldcount=0;
 
     public SplashScreen() {
         setPreferredSize(new Dimension(1280, 800));
@@ -84,7 +99,40 @@ public class SplashScreen extends JPanel implements MouseMotionListener {
         setCursor(c);
 
         addMouseMotionListener(this);
+        try {
+			foot100 = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/100.png"));
+			foot75 = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/foot75.png"));
+			foot50 = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/foot50.png"));
+			foot25 = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/foot25.png"));
+			foot100u = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/foot100u.png"));
+			foot75u = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/foot75u.png"));
+			foot50u = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/foot50u.png"));
+			foot25u = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/foot25u.png"));
+			foot100d = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/foot100d.png"));
+			foot75d = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/foot75d.png"));
+			foot50d = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/foot50d.png"));
+			foot25d = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/foot25d.png"));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+        Timer t2 = new Timer(125, new ActionListener() {
 
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				count++;
+				
+				System.out.println(count);
+				repaint();
+				
+				//if (count%4!=0){
+					//drawImage(foot100,x,y,10,10,null);
+				}
+				
+			
+        	
+        });
+        t2.start();
         Timer t = new Timer(50, new ActionListener() {
 
         	@Override
@@ -109,10 +157,11 @@ public class SplashScreen extends JPanel implements MouseMotionListener {
         });
         t.start();
         
+        
         //music();
     }
-
-   /* public void music(){
+/*
+    public void music(){
         URL url = null;
         try {
             url = new File("hedwig.wav").toURI().toURL();
@@ -159,8 +208,90 @@ public class SplashScreen extends JPanel implements MouseMotionListener {
             g.drawImage(highlight, (int) cursorPoint.getX() - 25,
                     (int) cursorPoint.getY() - 25, null);
         }*/
-        g.drawImage(rightFoot, x, y, 10, 10, null);
-        g.drawImage(leftFoot, x+25, y, 10, 10, null);
+       // if (oldcount==count)
+        //	return;
+        if (count<130){
+        	oldcount = count;
+        if(count%7==1){
+        	g.drawImage(foot100, x, y, 60, 25, null);
+        	
+        }
+        else if (count%7==2){
+        	g.drawImage(foot75, x, y, 60, 25, null);
+        }
+        else if (count%7==3){
+        	g.drawImage(foot50, x, y, 60, 25, null);
+        }
+        else if(count%7==4){
+        	g.drawImage(foot25, x, y, 60, 25, null);
+        }
+        else if(count%7==0){
+        	x+=20;
+        	//g.drawImage(foot100, x, y, 60, 25, null);
+        }
+        }
+        else if (count<200){
+        	oldcount=count;
+        	if (count==200)
+        		x+=20;
+        	if(count%7==1){
+            	g.drawImage(foot100u, x, y, 25, 60, null);
+            	
+            }
+            else if (count%7==2){
+            	g.drawImage(foot75u, x, y, 25, 60, null);
+            }
+            else if (count%7==3){
+            	g.drawImage(foot50u, x, y, 25, 60, null);
+            }
+            else if(count%7==4){
+            	g.drawImage(foot25u, x, y, 25, 60, null);
+            }
+            else if(count%7==0){
+            	//x+=8;
+            	y-=18;
+            	//g.drawImage(foot100, x, y, 60, 25, null);
+            }
+        }
+        if (count<32||count>100){
+        	if(count==101)x+=10;
+        if(count%7==1){
+        	g.drawImage(foot100, x2, y2,  60,25, null);
+        	
+        }
+        else if (count%7==2){
+        	g.drawImage(foot75, x2, y2,  60,25, null);
+        }
+        else if (count%7==3){
+        	g.drawImage(foot50, x2, y2,  60,25, null);
+        }
+        else if(count%7==4){
+        	g.drawImage(foot25, x2, y2,  60,25, null);
+        }
+        else if(count%7==0){
+        	x2+=20;
+        }
+        }
+        else {
+        	if(count==32)x2+=12;
+        	if(count%7==1){
+            	g.drawImage(foot100d, x2, y2,  25,60, null);
+            	
+            }
+            else if (count%7==2){
+            	g.drawImage(foot75d, x2, y2,  25,60, null);
+            }
+            else if (count%7==3){
+            	g.drawImage(foot50d, x2, y2,  25,60, null);
+            }
+            else if(count%7==4){
+            	g.drawImage(foot25d, x2, y2,  25,60, null);
+            }
+            else if(count%7==0){
+            	y2+=18;
+            }
+        }
+       // g.drawImage(leftFoot, x+25, y, 10, 10, null);
     }
 
     @Override
