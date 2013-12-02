@@ -31,6 +31,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 import java.awt.Font;
+import javax.swing.ImageIcon;
 
 
 public class SplashScreen extends JPanel implements MouseMotionListener {
@@ -65,7 +66,7 @@ public class SplashScreen extends JPanel implements MouseMotionListener {
     private int oldcount=0;
 
     public SplashScreen() {
-        setPreferredSize(new Dimension(1280, 800));
+        setPreferredSize(new Dimension(1280, 753));
         setMinimumSize(new Dimension(1280, 800));
         setLayout(null);
 
@@ -81,8 +82,9 @@ public class SplashScreen extends JPanel implements MouseMotionListener {
         }
 
         JButton button = new JButton("CLICK TO PLAY!");
+        button.setIcon(new ImageIcon(SplashScreen.class.getResource("/edu/gatech/spamr/resources/potter/click.jpg")));
         button.setFont(new Font("Verdana", Font.BOLD, 25));
-        button.setBounds(0, 700, 1280, 75);
+        button.setBounds(0, 686, 1280, 81);
         button.setBackground(Color.BLACK);
         button.setForeground(Color.WHITE);
         button.setFocusable(false);

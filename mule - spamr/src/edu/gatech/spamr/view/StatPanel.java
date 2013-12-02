@@ -1,18 +1,23 @@
 package edu.gatech.spamr.view;
 
 import javax.swing.JPanel;
+
 import java.awt.Dimension;
 import java.util.ArrayList;
 
 import javax.swing.JLabel;
 
+import edu.gatech.spamr.model.Game;
 import edu.gatech.spamr.model.Player;
+
 import java.awt.Font;
 
 public class StatPanel extends JPanel {
 
 	GameScreenUI parent;
-	Player currentp;
+
+	Player currentPlayer;
+	JLabel playerLabel;
 	String player;
 	JLabel lblNewLabel_1;
 	JLabel lblNewLabel_2;
@@ -42,13 +47,50 @@ public class StatPanel extends JPanel {
 		parent=gcui;
 		setMinimumSize(new Dimension(300, 800));
 		setMaximumSize(new Dimension(300, 800));
-		setPreferredSize(new Dimension(300, 753));
+		setPreferredSize(new Dimension(300, 684));
 		setLayout(null);
-		
+
 		JLabel lblNewLabel = new JLabel("Player Info");
 		lblNewLabel.setFont(new Font("Verdana", Font.BOLD, 13));
 		lblNewLabel.setBounds(93, 5, 95, 33);
 		add(lblNewLabel);
+		/*
+		playerLabel = new JLabel("Current Player: " + currentPlayer);
+		playerLabel.setFont(new Font("Verdana", Font.PLAIN, 13));
+		playerLabel.setBounds(12, 51, 198, 33);
+		if(currentPlayer.equals(parent.getGame().getPlayer1())){
+			currentPlayer = parent.getGame().getPlayer2();
+			playerLabel.setText("Current Player: " + currentPlayer.getName());
+			add(playerLabel);
+		}
+		else if(currentPlayer.equals(parent.getGame().getPlayer2())){
+			currentPlayer = parent.getGame().getPlayer3();
+			playerLabel.setText("Current Player: " +currentPlayer.getName());
+			add(playerLabel);
+		}
+		else if(currentPlayer.equals(parent.getGame().getPlayer3())){
+			currentPlayer = parent.getGame().getPlayer4();
+			playerLabel.setText("Current Player: " +currentPlayer.getName());
+			add(playerLabel);
+		}
+		
+
+		currentPlayer = parent.getGame().getPlayer1();
+		String name = currentPlayer.getName();
+		JLabel playerLabel = new JLabel(parent.getGame().getPlayer1().getName());
+		lblNewLabel_1 = new JLabel("Current Player :"+name);
+		lblNewLabel_1.setFont(new Font("Verdana", Font.PLAIN, 13));
+		lblNewLabel_1.setBounds(12, 51, 198, 33);
+		add(lblNewLabel_1);
+		add(playerLabel);
+		
+		int money = currentPlayer.getMoney();
+		lblNewLabel_2 = new JLabel("Money :" + money);
+		lblNewLabel_2.setFont(new Font("Verdana", Font.PLAIN, 13));
+		lblNewLabel_2.setBounds(12, 85, 95, 27);
+		add(lblNewLabel_2);
+		*/
+		
 	/*	//currentp=parent.getGame().getCurrentPlayer();
 		// player = currentp.getName();
 //		String p2 = parent.getGame().p2.getName();
@@ -130,15 +172,14 @@ public class StatPanel extends JPanel {
 		parent=gcui;
 	}
 	public void updateStats(){
-		money= Integer.toString(currentp.getMoney());
+		money= Integer.toString(currentPlayer.getMoney());
 		lblNewLabel_3 = new JLabel(money);
-		energy= Integer.toString(currentp.getMoney());
-		lblNewLabel_5 = new JLabel(money);
-		ore= Integer.toString(currentp.getMoney());
-		lblNewLabel_7 = new JLabel(money);
-		food= Integer.toString(currentp.getMoney());
-		lblNewLabel_9 = new JLabel(money);
-		
+		energy= Integer.toString(currentPlayer.getEnergy());
+		lblNewLabel_5 = new JLabel(energy);
+		ore= Integer.toString(currentPlayer.getOre());
+		lblNewLabel_7 = new JLabel(ore);
+		food= Integer.toString(currentPlayer.getFood());
+		lblNewLabel_9 = new JLabel(food);		
 	}
 	public void pushMsg(String msg){
 		messages.add(msg);
