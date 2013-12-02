@@ -120,6 +120,7 @@ public class GameConfigUI extends JPanel {
 		add(btnContinue);
 		
 		JButton btnLoadGame = new JButton("Load Game");
+		btnLoadGame.setFont(new Font("Verdana", Font.BOLD, 12));
 		btnLoadGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				parent.getLoadDialog().setVisible(true);
