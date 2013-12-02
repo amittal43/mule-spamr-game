@@ -176,9 +176,7 @@ public class Game implements Serializable {
 	public  int scorePlayer(Player playerToRate){
 		return playerToRate.getMoney()/100; //currently just keeps reversing turn order
 	}
-	
-	
-	
+
 	//getters and setters 
 	public  int getCurrentTurn(){
 		return currentTurn;
@@ -241,8 +239,7 @@ public class Game implements Serializable {
 	public  void setParent(GameScreenUI p){
 		parent = p;
 	}
-	
-	
+
 	
 	//player gets so their data can be updated by player class getters and setters
 	public  Player getPlayer1(){
