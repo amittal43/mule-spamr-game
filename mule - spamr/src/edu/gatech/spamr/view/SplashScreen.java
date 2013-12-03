@@ -124,7 +124,7 @@ public class SplashScreen extends JPanel implements MouseMotionListener {
 			public void actionPerformed(ActionEvent e) {
 				count++;
 				
-				System.out.println(count);
+//				System.out.println(count);
 				repaint();
 				
 				//if (count%4!=0){
