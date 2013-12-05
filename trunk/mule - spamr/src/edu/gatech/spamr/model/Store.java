@@ -182,5 +182,17 @@ public class Store implements Resource, Serializable {
 		return 0;
 	}
 
+	@Override
+	public void setMoney(int m) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int calcScore() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 	
 }
