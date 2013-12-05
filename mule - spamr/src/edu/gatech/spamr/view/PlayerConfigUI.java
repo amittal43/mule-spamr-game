@@ -372,7 +372,7 @@ public class PlayerConfigUI extends JPanel {
 					parent.getGame().getPlayer1().setColor(currentColor);
 					parent.getGame().getPlayer1().setRace(currentRace);
 					parent.getGame().getPlayer1().setMoney(currentRace.getStartingMoney());
-					parent.getGame().getPlayer1().setFood(parent.getGame().getDifficulty().getStartingFood());
+					parent.getGame().getPlayer1().setFoodQuantity(parent.getGame().getDifficulty().getStartingFood());
 					parent.getGame().getPlayer1().setEnergy(parent.getGame().getDifficulty().getStartingEnergy());
 					
 					
@@ -394,7 +394,7 @@ public class PlayerConfigUI extends JPanel {
 					parent.getGame().getPlayer2().setColor(currentColor);
 					parent.getGame().getPlayer2().setRace(currentRace);
 					parent.getGame().getPlayer2().setMoney(currentRace.getStartingMoney());
-					parent.getGame().getPlayer2().setFood(parent.getGame().getDifficulty().getStartingFood());
+					parent.getGame().getPlayer2().setFoodQuantity(parent.getGame().getDifficulty().getStartingFood());
 					parent.getGame().getPlayer2().setEnergy(parent.getGame().getDifficulty().getStartingEnergy());
 					
 					
@@ -415,7 +415,7 @@ public class PlayerConfigUI extends JPanel {
 					parent.getGame().getPlayer3().setColor(currentColor);
 					parent.getGame().getPlayer3().setRace(currentRace);
 					parent.getGame().getPlayer3().setMoney(currentRace.getStartingMoney());
-					parent.getGame().getPlayer3().setFood(parent.getGame().getDifficulty().getStartingFood());
+					parent.getGame().getPlayer3().setFoodQuantity(parent.getGame().getDifficulty().getStartingFood());
 					parent.getGame().getPlayer3().setEnergy(parent.getGame().getDifficulty().getStartingEnergy());
 					
 					
@@ -437,7 +437,7 @@ public class PlayerConfigUI extends JPanel {
 					parent.getGame().getPlayer4().setColor(currentColor);
 					parent.getGame().getPlayer4().setRace(currentRace);
 					parent.getGame().getPlayer4().setMoney(currentRace.getStartingMoney());
-					parent.getGame().getPlayer4().setFood(parent.getGame().getDifficulty().getStartingFood());
+					parent.getGame().getPlayer4().setFoodQuantity(parent.getGame().getDifficulty().getStartingFood());
 					parent.getGame().getPlayer4().setEnergy(parent.getGame().getDifficulty().getStartingEnergy());
 					
 					

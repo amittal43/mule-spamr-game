@@ -2,7 +2,7 @@ package edu.gatech.spamr.model;
 
 import java.io.Serializable;
 
-public class Store implements Serializable {
+public class Store implements Resource, Serializable {
 	
 	/**
 	 * 
@@ -31,7 +31,7 @@ public class Store implements Serializable {
 	
 	public void buyResource(Player currentPlayer, Resource relevantResource, int quantity){ // still need to implement money differences
 		if(relevantResource==Resource.FOOD){
-			currentPlayer.setFood(currentPlayer.getFood() + quantity);
+			currentPlayer.setFoodQuantity(currentPlayer.getFoodQuantity() + quantity);
 			foodQuantity -= quantity;
 			currentPlayer.updateMoney(-(foodPrice * quantity));
 		}
@@ -81,8 +81,8 @@ public class Store implements Serializable {
 	public void sellResource(Player currentPlayer, Resource relevantResource, int quantity){
 		if(quantity > 0){
 			if(relevantResource == Resource.FOOD){
-				if (currentPlayer.getFood() >= quantity){
-					currentPlayer.setFood(currentPlayer.getFood() - quantity);
+				if (currentPlayer.getFoodQuantity() >= quantity){
+					currentPlayer.setFoodQuantity(currentPlayer.getFoodQuantity() - quantity);
 					foodQuantity += quantity;
 					currentPlayer.updateMoney(foodPrice*quantity/2);
 				}else {
@@ -146,15 +146,15 @@ public class Store implements Serializable {
 		muleQuantity = mule;
 	}
 	
-	public int getFoodPrice(){
+	public int getFood(){
 		return foodPrice;
 	}
 	
-	public int getEnergyPrice(){
+	public int getEnergy(){
 		return energyPrice;
 	}
 	
-	public int getOrePrice(){
+	public int getOre(){
 		return orePrice;
 	}
 	
@@ -174,6 +174,12 @@ public class Store implements Serializable {
 			System.out.println("not a valid Resource ENUM!");
 		}
 		return toReturn;
+	}
+
+	@Override
+	public int getMoney() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	
