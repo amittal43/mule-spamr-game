@@ -1,10 +1,13 @@
 package edu.gatech.spamr.view;
+//package edu.gatech.spamr.resources;
+
 
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.event.MouseEvent;
 import java.io.File;
 import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.net.URL;
 
 import javax.sound.sampled.AudioInputStream;
@@ -14,6 +17,7 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
+import edu.gatech.spamr.*;
 
 import edu.gatech.spamr.model.Game;
 
@@ -34,9 +38,9 @@ public class MainAppView {
 	//MainAppView variables
 	private JFrame mainFrame;
 	private JDialog configDialog;
-	private SplashScreen title = new SplashScreen();
+	private SplashScreen title;
 	private GameConfigUI gcui;
-	private PlayerConfigUI pcui = new PlayerConfigUI();
+	private PlayerConfigUI pcui ;
 	private GameScreenUI gamescreen;
 	private Game game;
 	private LoadDialog ldialog;
@@ -84,7 +88,8 @@ public class MainAppView {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		
+		title = new SplashScreen();
+		pcui = new PlayerConfigUI();
 		//instantiate the frame and set preferences
 		mainFrame = new JFrame();
 		mainFrame.setBounds(100,100,1280,800);
@@ -150,8 +155,8 @@ public class MainAppView {
 	public void music(){
         URL url = null;
         try {
-            url = new File("src/edu/gatech/spamr/resources/potter/hedwig.wav").toURI().toURL();
-        } catch (MalformedURLException e) {
+            url= getClass().getResource("/edu/gatech/spamr/resources/potter/hedwig.wav").toURI().toURL();
+        } catch (MalformedURLException | URISyntaxException e) {
             e.printStackTrace();
         }
         Clip clip = null;
