@@ -49,7 +49,7 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 	private MuleMenuUI muleui;
 	private Timer stopWatch = new Timer();
 	private SaveDialog sdialog = new SaveDialog(this);
-	private StatPanel stats = new StatPanel(this);
+	private StatPanel stats = StatPanel.getInstance();
 	
 	/**
 	 * Creates the GameScreen Panel and adds the other panels as cards

@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 
 import java.awt.Dimension;
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 import javax.swing.JLabel;
 
@@ -13,8 +14,19 @@ import edu.gatech.spamr.model.Player;
 import java.awt.Font;
 
 public class StatPanel extends JPanel {
+	
+	private static StatPanel instance = null;
 
 	GameScreenUI parent;
+	
+	private LinkedList<String> msgQueue = new LinkedList<String>();
+	
+	//Messages
+	JLabel msg1;
+	JLabel msg2;
+	JLabel msg3;
+	JLabel msg4;
+	JLabel msg5;
 
 	Player currentPlayer;
 	JLabel playerLabel;
@@ -32,19 +44,15 @@ public class StatPanel extends JPanel {
 	JLabel lblNewLabel_8;
 	String food;
 	JLabel lblNewLabel_9;
-	//Messages
-	JLabel lblNewLabel_10;
-	JLabel lblNewLabel_11;
-	JLabel lblNewLabel_12;
-	JLabel lblNewLabel_13;
+	
 	JLabel lblNewLabel_14;
-	ArrayList<String> messages = new ArrayList<String>();
+	
 	
 	/**
 	 * Create the panel.
 	 */
-	public StatPanel(GameScreenUI gcui) {
-		parent=gcui;
+	private StatPanel() {
+		//parent=gcui;
 		setMinimumSize(new Dimension(300, 800));
 		setMaximumSize(new Dimension(300, 800));
 		setPreferredSize(new Dimension(300, 684));
@@ -141,33 +149,48 @@ public class StatPanel extends JPanel {
 		lblNewLabel_9.setBounds(189, 148, 56, 22);
 		add(lblNewLabel_9);
 		
-		JLabel lblMessages = new JLabel("Messages");
-		lblMessages.setFont(new Font("Verdana", Font.PLAIN, 13));
-		lblMessages.setBounds(103, 228, 85, 34);
-		add(lblMessages);
-		
-		lblNewLabel_10 = new JLabel("Random");
-		lblNewLabel_10.setFont(new Font("Verdana", Font.PLAIN, 13));
-		lblNewLabel_10.setBounds(12, 275, 276, 22);
-		add(lblNewLabel_10);
-		
-		 lblNewLabel_11 = new JLabel("New label");
-		 lblNewLabel_11.setFont(new Font("Verdana", Font.PLAIN, 13));
-		lblNewLabel_11.setBounds(12, 304, 276, 22);
-		add(lblNewLabel_11);
-		
-		lblNewLabel_12 = new JLabel("New label");
-		lblNewLabel_12.setFont(new Font("Verdana", Font.PLAIN, 13));
-		lblNewLabel_12.setBounds(12, 333, 276, 22);
-		add(lblNewLabel_12);
-		
-		 lblNewLabel_13 = new JLabel("New label");
-		 lblNewLabel_13.setFont(new Font("Verdana", Font.PLAIN, 13));
-		lblNewLabel_13.setBounds(12, 363, 276, 22);
-		add(lblNewLabel_13);
-		
 		*/
+		
+		
+		JLabel messages = new JLabel("Messages");
+		messages.setFont(new Font("Verdana", Font.PLAIN, 13));
+		messages.setBounds(103, 207, 85, 34);
+		add(messages);
+		
+		msg1 = new JLabel("Message 1");
+		msg1.setFont(new Font("Verdana", Font.PLAIN, 13));
+		msg1.setBounds(12, 246, 276, 22);
+		add(msg1);
+		
+		msg2 = new JLabel("Message 2");
+		msg2.setFont(new Font("Verdana", Font.PLAIN, 13));
+		msg2.setBounds(12, 275, 276, 22);
+		add(msg2);
+		
+		 msg3 = new JLabel("Message 3");
+		 msg3.setFont(new Font("Verdana", Font.PLAIN, 13));
+		msg3.setBounds(12, 304, 276, 22);
+		add(msg3);
+		
+		msg4 = new JLabel("Message 4");
+		msg4.setFont(new Font("Verdana", Font.PLAIN, 13));
+		msg4.setBounds(12, 333, 276, 22);
+		add(msg4);
+		
+		 msg5 = new JLabel("Message 5");
+		 msg5.setFont(new Font("Verdana", Font.PLAIN, 13));
+		msg5.setBounds(12, 363, 276, 22);
+		add(msg5);
+		
 	}
+	
+	public static StatPanel getInstance(){
+		if(instance == null)
+			instance = new StatPanel();
+		
+		return instance;
+	}
+	
 	public void setParent(GameScreenUI gcui){
 		parent=gcui;
 	}
@@ -181,8 +204,14 @@ public class StatPanel extends JPanel {
 		food= Integer.toString(currentPlayer.getFood());
 		lblNewLabel_9 = new JLabel(food);		
 	}
-	public void pushMsg(String msg){
-		messages.add(msg);
-		
+	public void queueMsg(String msg){
+		msgQueue.addFirst(msg);
+		msg1.setText(msgQueue.getFirst());
+		msg2.setText(msgQueue.get(1));
+		msg3.setText(msgQueue.get(2));
+		msg4.setText(msgQueue.get(3));
+		msg5.setText(msgQueue.get(4));
 	}
+	
+	
 }
