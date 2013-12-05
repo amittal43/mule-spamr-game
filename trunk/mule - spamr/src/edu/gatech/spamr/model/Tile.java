@@ -166,7 +166,7 @@ public class Tile implements Serializable{
 			System.out.println("The MULE on Tile " + tileIndex + " doesn't have enough energy to produce");
 		}else{
 
-			owner.setEnergy(owner.getEnergy()-1); // one unit of energy used to produce
+			owner.setEnergyQuantity(owner.getEnergy()-1); // one unit of energy used to produce
 			
 			if(mule==Resource.FOOD){
 				System.out.println(owner.getName() + " produced " + type.getFoodProduction() + " Food on Tile " + tileIndex);
@@ -177,12 +177,12 @@ public class Tile implements Serializable{
 			
 			else if(mule==Resource.ENERGY){
 				System.out.println(owner.getName() + " produced " + type.getEnergyProduction() + " Energy on Tile " + tileIndex);
-				owner.setEnergy(owner.getEnergy() + type.getEnergyProduction());
+				owner.setEnergyQuantity(owner.getEnergy() + type.getEnergyProduction());
 			}
 			
 			else if(mule==Resource.ORE){
 				System.out.println(owner.getName() + " produced " + type.getOreProduction() + " Ore on Tile " + tileIndex);
-				owner.setOre(owner.getOre() + type.getOreProduction());
+				owner.setOreQuantity(owner.getOre() + type.getOreProduction());
 			}
 		}
 		System.out.println("Food after Production: " + owner.getFoodQuantity());

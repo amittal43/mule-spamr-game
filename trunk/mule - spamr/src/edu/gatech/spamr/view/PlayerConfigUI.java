@@ -373,7 +373,7 @@ public class PlayerConfigUI extends JPanel {
 					parent.getGame().getPlayer1().setRace(currentRace);
 					parent.getGame().getPlayer1().setMoney(currentRace.getStartingMoney());
 					parent.getGame().getPlayer1().setFoodQuantity(parent.getGame().getDifficulty().getStartingFood());
-					parent.getGame().getPlayer1().setEnergy(parent.getGame().getDifficulty().getStartingEnergy());
+					parent.getGame().getPlayer1().setEnergyQuantity(parent.getGame().getDifficulty().getStartingEnergy());
 					
 					
 					System.out.println();
@@ -395,7 +395,7 @@ public class PlayerConfigUI extends JPanel {
 					parent.getGame().getPlayer2().setRace(currentRace);
 					parent.getGame().getPlayer2().setMoney(currentRace.getStartingMoney());
 					parent.getGame().getPlayer2().setFoodQuantity(parent.getGame().getDifficulty().getStartingFood());
-					parent.getGame().getPlayer2().setEnergy(parent.getGame().getDifficulty().getStartingEnergy());
+					parent.getGame().getPlayer2().setEnergyQuantity(parent.getGame().getDifficulty().getStartingEnergy());
 					
 					
 					System.out.println();
@@ -416,7 +416,7 @@ public class PlayerConfigUI extends JPanel {
 					parent.getGame().getPlayer3().setRace(currentRace);
 					parent.getGame().getPlayer3().setMoney(currentRace.getStartingMoney());
 					parent.getGame().getPlayer3().setFoodQuantity(parent.getGame().getDifficulty().getStartingFood());
-					parent.getGame().getPlayer3().setEnergy(parent.getGame().getDifficulty().getStartingEnergy());
+					parent.getGame().getPlayer3().setEnergyQuantity(parent.getGame().getDifficulty().getStartingEnergy());
 					
 					
 					System.out.println();
@@ -438,7 +438,7 @@ public class PlayerConfigUI extends JPanel {
 					parent.getGame().getPlayer4().setRace(currentRace);
 					parent.getGame().getPlayer4().setMoney(currentRace.getStartingMoney());
 					parent.getGame().getPlayer4().setFoodQuantity(parent.getGame().getDifficulty().getStartingFood());
-					parent.getGame().getPlayer4().setEnergy(parent.getGame().getDifficulty().getStartingEnergy());
+					parent.getGame().getPlayer4().setEnergyQuantity(parent.getGame().getDifficulty().getStartingEnergy());
 					
 					
 					System.out.println();
