@@ -172,25 +172,8 @@ public class Player implements Resource,Serializable {
 	}
 
 
-	@Override
-	public int getFood() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 
-	@Override
-	public int getEnergy() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-
-	@Override
-	public int getOre() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 
 

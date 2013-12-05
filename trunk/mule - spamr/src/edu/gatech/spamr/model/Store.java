@@ -37,13 +37,13 @@ public class Store implements Resource, Serializable {
 		}
 		
 		if(relevantResource==Resource.ENERGY){
-			currentPlayer.setEnergyQuantity(currentPlayer.getEnergy() + quantity);
+			currentPlayer.setEnergyQuantity(currentPlayer.getEnergyQuantity() + quantity);
 			energyQuantity -= quantity;
 			currentPlayer.updateMoney(-(energyPrice * quantity));
 		}
 		
 		if(relevantResource==Resource.ORE){
-			currentPlayer.setOreQuantity(currentPlayer.getOre() + quantity);
+			currentPlayer.setOreQuantity(currentPlayer.getOreQuantity() + quantity);
 			oreQuantity -= quantity;
 			currentPlayer.updateMoney(-(orePrice * quantity));
 		}
@@ -89,16 +89,16 @@ public class Store implements Resource, Serializable {
 					System.out.println("Player doesn't have " + quantity + " Food to sell");
 				}
 			} else if(relevantResource == Resource.ENERGY){
-				if (currentPlayer.getEnergy() >= quantity) {
-					currentPlayer.setEnergyQuantity(currentPlayer.getEnergy() - quantity);
+				if (currentPlayer.getEnergyQuantity() >= quantity) {
+					currentPlayer.setEnergyQuantity(currentPlayer.getEnergyQuantity() - quantity);
 					energyQuantity += quantity;
 					currentPlayer.updateMoney(energyPrice*quantity/2);
 				} else {
 					System.out.println("Player doesn't have " + quantity + " Energy to sell");
 				}
 			} else if(relevantResource == Resource.ORE){
-				if (currentPlayer.getOre() >= quantity){
-					currentPlayer.setOreQuantity(currentPlayer.getOre() - quantity);
+				if (currentPlayer.getOreQuantity() >= quantity){
+					currentPlayer.setOreQuantity(currentPlayer.getOreQuantity() - quantity);
 					oreQuantity += quantity;
 					currentPlayer.updateMoney(orePrice*quantity/2);
 				} else {
@@ -146,15 +146,15 @@ public class Store implements Resource, Serializable {
 		muleQuantity = mule;
 	}
 	
-	public int getFood(){
+	public int getFoodPrice(){
 		return foodPrice;
 	}
 	
-	public int getEnergy(){
+	public int getEnergyPrice(){
 		return energyPrice;
 	}
 	
-	public int getOre(){
+	public int getOrePrice(){
 		return orePrice;
 	}
 	
@@ -193,6 +193,8 @@ public class Store implements Resource, Serializable {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+
 
 	
 }

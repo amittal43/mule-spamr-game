@@ -107,9 +107,9 @@ public class StatPanel extends JPanel {
 	public void updateStats(){
 		money= Integer.toString(currentPlayer.getMoney());
 		lblNewLabel_3 = new JLabel(money);
-		energy= Integer.toString(currentPlayer.getEnergy());
+		energy= Integer.toString(currentPlayer.getEnergyQuantity());
 		lblNewLabel_5 = new JLabel(energy);
-		ore= Integer.toString(currentPlayer.getOre());
+		ore= Integer.toString(currentPlayer.getOreQuantity());
 		lblNewLabel_7 = new JLabel(ore);
 		food= Integer.toString(currentPlayer.getFoodQuantity());
 		lblNewLabel_9 = new JLabel(food);		

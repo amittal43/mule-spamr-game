@@ -19,12 +19,6 @@ public interface Resource {
 	
 	public void setMuleQuantity(int mule);
 	
-	public int getFood();
-	
-	public int getEnergy();
-	
-	public int getOre();
-	
 	public int getMoney();
 	
 	public void setMoney(int m);

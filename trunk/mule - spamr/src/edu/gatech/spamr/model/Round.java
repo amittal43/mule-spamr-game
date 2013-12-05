@@ -106,17 +106,17 @@ public class Round implements Serializable {
 		}
 		
 		System.out.println("Food Before Event: " + currPlayer.getFoodQuantity());
-		System.out.println("Energy Before Event: " + currPlayer.getEnergy());
-		System.out.println("Ore Before Event: " + currPlayer.getOre());
+		System.out.println("Energy Before Event: " + currPlayer.getEnergyQuantity());
+		System.out.println("Ore Before Event: " + currPlayer.getOreQuantity());
 		System.out.println("Money Before Event: " + currPlayer.getMoney());
 		
 		if (eventID == 1){ //1,2,3,4 good events
 			currPlayer.setFoodQuantity(currPlayer.getFoodQuantity() +3);
-			currPlayer.setEnergyQuantity(currPlayer.getEnergy() +2);
+			currPlayer.setEnergyQuantity(currPlayer.getEnergyQuantity() +2);
 			System.out.println("YOU JUST RECEIVED A PACKAGE FROM THE GT ALUMNI CONTAINING 3 FOOD AND 2 ENERGY UNITS");
 		}
 		else if(eventID == 2){
-			currPlayer.setOreQuantity(currPlayer.getOre() +2);
+			currPlayer.setOreQuantity(currPlayer.getOreQuantity() +2);
 			System.out.println("A WANDERING TECH STUDENT REPAID YOUR HOSPITALITY BY LEAVING TWO BARS OF ORE");
 		}
 		else if(eventID == 3){
@@ -143,8 +143,8 @@ public class Round implements Serializable {
 		}
 		
 		System.out.println("Food After Event: " + currPlayer.getFoodQuantity());
-		System.out.println("Energy After Event: " + currPlayer.getEnergy());
-		System.out.println("Ore After Event: " + currPlayer.getOre());
+		System.out.println("Energy After Event: " + currPlayer.getEnergyQuantity());
+		System.out.println("Ore After Event: " + currPlayer.getOreQuantity());
 		System.out.println("Money After Event: " + currPlayer.getMoney());
 	}
 	
@@ -180,7 +180,7 @@ public class Round implements Serializable {
 			//redefining as random player loses 5 food and gains 2 ore
 			int pick = rand.nextInt()%4;
 			players[pick].setFoodQuantity(players[pick].getFoodQuantity() - 5);
-			players[pick].setOreQuantity(players[pick].getOre() + 2);
+			players[pick].setOreQuantity(players[pick].getOreQuantity() + 2);
 			System.out.println("Meteorite Strike occured. "+ players[pick].getName() + " loses 5 food and gains 2 ore.");
 			
 			rEventOccured[5] ++;
@@ -212,10 +212,10 @@ public class Round implements Serializable {
 				int pick = rand.nextInt()%2;
 				if(pick == 0){
 					players[i].setFoodQuantity(players[i].getFoodQuantity() + 4);
-					players[i].setEnergyQuantity(players[i].getEnergy() - 2);
+					players[i].setEnergyQuantity(players[i].getEnergyQuantity() - 2);
 				} else {
 					players[i].setFoodQuantity(players[i].getFoodQuantity() + 2);
-					players[i].setEnergyQuantity(players[i].getEnergy() - 1);
+					players[i].setEnergyQuantity(players[i].getEnergyQuantity() - 1);
 				}
 			}
 			
@@ -236,8 +236,8 @@ public class Round implements Serializable {
 			//redefining as player 1 or 2 has 1 of each resource removed
 			int pick = rand.nextInt()%2;
 			players[pick].setFoodQuantity(players[pick].getFoodQuantity() - 1);
-			players[pick].setEnergyQuantity(players[pick].getEnergy() - 1);
-			players[pick].setOreQuantity(players[pick].getOre() - 1);
+			players[pick].setEnergyQuantity(players[pick].getEnergyQuantity() - 1);
+			players[pick].setOreQuantity(players[pick].getOreQuantity() - 1);
 			System.out.println("Pest Attack occured. " + players[pick].getName() + " has lost one of each resource");
 			
 			rEventOccured[0] ++;
