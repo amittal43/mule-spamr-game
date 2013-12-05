@@ -15,7 +15,7 @@ import java.io.Serializable;
  * @version 1.0 10/22/2013 
  */
 
-public class Player implements Serializable {
+public class Player implements Resource,Serializable {
 	
 	
 
@@ -130,7 +130,7 @@ public class Player implements Serializable {
 		food = f;
 	}
 	
-	public int getEnergy(){
+	public int getEnergyQuantity(){
 		return energy;
 	}
 	
@@ -138,21 +138,58 @@ public class Player implements Serializable {
 		return (money/100) + ore + food + energy;
 	}
 	
-	public void setEnergy(int e){
+	public void setEnergyQuantity(int e){
 		energy = e;
 	}
 	
-	public int getOre(){
+	public int getOreQuantity(){
 		return ore;
 	}
 	
-	public void setOre(int o){
+	public void setOreQuantity(int o){
 		ore = o;
 	}
 	
 
 	public Color getRGB(){
 		return color.getRGB();
+	}
+
+
+	
+
+	@Override
+	public int getMuleQuantity() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public void setMuleQuantity(int mule) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public int getFood() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public int getEnergy() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public int getOre() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 

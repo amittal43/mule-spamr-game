@@ -37,13 +37,13 @@ public class Store implements Resource, Serializable {
 		}
 		
 		if(relevantResource==Resource.ENERGY){
-			currentPlayer.setEnergy(currentPlayer.getEnergy() + quantity);
+			currentPlayer.setEnergyQuantity(currentPlayer.getEnergy() + quantity);
 			energyQuantity -= quantity;
 			currentPlayer.updateMoney(-(energyPrice * quantity));
 		}
 		
 		if(relevantResource==Resource.ORE){
-			currentPlayer.setOre(currentPlayer.getOre() + quantity);
+			currentPlayer.setOreQuantity(currentPlayer.getOre() + quantity);
 			oreQuantity -= quantity;
 			currentPlayer.updateMoney(-(orePrice * quantity));
 		}
@@ -90,7 +90,7 @@ public class Store implements Resource, Serializable {
 				}
 			} else if(relevantResource == Resource.ENERGY){
 				if (currentPlayer.getEnergy() >= quantity) {
-					currentPlayer.setEnergy(currentPlayer.getEnergy() - quantity);
+					currentPlayer.setEnergyQuantity(currentPlayer.getEnergy() - quantity);
 					energyQuantity += quantity;
 					currentPlayer.updateMoney(energyPrice*quantity/2);
 				} else {
@@ -98,7 +98,7 @@ public class Store implements Resource, Serializable {
 				}
 			} else if(relevantResource == Resource.ORE){
 				if (currentPlayer.getOre() >= quantity){
-					currentPlayer.setOre(currentPlayer.getOre() - quantity);
+					currentPlayer.setOreQuantity(currentPlayer.getOre() - quantity);
 					oreQuantity += quantity;
 					currentPlayer.updateMoney(orePrice*quantity/2);
 				} else {
