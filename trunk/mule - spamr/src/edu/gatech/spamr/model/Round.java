@@ -26,6 +26,13 @@ public class Round implements Serializable {
 	public final int[] gamblingBonus = {50,50,50,100,100,100,100,150,150,150,150,200};
 	public final int[] randomNumber = {25, 25, 25, 50, 50, 50, 50, 75, 75, 75, 75, 100};
 
+	//randomRoundEvent data
+	private int eventsLeft = 20;
+	private int[] rEventProb = {15,10,15,15,15,10,10,10};
+	private int[] rEventMax = {3,2,3,3,3,2,2,2};
+	private int[] rEventOccured = new int[7];
+	
+	
 	/**
 	 * getRoundNumber method
 	 * 
@@ -141,6 +148,110 @@ public class Round implements Serializable {
 		System.out.println("Money After Event: " + currPlayer.getMoney());
 	}
 	
+	
+	public void RandomRoundEvent(Player[] players){ // may need to pass in a store object
+		if(eventsLeft == 0) return;
+		Random rand = new Random();
+		int num = rand.nextInt()%100 + 1;
+		
+		//choses event
+		if (num > rEventProb[0] + rEventProb[1] + rEventProb[2] + rEventProb[3] + rEventProb[4] + rEventProb[5] + rEventProb[6]) {
+			//event #7 occurs
+			System.out.println("Fire in Store occured. The store is closed this round.");
+			//make players not able to enter the store this round
+			//need to add int onFire to class with button for store and make it default 0
+			//if this happens then make it 1
+			//if it is 1 then disable button functionality
+			//every round reinitalize onFire to 0
+			
+			rEventOccured[7] ++;
+			
+		} else if (num > rEventProb[0] + rEventProb[1] + rEventProb[2] + rEventProb[3] + rEventProb[4] + rEventProb[5]) {
+			//event #6 occurs
+			int pick = rand.nextInt()%2;
+			//players[pick] has what his production would be subtracted from his current resources
+			//will be like he had no production
+			System.out.println("Radiation occured. " + players[pick].getName() + " has no production this turn.");
+			
+			rEventOccured[6] ++;
+			
+		} else if (num > rEventProb[0] + rEventProb[1] + rEventProb[2] + rEventProb[3] + rEventProb[4]) {
+			//event #5 occurs
+			//redefining as random player loses 5 food and gains 2 ore
+			int pick = rand.nextInt()%4;
+			players[pick].setFood(players[pick].getFood() - 5);
+			players[pick].setOre(players[pick].getOre() + 2);
+			System.out.println("Meteorite Strike occured. "+ players[pick].getName() + " loses 5 food and gains 2 ore.");
+			
+			rEventOccured[5] ++;
+			
+		} else if (num > rEventProb[0] + rEventProb[1] + rEventProb[2] + rEventProb[3]){
+			//event #4 occurs
+			System.out.println("Sunspot Activity occured all players gain 3 energy");
+			for(int i = 0; i < 4; i++){
+				players[i].setFood(players[i].getFood() + 3);
+			}
+			rEventOccured[4] ++;
+			
+		} else if (num > rEventProb[0] + rEventProb[1] + rEventProb[2]){
+			//event #3 occurs
+			System.out.println("Planetquake occured. Production is randomized.");
+			//redefine as randomizing production this turn
+			//where production is calculated add int isQuake = 0
+			//if isQuake = 1 then (add a random calcuation)
+			//if this happens then set isQuake to 1
+			//at the beginning of the round set isQuake to 0
+			
+			rEventOccured[3] ++;
+			
+		} else if (num > rEventProb[0] + rEventProb[1]) {
+			//event #2 occurs
+			System.out.println("Acid Rain Storm occured. Additional Food is found at the cost of your Energy");
+			//add 4 or 2 to food and remove 2 or 1 from energy
+			for(int i = 0; i < 4; i++){
+				int pick = rand.nextInt()%2;
+				if(pick == 0){
+					players[i].setFood(players[i].getFood() + 4);
+					players[i].setEnergy(players[i].getEnergy() - 2);
+				} else {
+					players[i].setFood(players[i].getFood() + 2);
+					players[i].setEnergy(players[i].getEnergy() - 1);
+				}
+			}
+			
+			rEventOccured[2] ++;
+			
+		} else if (num > rEventProb[0]) {
+			//event #1 occurs
+			System.out.println("Pirate Ship occured. The Ore is gone. Why is the Ore always gone?");
+			for(int i = 0; i < 4; i++){
+				players[i].setOre(0);
+			}
+			//set the store's ore to 0
+			
+			rEventOccured[1] ++;
+			
+		} else {
+			//event #0 occurs
+			//redefining as player 1 or 2 has 1 of each resource removed
+			int pick = rand.nextInt()%2;
+			players[pick].setFood(players[pick].getFood() - 1);
+			players[pick].setEnergy(players[pick].getEnergy() - 1);
+			players[pick].setOre(players[pick].getOre() - 1);
+			System.out.println("Pest Attack occured. " + players[pick].getName() + " has lost one of each resource");
+			
+			rEventOccured[0] ++;
+		}
+		//updates probability after an event occurs
+		roundEventProbUpdater();
+		
+	}
+	
+	private void roundEventProbUpdater(){
+		for(int i = 0; i < 8; i++){
+			rEventProb[i] = 100 * (rEventMax[i]-rEventOccured[i]) / eventsLeft;
+		}
+	}
 	
 	
 	
