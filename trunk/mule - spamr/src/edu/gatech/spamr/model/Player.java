@@ -122,11 +122,11 @@ public class Player implements Serializable {
 		money += n;
 	}
 	
-	public int getFood(){
+	public int getFoodQuantity(){
 		return food;
 	}
 	
-	public void setFood(int f){
+	public void setFoodQuantity(int f){
 		food = f;
 	}
 	
@@ -154,5 +154,8 @@ public class Player implements Serializable {
 	public Color getRGB(){
 		return color.getRGB();
 	}
+
+
+
 }
 

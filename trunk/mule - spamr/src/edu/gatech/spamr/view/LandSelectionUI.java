@@ -147,7 +147,7 @@ public class LandSelectionUI extends JPanel {
 						mapui.getCurrentTile().setOwner(currentPlayer);
 						mapui.colorTile(mapui.getCurrentTile(), mapui.getCurrentButton());
 						System.out.println(currentPlayer.getName() + " received tile!");
-						newMessage(currentPlayer.getName() + " received tile!");
+//						newMessage(currentPlayer.getName() + " received tile!");
 						propertiesOwned++;
 						nextPlayer();
 						return;
@@ -206,43 +206,8 @@ public class LandSelectionUI extends JPanel {
 		playerActiveLabel.setForeground(Color.LIGHT_GRAY);
 		playerActiveLabel.setBounds(678, 37, 163, 35);
 		add(playerActiveLabel);
-		
-		/*JLabel moneyLabel = new JLabel("Money:"); // finish other JLabels later
-		moneyLabel.setForeground(Color.LIGHT_GRAY);
-		moneyLabel.setFont(new Font("Verdana", Font.BOLD, 20));
-		moneyLabel.setBounds(956, 252, 84, 50);
-		add(moneyLabel);
-		
-		JLabel moneyActiveLabel = new JLabel("" + currentPlayer.getMoney());
-		moneyActiveLabel.setForeground(Color.LIGHT_GRAY);
-		moneyActiveLabel.setFont(new Font("Verdana", Font.BOLD | Font.ITALIC, 20));
-		moneyActiveLabel.setBounds(1050, 260, 127, 35);
-		add(moneyActiveLabel);
-		
-		JLabel tileCostLabel = new JLabel("Tile Cost:");
-		tileCostLabel.setForeground(Color.LIGHT_GRAY);
-		tileCostLabel.setFont(new Font("Verdana", Font.BOLD, 20));
-		tileCostLabel.setBounds(930, 313, 115, 21);
-		add(tileCostLabel);
-		
-		JLabel costActiveLabel = costLabel;
-		costActiveLabel.setForeground(Color.LIGHT_GRAY);
-		costActiveLabel.setFont(new Font("Verdana", Font.BOLD | Font.ITALIC, 20));
-		costActiveLabel.setBounds(1050, 309, 122, 28);
-		add(costActiveLabel);
-		
-		JLabel tileOwnedLabel = new JLabel("Owned? :");
-		tileOwnedLabel.setForeground(Color.LIGHT_GRAY);
-		tileOwnedLabel.setFont(new Font("Verdana", Font.BOLD, 20));
-		tileOwnedLabel.setBounds(930, 349, 122, 28);
-		add(tileOwnedLabel);
-		
-		JLabel ownActiveLabel = new JLabel("" + currentTile.isOwned());
-		ownActiveLabel.setForeground(Color.LIGHT_GRAY);
-		ownActiveLabel.setFont(new Font("Verdana", Font.BOLD | Font.ITALIC, 20));
-		ownActiveLabel.setBounds(1050, 349, 115, 28);
-		add(ownActiveLabel);
-*/
+
+
 	}
 	
 	//getters and setters
@@ -254,7 +219,7 @@ public class LandSelectionUI extends JPanel {
 		mapui = map;
 	}
 	
-	public void newMessage(String msg){
-		StatPanel.getInstance().queueMsg(msg);
-	}
+//	public void newMessage(String msg){
+//		StatPanel.getInstance().queueMsg(msg);
+//	}
 }

@@ -161,7 +161,7 @@ public class Tile implements Serializable{
 		if(!isOwned() || mule==null){
 			return;
 		}
-		System.out.println("Food before Production: " + owner.getFood());
+		System.out.println("Food before Production: " + owner.getFoodQuantity());
 		if(owner.getEnergy()==0){
 			System.out.println("The MULE on Tile " + tileIndex + " doesn't have enough energy to produce");
 		}else{
@@ -171,7 +171,7 @@ public class Tile implements Serializable{
 			if(mule==Resource.FOOD){
 				System.out.println(owner.getName() + " produced " + type.getFoodProduction() + " Food on Tile " + tileIndex);
 				
-				owner.setFood(owner.getFood() + type.getFoodProduction());
+				owner.setFoodQuantity(owner.getFoodQuantity() + type.getFoodProduction());
 				
 			}
 			
@@ -185,7 +185,7 @@ public class Tile implements Serializable{
 				owner.setOre(owner.getOre() + type.getOreProduction());
 			}
 		}
-		System.out.println("Food after Production: " + owner.getFood());
+		System.out.println("Food after Production: " + owner.getFoodQuantity());
 	}
 	
 }

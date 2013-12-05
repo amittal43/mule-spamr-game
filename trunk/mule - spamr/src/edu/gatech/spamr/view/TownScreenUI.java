@@ -48,7 +48,7 @@ public class TownScreenUI extends JPanel {
 	public TownScreenUI() {
 		
 		//sets preferences for TownScreen
-		setPreferredSize(new Dimension(1280, 751));
+		setPreferredSize(new Dimension(1280, 685));
 		setBackground(Color.LIGHT_GRAY);
 //		JPanel buttonPanel = new JPanel(new GridLayout(2,2));	//creates the panel
 //		buttonPanel.setPreferredSize(new Dimension(800,500) );
@@ -137,7 +137,7 @@ public class TownScreenUI extends JPanel {
 		public void setParent(GameScreenUI gcui){
 			parent = gcui;
 		}
-	
+
 }
 	
 

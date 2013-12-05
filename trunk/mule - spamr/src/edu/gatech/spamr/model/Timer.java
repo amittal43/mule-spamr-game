@@ -22,11 +22,11 @@ public class Timer implements Runnable {
 	
 	/////////methods/////////
 	public  long calcTurnTime(Player player, Round round){
-		if(player.getFood() >= round.getFoodRequirement()){ // no food shortage
+		if(player.getFoodQuantity() >= round.getFoodRequirement()){ // no food shortage
 			System.out.println("The player has 50 seconds");
 			return 50000; //50.00 seconds
 		}
-		else if(player.getFood()==0){// complete food shortage
+		else if(player.getFoodQuantity()==0){// complete food shortage
 			System.out.println("The player has 5 seconds");
 			return 5000; //5.00 seconds
 		}
