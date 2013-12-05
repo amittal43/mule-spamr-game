@@ -59,17 +59,32 @@ public class TownScreenUI extends JPanel {
 		town.setFont(new Font("Serif", Font.BOLD, 48));
 		
 		//create a store button in which the player can go to the store
+
+		setLayout(null);
+		//ImageIcon storeIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/potter/STORE_converted.jpg"));
+		/*ImageIcon storeIcon = new ImageIcon();
+		storeButton = new JButton(storeIcon);
+
 		//ImageIcon storeIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/potter/STORE.JPG"));
 		storeButton = new JButton();
+
+		storeButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				parent.cardChangeTo("Store");
+			}
+		}); 
+		*/
+		
+		storeButton = new JButton();
+		storeButton.setIcon(new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/potter/STORE_converted.jpg")));
+		storeButton.setBounds(57, 68, 371, 304);
 		storeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				parent.cardChangeTo("Store");
 			}
 		});
-		setLayout(null);
-		storeButton.setBackground(Color.DARK_GRAY);
-		storeButton.setBounds(57, 68, 371, 304);
 		add(storeButton);
+	
 		
 		//create an assay button in which the player can go assay 
 		ImageIcon assayIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/potter/ASSAYOFFICE.jpg"));
