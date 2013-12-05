@@ -27,6 +27,9 @@ public interface Resource {
 	
 	public int getMoney();
 	
+	public void setMoney(int m);
+	
+	public int calcScore();
 	
 	
 
