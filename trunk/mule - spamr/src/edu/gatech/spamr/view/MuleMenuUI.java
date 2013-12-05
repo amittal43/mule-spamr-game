@@ -61,7 +61,7 @@ public class MuleMenuUI extends JPanel {
 		
 		setBackground(Color.DARK_GRAY);
 		setMinimumSize(new Dimension(1280, 800));
-		setPreferredSize(new Dimension(1280, 800));
+		setPreferredSize(new Dimension(1280, 684));
 		mapui.setLocation(104, 108);
 		
 		mapui.setParent(parent);
@@ -76,7 +76,7 @@ public class MuleMenuUI extends JPanel {
 		JLabel playerTurnLabel = new JLabel("MULE Menu");
 		playerTurnLabel.setFont(new Font("Verdana", Font.BOLD, 25));
 		playerTurnLabel.setForeground(Color.LIGHT_GRAY);
-		playerTurnLabel.setBounds(104, 45, 163, 32);
+		playerTurnLabel.setBounds(16, 45, 163, 32);
 		add(playerTurnLabel);
 		btnFoodMule.setFont(new Font("Verdana", Font.BOLD, 16));
 		
@@ -91,7 +91,7 @@ public class MuleMenuUI extends JPanel {
 				currentSelected.setBorder(new LineBorder(Color.BLACK,2));
 			}
 		});
-		btnFoodMule.setBounds(1000, 108, 170, 58);
+		btnFoodMule.setBounds(191, 35, 139, 58);
 		add(btnFoodMule);
 		btnEnergyMule.setFont(new Font("Verdana", Font.BOLD, 16));
 		
@@ -104,7 +104,7 @@ public class MuleMenuUI extends JPanel {
 				currentSelected.setBorder(new LineBorder(Color.BLACK,2));
 			}
 		});
-		btnEnergyMule.setBounds(1000, 208, 170, 58);
+		btnEnergyMule.setBounds(348, 36, 139, 58);
 		add(btnEnergyMule);
 		btnOreMule.setFont(new Font("Verdana", Font.BOLD, 16));
 		
@@ -117,7 +117,7 @@ public class MuleMenuUI extends JPanel {
 				currentSelected.setBorder(new LineBorder(Color.BLACK,2));
 			}
 		});
-		btnOreMule.setBounds(1000, 308, 170, 58);
+		btnOreMule.setBounds(499, 36, 139, 58);
 		add(btnOreMule);
 		btnGoBack.setFont(new Font("Verdana", Font.BOLD, 16));
 		btnGoBack.setPreferredSize(new Dimension(170, 58));
@@ -128,7 +128,7 @@ public class MuleMenuUI extends JPanel {
 				parent.cardChangeTo("Store");
 			}
 		});
-		btnGoBack.setBounds(1000, 550, 170, 58);
+		btnGoBack.setBounds(793, 36, 139, 58);
 		add(btnGoBack);
 		btnConfirm.setSize(new Dimension(170, 58));
 		btnConfirm.setFont(new Font("Verdana", Font.BOLD, 16));
@@ -159,7 +159,7 @@ public class MuleMenuUI extends JPanel {
 				}
 			}
 		});
-		btnConfirm.setBounds(1000, 650, 170, 58);
+		btnConfirm.setBounds(650, 36, 131, 58);
 		add(btnConfirm);
 
 	}
