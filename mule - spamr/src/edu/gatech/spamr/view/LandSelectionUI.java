@@ -147,6 +147,7 @@ public class LandSelectionUI extends JPanel {
 						mapui.getCurrentTile().setOwner(currentPlayer);
 						mapui.colorTile(mapui.getCurrentTile(), mapui.getCurrentButton());
 						System.out.println(currentPlayer.getName() + " received tile!");
+						newMessage(currentPlayer.getName() + " received tile!");
 						propertiesOwned++;
 						nextPlayer();
 						return;
@@ -251,5 +252,9 @@ public class LandSelectionUI extends JPanel {
 	
 	public void setMapUI(MapUI map){
 		mapui = map;
+	}
+	
+	public void newMessage(String msg){
+		StatPanel.getInstance().queueMsg(msg);
 	}
 }

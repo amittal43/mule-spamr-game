@@ -59,8 +59,8 @@ public class TownScreenUI extends JPanel {
 		town.setFont(new Font("Serif", Font.BOLD, 48));
 		
 		//create a store button in which the player can go to the store
-		ImageIcon storeIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/potter/STORE.JPG"));
-		storeButton = new JButton(storeIcon);
+		//ImageIcon storeIcon = new ImageIcon(TownScreenUI.class.getResource("/edu/gatech/spamr/resources/potter/STORE.JPG"));
+		storeButton = new JButton();
 		storeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				parent.cardChangeTo("Store");
