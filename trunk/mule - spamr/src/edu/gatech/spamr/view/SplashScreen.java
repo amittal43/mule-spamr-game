@@ -15,6 +15,7 @@ import java.awt.image.BufferedImage;
 import java.awt.image.RescaleOp;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
@@ -71,8 +72,13 @@ public class SplashScreen extends JPanel implements MouseMotionListener {
         setLayout(null);
 
         try {
-            background = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/splashBg.png"));
-            wand = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/wand.png"));
+        	InputStream input = getClass().getResourceAsStream("src/edu/gatech/spamr/resources/potter/foot75.png");
+            //background = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/splashBg.png"));
+           background = ImageIO.read(getClass().getResourceAsStream
+    	           ("/edu/gatech/spamr/resources/potter/splashBg.png"));
+            wand = ImageIO.read(getClass().getResourceAsStream
+     	           ("/edu/gatech/spamr/resources/potter/wand.png"));
+            //wand = SplashScreen.class.getResource("/edu/gatech/spamr/resources/potter/click.jpg");
             //fire = ImageIO.read(new File("fire.png"));
             //highlight = ImageIO.read(new File("highlight.png"));
             //rightFoot = ImageIO.read(new File("rightFoot.png"));
@@ -80,7 +86,6 @@ public class SplashScreen extends JPanel implements MouseMotionListener {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         JButton button = new JButton("CLICK TO PLAY!");
         button.setIcon(new ImageIcon(SplashScreen.class.getResource("/edu/gatech/spamr/resources/potter/click.jpg")));
         button.setFont(new Font("Verdana", Font.BOLD, 25));
@@ -102,18 +107,18 @@ public class SplashScreen extends JPanel implements MouseMotionListener {
 
         addMouseMotionListener(this);
         try {
-			foot100 = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/100.png"));
-			foot75 = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/foot75.png"));
-			foot50 = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/foot50.png"));
-			foot25 = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/foot25.png"));
-			foot100u = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/foot100u.png"));
-			foot75u = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/foot75u.png"));
-			foot50u = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/foot50u.png"));
-			foot25u = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/foot25u.png"));
-			foot100d = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/foot100d.png"));
-			foot75d = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/foot75d.png"));
-			foot50d = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/foot50d.png"));
-			foot25d = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/foot25d.png"));
+			foot100 = ImageIO.read(getClass().getResourceAsStream("/edu/gatech/spamr/resources/potter/100.png"));
+			foot75 = ImageIO.read(getClass().getResourceAsStream("/edu/gatech/spamr/resources/potter/foot75.png"));
+			foot50 = ImageIO.read(getClass().getResourceAsStream("/edu/gatech/spamr/resources/potter/foot50.png"));
+			foot25 = ImageIO.read(getClass().getResourceAsStream("/edu/gatech/spamr/resources/potter/foot25.png"));
+			foot100u = ImageIO.read(getClass().getResourceAsStream("/edu/gatech/spamr/resources/potter/foot100u.png"));
+			foot75u = ImageIO.read(getClass().getResourceAsStream("/edu/gatech/spamr/resources/potter/foot75u.png"));
+			foot50u = ImageIO.read(getClass().getResourceAsStream("/edu/gatech/spamr/resources/potter/foot50u.png"));
+			foot25u = ImageIO.read(getClass().getResourceAsStream("/edu/gatech/spamr/resources/potter/foot25u.png"));
+			foot100d = ImageIO.read(getClass().getResourceAsStream("/edu/gatech/spamr/resources/potter/foot100d.png"));
+			foot75d = ImageIO.read(getClass().getResourceAsStream("/edu/gatech/spamr/resources/potter/foot75d.png"));
+			foot50d = ImageIO.read(getClass().getResourceAsStream("/edu/gatech/spamr/resources/potter/foot50d.png"));
+			foot25d = ImageIO.read(getClass().getResourceAsStream("/edu/gatech/spamr/resources/potter/foot25d.png"));
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -149,7 +154,7 @@ public class SplashScreen extends JPanel implements MouseMotionListener {
                 }
                 if (val-7.0f >= 0.0f) {
                     try {
-                        background = ImageIO.read(new File("src/edu/gatech/spamr/resources/potter/splashBg.png"));
+                        background = ImageIO.read(getClass().getResourceAsStream("/edu/gatech/spamr/resources/potter/splashBg.png"));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
