@@ -88,7 +88,7 @@ public class Tile implements Serializable{
 		
 		public static TileType getRandomTileType(){
 			Random random = new Random();
-			int randomNum = random.nextInt()%5;
+			int randomNum = Math.abs(random.nextInt())%4;
 			
 			if(randomNum==0){
 				return MOUNTAIN1;
@@ -99,14 +99,8 @@ public class Tile implements Serializable{
 			else if(randomNum==2){
 				return MOUNTAIN3;
 			}
-			else if(randomNum==3){
-				return PLAIN;
-			}
-			else if(randomNum==4){
-				return RIVER;
-			}
 			else{
-				return RIVER2;
+				return PLAIN;
 			}
 		}
 	}

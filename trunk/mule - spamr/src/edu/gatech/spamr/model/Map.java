@@ -69,6 +69,12 @@ public class Map implements Serializable{
 		}
 		
 		Random rand = new Random();
+		int riverStart = Math.abs(rand.nextInt())%9; // get beginning river
+		random[riverStart] = TileType.RIVER2;
+		
+		for(int i=1; i<5; i++){
+			random[riverStart + (i*9)] = TileType.RIVER;
+		}
 		
 		random[22] = TileType.TOWN;
 		
