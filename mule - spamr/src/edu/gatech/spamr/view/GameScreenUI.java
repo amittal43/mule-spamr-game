@@ -164,6 +164,10 @@ public class GameScreenUI extends JPanel {	//panel that holds cards
 		return sdialog;
 	}
 	
+	public TownScreenUI getTsui(){
+		return tsui;
+	}
+	
 	public void initializeMapScreens(){
 		lsui = new LandSelectionUI(this);
 		turnui = new TurnScreenUI(this);

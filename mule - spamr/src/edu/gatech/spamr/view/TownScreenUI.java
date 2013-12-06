@@ -41,6 +41,7 @@ public class TownScreenUI extends JPanel {
 	private GameScreenUI parent;
 	//private Timer storeTimer;
 	//private JLabel timeRemaining;
+	private int storeOnFire = 0;
 	
 	/**
 	 * TownScreenUI is a representation of the various locations a player can go to in the town
@@ -70,7 +71,9 @@ public class TownScreenUI extends JPanel {
 
 		storeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				parent.cardChangeTo("Store");
+				if(storeOnFire == 0){
+					parent.cardChangeTo("Store");
+				}
 			}
 		}); 
 		*/
@@ -80,7 +83,9 @@ public class TownScreenUI extends JPanel {
 		storeButton.setBounds(57, 68, 371, 304);
 		storeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				parent.cardChangeTo("Store");
+				if(storeOnFire == 0){
+					parent.cardChangeTo("Store");
+				}
 			}
 		});
 		add(storeButton);
@@ -137,7 +142,11 @@ public class TownScreenUI extends JPanel {
 		public void setParent(GameScreenUI gcui){
 			parent = gcui;
 		}
-
+		
+		public void setFire(int yn){
+			storeOnFire = yn;
+		}
+	
 }
 	
 
