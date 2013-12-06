@@ -86,7 +86,7 @@ public class PubUI extends JPanel {
 				Random rand = new Random();
 				//updates player money
 				int bonus = pubInstance.calcGamble(parent.getGame().getCurrentRound(), rand.nextInt(50001));//parent.getTimer().getTimeRemaining()); 
-				System.out.println(parent.getGame().getCurrentPlayer().getName() + " recieves " + bonus + " money!");
+				StatPanel.getInstance().queueMsg(parent.getGame().getCurrentPlayer().getName() + " recieves " + bonus + " money!");
 				parent.getGame().getCurrentPlayer().updateMoney(bonus);
 				
 				//interrupts the current timer
@@ -95,7 +95,7 @@ public class PubUI extends JPanel {
 				
 				//turn change
 				parent.getGame().updateTurn(); //updates turn/round count in game (not current player)
-				System.out.println("Turn changes to " + parent.getGame().getCurrentPlayer().getName());
+				//System.out.println("Turn changes to " + parent.getGame().getCurrentPlayer().getName());
 				
 				//screen change
 				parent.cardChangeTo("TurnScreen");

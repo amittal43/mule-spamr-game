@@ -123,11 +123,11 @@ public class Game implements Serializable {
 			playOrder = currentRound.calcTurn(player1, player2, player3, player4);
 			currentTurn = 0;
 			
-			System.out.println(parent);
-			System.out.println(parent.getTsui());
+			//System.out.println(parent);
+			//System.out.println(parent.getTsui());
 			parent.getTsui().setFire(0);
-			System.out.println("playOrder");
-			System.out.println(playOrder);
+			//System.out.println("playOrder");
+			//System.out.println(playOrder);
 			ArrayList playEffect = currentRound.RandomRoundEvent(playOrder, parent.getTsui());
 			int food = 0;
 			int energy = 0;
