@@ -104,7 +104,7 @@ public class StatPanel extends JPanel {
 	public void setParent(GameScreenUI gcui){
 		parent=gcui;
 	}
-	public void updateStats(){
+/*	public void updateStats(){
 		money= Integer.toString(currentPlayer.getMoney());
 		lblNewLabel_3 = new JLabel(money);
 		energy= Integer.toString(currentPlayer.getEnergyQuantity());
@@ -113,14 +113,23 @@ public class StatPanel extends JPanel {
 		lblNewLabel_7 = new JLabel(ore);
 		food= Integer.toString(currentPlayer.getFoodQuantity());
 		lblNewLabel_9 = new JLabel(food);		
-	}
+	}*/
 	public void queueMsg(String msg){
 		msgQueue.addFirst(msg);
-		msg1.setText(msgQueue.getFirst());
-		msg2.setText(msgQueue.get(1));
-		msg3.setText(msgQueue.get(2));
-		msg4.setText(msgQueue.get(3));
-		msg5.setText(msgQueue.get(4));
+		
+		msg1.setText(msgQueue.get(0));
+		
+		if(msgQueue.size()>=2)
+			msg2.setText(msgQueue.get(1));
+		
+		if(msgQueue.size()>=3)
+			msg3.setText(msgQueue.get(2));
+		
+		if(msgQueue.size()>=4)
+			msg4.setText(msgQueue.get(3));
+		
+		if(msgQueue.size()>=5)
+			msg5.setText(msgQueue.get(4));
 	}
 	
 }
