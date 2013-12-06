@@ -82,27 +82,27 @@ public class StatPanel extends JPanel {
 		
 		msg1 = new JLabel("Message 1");
 		msg1.setFont(new Font("Verdana", Font.PLAIN, 13));
-		msg1.setBounds(12, 246, 276, 22);
+		msg1.setBounds(12, 246, 276, 47);
 		add(msg1);
 		
 		msg2 = new JLabel("Message 2");
 		msg2.setFont(new Font("Verdana", Font.PLAIN, 13));
-		msg2.setBounds(12, 275, 276, 22);
+		msg2.setBounds(12, 304, 276, 47);
 		add(msg2);
 		
 		msg3 = new JLabel("Message 3");
 		msg3.setFont(new Font("Verdana", Font.PLAIN, 13));
-		msg3.setBounds(12, 304, 276, 22);
+		msg3.setBounds(12, 362, 276, 47);
 		add(msg3);
 		
 		msg4 = new JLabel("Message 4");
 		msg4.setFont(new Font("Verdana", Font.PLAIN, 13));
-		msg4.setBounds(12, 333, 276, 22);
+		msg4.setBounds(12, 420, 276, 47);
 		add(msg4);
 		
 		msg5 = new JLabel("Message 5");
 		msg5.setFont(new Font("Verdana", Font.PLAIN, 13));
-		msg5.setBounds(12, 363, 276, 22);
+		msg5.setBounds(12, 478, 276, 47);
 		add(msg5);
 		
 	}
@@ -125,6 +125,9 @@ public class StatPanel extends JPanel {
 	}
 	
 	public void queueMsg(String msg){
+		
+		msg = "<html>" + msg + "<html>";
+		
 		msgQueue.addFirst(msg);
 		
 		msg1.setText(msgQueue.get(0));
