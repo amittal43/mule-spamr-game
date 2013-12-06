@@ -99,6 +99,7 @@ public class MainAppView {
 		game = new Game();
 		gamescreen = new GameScreenUI(this);
 		gamescreen.setParent(this);
+		game.setParent(gamescreen);
 		
 		ldialog = new LoadDialog(this);
 		

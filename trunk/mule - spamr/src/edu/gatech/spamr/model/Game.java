@@ -1,5 +1,6 @@
 package edu.gatech.spamr.model;
 
+import java.awt.List;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -7,6 +8,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 import edu.gatech.spamr.model.Map.MapType;
 import edu.gatech.spamr.view.GameScreenUI;
@@ -121,8 +123,30 @@ public class Game implements Serializable {
 			playOrder = currentRound.calcTurn(player1, player2, player3, player4);
 			currentTurn = 0;
 			
-			for(Tile tile : gameMap.getMapArray()){
-				tile.processProduction();
+			System.out.println(parent);
+			System.out.println(parent.getTsui());
+			parent.getTsui().setFire(0);
+			ArrayList playEffect = currentRound.RandomRoundEvent(playOrder, parent.getTsui());
+			int food = 0;
+			int energy = 0;
+			int ore = 0;
+			if (playEffect.get(0) != null && (int)playEffect.get(0) == 6){	//saving resources to be set to
+				food = ((Player)playEffect.get(0)).getFoodQuantity();
+				energy = ((Player)playEffect.get(0)).getEnergyQuantity();
+				ore = ((Player)playEffect.get(0)).getOreQuantity();
+			}
+			if((int)playEffect.get(1) != 3){
+				for(Tile tile : gameMap.getMapArray()){
+					tile.processProduction();
+				}
+			}
+			if (playEffect.get(0) != null && (int)playEffect.get(0) == 6){ //reseting resources to before production
+				((Player)playEffect.get(0)).setFoodQuantity(food);
+				((Player)playEffect.get(0)).setEnergyQuantity(energy);
+				((Player)playEffect.get(0)).setOreQuantity(ore);
+			}
+			if( (int)playEffect.get(1) == 1){
+				store.setOreQuantity(0);
 			}
 			
 		} else {
