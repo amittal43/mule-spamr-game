@@ -180,6 +180,7 @@ public class LandSelectionUI extends JPanel {
 						}
 					}
 					else{
+						StatPanel.getInstance().queueMsg("Player does not Enough have Money to buy!");
 						System.out.println("Not Enough Money!");
 						playersPassed++; // must pass because insufficient funds
 						nextPlayer();
