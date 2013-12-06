@@ -211,6 +211,7 @@ public class StoreUI extends JPanel{
 					System.out.println(parent.getGame().getCurrentPlayer().getName() + "'s Money after purchase: " + parent.getGame().getCurrentPlayer().getMoney());
 					System.out.println("Store's Ore after purchase: " + parent.getGame().getStore().getOreQuantity());
 	
+					StatPanel.getInstance().updateStats(parent.getGame().getCurrentPlayer());
 				} else {
 					System.out.println("Invalid Resource Selected?");
 				}
@@ -262,6 +263,7 @@ public class StoreUI extends JPanel{
 					System.out.println(parent.getGame().getCurrentPlayer().getName() + "'s Money after selling: " + parent.getGame().getCurrentPlayer().getMoney());
 					System.out.println("Store's Ore after selling: " + parent.getGame().getStore().getOreQuantity());
 					
+					StatPanel.getInstance().updateStats(parent.getGame().getCurrentPlayer());
 				} else {
 					System.out.println("somehow you messed up selling a resource?");
 				}

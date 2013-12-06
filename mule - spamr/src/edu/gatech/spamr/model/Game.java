@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import edu.gatech.spamr.model.Map.MapType;
 import edu.gatech.spamr.view.GameScreenUI;
 import edu.gatech.spamr.view.MapUI;
+import edu.gatech.spamr.view.StatPanel;
 
 /** 
  * The Game class represents the actual application of the game.
@@ -155,6 +156,7 @@ public class Game implements Serializable {
 			currentTurn++;
 		}
 		currentPlayer = playOrder[currentTurn];
+		StatPanel.getInstance().updateStats(currentPlayer);
 	}
 	
 	public  void calcTurnOrder(){
