@@ -118,33 +118,33 @@ public class Round implements Serializable {
 		if (eventID == 1){ //1,2,3,4 good events
 			currPlayer.setFoodQuantity(currPlayer.getFoodQuantity() +3);
 			currPlayer.setEnergyQuantity(currPlayer.getEnergyQuantity() +2);
-			//StatPanel.getInstance().queueMsg("YOU JUST RECEIVED A PACKAGE FROM THE GT ALUMNI CONTAINING 3 FOOD AND 2 ENERGY UNITS");
+			StatPanel.getInstance().queueMsg("YOU JUST RECEIVED A PACKAGE FROM THE GT ALUMNI CONTAINING 3 FOOD AND 2 ENERGY UNITS");
 		}
 		else if(eventID == 2){
 			currPlayer.setOreQuantity(currPlayer.getOreQuantity() +2);
-			//StatPanel.getInstance().queueMsg("A WANDERING TECH STUDENT REPAID YOUR HOSPITALITY BY LEAVING TWO BARS OF ORE");
+			StatPanel.getInstance().queueMsg("A WANDERING TECH STUDENT REPAID YOUR HOSPITALITY BY LEAVING TWO BARS OF ORE");
 		}
 		else if(eventID == 3){
 			currPlayer.setMoney(currPlayer.getMoney() + 8*randomNumber[roundNumber]);
-			//StatPanel.getInstance().queueMsg("THE MUSEUM BOUGHT YOUR ANTIQUE PERSONAL COMPUTER");
+			StatPanel.getInstance().queueMsg("THE MUSEUM BOUGHT YOUR ANTIQUE PERSONAL COMPUTER");
 		}
 		else if(eventID == 4){
 			currPlayer.setMoney(currPlayer.getMoney() + 2*randomNumber[roundNumber]);
-			//StatPanel.getInstance().queueMsg("YOU FOUND A DEAD MOOSE RAT AND SOLD THE HIDE");
+			StatPanel.getInstance().queueMsg("YOU FOUND A DEAD MOOSE RAT AND SOLD THE HIDE");
 		}
 		else if (eventID == 5){ //5,6,7 bad events
 			currPlayer.setMoney(currPlayer.getMoney() + 4*randomNumber[roundNumber]);
-			//StatPanel.getInstance().queueMsg("FLYING CAT-BUGS ATE THE ROOF OFF YOUR HOUSE");
+			StatPanel.getInstance().queueMsg("FLYING CAT-BUGS ATE THE ROOF OFF YOUR HOUSE");
 		}
 		else if(eventID == 6){
 			currPlayer.setFoodQuantity(currPlayer.getFoodQuantity() - currPlayer.getFoodQuantity()/2);
-			//StatPanel.getInstance().queueMsg("MISCHIEVOUS UGA STUDENTS BROKE INTO YOUR STORAGE SHED AND STOLE HALF YOUR FOOD");
+			StatPanel.getInstance().queueMsg("MISCHIEVOUS UGA STUDENTS BROKE INTO YOUR STORAGE SHED AND STOLE HALF YOUR FOOD");
 		}
 		else if(eventID == 7){
 			currPlayer.setMoney(currPlayer.getMoney() - 2*randomNumber[roundNumber]);
-			//StatPanel.getInstance().queueMsg("YOUR SPACE GYPSY INLAWS MADE A MESS OF THE TOWN");
+			StatPanel.getInstance().queueMsg("YOUR SPACE GYPSY INLAWS MADE A MESS OF THE TOWN");
 		} else {
-			//StatPanel.getInstance().queueMsg("no event occured, eventID = " + eventID);
+			StatPanel.getInstance().queueMsg("no event occured, eventID = " + eventID);
 		}
 		
 		System.out.println("Food After Event: " + currPlayer.getFoodQuantity());
@@ -157,14 +157,14 @@ public class Round implements Serializable {
 	public ArrayList RandomRoundEvent(Player[] players, TownScreenUI tsui){ // may need to pass in a store object
 		if(eventsLeft == 0) return null;
 		
-		System.out.println("RoundRandomEvent happened!");
-		System.out.println(players[3].getName());
+		//System.out.println("RoundRandomEvent happened!");
+		//System.out.println(players[3].getName());
 		
 		Random rand = new Random();
 		int num = Math.abs(rand.nextInt()%100) + 1;
 		
-		System.out.println("event number");
-		System.out.println(num);
+		//System.out.println("event number");
+		//System.out.println(num);
 		
 		Player playerAffected = null;
 		int effect = 0;
@@ -173,7 +173,7 @@ public class Round implements Serializable {
 		if (num > rEventProb[0] + rEventProb[1] + rEventProb[2] + rEventProb[3] + rEventProb[4] + rEventProb[5] + rEventProb[6]) {
 			//event #7 occurs
 			
-			System.out.println("event 7");
+			//System.out.println("event 7");
 			
 			StatPanel.getInstance().queueMsg("Fire in Store occured. The store is closed this round.");
 			tsui.setFire(1);
@@ -188,8 +188,8 @@ public class Round implements Serializable {
 			//event #6 occurs
 			int pick = Math.abs(rand.nextInt()%2);
 			
-			System.out.println("event 6");
-			System.out.println(pick);
+			//System.out.println("event 6");
+			//System.out.println(pick);
 			
 			//players[pick] has what his production would be subtracted from his current resources
 			//will be like he had no production
@@ -203,8 +203,8 @@ public class Round implements Serializable {
 			//redefining as random player loses 5 food and gains 2 ore
 			int pick = Math.abs(rand.nextInt()%4);
 			
-			System.out.println("event 5");
-			System.out.println(pick);
+			//System.out.println("event 5");
+			//System.out.println(pick);
 			
 			players[pick].setFoodQuantity(players[pick].getFoodQuantity() - 5);
 			players[pick].setOreQuantity(players[pick].getOreQuantity() + 2);
@@ -214,7 +214,7 @@ public class Round implements Serializable {
 		} else if (num > rEventProb[0] + rEventProb[1] + rEventProb[2] + rEventProb[3]){
 			//event #4 occurs
 			
-			System.out.println("event 4");
+			//System.out.println("event 4");
 			
 			StatPanel.getInstance().queueMsg("Sunspot Activity occured all players gain 3 energy");
 			for(int i = 0; i < 4; i++){
@@ -231,8 +231,8 @@ public class Round implements Serializable {
 				int playerind = Math.abs(rand.nextInt()%4);
 				int resourceind = Math.abs(rand.nextInt()%3);
 				
-				System.out.println("event 3");
-				System.out.println(playerind + " " + resourceind);
+				//System.out.println("event 3");
+				//System.out.println(playerind + " " + resourceind);
 				
 				if (resourceind == 0){
 					players[playerind].setFoodQuantity(players[playerind].getFoodQuantity() + 1);
@@ -253,8 +253,8 @@ public class Round implements Serializable {
 				int pick = Math.abs(rand.nextInt()%2);
 				
 				
-				System.out.println("event 2");
-				System.out.println(pick);
+				//System.out.println("event 2");
+				//System.out.println(pick);
 				
 				if(pick == 0){
 					players[i].setFoodQuantity(players[i].getFoodQuantity() + 4);
@@ -270,7 +270,7 @@ public class Round implements Serializable {
 		} else if (num > rEventProb[0]) {
 			//event #1 occurs
 			
-			System.out.println("event 1");
+			//System.out.println("event 1");
 			
 			StatPanel.getInstance().queueMsg("Pirate Ship occured. The Ore is gone. Why is the Ore always gone?");
 			for(int i = 0; i < 4; i++){
@@ -287,8 +287,8 @@ public class Round implements Serializable {
 			//redefining as player 1 or 2 has 1 of each resource removed
 			int pick = Math.abs(rand.nextInt()%2);
 			
-			System.out.println("event 0");
-			System.out.println(pick);
+			//System.out.println("event 0");
+			//System.out.println(pick);
 			
 			players[pick].setFoodQuantity(players[pick].getFoodQuantity() - 1);
 			players[pick].setEnergyQuantity(players[pick].getEnergyQuantity() - 1);
