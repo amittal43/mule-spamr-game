@@ -28,24 +28,12 @@ public class StatPanel extends JPanel {
 	JLabel msg4;
 	JLabel msg5;
 
-	Player currentPlayer;
 	JLabel playerLabel;
-	String player;
-	JLabel lblNewLabel_1;
-	JLabel lblNewLabel_2;
-	String money;
-	JLabel lblNewLabel_3;
-	JLabel lblNewLabel_4;
-	String energy;
-	JLabel lblNewLabel_5;
-	JLabel lblNewLabel_6;
-	String ore;
-	JLabel lblNewLabel_7;
-	JLabel lblNewLabel_8;
-	String food;
-	JLabel lblNewLabel_9;
-	
-	JLabel lblNewLabel_14;
+	JLabel playerMoney;
+	JLabel playerFood;
+	JLabel playerEnergy;
+	JLabel playerOre;
+
 	
 	
 	/**
@@ -57,11 +45,35 @@ public class StatPanel extends JPanel {
 		setPreferredSize(new Dimension(300, 684));
 		setLayout(null);
 
-		JLabel lblNewLabel = new JLabel("Player Info");
-		lblNewLabel.setFont(new Font("Verdana", Font.BOLD, 13));
-		lblNewLabel.setBounds(93, 5, 95, 33);
-		add(lblNewLabel);
+		JLabel playerInfo = new JLabel("Player Info");
+		playerInfo.setFont(new Font("Verdana", Font.BOLD, 13));
+		playerInfo.setBounds(93, 5, 95, 33);
+		add(playerInfo);
 		
+		playerLabel = new JLabel("Player");
+		playerLabel.setFont(new Font("Verdana", Font.PLAIN, 13));
+		playerLabel.setBounds(12, 40, 276, 22);
+		add(playerLabel);
+		
+		playerMoney = new JLabel("Player Money");
+		playerMoney.setFont(new Font("Verdana", Font.PLAIN, 13));
+		playerMoney.setBounds(12, 65, 276, 22);
+		add(playerMoney);
+		
+		playerFood = new JLabel("Player Food");
+		playerFood.setFont(new Font("Verdana", Font.PLAIN, 13));
+		playerFood.setBounds(12, 90, 276, 22);
+		add(playerFood);
+		
+		playerEnergy = new JLabel("Player Energy");
+		playerEnergy.setFont(new Font("Verdana", Font.PLAIN, 13));
+		playerEnergy.setBounds(12, 115, 276, 22);
+		add(playerEnergy);
+		
+		playerOre = new JLabel("Player Ore");
+		playerOre.setFont(new Font("Verdana", Font.PLAIN, 13));
+		playerOre.setBounds(12, 140, 276, 22);
+		add(playerOre);
 		
 		JLabel messages = new JLabel("Messages");
 		messages.setFont(new Font("Verdana", Font.PLAIN, 13));
@@ -104,16 +116,14 @@ public class StatPanel extends JPanel {
 	public void setParent(GameScreenUI gcui){
 		parent=gcui;
 	}
-/*	public void updateStats(){
-		money= Integer.toString(currentPlayer.getMoney());
-		lblNewLabel_3 = new JLabel(money);
-		energy= Integer.toString(currentPlayer.getEnergyQuantity());
-		lblNewLabel_5 = new JLabel(energy);
-		ore= Integer.toString(currentPlayer.getOreQuantity());
-		lblNewLabel_7 = new JLabel(ore);
-		food= Integer.toString(currentPlayer.getFoodQuantity());
-		lblNewLabel_9 = new JLabel(food);		
-	}*/
+	public void updateStats(Player p){
+		playerLabel.setText(p.getName());	
+		playerMoney.setText("$" + p.getMoney());
+		playerFood.setText("Food: " + p.getFoodQuantity());
+		playerEnergy.setText("Energy: " + p.getEnergyQuantity());
+		playerOre.setText("Ore: " + p.getOreQuantity());
+	}
+	
 	public void queueMsg(String msg){
 		msgQueue.addFirst(msg);
 		

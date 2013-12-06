@@ -53,6 +53,8 @@ public class LandSelectionUI extends JPanel {
 	
 	private void nextPlayer(){
 		
+		StatPanel.getInstance().updateStats(currentPlayer);
+		
 		//rotate's which player is choosing a land tile
 		if(currentPlayer.equals(parent.getGame().getPlayer1())){
 			currentPlayer = parent.getGame().getPlayer2();
@@ -94,6 +96,7 @@ public class LandSelectionUI extends JPanel {
 				//parent.getGame().decidePlayOrder(new Player[]{parent.getGame().getPlayer1(),parent.getGame().getPlayer2(), parent.getGame().getPlayer3(), parent.getGame().getPlayer4()});
 				parent.getTurnScreenUI().getTurnDialog().setCurrentPlayerText(parent.getGame().getCurrentPlayer().getName());
 				parent.getTurnScreenUI().getTurnDialog().setVisible(true);
+				StatPanel.getInstance().updateStats(parent.getGame().getCurrentPlayer());
 				//(new Thread(new Timer())).start();
 			}
 
@@ -150,6 +153,7 @@ public class LandSelectionUI extends JPanel {
 						newMessage(currentPlayer.getName() + " received tile!");
 						propertiesOwned++;
 						nextPlayer();
+						StatPanel.getInstance().updateStats(currentPlayer);
 						return;
 					}
 					else{
