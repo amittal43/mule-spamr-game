@@ -156,14 +156,25 @@ public class Round implements Serializable {
 	
 	public ArrayList RandomRoundEvent(Player[] players, TownScreenUI tsui){ // may need to pass in a store object
 		if(eventsLeft == 0) return null;
+		
 		System.out.println("RoundRandomEvent happened!");
+		System.out.println(players[3].getName());
+		
 		Random rand = new Random();
-		int num = rand.nextInt()%100 + 1;
+		int num = Math.abs(rand.nextInt()%100) + 1;
+		
+		System.out.println("event number");
+		System.out.println(num);
+		
 		Player playerAffected = null;
 		int effect = 0;
+		
 		//choses event
 		if (num > rEventProb[0] + rEventProb[1] + rEventProb[2] + rEventProb[3] + rEventProb[4] + rEventProb[5] + rEventProb[6]) {
 			//event #7 occurs
+			
+			System.out.println("event 7");
+			
 			StatPanel.getInstance().queueMsg("Fire in Store occured. The store is closed this round.");
 			tsui.setFire(1);
 			rEventOccured[7] ++;
@@ -175,7 +186,11 @@ public class Round implements Serializable {
 			
 		} else if (num > rEventProb[0] + rEventProb[1] + rEventProb[2] + rEventProb[3] + rEventProb[4] + rEventProb[5]) {
 			//event #6 occurs
-			int pick = rand.nextInt()%2;
+			int pick = Math.abs(rand.nextInt()%2);
+			
+			System.out.println("event 6");
+			System.out.println(pick);
+			
 			//players[pick] has what his production would be subtracted from his current resources
 			//will be like he had no production
 			StatPanel.getInstance().queueMsg("Radiation occured. " + players[pick].getName() + " has no production this turn.");
@@ -186,7 +201,11 @@ public class Round implements Serializable {
 		} else if (num > rEventProb[0] + rEventProb[1] + rEventProb[2] + rEventProb[3] + rEventProb[4]) {
 			//event #5 occurs
 			//redefining as random player loses 5 food and gains 2 ore
-			int pick = rand.nextInt()%4;
+			int pick = Math.abs(rand.nextInt()%4);
+			
+			System.out.println("event 5");
+			System.out.println(pick);
+			
 			players[pick].setFoodQuantity(players[pick].getFoodQuantity() - 5);
 			players[pick].setOreQuantity(players[pick].getOreQuantity() + 2);
 			StatPanel.getInstance().queueMsg("Meteorite Strike occured. "+ players[pick].getName() + " loses 5 food and gains 2 ore.");
@@ -194,7 +213,10 @@ public class Round implements Serializable {
 			
 		} else if (num > rEventProb[0] + rEventProb[1] + rEventProb[2] + rEventProb[3]){
 			//event #4 occurs
-			System.out.println("Sunspot Activity occured all players gain 3 energy");
+			
+			System.out.println("event 4");
+			
+			StatPanel.getInstance().queueMsg("Sunspot Activity occured all players gain 3 energy");
 			for(int i = 0; i < 4; i++){
 				players[i].setFoodQuantity(players[i].getFoodQuantity() + 3);
 			}
@@ -206,8 +228,12 @@ public class Round implements Serializable {
 			//redefine as randomizing production this turn
 			//20 resources are randomly distributed between the players
 			for(int i = 0; i < 20; i++){
-				int playerind = rand.nextInt()%4;
-				int resourceind = rand.nextInt()%3;
+				int playerind = Math.abs(rand.nextInt()%4);
+				int resourceind = Math.abs(rand.nextInt()%3);
+				
+				System.out.println("event 3");
+				System.out.println(playerind + " " + resourceind);
+				
 				if (resourceind == 0){
 					players[playerind].setFoodQuantity(players[playerind].getFoodQuantity() + 1);
 				} else if (resourceind == 1) {
@@ -224,7 +250,12 @@ public class Round implements Serializable {
 			StatPanel.getInstance().queueMsg("Acid Rain Storm occured. Additional Food is found at the cost of your Energy");
 			//add 4 or 2 to food and remove 2 or 1 from energy
 			for(int i = 0; i < 4; i++){
-				int pick = rand.nextInt()%2;
+				int pick = Math.abs(rand.nextInt()%2);
+				
+				
+				System.out.println("event 2");
+				System.out.println(pick);
+				
 				if(pick == 0){
 					players[i].setFoodQuantity(players[i].getFoodQuantity() + 4);
 					players[i].setEnergyQuantity(players[i].getEnergyQuantity() - 2);
@@ -238,6 +269,9 @@ public class Round implements Serializable {
 			
 		} else if (num > rEventProb[0]) {
 			//event #1 occurs
+			
+			System.out.println("event 1");
+			
 			StatPanel.getInstance().queueMsg("Pirate Ship occured. The Ore is gone. Why is the Ore always gone?");
 			for(int i = 0; i < 4; i++){
 				players[i].setOreQuantity(0);
@@ -245,12 +279,17 @@ public class Round implements Serializable {
 			//set the store's ore to 0
 			effect = 1;
 			rEventOccured[1] ++;
-
+			
+			
 			
 		} else {
 			//event #0 occurs
 			//redefining as player 1 or 2 has 1 of each resource removed
-			int pick = rand.nextInt()%2;
+			int pick = Math.abs(rand.nextInt()%2);
+			
+			System.out.println("event 0");
+			System.out.println(pick);
+			
 			players[pick].setFoodQuantity(players[pick].getFoodQuantity() - 1);
 			players[pick].setEnergyQuantity(players[pick].getEnergyQuantity() - 1);
 			players[pick].setOreQuantity(players[pick].getOreQuantity() - 1);
@@ -269,7 +308,7 @@ public class Round implements Serializable {
 	}
 	
 	private void roundEventProbUpdater(){
-		for(int i = 0; i < 8; i++){
+		for(int i = 0; i < 7; i++){
 			rEventProb[i] = 100 * (rEventMax[i]-rEventOccured[i]) / eventsLeft;
 		}
 	}
