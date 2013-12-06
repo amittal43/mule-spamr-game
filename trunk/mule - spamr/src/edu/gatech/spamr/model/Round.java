@@ -118,33 +118,33 @@ public class Round implements Serializable {
 		if (eventID == 1){ //1,2,3,4 good events
 			currPlayer.setFoodQuantity(currPlayer.getFoodQuantity() +3);
 			currPlayer.setEnergyQuantity(currPlayer.getEnergyQuantity() +2);
-			StatPanel.getInstance().queueMsg("YOU JUST RECEIVED A PACKAGE FROM THE GT ALUMNI CONTAINING 3 FOOD AND 2 ENERGY UNITS");
+			//StatPanel.getInstance().queueMsg("YOU JUST RECEIVED A PACKAGE FROM THE GT ALUMNI CONTAINING 3 FOOD AND 2 ENERGY UNITS");
 		}
 		else if(eventID == 2){
 			currPlayer.setOreQuantity(currPlayer.getOreQuantity() +2);
-			StatPanel.getInstance().queueMsg("A WANDERING TECH STUDENT REPAID YOUR HOSPITALITY BY LEAVING TWO BARS OF ORE");
+			//StatPanel.getInstance().queueMsg("A WANDERING TECH STUDENT REPAID YOUR HOSPITALITY BY LEAVING TWO BARS OF ORE");
 		}
 		else if(eventID == 3){
 			currPlayer.setMoney(currPlayer.getMoney() + 8*randomNumber[roundNumber]);
-			StatPanel.getInstance().queueMsg("THE MUSEUM BOUGHT YOUR ANTIQUE PERSONAL COMPUTER");
+			//StatPanel.getInstance().queueMsg("THE MUSEUM BOUGHT YOUR ANTIQUE PERSONAL COMPUTER");
 		}
 		else if(eventID == 4){
 			currPlayer.setMoney(currPlayer.getMoney() + 2*randomNumber[roundNumber]);
-			StatPanel.getInstance().queueMsg("YOU FOUND A DEAD MOOSE RAT AND SOLD THE HIDE");
+			//StatPanel.getInstance().queueMsg("YOU FOUND A DEAD MOOSE RAT AND SOLD THE HIDE");
 		}
 		else if (eventID == 5){ //5,6,7 bad events
 			currPlayer.setMoney(currPlayer.getMoney() + 4*randomNumber[roundNumber]);
-			StatPanel.getInstance().queueMsg("FLYING CAT-BUGS ATE THE ROOF OFF YOUR HOUSE");
+			//StatPanel.getInstance().queueMsg("FLYING CAT-BUGS ATE THE ROOF OFF YOUR HOUSE");
 		}
 		else if(eventID == 6){
 			currPlayer.setFoodQuantity(currPlayer.getFoodQuantity() - currPlayer.getFoodQuantity()/2);
-			StatPanel.getInstance().queueMsg("MISCHIEVOUS UGA STUDENTS BROKE INTO YOUR STORAGE SHED AND STOLE HALF YOUR FOOD");
+			//StatPanel.getInstance().queueMsg("MISCHIEVOUS UGA STUDENTS BROKE INTO YOUR STORAGE SHED AND STOLE HALF YOUR FOOD");
 		}
 		else if(eventID == 7){
 			currPlayer.setMoney(currPlayer.getMoney() - 2*randomNumber[roundNumber]);
-			StatPanel.getInstance().queueMsg("YOUR SPACE GYPSY INLAWS MADE A MESS OF THE TOWN");
+			//StatPanel.getInstance().queueMsg("YOUR SPACE GYPSY INLAWS MADE A MESS OF THE TOWN");
 		} else {
-			StatPanel.getInstance().queueMsg("no event occured, eventID = " + eventID);
+			//StatPanel.getInstance().queueMsg("no event occured, eventID = " + eventID);
 		}
 		
 		System.out.println("Food After Event: " + currPlayer.getFoodQuantity());
